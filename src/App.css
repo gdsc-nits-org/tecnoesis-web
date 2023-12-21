@@ -11,7 +11,36 @@
   --footer-blue-1-100: #002358;
   --footer-blue-2-100: #4debf6;
 
-  --navbar-blue-1-100: #1a084A;
-  --navbar-blue-2-100: #1E0352;
+  --navbar-blue-1-100: #1a084a;
+  --navbar-blue-2-100: #1e0352;
+}
 
+@font-face {
+  font-family: CrackmanBack;
+  src: url("/fonts/crackman.back-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: CrackmanFront;
+  src: url("/fonts/crackman.front-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Crackman;
+  src: url("/fonts/crackman.regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PixeloidMono;
+  src: url("/fonts/PixeloidMono-d94EV.ttf");
+}
+
+@font-face {
+  font-family: PixeloidSansBold;
+  src: url("/fonts/PixeloidSansBold-PKnYd.ttf");
+}
+
+@font-face {
+  font-family: PixeloidSans;
+  src: url("/fonts/PixeloidSans-mLxMm.ttf");
 }
