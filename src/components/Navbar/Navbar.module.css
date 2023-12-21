@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Pixeloid Sans';
+  src: url('../../../public/fonts/PixeloidSans-mLxMm.ttf') format('opentype');
+}
+
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0vh 5vw;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4vh;
+}
+
+.navbar {
+  height: 3.75rem;
+  background: transparent;
+  
+  gap: 25px;
+  margin-right: 4vw;
+}
+
+
+
+.menu_icon {
+  display: none;
+}
+
+
+
+.nav_elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav_elements ul li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav_elements ul a {
+  text-decoration: none;
+}
+
+.nav_button_style {
+  border-radius: 9999px;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.nav_button_style:hover {
+  background-color: #1A084A;
+  border-radius: 9999px;
+  border: 0.187rem solid #E3E2A9;
+}
+
+.navButton {
+  padding: 2rem 2rem;
+  gap: 1rem;
+  display: inline-flex;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: 'Pixeloid Sans';
+  line-height: 1rem;
+  letter-spacing: 0.05em;
+  width: auto;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  color: #1A084A;
+  background: linear-gradient(90deg, #56F4FD 0%, #047A94 100%);
+  transform: translateY(9px) translateX(8px);
+}
+
+
+
+@media (max-width: 768px) {
+  .nav_elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu_icon {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .navButton:hover {
+    background: none;
+    transform: none;
+    box-shadow: none;
+    color: inherit;
+    border: none;
+  }
+  .nav_button_style:hover{
+    background: none;
+    transform: none;
+    box-shadow: none;
+    color: inherit;
+    border: none;
+  }
+
+
+  .nav_elements {
+    position: absolute;
+    right: 0;
+    top: 7rem;
+    background: rgba(217, 217, 217, 0.05);
+    border-radius: 0.875rem;
+    backdrop-filter: blur(30px);
+    width: 0px;
+    height: fit-content;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav_elements.active {
+    width: 93vw;
+  }
+
+  .nav_elements ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav_elements ul li {
+    margin-right: 2.1vw;
+    margin-top: 1.375rem;
+  }
+}

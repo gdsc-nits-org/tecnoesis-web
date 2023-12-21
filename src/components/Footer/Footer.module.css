@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Pixeloid Sans';
+    src: url('../../../public/fonts/PixeloidSans-mLxMm.ttf') format('opentype');
+}
+
+.footer {
+    width: 100%;
+    background: transparent;
+}
+
+.footer_container {
+    position: relative;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    color: white;
+}
+
+.footer_content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_logo {
+    width: 75%;
+}
+
+.pikachu {
+    width: 7rem;
+    margin-top: 1rem;
+    border: 1px solid #B5868D;
+}
+
+.foot_buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+}
+
+.foot_satellite {
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 150px;
+}
+
+
+.footer_button {
+    background: linear-gradient(to right, #002358, #1D0B21);
+    border: 1px solid #B5868D;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    color: #4DEBF6;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    outline: none;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    margin-bottom: 1.3rem;
+}
+
+.footer_button:hover {
+    background: linear-gradient(to right, #B5868D, #F36196);
+    color: white;
+    outline: none;
+    transition: all 300ms ease-in-out;
+}
+
+.footer_contact {
+    margin-top: 1.75rem;
+    color: #fff;
+    z-index: 20;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Pixeloid Sans';
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+}
+
+.footer_icons {
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3.3rem;
+    gap: 1.5rem;
+
+}
+
+.black_flare {
+    width: 15rem;
+    height: 5rem;
+    margin-top: 0.75rem;
+    background-color: #000;
+    border-radius: 9999px;
+    filter: blur(2.75rem);
+}
+
+.footer_flare {
+    width: 100vw;
+    z-index: -20;
+    height: 9rem;
+    background-color: #cd00fb;
+    border-radius: 9999px;
+    filter: blur(18.75rem);
+}
+
+@media (max-width: 768px) {
+    .foot_satellite {
+        display: none;
+    }
+
+    .footer_button {
+        font-size: small;
+    }
+
+    .footer_icons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
