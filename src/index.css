@@ -41,3 +41,16 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+body{
+  margin: 0;
+}
+
+@font-face { 
+  font-family: "Pixeloid"; 
+  src: url("../fonts/PixeloidSansBold-PKnYd.ttf"); 
+}
+@font-face { 
+  font-family: "JetBrainsMono"; 
+  src: url("../fonts/JetBrainsMono-VariableFont_wght.ttf"); 
+}
