@@ -1,7 +1,16 @@
+import { Home, Error } from "./pages";
+
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
 
 function App() {
-  return <h1> Tecnoesis 2024</h1>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<Error />} />
+    </Routes>
+  );
 }
 
 export default App;
