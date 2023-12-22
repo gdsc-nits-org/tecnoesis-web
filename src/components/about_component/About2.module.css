@@ -19,7 +19,7 @@
     height: 15rem;
     width: 15rem;
     /* background-image: url('./aboutus_rightimg.svg'); */
-    background-image: url('./aboutus_rightimg.svg');
+    background-image: url('/aboutus_rightimg.svg');
     background-size: contain;
 
   }
