@@ -42,10 +42,9 @@ h6 {
   isolation: isolate;
 }
 
-body{
-  margin: 0;
-}
-
+/* html{
+  font-size:1.1vw;
+} */
 @font-face { 
   font-family: "Pixeloid"; 
   src: url("../fonts/PixeloidSansBold-PKnYd.ttf"); 

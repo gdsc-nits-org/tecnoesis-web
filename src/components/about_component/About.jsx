@@ -105,7 +105,7 @@ function About() {
           </div>
           {/* about nit silchar*/}
           <div className={styles2.contentContainer}>
-          <div className={styles2.aboutleftImg}></div>
+          <div className={styles2.aboutrightImg}></div>
             <div className={styles2.textContainer}>
             <div className={styles2.coinboxContainerParent}>
                 <div className={styles2.coinboxContainer}>

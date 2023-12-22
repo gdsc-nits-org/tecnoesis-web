@@ -4,10 +4,11 @@
   overflow: hidden;
   background-image: url('./bg2.svg');
   background-attachment: fixed;
+  /* background-size:contain; */
 }
 
 .contentContainer {
-  /* padding-bottom: 4rem; */
+  padding-bottom: 3rem;
   padding-top: 4rem;
   position:relative;
 }
@@ -16,6 +17,7 @@
   height: 10.5rem;
   width: 10.5rem;
   background-image: url('./aboutus_leftimg.svg');
+ background-size: contain;
 }
 
 .textContainer {
@@ -43,6 +45,9 @@
   font-weight: bold;
   font-family: Pixeloid, serif;
   color: #ffffff;
+  background : linear-gradient(rgba(29, 8, 83, 1), rgba(76, 232, 244, 1));
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.30rem transparent;
  
 }
 
@@ -112,6 +117,7 @@
   height: 8rem;
   width: 8rem;
   background-image: url('./aboutus_coinbox.svg');
+  background-size:contain;
 
 }
 

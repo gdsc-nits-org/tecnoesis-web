@@ -1,24 +1,27 @@
 
-.bgContainer {
+/* .bgContainer {
     position: relative;
     overflow: hidden;
     background-image: url('./bg2.svg');
     background-attachment: fixed;
-  }
+  } */
   
   .contentContainer {
     padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
     position: relative;
   }
-  .aboutleftImg{
+  .aboutrightImg{
     position:absolute;
     bottom: 0;
   right: 0;
 
     height: 15rem;
     width: 15rem;
+    /* background-image: url('./aboutus_rightimg.svg'); */
     background-image: url('./aboutus_rightimg.svg');
+    background-size: contain;
+
   }
   
   .textContainer {
@@ -45,6 +48,9 @@
     font-family: Pixeloid, serif;
     color: #ffffff;
     text-align: end;
+    background : linear-gradient(rgba(29, 8, 83, 1), rgba(76, 232, 244, 1));
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0.30rem transparent;
    
   }
   
