@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
+.main_container{
+    position: absolute;
+}
+.text_container{
+    position: relative;
+    left: 26rem;
+    top: 4rem;
+    width: 30rem;
+    margin-bottom: 2rem;
+}
+.mn_fr_container{
+    position: relative;
+    width: 16rem;
+    height: 18rem;
+    left: 9rem;
+    top: 2.8rem;
+    float: left;
+}
+.fr_container{
+    position: relative;
+    float: left;
+    width: 8rem;
+    height: 5rem;
+    left: -3rem;
+    top: 8rem;
+}
+
