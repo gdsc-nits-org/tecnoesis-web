@@ -38,16 +38,16 @@ const Footer = () => {
                     <div className={styles.footer_contact}>CONTACT US</div>
                     <div className={styles.black_flare}></div>
                     <div className={styles.footer_icons}>
-                        <img src={facebook} alt='facebook' />
-                        <img src={instagram} alt='instagram' />
-                        <img src={mail}style={{ backgroundColor:"white", borderRadius:"10px" }} alt='mail' />
-                        <img src={linkedin} alt='linkedin' />
-                        <img src={twitter} alt='twitter' />
-                    </div>
+                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={facebook} alt='facebook' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer "><img src={instagram} alt='instagram' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer "><img src={mail} style={{ backgroundColor: "white", borderRadius: "10px" }} alt='mail' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={linkedin} alt='linkedin' /></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={twitter} alt='twitter' /></a>
+                    </div>y
                     <div className={styles.footer_flare}></div>
                 </div>
             </div>
-            
+
 
         </div>
     )
