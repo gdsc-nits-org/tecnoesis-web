@@ -57,6 +57,15 @@
   animation-iteration-count: 1;
   animation-direction: alternate;
 }
+
+.pacman {
+  width: 15%;
+  position: absolute;
+  bottom: -8%;
+  left: 40%;
+  z-index: 99;
+}
+
 .arrow {
   position: absolute;
   height: 70px;
@@ -84,14 +93,21 @@
   }
 }
 
+.pacman {
+  width: 200px;
+}
 
 .tec {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 64%;
 
   position: absolute;
 
-  width: 70%;
-  top: 180px;
-  left: 180px;
+  /* width: 70%; */
+  top: 32%;
+  left: 18%;
   animation-duration: 1.3s;
   animation-name: slidein;
   animation-iteration-count: 1;
@@ -138,9 +154,8 @@
   margin-right: auto;
   width: 50%;
   position: relative;
-  top: -300px;
-  width: 562px;
-  height: 85px;
+  top: -38%;
+  width: 40%;
 
   animation-duration: 6s;
   animation-name: hide;
@@ -155,132 +170,583 @@
   background-color: blue;
 }
 
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation-duration: 4s;
+@media((max-width: 1440px) and (min-width: 1280px)) {
+  
+  .hero-section {
+    height: 100vh;
+      width: 100%;
+      overflow-x:hidden ;
+      perspective: 10px;
+      overflow-y: auto;
+  }
+  
+  .bgimg{
+    
+    top: -6.5%;
+    transform: scale(1, 1.15);
+    z-index: 10;
+    
+    animation-duration: 3s;
+    animation-name: zoomeffect;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  .arrow {
+    position: absolute;
+    height: 70px;
+    transform: rotate(270deg);
+    left: 47%;
+    z-index: 999;
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+  .pacman {
+    width: 15%;
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+    z-index: 99;
+    animation-duration: 7s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+    
+  }
+  
+  @keyframes zoomeffect{
+    0%{
+      background-position:center;
+      transform:scale(2,2);
+    }
+    
+    100%{
+      background-position:center;
+      transform:scale(1,1.15);
+    }
+  }
+  
+  
+  .tec {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+  
+    position: absolute;
+  
+    top: 28%;
+    left: 18%;
+    animation-duration: 1.4s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    z-index: 20;
+  }
+  
+  @keyframes slidein{
+    0%{
+      transform: translateY(260%);
+    }
+    
+    100%{
+      transform: translateY(0%);
+    }
+    
+  }
+  
+  @keyframes hide {
+    0% {
+      opacity: 0;
+      
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .mobimg{
+    top: -32%;
+    display: block;
+    position: absolute;
+  }
+  
+  
+  .comingsoon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: relative;
+    top: -52%;
+    width: 40%;
+  
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  
+    z-index: 20;
+    
+  }
+  
+  .about{
+    color: aliceblue;
+    background-color: blue;
+  }
+  
+  
+  } 
+
+
+
+@media((max-width: 1140px) and (min-width: 1024px)) {
+  
+  .hero-section {
+    height: 100vh;
+      width: 100%;
+      overflow-x:hidden ;
+      perspective: 10px;
+      overflow-y: auto;
+  }
+  
+  .bgimg{
+    
+    top: -6.5%;
+    transform: scale(1, 1.15);
+    z-index: 10;
+    
+    animation-duration: 3s;
+    animation-name: zoomeffect;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  .arrow {
+    position: absolute;
+    height: 70px;
+    transform: rotate(270deg);
+    left: 47%;
+    /* bottom: -10%; */
+    z-index: 999;
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+  .pacman {
+    width: 15%;
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    z-index: 99;
+    animation-duration: 7s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+    
+  }
+  
+  @keyframes zoomeffect{
+    0%{
+      background-position:center;
+      transform:scale(2,2);
+    }
+    
+    100%{
+      background-position:center;
+      transform:scale(1,1.15);
+    }
+  }
+  
+  
+  .tec {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+  
+    position: absolute;
+  
+    top: 28%;
+    left: 18%;
+    animation-duration: 1.4s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    z-index: 20;
+  }
+  
+  @keyframes slidein{
+    0%{
+      transform: translateY(260%);
+    }
+    
+    100%{
+      transform: translateY(0%);
+    }
+    
+  }
+  
+  @keyframes hide {
+    0% {
+      opacity: 0;
+      
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .mobimg{
+    top: -32%;
+    display: block;
+    position: absolute;
+  }
+  
+  
+  .comingsoon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: relative;
+    top: -42%;
+    width: 40%;
+  
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  
+    z-index: 20;
+    
+  }
+  
+  .about{
+    color: aliceblue;
+    background-color: blue;
+  }
+  
+  
+  } 
+  
+
+
+/***** Responsive Lapp******/
+
+@media((max-width: 1024px) and (min-width: 768px)) {
+  
+.hero-section {
+  height: 100vh;
+    width: 100%;
+    overflow-x:hidden ;
+    perspective: 10px;
+    overflow-y: auto;
+}
+
+.bgimg{
+
+  top: 70px;
+  transform: scale(1.27, 1.27);
+  z-index: 10;
+
+  animation-duration: 3s;
+  animation-name: zoomeffect;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+.pacman {
+  width: 15%;
+  position: absolute;
+  bottom: 16%;
+  left: 42%;
+  z-index: 99;
+  animation-duration: 7s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+
+}
+
+.arrow {
+  position: absolute;
+  height: 70px;
+  transform: rotate(270deg);
+  left: 47%;
+  bottom: 0%;
+  z-index: 999;
+  animation-duration: 6s;
   animation-name: hide;
   animation-iteration-count: 1;
 }
 
+@keyframes zoomeffect{
+  0%{
+    background-position:center;
+    transform:scale(2,2);
+  }
+  
+  100%{
+    background-position:center;
+    transform:scale(1.27,1.27);
+  }
+}
 
-.container {
-  /* position: fixed; */
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  width: 270px;
-  height: 72px;
+
+.tec {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 64%;
+
   position: absolute;
-  top: 500px;
 
+  /* width: 70%; */
+  top: 32%;
+  left: 18%;
+  animation-duration: 1.4s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
   z-index: 20;
 }
 
-
-
-
-.pacman {
-  position: relative;
-  background: transparent;
-  z-index: 1;
-
-  &::before,
-  &::after {
-      position: absolute;
-      top: -35px;
-      display: block;
-      border-radius: 50%;
-      content: "";
-      height: 0px;
-      width: 0px;
+@keyframes slidein{
+  0%{
+    transform: translateY(260%);
   }
-
-  &::before {
-      animation: chunk-top .5s ease infinite;
-      border: 35px solid #FFCC00;
-      border-left-color: transparent;
-      border-bottom-color: transparent;
+  
+  100%{
+    transform: translateY(0%);
   }
-
-  &::after {
-      animation: chunk-bottom .5s ease infinite;
-      border: 35px solid #FFCC00;
-      border-right-color: transparent;
-      border-top-color: transparent;
-  }
+  
 }
 
-.path {
-  display: flex;
-  justify-content: space-around;
-  animation: eating-path .5s linear infinite;
-  width: 100%;
-
-  &::before {
-      background: #ffcc00;
-      border-radius: 50%;
-      content: "";
-      height: 1rem;
-      width: 1rem;
-  }
-}
-
-@keyframes chunk-top {
-  0%,
-  100% {
-      transform: rotate(-45deg);
-  }
-  50% {
-      transform: rotate(-80deg);
-  }
-}
-
-@keyframes chunk-bottom {
-  0%,
-  100% {
-      transform: rotate(-40deg);
-  }
-  50% {
-      transform: rotate(0deg);
-  }
-}
-
-@keyframes eating-path {
+@keyframes hide {
   0% {
-      transform: translateX(50%);
+    opacity: 0;
+    
   }
+
+  50% {
+    opacity: 0;
+  }
+
   100% {
-      transform: translateX(-50%);
+    opacity: 1;
   }
 }
+
+.mobimg{
+  top: -32%;
+  display: block;
+  position: absolute;
+}
+
+
+.comingsoon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: relative;
+  top: -22%;
+  left: -2%;
+  width: 40%;
+  /* height: 85px; */
+
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+
+  z-index: 20;
+  
+}
+
+.about{
+  color: aliceblue;
+  background-color: blue;
+}
+
+}
+
+
+
+@media((max-width: 768px) and (min-width: 480px)) {
+  
+  .hero-section {
+    height: 100vh;
+      width: 100%;
+      overflow-x:hidden ;
+      perspective: 10px;
+      overflow-y: auto;
+  }
+  
+  .bgimg{
+    
+    top: 20%;
+    transform: scale(1.68, 1.68);
+    z-index: 10;
+  
+    animation-duration: 3s;
+    animation-name: zoomeffect;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  .pacman {
+    width: 15%;
+    position: absolute;
+    bottom: 16%;
+    left: 35%;
+    z-index: 99;
+    animation-duration: 7s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  
+  }
+
+  .arrow {
+    position: absolute;
+    height: 70px;
+    transform: rotate(270deg);
+    left: 47%;
+    bottom: 0%;
+    z-index: 999;
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes zoomeffect{
+    0%{
+      background-position:center;
+      transform:scale(3,3);
+    }
+    /* 50%{
+      background-position:center;
+      transform:scale(1.5,1.5);
+    } */
+    100%{
+      background-position:center;
+      transform:scale(1.68,1.68);
+    }
+  }
+  
+  
+  .tec {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+  
+    position: absolute;
+  
+    /* width: 70%; */
+    top: 40%;
+    left: 18%;
+    animation-duration: 1.3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    z-index: 20;
+  }
+  
+  @keyframes slidein{
+    0%{
+      transform: translateY(280%);
+    }
+    
+    100%{
+      transform: translateY(0%);
+
+    }
+    
+  }
+  
+  @keyframes hide {
+    0% {
+      opacity: 0;
+      
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .mobimg{
+    top: -32%;
+    display: block;
+    position: absolute;
+  }
+  
+  
+  .comingsoon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: relative;
+    top: 0%;
+    left: -2%;
+    width: 40%;
+    /* height: 85px; */
+  
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  
+    z-index: 20;
+    
+  }
+  
+  .about{
+    color: aliceblue;
+    background-color: blue;
+  }
+  
+ 
+  }
+  
+
 
 
 /***** Responsive Mobile******/
 
-@media(max-width: 360px) {
+@media(max-width: 480px) {
   .hero-section {
-    background-image: url(./assets/outrun-neon-dark-background-purple-1920x1200-4523\ 2.png);
+    /* background-image: url(./assets/outrun-neon-dark-background-purple-1920x1200-4523\ 2.png); */
     height: 100vh;
     width: 100%;
     overflow-x:hidden ;
     perspective: 10px;
     overflow-y: hidden;
   }
-  
-  /* .bgimg{
 
-    position: relative;
-    width: 100%;
-    z-index: 10;
-    top: -50%;
-  
-    animation-duration: 3s;
-    animation-name: zoomeffect;
+  .pacman {
+    width: 15%;
+    position: absolute;
+    bottom: 25%;
+    left: 42%;
+    z-index: 99;
+    animation-duration: 7s;
+    animation-name: hide;
     animation-iteration-count: 1;
-    animation-direction: alternate;
-  } */
+  
+  }
+  
   .bgimg{
     z-index: -10;
   }
@@ -302,6 +768,10 @@
     /* bottom: 55%;   */
     position: relative; 
     z-index: -1; 
+    width: 100%;
+    height: 100%;
+    transform: scale(1,1.05);
+    /* object-fit: cover; */
 
     animation-duration: 3s;
   animation-name: zoomeffect;
@@ -327,91 +797,28 @@
       transform:scale(1,1);
     }
   }
-  
-  
-  .building {
-    position: absolute;
-    z-index: 999;
-    bottom: 0%;
-  
-    animation-duration: 2s;
-    animation-name: start;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  
-  }
-  .stars {
-    position: absolute;
-    /* z-index: 999; */
-    bottom: 0%;
-    /* width: 1200px;
-    height: 1000px; */
-  
-    animation-duration: 1s;
-    animation-name: stars;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  
-  }
-  
-  .stars{
-    animation: zoomOut 2s ease-in-out;
-    }
-    @keyframes zoomOut {
-      from {
-        transform: scale(2);
-      }
-      to {
-        transform: scale(1);
-      }
-    }
-  
-  @keyframes start {
-    0%{
-      opacity: 1;
-      /* z-index: 20; */
-      bottom: 0%;
-    }
-  
-    100% {
-      /* position: relative; */
-      opacity: 0;
-      bottom: -100%;
-      z-index: -5;
-    }
-  
-  
-  }
-  @keyframes end {
-  
-    0% {
-      opacity: 0;
-      z-index: 5;
-      bottom: -100%;
-    }
-  
-    100%{
-      opacity: 1;
-      z-index: 20;
-      bottom: 0%;
-    }
-  
-  
-  }
+
   
   
   .tec {
-  
-    position: absolute;
-  
-    width: 70%;
-    top: 350px;
-    left: 40px;
-    animation-duration: 1.2s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
+
+
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 64%;
+
+  position: absolute;
+
+  /* width: 70%; */
+  top: 50%;
+  left: 18%;
+  animation-duration: 1.2s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  z-index: 20;
+
   }
   
   @keyframes slidein{
@@ -448,8 +855,8 @@
     margin-right: auto;
     width: 50%;
     position: absolute;
-    top: 395px;
-    left: 85px;
+    top: 62%;
+    left: 25%;
     width: 180px;
     /* height: 85px; */
   
@@ -461,9 +868,7 @@
     
   }
   
-  .container{
-    z-index: -1000;
-  }
+
   
 }
 

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import "./App.css";
 import Lottie from 'lottie-react';
-import animationData from "./lotties/home_arror.json"
+import animationData1 from "./lotties/home_arror.json"
+import animationData2 from "./lotties/pacman.json"
 
 function App() {
 
@@ -25,21 +26,10 @@ function App() {
     <img className="comingsoon" src="./src/assets/Group 28.svg" alt="" />
 
     
-    <div className="box">
-      <main className="container">
-          <div className="pacman"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-          <div className="path"></div>
-      </main>
-    </div>
+    
 
-    <Lottie className="arrow" animationData={animationData} />
+    <Lottie className="arrow" animationData={animationData1} />
+    <Lottie className="pacman" animationData={animationData2} />
    </section>
 
    
