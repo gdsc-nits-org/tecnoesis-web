@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from "./Footer.module.css";
-import techno_logo from '../../assets/techno_logo.png'
-import pikachu from '../../assets/pikachu.gif'
-import facebook from '../../assets/facebook.png'
-import instagram from '../../assets/instagram.png'
-import mail from '../../assets/mail.png'
-import linkedin from '../../assets/linkedin.png'
-import twitter from '../../assets/twitter.png'
-import satellite from '../../assets/satellite.svg'
+import techno_logo from '../../../public/elements/techno_logo.png'
+import pikachu from '../../../public/elements/pikachu.gif'
+import facebook from '../../../public/elements/facebook.png'
+import instagram from '../../../public/elements/instagram.png'
+import mail from '../../../public/elements/mail.png'
+import linkedin from '../../../public/elements/linkedin.png'
+import twitter from '../../../public/elements/twitter.png'
+import satellite from '../../../public/elements/satellite.svg'
 
 
 const Footer = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
                         <a href="#" target="_blank" rel="noopener noreferrer "><img src={mail} style={{ backgroundColor: "white", borderRadius: "10px" }} alt='mail' /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer " ><img src={linkedin} alt='linkedin' /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer " ><img src={twitter} alt='twitter' /></a>
-                    </div>y
+                    </div>
                     <div className={styles.footer_flare}></div>
                 </div>
             </div>

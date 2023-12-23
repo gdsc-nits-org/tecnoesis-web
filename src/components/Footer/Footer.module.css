@@ -15,7 +15,7 @@
     margin-right: auto;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    color: white;
+    color: var(--tecno-light-1-100);
 }
 
 .footer_content {
@@ -32,7 +32,7 @@
 .pikachu {
     width: 7rem;
     margin-top: 1rem;
-    border: 1px solid #B5868D;
+    border: 1px solid var(--tecno-brown-1-100);
 }
 
 .foot_buttons {
@@ -52,8 +52,8 @@
 
 
 .footer_button {
-    background: linear-gradient(to right, #002358, #1D0B21);
-    border: 1px solid #B5868D;
+    background: linear-gradient(to right, var(--footer-blue-1-100), var(--footer-blue-3-100));
+    border: 1px solid var(--tecno-brown-1-100);
     padding-left: 2.4rem;
     padding-right: 2.4rem;
     padding-top: 1rem;
@@ -71,15 +71,15 @@
 }
 
 .footer_button:hover {
-    background: linear-gradient(to right, #B5868D, #F36196);
-    color: white;
+    background: linear-gradient(to right, var(--tecno-brown-1-100), #F36196);
+    color: var(--tecno-light-1-100);
     outline: none;
     transition: all 300ms ease-in-out;
 }
 
 .footer_contact {
     margin-top: 1.75rem;
-    color: #fff;
+    color: var(--tecno-light-1-100);
     z-index: 20;
     font-size: 1rem;
     font-weight: normal;
@@ -102,7 +102,7 @@
     width: 15rem;
     height: 5rem;
     margin-top: 0.75rem;
-    background-color: #000;
+    background-color: var(--techno-black-1-100);
     border-radius: 9999px;
     filter: blur(2.75rem);
 }
@@ -111,7 +111,7 @@
     width: 100vw;
     z-index: -20;
     height: 9rem;
-    background-color: #cd00fb;
+    background-color: var(--techno-purple-2-100);
     border-radius: 9999px;
     filter: blur(18.75rem);
 }

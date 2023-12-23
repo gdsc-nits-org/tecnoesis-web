@@ -21,8 +21,7 @@
 .navbar {
   height: 3.75rem;
   background: transparent;
-  
-  gap: 25px;
+  gap: 1.563rem;
   margin-right: 4vw;
 }
 
@@ -41,7 +40,7 @@
 }
 
 .nav_elements ul li:not(:last-child) {
-  margin-right: 60px;
+  margin-right: 3.75rem;
 }
 
 .nav_elements ul a {
@@ -58,9 +57,9 @@
 }
 
 .nav_button_style:hover {
-  background-color: #1A084A;
+  background-color: var(--navbar-blue-1-100);
   border-radius: 9999px;
-  border: 0.187rem solid #E3E2A9;
+  border: 0.187rem solid var(--tecno-yellow-100);
 }
 
 .navButton {
@@ -68,7 +67,7 @@
   gap: 1rem;
   display: inline-flex;
   text-align: center;
-  color: white;
+  color: var(--tecno-light-1-100);
   font-size: 1.5rem;
   font-weight: normal;
   font-family: 'Pixeloid Sans';
@@ -81,8 +80,8 @@
 }
 
 .navButton:hover {
-  color: #1A084A;
-  background: linear-gradient(90deg, #56F4FD 0%, #047A94 100%);
+  color:var(--navbar-blue-1-100);
+  background: linear-gradient(90deg, var(--navbar-cyan-1-100) 100%, var(--navbar-cyan-2-100) 100%);
   transform: translateY(9px) translateX(8px);
 }
 
