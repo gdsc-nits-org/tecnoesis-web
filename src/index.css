@@ -2,6 +2,473 @@
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: crackman;
+  src: url(./public/Crackman.ttf);
+}
+
+@font-face {
+  font-family: crackman-back;
+  src: url(./public/Crackman Back.ttf);
+}
+
+@font-face {
+  font-family: crackman-front;
+  src: url(./public/Crackman Front.ttf);
+}
+
+@font-face {
+  font-family: pixeloid-sans;
+  src: url(./public/PixeloidSans-mLxMm.ttf);
+}
+
+@font-face {
+  font-family: pixeloid-mono;
+  src: url(./public/PixeloidMono-d94EV.ttf);
+}
+
+@font-face {
+  font-family: pixeloid-sansbold;
+  src: url(./public/PixeloidSansBold-PKnYd.ttf);
+}
+
+
+
+.hero-section {
+  height: 100vh;
+    width: 100%;
+    overflow-x:hidden ;
+    perspective: 10px;
+    overflow-y: auto;
+}
+
+.bgimg{
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  animation-duration: 3s;
+  animation-name: zoomeffect;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+.arrow {
+  position: absolute;
+  height: 70px;
+  transform: rotate(270deg);
+  left: 50%;
+  bottom: -20%;
+  z-index: 999;
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+}
+
+@keyframes zoomeffect{
+  0%{
+    background-position:center;
+    transform:scale(2,2);
+  }
+  50%{
+    background-position:center;
+    transform:scale(1,1);
+  }
+  100%{
+    background-position:center;
+    transform:scale(1,1);
+  }
+}
+
+
+.tec {
+
+  position: absolute;
+
+  width: 70%;
+  top: 180px;
+  left: 180px;
+  animation-duration: 1.3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  z-index: 20;
+}
+
+@keyframes slidein{
+  0%{
+    transform: translateY(100%);
+  }
+  
+  100%{
+    transform: translateY(0%);
+  }
+  
+}
+
+@keyframes hide {
+  0% {
+    opacity: 0;
+    
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.mobimg{
+  top: -20%;
+  display: block;
+  position: absolute;
+}
+
+
+.comingsoon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: relative;
+  top: -300px;
+  width: 562px;
+  height: 85px;
+
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+
+  z-index: 20;
+  
+}
+
+.about{
+  color: aliceblue;
+  background-color: blue;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 4s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+}
+
+
+.container {
+  /* position: fixed; */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 270px;
+  height: 72px;
+  position: absolute;
+  top: 500px;
+
+  z-index: 20;
+}
+
+
+
+
+.pacman {
+  position: relative;
+  background: transparent;
+  z-index: 1;
+
+  &::before,
+  &::after {
+      position: absolute;
+      top: -35px;
+      display: block;
+      border-radius: 50%;
+      content: "";
+      height: 0px;
+      width: 0px;
+  }
+
+  &::before {
+      animation: chunk-top .5s ease infinite;
+      border: 35px solid #FFCC00;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+  }
+
+  &::after {
+      animation: chunk-bottom .5s ease infinite;
+      border: 35px solid #FFCC00;
+      border-right-color: transparent;
+      border-top-color: transparent;
+  }
+}
+
+.path {
+  display: flex;
+  justify-content: space-around;
+  animation: eating-path .5s linear infinite;
+  width: 100%;
+
+  &::before {
+      background: #ffcc00;
+      border-radius: 50%;
+      content: "";
+      height: 1rem;
+      width: 1rem;
+  }
+}
+
+@keyframes chunk-top {
+  0%,
+  100% {
+      transform: rotate(-45deg);
+  }
+  50% {
+      transform: rotate(-80deg);
+  }
+}
+
+@keyframes chunk-bottom {
+  0%,
+  100% {
+      transform: rotate(-40deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes eating-path {
+  0% {
+      transform: translateX(50%);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+
+/***** Responsive Mobile******/
+
+@media(max-width: 360px) {
+  .hero-section {
+    background-image: url(./assets/outrun-neon-dark-background-purple-1920x1200-4523\ 2.png);
+    height: 100vh;
+    width: 100%;
+    overflow-x:hidden ;
+    perspective: 10px;
+    overflow-y: hidden;
+  }
+  
+  /* .bgimg{
+
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    top: -50%;
+  
+    animation-duration: 3s;
+    animation-name: zoomeffect;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  } */
+  .bgimg{
+    z-index: -10;
+  }
+
+  .arrow {
+    position: absolute;
+    height: 10%;
+    transform: rotate(270deg);
+    left: 36%;
+    bottom: 0%;
+    z-index: 999;
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+
+  .mobimg {
+    top: -35%;
+    /* bottom: 55%;   */
+    position: relative; 
+    z-index: -1; 
+
+    animation-duration: 3s;
+  animation-name: zoomeffect;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+    
+  }
+  
+ 
+
+
+  @keyframes zoomeffect{
+    0%{
+      background-position:center;
+      transform:scale(2,2);
+    }
+    50%{
+      background-position:center;
+      transform:scale(1,1);
+    }
+    100%{
+      background-position:center;
+      transform:scale(1,1);
+    }
+  }
+  
+  
+  .building {
+    position: absolute;
+    z-index: 999;
+    bottom: 0%;
+  
+    animation-duration: 2s;
+    animation-name: start;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  
+  }
+  .stars {
+    position: absolute;
+    /* z-index: 999; */
+    bottom: 0%;
+    /* width: 1200px;
+    height: 1000px; */
+  
+    animation-duration: 1s;
+    animation-name: stars;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  
+  }
+  
+  .stars{
+    animation: zoomOut 2s ease-in-out;
+    }
+    @keyframes zoomOut {
+      from {
+        transform: scale(2);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  
+  @keyframes start {
+    0%{
+      opacity: 1;
+      /* z-index: 20; */
+      bottom: 0%;
+    }
+  
+    100% {
+      /* position: relative; */
+      opacity: 0;
+      bottom: -100%;
+      z-index: -5;
+    }
+  
+  
+  }
+  @keyframes end {
+  
+    0% {
+      opacity: 0;
+      z-index: 5;
+      bottom: -100%;
+    }
+  
+    100%{
+      opacity: 1;
+      z-index: 20;
+      bottom: 0%;
+    }
+  
+  
+  }
+  
+  
+  .tec {
+  
+    position: absolute;
+  
+    width: 70%;
+    top: 350px;
+    left: 40px;
+    animation-duration: 1.2s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    z-index: 20;
+  }
+  
+  @keyframes slidein{
+    0%{
+      transform: translateY(300%);
+    }
+    
+    100%{
+      transform: translateY(0%);
+    }
+    /* 100% {
+      transform: translateY(100%);
+    } */
+  }
+  
+  @keyframes hide {
+    0% {
+      opacity: 0;
+      
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .comingsoon{
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: absolute;
+    top: 395px;
+    left: 85px;
+    width: 180px;
+    /* height: 85px; */
+  
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  
+    z-index: 50;
+    
+  }
+  
+  .container{
+    z-index: -1000;
+  }
+  
+}
+
+
+
 *,
 *::before,
 *::after {
@@ -41,3 +508,5 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+
