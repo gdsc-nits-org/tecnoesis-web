@@ -17,9 +17,9 @@ function Herosection () {
       <img className={styles.tecLogo}src="./public/images/Tecno 24 logo.png" alt="" />
       <img className={styles.comingSoon} src="./public/images/Group 28.svg" alt="" />
       
-      <div className={styles.arrowLottie}>
-      <Lottie animationData={home_arror} />
-      </div>
+      
+      <Lottie className={styles.arrowLottie} animationData={home_arror} />
+      
         
       <Lottie className={styles.pacmanLottie} animationData={pacman} />
   </section>
