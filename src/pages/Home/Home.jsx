@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./Home.module.css";
 
 import { Button, Input } from "../../components";
-import About from "../../components/about_component/About";
+import About from "../../components/About/About";
 
 const Home = () => {
   const [demoState, setDemoState] = useState("");
@@ -19,7 +19,7 @@ const Home = () => {
       <Input value={demoState} onChange={changeDemoState} />
       <Button>Hello</Button>
     </div>
-    <About></About>
+    <About/>
     </>
   );
 };
