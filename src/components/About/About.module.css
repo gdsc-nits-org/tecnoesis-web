@@ -155,7 +155,7 @@
   .spaceBox {
     display: none;
   }
-  .coinboxContainer {
+  .lottieContainer {
     display: none;
   }
   .techFestText {
@@ -169,7 +169,7 @@
   .spaceBoxParent {
     width: 0%;
   }
-  .coinboxContainerParent {
+  .lottieContainerParent {
     width: 0%;
   }
 }
