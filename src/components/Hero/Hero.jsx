@@ -1,21 +1,20 @@
 import React from 'react'
 
-
 import Lottie from 'lottie-react';
 import home_arror from "../../lotties/home_arror.json";
 import pacman from "../../lotties/pacman.json";
-import styles from '../Herosection/Herosection.module.css';
+import styles from './Herosection.module.css';
 
 function Herosection () {
   return (
     <section className={styles.heroSection}>
 
-      <img className= {styles.bgImg} src="./public/images/bg landing.svg" alt="" />
+      <img className= {styles.bgImg} src="images/bg_landing.svg" alt="" />
 
-      <img src="./public/images/mobbg.png" alt="" className= {styles.mobImg} />
+      <img src="images/mobimg.png" alt="" className= {styles.mobImg} />
 
-      <img className={styles.tecLogo}src="./public/images/Tecno 24 logo.png" alt="" />
-      <img className={styles.comingSoon} src="./public/images/Group 28.svg" alt="" />
+      <img className={styles.tecLogo}src="images/Tecno 24 logo.png" alt="" />
+      <img className={styles.comingSoon} src="images/Group 28.svg" alt="" />
       
       
       <Lottie className={styles.arrowLottie} animationData={home_arror} />

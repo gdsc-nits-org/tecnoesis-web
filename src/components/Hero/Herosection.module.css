@@ -46,7 +46,7 @@
   width: 100%;
   z-index: 10;
 
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: zoomeffect;
   animation-iteration-count: 1;
   animation-direction: alternate;
