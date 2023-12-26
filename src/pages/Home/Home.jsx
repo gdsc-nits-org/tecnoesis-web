@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import styles from "./Home.module.css";
 
+import { Sponsors } from "../../components";
 import { Button, Input } from "../../components";
 import About from "../../components/About/About";
 
@@ -15,9 +16,7 @@ const Home = () => {
   return (
     <>
     <div>
-      <h1 className={styles["heading"]}>Tecnoesis 2024</h1>
-      <Input value={demoState} onChange={changeDemoState} />
-      <Button>Hello</Button>
+      <Sponsors/>
     </div>
     <About/>
     </>
