@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from '../Sponsors/Sponsors.module.css';
 import Cards from '../../assets/Card.json';
+import '../../App.css'; // Import app.css
+
 
 const Sponsors = () => {
   return (
@@ -10,11 +12,11 @@ const Sponsors = () => {
         src="images/bg_landing_stars.svg"
         alt="Background stars"
       />
-      <img className={styles.text_container} src="images/sponsor_logo.png" />
+      <h1 className={styles.text_container}>Our Past Sponsors</h1> 
 
       {Cards &&
         Cards.map((item) => (
-          <div key={item.id} className={styles.mn_fr_container}> {/* Apply mn_fr_container to the parent div */}
+          <div key={item.id} className={styles.mn_fr_container}>
             <img src="images/frame.png" />
             <img className={styles.fr_container} src={item.company} />
           </div>
