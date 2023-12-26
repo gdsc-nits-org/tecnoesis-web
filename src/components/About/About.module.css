@@ -44,7 +44,7 @@
   font-size: 1em;
   line-height: 1;
   font-weight: bold;
-  font-family: Pixeloid, serif;
+  font-family: PixeloidSansBold, serif;
   color: #ffffff;
   background: linear-gradient(rgba(29, 8, 83, 1), rgba(76, 232, 244, 1));
   -webkit-background-clip: text;
@@ -121,12 +121,9 @@
 }
 .coinboxImage {
   position: absolute;
-  /* height: 100%; */
   bottom: 0;
   padding-bottom: 100%;
   width: 100%;
-  /* height: 8rem;
-  width: 100%; */
   background-image: url("/aboutus_coinbox.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -176,7 +173,20 @@
 @media screen and (max-width: 480px) {
   .textContainer {
     width: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
+  .techFestText{
+    line-height: 1.2;
+    font-size: 0.9em;
+  }
+  .eventText{
+    line-height: 1.7;
+  }
+  .aboutUsText{
+    font-size: 2.1rem;
+  }
+
 }
 @media screen and (min-width: 1500px) {
   .translateLottie {
@@ -249,12 +259,14 @@
   font-size: 1em;
   line-height: 1;
   font-weight: bold;
-  font-family: Pixeloid, serif;
+  font-family: PixeloidSansBold, serif;
   color: #ffffff;
   text-align: end;
   background: linear-gradient(rgba(29, 8, 83, 1), rgba(76, 232, 244, 1));
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.3rem transparent;
+  white-space: nowrap;
+
 }
 
 .eventText2 {
@@ -286,7 +298,10 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+.wordbreak {
+  content: "\00a0"; /* Unicode non-breaking space character */
+  white-space: normal; /* Allow wrapping after the inserted space */
+}
 @media screen and (max-width: 1180px) {
   .aboutNitText {
     font-size: 2.5rem;
@@ -326,15 +341,25 @@
   .lottieContainerParent2 {
     width: 80%;
   }
-  .word-break {
-    content: "\00a0"; /* Unicode non-breaking space character */
-    white-space: normal; /* Allow wrapping after the inserted space */
-  }
+ 
 }
 @media screen and (max-width: 480px) {
   .textContainer2 {
     width: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
+  .techFestText2{
+    line-height: 1.2;
+    font-size: 0.9em;
+  }
+  .eventText2{
+    line-height: 1.7;
+  }
+  .aboutNitText{
+    font-size: 2.1rem;
+  }
+
 }
 @media screen and (min-width: 1900px) {
   .aboutNitText {

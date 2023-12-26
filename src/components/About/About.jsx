@@ -88,7 +88,7 @@ function About() {
               </div>
               <div className={styles.aboutNitText}>
                 <div className={styles.techFestText2}>
-                  ABOUT<span className="word-break"></span> NIT SILCHAR
+                  ABOUT<span className={styles.wordbreak}></span> NIT SILCHAR
                 </div>
                 <div className={styles.eventText2}>
                   A bright future requires a bright start. NITS abides by this
