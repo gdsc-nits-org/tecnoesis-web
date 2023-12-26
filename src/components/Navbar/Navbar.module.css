@@ -14,9 +14,8 @@
 
 .navbar {
   height:10.75rem;
-  background: transparent;
   gap: 1.563rem;
-  margin-right: 4vw;
+  padding-right: 4vw;
 }
 
 

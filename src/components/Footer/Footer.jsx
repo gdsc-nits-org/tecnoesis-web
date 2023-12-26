@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from "./Footer.module.css";
-import techno_logo from '/elements/techno_logo.png'
+import techno_logo from '/elements/tecneosis.svg'
 import pikachu from '/elements/pikachu.gif'
-import facebook from '/elements/facebook.png'
-import instagram from '/elements/instagram.png'
-import mail from '/elements/mail.png'
-import linkedin from '/elements/linkedin.png'
-import twitter from '/elements/twitter.png'
+import facebook from '/elements/social_fb.svg'
+import instagram from '/elements/social_insta.svg'
+import mail from '/elements/social_mail.svg'
+import linkedin from '/elements/social_lin.svg'
+import twitter from '/elements/social_twit.svg'
 import satellite from '/elements/satellite.svg'
 
 

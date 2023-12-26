@@ -28,7 +28,6 @@
 .pikachu {
     width: 7rem;
     margin-top: 1rem;
-    border: 1px solid var(--tecno-brown-1-100);
 }
 
 .foot_buttons {
@@ -109,8 +108,7 @@
     z-index: -20;
     height: 9rem;
     background-color: var(--techno-purple-2-100);
-    border-radius: 9999px;
-    filter: blur(18.75rem);
+    filter: blur(5.75rem);
 }
 
 @media (max-width: 768px) {
