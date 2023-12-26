@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap');
 .main_container{
+    overflow-x: hidden;
+}
+.bg_container{
     position: absolute;
 }
 .text_container{
     position: relative;
-    left: 26rem;
+    left: 32vw;
     top: 4rem;
     width: 30rem;
     margin-bottom: 2rem;
@@ -25,4 +28,3 @@
     left: -3rem;
     top: 8rem;
 }
-
