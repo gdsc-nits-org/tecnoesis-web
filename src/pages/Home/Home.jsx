@@ -3,6 +3,8 @@ import { useState } from "react";
 import styles from "./Home.module.css";
 
 import { Sponsors } from "../../components";
+import { Button, Input } from "../../components";
+import About from "../../components/About/About";
 
 const Home = () => {
   const [demoState, setDemoState] = useState("");
@@ -12,9 +14,12 @@ const Home = () => {
   };
 
   return (
+    <>
     <div>
       <Sponsors/>
     </div>
+    <About/>
+    </>
   );
 };
 
