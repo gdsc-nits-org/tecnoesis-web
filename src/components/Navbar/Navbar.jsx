@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Cross as Hamburger } from 'hamburger-react'
-import techno_logo from '../../../public/elements/techno-Logo.svg'
+import techno_logo from '/elements/techno-Logo.svg'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {

@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from "./Footer.module.css";
-import techno_logo from '../../../public/elements/techno_logo.png'
-import pikachu from '../../../public/elements/pikachu.gif'
-import facebook from '../../../public/elements/facebook.png'
-import instagram from '../../../public/elements/instagram.png'
-import mail from '../../../public/elements/mail.png'
-import linkedin from '../../../public/elements/linkedin.png'
-import twitter from '../../../public/elements/twitter.png'
-import satellite from '../../../public/elements/satellite.svg'
+import techno_logo from '/elements/techno_logo.png'
+import pikachu from '/elements/pikachu.gif'
+import facebook from '/elements/facebook.png'
+import instagram from '/elements/instagram.png'
+import mail from '/elements/mail.png'
+import linkedin from '/elements/linkedin.png'
+import twitter from '/elements/twitter.png'
+import satellite from '/elements/satellite.svg'
 
 
 const Footer = () => {

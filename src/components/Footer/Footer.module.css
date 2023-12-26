@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'Pixeloid Sans';
-    src: url('../../../public/fonts/PixeloidSans-mLxMm.ttf') format('opentype');
-}
 
 .footer {
     width: 100%;
@@ -61,6 +57,7 @@
     display: flex;
     color: #4DEBF6;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
     display: inline-flex;
@@ -83,7 +80,7 @@
     z-index: 20;
     font-size: 1rem;
     font-weight: normal;
-    font-family: 'Pixeloid Sans';
+    font-family: PixeloidSans, serif;
     line-height: 1.5;
     letter-spacing: -0.025em;
 }
