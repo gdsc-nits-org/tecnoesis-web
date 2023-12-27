@@ -21,6 +21,7 @@ function About() {
   return (
     <>
       <div id='about' >
+      <div>
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
             <div className={styles.aboutleftImg}></div>
