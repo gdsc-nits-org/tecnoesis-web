@@ -11,7 +11,7 @@ function Herosection () {
 
       <img className= {styles.bgImg} src="images/bg_landing.svg" alt="" />
 
-      <img src="images/mobimg.png" alt="" className= {styles.mobImg} />
+      <img className= {styles.mobImg} src="images/mobbg.png" alt=""  />
 
       <img className={styles.tecLogo}src="images/Tecno 24 logo.png" alt="" />
       <img className={styles.comingSoon} src="images/Group 28.svg" alt="" />
