@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "company": "images/coca_cola_logo.png"
+  },
+  {
+    "id": 2,
+    "company": "images/amul_logo.png"
+  },
+  {
+    "id": 3,
+    "company": "images/zebronics_logo.png"
+  },
+  {
+    "id": 4,
+    "company": "images/royal_enfield_logo.png"
+  },
+  {
+    "id": 5,
+    "company": "images/unacademy_logo.png"
+  },
+  {
+    "id": 6,
+    "company": "images/heaven_logo.png"
+  }
+]
+
