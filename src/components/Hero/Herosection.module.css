@@ -1,38 +1,3 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
-@font-face {
-  font-family: crackman;
-  src: url(./public/Crackman.ttf);
-}
-
-@font-face {
-  font-family: crackman-back;
-  src: url(./public/Crackman Back.ttf);
-}
-
-@font-face {
-  font-family: crackman-front;
-  src: url(./public/Crackman Front.ttf);
-}
-
-@font-face {
-  font-family: pixeloid-sans;
-  src: url(./public/PixeloidSans-mLxMm.ttf);
-}
-
-@font-face {
-  font-family: pixeloid-mono;
-  src: url(./public/PixeloidMono-d94EV.ttf);
-}
-
-@font-face {
-  font-family: pixeloid-sansbold;
-  src: url(./public/PixeloidSansBold-PKnYd.ttf);
-}
-
 .heroSection {
   height: 100vh;
   width: 100%;
@@ -263,7 +228,7 @@
     margin-right: auto;
     width: 50%;
     position: relative;
-    top: -52%;
+    top: -72%;
     width: 40%;
 
     animation-duration: 6s;
@@ -526,7 +491,7 @@
   }
 
   .bgImg {
-    top: 70px;
+    /* top: 70px; */
     transform: scale(1.27, 1.27);
     z-index: 10;
 
@@ -654,7 +619,7 @@
     width: 15%;
     position: absolute;
     bottom: 16%;
-    left: 40%;
+    left: 42%;
     z-index: 99;
     animation-duration: 7s;
     animation-name: hide;
@@ -737,8 +702,7 @@
     margin-right: auto;
     width: 50%;
     position: relative;
-    top: 0%;
-    left: -2%;
+    top: -8%;
     width: 40%;
 
     animation-duration: 6s;
@@ -761,9 +725,9 @@
   }
 
   .pacmanLottie {
-    width: 15%;
+    width: 22%;
     position: absolute;
-    bottom: 25%;
+    bottom: 27%;
     left: 42%;
     z-index: 99;
     animation-duration: 7s;
@@ -788,12 +752,12 @@
   }
 
   .mobImg {
-    top: -35%;
+    top: -36%;
     position: relative;
     z-index: -1;
     width: 100%;
     height: 100%;
-    transform: scale(1, 1.15);
+    transform: scale(1, 1.2);
 
     animation-duration: 3s;
     animation-name: zoomeffect;
@@ -809,7 +773,7 @@
 
     100% {
       background-position: center;
-      transform: scale(1, 1.15);
+      transform: scale(1, 1.2);
     }
   }
 
@@ -817,12 +781,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 64%;
+    width: 85%;
 
     position: absolute;
 
-    top: 50%;
-    left: 18%;
+    top: 42%;
+    left: 7%;
     animation-duration: 1.2s;
     animation-name: slidein;
     animation-iteration-count: 1;
@@ -858,10 +822,129 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 55%;
     position: absolute;
-    top: 60%;
-    left: 31%;
+    top: 56%;
+    left: 28%;
+    width: 180px;
+
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+
+    z-index: 50;
+  }
+}
+
+@media (max-width: 300px) {
+  .heroSection {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    perspective: 10px;
+    overflow-y: hidden;
+  }
+
+  .pacmanLottie {
+    width: 22%;
+    position: absolute;
+    bottom: 27%;
+    left: 42%;
+    z-index: 99;
+    animation-duration: 7s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+
+  .bgImg {
+    z-index: -10;
+  }
+
+  .arrowLottie {
+    position: absolute;
+    height: 5%;
+    transform: rotate(270deg);
+    left: 45%;
+    bottom: 0%;
+    z-index: 999;
+    animation-duration: 6s;
+    animation-name: hide;
+    animation-iteration-count: 1;
+  }
+
+  .mobImg {
+    top: -36%;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 110%;
+    animation-duration: 3s;
+    animation-name: zoomeffect;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  @keyframes zoomeffect {
+    0% {
+      background-position: center;
+      transform: scale(2, 2);
+    }
+
+    100% {
+      background-position: center;
+      transform: scale(1, 1.2);
+    }
+  }
+
+  .tecLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+
+    position: absolute;
+
+    top: 42%;
+    left: 7%;
+    animation-duration: 1.2s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    z-index: 20;
+  }
+
+  @keyframes slidein {
+    0% {
+      transform: translateY(300%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes hide {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .comingSoon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    position: absolute;
+    top: 56%;
+    left: 20%;
     width: 180px;
 
     animation-duration: 6s;
