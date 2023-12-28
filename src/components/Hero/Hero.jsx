@@ -6,6 +6,7 @@ import pacman from "../../lotties/pacman.json";
 import styles from './Herosection.module.css';
 
 function Herosection () {
+  
   return (
     <section className={styles.heroSection}>
 
@@ -16,9 +17,9 @@ function Herosection () {
       <img className={styles.tecLogo}src="images/Tecno 24 logo.png" alt="" />
       <img className={styles.comingSoon} src="images/Group 28.svg" alt="" />
       
-      
+      <a href="#about">
       <Lottie className={styles.arrowLottie} animationData={home_arror} />
-      
+      </a>
         
       <Lottie className={styles.pacmanLottie} animationData={pacman} />
   </section>
