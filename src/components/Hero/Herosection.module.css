@@ -122,13 +122,15 @@
 }
 
 @media ((max-width: 1440px) and (min-width: 1280px)) {
+
   .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 
   .bgImg {
     top: -6.5%;
@@ -240,14 +242,15 @@
 }
 
 @media ((max-width: 3500px) and (min-width: 1600px)) {
-  .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
 
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
   .bgImg {
     top: -55%;
     transform: scale(1, 0.65);
@@ -358,18 +361,19 @@
 }
 
 @media ((max-width: 1280px) and (min-width: 1024px)) {
+
   .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 
   .bgImg {
-    top: -6.5%;
-    height: 125%;
     width: 100%;
+    transform: scale(1,1.175);
     
     z-index: 10;
 
@@ -392,7 +396,7 @@
   .pacmanLottie {
     width: 15%;
     position: absolute;
-    bottom: 10%;
+    top: 65%;
     left: 40%;
     z-index: 99;
     animation-duration: 7s;
@@ -408,7 +412,7 @@
 
     100% {
       background-position: center;
-      transform: scale(1, 1.15);
+      transform: scale(1, 1.175);
     }
   }
 
@@ -465,8 +469,7 @@
     margin-right: auto;
     width: 50%;
     position: relative;
-    top: -67%;
-    left: 2%;
+    top: -45%;
     width: 40%;
 
     animation-duration: 6s;
@@ -480,13 +483,15 @@
 /***** Responsive Lapp******/
 
 @media ((max-width: 1024px) and (min-width: 768px)) {
-  .heroSection {
-    height: 125%;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
+
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 
   .bgImg {
     /* top: 70px; */
@@ -594,13 +599,15 @@
 }
 
 @media ((max-width: 768px) and (min-width: 480px)) {
+
   .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 
   .bgImg {
     top: 20%;
@@ -716,14 +723,15 @@
 /***** Responsive Mobile******/
 
 @media (max-width: 480px) {
-  .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
-
+  
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  perspective: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
   .pacmanLottie {
     width: 22%;
     position: absolute;
