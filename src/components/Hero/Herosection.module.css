@@ -21,7 +21,7 @@
 .pacmanLottie {
   width: 15%;
   position: absolute;
-  bottom: 7%;
+  bottom: 6%;
   left: 40%;
   z-index: 99;
 }
@@ -111,7 +111,7 @@
   margin-right: auto;
   width: 50%;
   position: relative;
-  top: -54%;
+  top: -53%;
   width: 40%;
 
   animation-duration: 6s;
