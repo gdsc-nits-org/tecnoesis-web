@@ -10,15 +10,17 @@
   --techno-purple-2-100:#cd00fb;
   --techno-brown-2-100:#F36196;
   --techno-black-1-100:#000;
-
+  
   --footer-blue-1-100: #002358;
   --footer-blue-2-100: #4debf6;
   --footer-blue-3-100: #1D0B21;
+  --footer-blue-4-100: #060318;
 
   --navbar-blue-1-100: #1a084a;
   --navbar-blue-2-100: #1e0352;
   --navbar-cyan-1-100: #56F4FD;
   --navbar-cyan-2-100: #047A94;
+  
 }
 
 @font-face {

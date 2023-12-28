@@ -87,9 +87,19 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    flex-direction: row; /* Change flex direction to column */
+    align-items: center; /* Center items in the column */
+  }
+
   .menu_icon {
-    display: block;
+    justify-content: flex-start;
     cursor: pointer;
+    display: block;
+  }
+
+  .logo {
+    order: 1; 
   }
   
   .nav_button_style:hover,
@@ -105,7 +115,7 @@
 
   .nav_elements {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 7rem;
     background: rgba(217, 217, 217, 0.05);
     border-radius: 0.875rem;
