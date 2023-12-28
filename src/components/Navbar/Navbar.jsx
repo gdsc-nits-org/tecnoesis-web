@@ -18,7 +18,7 @@ const Navbar = () => {
                     <img src={techno_logo} alt="Logo" />
                 </div>
                 <div className={styles.menu_icon} onClick={handleShowNavbar}>
-                    <Hamburger color="#56F4FD" easing="ease-in" rounded />
+                    <Hamburger color="linear-gradient(to bottom, #41D4E8, #0C6CA5)" easing="ease-in" rounded />
                 </div>
                 <div className={`${styles.nav_elements} ${showNavbar && styles.active}`}>
                     <ul>
