@@ -39,6 +39,7 @@
   overflow-x: hidden;
   perspective: 10px;
   overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 .bgImg {
@@ -162,6 +163,7 @@
     overflow-x: hidden;
     perspective: 10px;
     overflow-y: hidden;
+    scroll-behavior: smooth;
   }
 
   .bgImg {
@@ -279,6 +281,7 @@
     overflow-x: hidden;
     perspective: 10px;
     overflow-y: hidden;
+    scroll-behavior: smooth;
   }
 
   .bgImg {
@@ -397,6 +400,7 @@
     overflow-x: hidden;
     perspective: 10px;
     overflow-y: hidden;
+    scroll-behavior: smooth;
   }
 
   .bgImg {
@@ -423,10 +427,10 @@
     animation-iteration-count: 1;
   }
   .pacmanLottie {
-    /* width: 15%; */
+    width: 15%;
     position: absolute;
-    bottom: 7%;
-    left: 45%;
+    bottom: 10%;
+    left: 40%;
     z-index: 99;
     animation-duration: 7s;
     animation-name: hide;
@@ -498,7 +502,7 @@
     margin-right: auto;
     width: 50%;
     position: relative;
-    top: -68%;
+    top: -67%;
     left: 2%;
     width: 40%;
 
@@ -632,7 +636,7 @@
     width: 100%;
     overflow-x: hidden;
     perspective: 10px;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .bgImg {

@@ -10,12 +10,12 @@ function Herosection () {
   return (
     <section className={styles.heroSection}>
 
-      <img className= {styles.bgImg} src="images/bg_landing.svg" alt="" />
+      <img className= {styles.bgImg} src="images/bg_landing.svg" alt="" loading='lazy'/>
 
-      <img className= {styles.mobImg} src="images/mobbg.png" alt=""  />
+      <img className= {styles.mobImg} src="images/mobbg.png" alt=""  loading='lazy'/>
 
-      <img className={styles.tecLogo}src="images/Tecno 24 logo.png" alt="" />
-      <img className={styles.comingSoon} src="images/Group 28.svg" alt="" />
+      <img className={styles.tecLogo}src="images/Tecno 24 logo.png" alt="" loading='lazy'/>
+      <img className={styles.comingSoon} src="images/Group 28.svg" alt="" loading='lazy'/>
       
       <a href="#about">
       <Lottie className={styles.arrowLottie} animationData={home_arror} />
