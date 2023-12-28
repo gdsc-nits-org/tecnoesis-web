@@ -87,20 +87,13 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    flex-direction: row; /* Change flex direction to column */
-    align-items: center; /* Center items in the column */
-  }
-
+  
   .menu_icon {
-    justify-content: flex-start;
+    
     cursor: pointer;
     display: block;
   }
 
-  .logo {
-    order: 1; 
-  }
   
   .nav_button_style:hover,
   .navButton:hover {
@@ -115,8 +108,9 @@
 
   .nav_elements {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 7rem;
+    margin-right: 0.3rem;
     background: rgba(217, 217, 217, 0.05);
     border-radius: 0.875rem;
     backdrop-filter: blur(30px);
@@ -127,7 +121,7 @@
   }
 
   .nav_elements.active {
-    width: 98vw;
+    width: 97vw;
   }
 
   .nav_elements ul {
