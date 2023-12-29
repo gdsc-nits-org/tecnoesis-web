@@ -751,7 +751,7 @@
     height: 5%;
     transform: rotate(270deg);
     left: 45%;
-    bottom: 6%;
+    bottom: 8%;
     z-index: 999;
     animation-duration: 6s;
     animation-name: hide;
