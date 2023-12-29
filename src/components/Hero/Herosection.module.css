@@ -722,8 +722,7 @@
 
 /***** Responsive Mobile******/
 
-@media (max-width: 480px) {
-  
+@media ((max-width: 480px) and (min-width: 300px)) {
 .heroSection {
   height: 100vh;
   width: 100%;
@@ -752,7 +751,7 @@
     height: 5%;
     transform: rotate(270deg);
     left: 45%;
-    bottom: 0%;
+    bottom: 6%;
     z-index: 999;
     animation-duration: 6s;
     animation-name: hide;
@@ -873,7 +872,7 @@
     height: 5%;
     transform: rotate(270deg);
     left: 45%;
-    bottom: 0%;
+    bottom: 10%;
     z-index: 999;
     animation-duration: 6s;
     animation-name: hide;
