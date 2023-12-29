@@ -7,10 +7,51 @@
   scroll-behavior: smooth;
 }
 
-.bgImg {
-  position: relative;
+.buildImg {
   width: 100%;
-  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;  
+  z-index: -25;
+
+  animation-duration: 2s;
+  animation-name: zoomeffect2;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  
+}
+
+.lightsImg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -30;
+  
+  animation-duration: 2s;
+  animation-name: comeleft;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes comeleft {
+
+   from {
+     width: 50vw;
+    }
+    to{
+      width: 100vw;
+   
+ } 
+}
+
+.starsImg{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+
 
   animation-duration: 2s;
   animation-name: zoomeffect;
@@ -18,20 +59,136 @@
   animation-direction: alternate;
 }
 
-.pacmanLottie {
-  width: 15%;
-  position: absolute;
-  bottom: 6%;
-  left: 45%;
-  z-index: 99;
+
+
+.tecComing {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
 }
+
+.tecLogo {
+
+  width: 60%;
+  z-index: 20;
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+
+.comingSoon {
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+
+  z-index: 20;
+}
+
+.pacmanLottie {
+  width: 20%;
+  position: relative;
+  left: 25%;
+  z-index: -1;
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+}
+
+.pacmanContainer {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 20vh;
+  width: 100%;
+  z-index: 1;
+  margin-top: -2%;
+
+  animation-duration: 6s;
+  animation-name: hide;
+  animation-iteration-count: 1;
+}
+
+.pacmanImage {
+  position: relative;
+  animation: eating-path 7s linear infinite;
+  width: 22%;
+  left: 48%;
+  &::before,
+  &::after {
+      position: absolute;
+      top: -35px;
+      display: block;
+      border-radius: 50%;
+      content: "";
+      height: 0px;
+      width: 0px;
+  }
+
+  &::before {
+      animation: chunk-top .5s ease infinite;
+      border: 35px solid #FFCC00;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+  }
+
+  &::after {
+      animation: chunk-bottom .5s ease infinite;
+      border: 35px solid #FFCC00;
+      border-right-color: transparent;
+      border-top-color: transparent;
+  }
+}
+
+
+@keyframes hide {
+  100% {
+      background: transparent;
+  }
+}
+
+@keyframes chunk-top {
+  0%,
+  100% {
+      transform: rotate(-45deg);
+  }
+  50% {
+      transform: rotate(-80deg);
+  }
+}
+
+@keyframes chunk-bottom {
+  0%,
+  100% {
+      transform: rotate(-40deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes eating-path {
+  0% {
+      transform: translateX(-50%);
+  }
+  100% {
+      transform: translateX(50%);
+  }
+}
+
+
+
 
 .arrowLottie {
   position: absolute;
-  height: 70px;
+  bottom: 0;
+  right: 45%;
+  width: 8%;
   transform: rotate(270deg);
-  left: 47%;
-  bottom: 0%;
+  
   z-index: 999;
   animation-duration: 6s;
   animation-name: hide;
@@ -53,30 +210,29 @@
   }
 }
 
-.pacmanLottie {
-  width: 200px;
+@keyframes zoomeffect2 {
+  0% {
+    background-position: center;
+    transform: scale(2, 2);
+    z-index: 100;
+  }
+  50% {
+    background-position: center;
+    transform: scale(1, 1);
+    z-index: 100;
+  }
+  100% {
+    background-position: center;
+    transform: scale(1, 1);
+    z-index: -10;
+  }
 }
 
-.tecLogo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 64%;
 
-  position: absolute;
-
-  top: 32%;
-  left: 18%;
-  animation-duration: 1.3s;
-  animation-name: slidein;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-  z-index: 20;
-}
 
 @keyframes slidein {
   0% {
-    transform: translateY(100%);
+    transform: translateY(300%);
   }
 
   100% {
@@ -98,866 +254,60 @@
   }
 }
 
-.mobImg {
-  top: -20%;
-  height: 0px;
-  display: block;
-  position: absolute;
-}
 
-.comingSoon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  position: relative;
-  top: -53%;
-  width: 40%;
 
-  animation-duration: 6s;
-  animation-name: hide;
-  animation-iteration-count: 1;
 
-  z-index: 20;
-}
+@media screen and (max-width: 1180px) {
 
-@media ((max-width: 1440px) and (min-width: 1280px)) {
-
-  .heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-  .bgImg {
-    top: -6.5%;
-    transform: scale(1, 1.15);
-    z-index: 10;
-
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+  .starsImg {
+    transform: scale(1,1.75);
   }
-
-  .arrowLottie {
-    position: absolute;
-    height: 70px;
-    transform: rotate(270deg);
-    left: 47%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-  .pacmanLottie {
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    bottom: 15%;
-    left: 40%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
   @keyframes zoomeffect {
     0% {
       background-position: center;
-      transform: scale(2, 2);
+      transform: scale(4, 4);
     }
-
+    50% {
+      background-position: center;
+      transform: scale(1, 1.75);
+    }
     100% {
       background-position: center;
-      transform: scale(1, 1.15);
+      transform: scale(1, 1.75);
     }
   }
 
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 64%;
-
-    position: absolute;
-
-    top: 28%;
-    left: 18%;
-    animation-duration: 1.4s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(260%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .mobImg {
-    top: -32%;
-    display: block;
-    position: absolute;
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    position: relative;
-    top: -75%;
+  .comingSoon{
     width: 40%;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 20;
   }
+  .pacmanContainer{
+    transform: scale(0.75,0.75);
+  }
+
 }
 
-@media ((max-width: 3500px) and (min-width: 1600px)) {
 
-.heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-  .bgImg {
-    top: -55%;
-    transform: scale(1, 0.65);
-    z-index: 10;
-
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+@media screen and (max-width: 800px) {
+  .tecComing {
+    margin-top: 16rem;
   }
-
-  .arrowLottie {
-    position: absolute;
-    height: 50px;
-    bottom: -07%;
-    transform: rotate(270deg);
-    left: 47%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-  .pacmanLottie {
-    width: 7.5%;
-    position: absolute;
-    bottom: -10%;
-    left: 45%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(2, 2);
-    }
-
-    100% {
-      background-position: center;
-      transform: scale(1, 0.65);
-    }
-  }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 64%;
-
-    position: absolute;
-
-    top: 28%;
-    left: 18%;
-    animation-duration: 1.4s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(260%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .mobImg {
-    top: -32%;
-    display: block;
-    position: absolute;
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-    position: relative;
-    top: -120%;
-    width: 20%;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 20;
-  }
-}
-
-@media ((max-width: 1280px) and (min-width: 1024px)) {
-
   .heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-  .bgImg {
-    width: 100%;
-    transform: scale(1,1.175);
-    
-    z-index: 10;
-
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+    background-image: url(../../../public/images/mobback.png);
+  }
+  .starsImg {
+    height: 0;
   }
 
   .arrowLottie {
-    position: absolute;
-    height: 70px;
-    transform: rotate(270deg);
-    left: 47%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-  .pacmanLottie {
-    width: 15%;
-    position: absolute;
-    top: 65%;
-    left: 40%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(2, 2);
-    }
-
-    100% {
-      background-position: center;
-      transform: scale(1, 1.175);
-    }
-  }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 64%;
-
-    position: absolute;
-
-    top: 28%;
-    left: 18%;
-    animation-duration: 1.4s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(260%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .mobImg {
-    top: -32%;
-    display: block;
-    position: absolute;
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    position: relative;
-    top: -45%;
-    width: 40%;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 20;
-  }
-}
-
-/***** Responsive Lapp******/
-
-@media ((max-width: 1024px) and (min-width: 768px)) {
-
-.heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-  .bgImg {
-    /* top: 70px; */
-    transform: scale(1.27, 1.27);
-    z-index: 10;
-
-    animation-duration: 2s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  }
-
-  .pacmanLottie {
-    width: 15%;
-    position: absolute;
-    bottom: 16%;
-    left: 42%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  .arrowLottie {
-    position: absolute;
-    height: 70px;
-    transform: rotate(270deg);
-    left: 47%;
-    bottom: 0%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(2, 2);
-    }
-
-    100% {
-      background-position: center;
-      transform: scale(1.27, 1.27);
-    }
-  }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 64%;
-
-    position: absolute;
-
-    top: 32%;
-    left: 18%;
-    animation-duration: 1.4s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(260%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .mobImg {
-    top: -32%;
-    display: block;
-    position: absolute;
-  }
-
-  .comingSoon {
-    width: 50%;
-    width: 40%;
-    bottom: 215px;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-    z-index: 20;
-  }
-}
-
-@media ((max-width: 768px) and (min-width: 480px)) {
-
-  .heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-
-  .bgImg {
-    top: 20%;
-    transform: scale(1.68, 1.68);
-    z-index: 10;
-
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  }
-
-  .pacmanLottie {
-    width: 15%;
-    position: absolute;
-    bottom: 16%;
-    left: 42%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  .arrowLottie {
-    position: absolute;
-    height: 70px;
-    transform: rotate(270deg);
-    left: 47%;
-    bottom: 0%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(3, 3);
-    }
-    100% {
-      background-position: center;
-      transform: scale(1.68, 1.68);
-    }
-  }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 64%;
-
-    position: absolute;
-
-    top: 40%;
-    left: 18%;
-    animation-duration: 1.3s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(280%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .mobImg {
-    top: -32%;
-    display: block;
-    position: absolute;
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    position: relative;
-    top: -8%;
-    width: 40%;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 20;
-  }
-}
-
-
-
-/***** Responsive Mobile******/
-
-@media ((max-width: 480px) and (min-width: 300px)) {
-.heroSection {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  perspective: 10px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-}
-  .pacmanLottie {
-    width: 22%;
-    position: absolute;
-    bottom: 27%;
-    left: 42%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  .bgImg {
-    z-index: -10;
-  }
-
-  .arrowLottie {
-    position: absolute;
-    height: 5%;
-    transform: rotate(270deg);
-    left: 45%;
-    bottom: 8%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  .mobImg {
-    top: -36%;
-    position: relative;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    transform: scale(1, 1.2);
-
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(2, 2);
-    }
-
-    100% {
-      background-position: center;
-      transform: scale(1, 1.2);
-    }
-  }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 85%;
-
-    position: absolute;
-
-    top: 42%;
-    left: 7%;
-    animation-duration: 1.2s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(300%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 55%;
-    position: absolute;
-    top: 56%;
-    left: 28%;
-    width: 180px;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 50;
-  }
-}
-
-@media (max-width: 300px) {
-  .heroSection {
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    perspective: 10px;
-    overflow-y: hidden;
-  }
-
-  .pacmanLottie {
-    width: 22%;
-    position: absolute;
-    bottom: 27%;
-    left: 42%;
-    z-index: 99;
-    animation-duration: 7s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-  }
-
-  .bgImg {
-    z-index: -10;
-  }
-
-  .arrowLottie {
-    position: absolute;
-    height: 5%;
-    transform: rotate(270deg);
-    left: 45%;
     bottom: 10%;
-    z-index: 999;
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
   }
 
-  .mobImg {
-    top: -36%;
-    position: relative;
-    z-index: -1;
-    width: 100%;
-    height: 110%;
-    animation-duration: 3s;
-    animation-name: zoomeffect;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+  .pacmanContainer{
+    margin-top: -8%;
+    transform: scale(0.4,0.4);
   }
-
-  @keyframes zoomeffect {
-    0% {
-      background-position: center;
-      transform: scale(2, 2);
-    }
-
-    100% {
-      background-position: center;
-      transform: scale(1, 1.2);
-    }
+  .pacmanLottie {
+    width: 50%;
   }
-
-  .tecLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 85%;
-
-    position: absolute;
-
-    top: 42%;
-    left: 7%;
-    animation-duration: 1.2s;
-    animation-name: slidein;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    z-index: 20;
-  }
-
-  @keyframes slidein {
-    0% {
-      transform: translateY(300%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes hide {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .comingSoon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 55%;
-    position: absolute;
-    top: 56%;
-    left: 20%;
-    width: 180px;
-
-    animation-duration: 6s;
-    animation-name: hide;
-    animation-iteration-count: 1;
-
-    z-index: 50;
-  }
+ 
 }
