@@ -16,9 +16,9 @@ const Home = () => {
   return (
     <>
     <div>
-      <Sponsors/>
+      <About/>
     </div>
-    <About/>
+    <Sponsors/>
     </>
   );
 };

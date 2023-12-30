@@ -62,3 +62,11 @@
     }
 
   }
+
+  @media only screen and (min-width: 3500px) {
+
+    .text_container{
+        font-size: 7rem;
+    }
+
+  }
