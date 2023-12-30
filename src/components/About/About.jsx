@@ -20,7 +20,7 @@ function About() {
 
   return (
     <>
-      <div>
+      <div id="about">
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
             <div className={styles.aboutleftImg}></div>
