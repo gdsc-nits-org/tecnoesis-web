@@ -12,7 +12,7 @@ const Sponsors = () => {
         src="images/bg_landing_stars.svg"
         alt="Background stars"
       />
-      <h1 className={styles.text_container}>Our Past Sponsors</h1> 
+      <h1 className={styles.text_container}>OUR PAST SPONSORS</h1> 
 
       {Cards &&
         Cards.map((item) => (
