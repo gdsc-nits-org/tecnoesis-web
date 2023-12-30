@@ -10,34 +10,31 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 4vh;
-  animation: slideInFromTop 3s ease-in-out;
+  opacity: 0;
+  animation: slideInFromTop 3s ease-in-out 2s forwards;
+  
   
 }
 
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .navbar {
-  
   /* height:3..75rem; */
   gap: 1.563rem;
   padding-right: 4vw;
   
   
 }
-@keyframes slideInFromTop {
-  0% {
-    top: -80px;
-  }
-  100% {
-    top: 0; 
-  }
-}
-.navbar {
-  animation-delay: 0.8s;
-}
 
-.navbar.active {
-  animation: none; 
-  top: 0;
-}
 
 .menu_icon {
   display: none;
