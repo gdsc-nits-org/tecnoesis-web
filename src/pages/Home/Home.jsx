@@ -17,8 +17,8 @@ const Home = () => {
     <>
     <div>
       <About/>
+      <Sponsors/>
     </div>
-    <Sponsors/>
     </>
   );
 };
