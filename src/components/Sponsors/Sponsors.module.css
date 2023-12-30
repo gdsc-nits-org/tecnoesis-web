@@ -1,10 +1,9 @@
 .main_container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    overflow-x: hidden;
-    position: relative;
 }
   
 .bg_container {
@@ -14,16 +13,20 @@
     position: absolute; 
     z-index: -1; 
 }
+
 .text_container {
     width: 100%;
-    font-size: 2rem;
+    font-size: 3.5rem;
     text-align: center;
     margin: 2rem 0 0 0;
     font-family: 'PixeloidSans', sans-serif;
     color: white;
+    background: linear-gradient(rgba(29, 8, 83, 1), rgba(76, 232, 244, 1));
+    background-clip: text;
+    -webkit-text-stroke: 0.3rem transparent;
 }
+
 .mn_fr_container {
-    max-width: 25rem;
     position: relative; 
 }
 
@@ -34,3 +37,36 @@
     left: 50%;
     transform: translate(-50%, -50%); 
 } 
+
+@media only screen and (min-width: 1520px) {
+
+    .mn_fr_container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 33.33%;
+    }
+    .frame {
+        width: 60%;
+        height: 60%;
+    }
+    .fr_container {
+        width: 25%;
+    } 
+
+  }
+
+  @media only screen and (min-width: 2500px) {
+
+    .text_container{
+        font-size: 5rem;
+    }
+
+  }
+
+  @media only screen and (min-width: 3500px) {
+
+    .text_container{
+        font-size: 7rem;
+    }
+
+  }
