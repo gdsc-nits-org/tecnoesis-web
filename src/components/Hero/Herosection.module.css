@@ -193,7 +193,7 @@
 @media screen and (max-width: 800px) {
   .tecComing {
     transform: scale(1.5, 1.5);
-    margin-top: 16rem;
+    margin-top: 20rem;
   }
   .comingSoon {
     width: 42%;
@@ -229,7 +229,9 @@
   }
 
   .arrowLottie {
+    width: 15%;
     bottom: 10%;
+    left: 42%;
   }
 
 }
