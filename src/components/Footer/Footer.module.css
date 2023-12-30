@@ -1,0 +1,223 @@
+
+.footer {
+    width: 100%;
+    background: var(--footer-blue-4-100);
+    height:87vh;
+    overflow: hidden;
+}
+
+.footer_container {
+    position: relative;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    color: var(--tecno-light-1-100);
+}
+
+.footer_content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer_logo {
+    width: 75%;
+}
+
+.pikachu {
+    width: 7rem;
+    margin-top: 1rem;
+    clip-path: polygon(0% 0%, 100% 15%, 100% 80%, 10% 100%, 0% 80%);
+}
+
+.foot_buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    z-index: 7;
+
+
+}
+
+.foot_satellite {
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 150px;
+}
+
+
+.footer_button {
+    background: linear-gradient(to right, var(--footer-blue-1-100), var(--footer-blue-3-100));
+    border: 1px solid var(--tecno-brown-1-100);
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    color: #4DEBF6;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    outline: none;
+    z-index: 7;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    margin-bottom: 1.3rem;
+}
+
+.footer_button:hover {
+    background: linear-gradient(to right, var(--tecno-brown-1-100), #F36196);
+    color: var(--tecno-light-1-100);
+    outline: none;
+    transition: all 300ms ease-in-out;
+}
+
+.footer_contact {
+    margin-top: 1.75rem;
+    color: var(--tecno-light-1-100);
+    z-index: 20;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: PixeloidSans, serif;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+}
+
+.footer_icons {
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3.3rem;
+    gap: 1.5rem;
+
+}
+
+.black_flare {
+    width: 15rem;
+    height: 5rem;
+    z-index: 10;
+    margin-top: 0.75rem;
+    background-color: var(--techno-black-1-100);
+    border-radius: 9999px;
+    filter: blur(2.75rem);
+}
+
+.footer_flare {
+    width: 100vw;
+    z-index: 5;
+    height: 9rem;
+    background-color: var(--techno-purple-2-100);
+    filter: blur(5.75rem);
+    position: absolute;
+    margin-top:62vh ;
+}
+
+@media (max-width: 768px) {
+    .foot_satellite {
+        display: none;
+    }
+
+    .footer_button {
+        font-size: small;
+    }
+
+    .footer_icons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .footer_container {
+        max-width: 60rem;
+        
+    }
+    .footer{
+        height: 67vh;
+    }
+    .footer_logo{
+        width: 60rem;
+    }
+
+    .footer_buttons {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    .pikachu{
+        width: 15rem;
+    }
+
+    .footer_button {
+        font-size: 2rem;
+        margin-top: 2rem; 
+        padding: 4rem;
+    }
+    .footer_contact{
+        margin-top: 2rem;
+        font-size: 26rem;
+    }
+    .footer_icons img{
+        margin-top: 2rem;
+        width: 3.5rem;
+        
+    }
+    .foot_satellite{
+        width: 10%;
+    }
+    .footer_flare{
+        height: 15rem;
+    }
+}
+@media screen and (min-width: 2500px) {
+    .footer_container {
+        max-width: 60rem;
+        
+    }
+    .footer{
+        max-height: 75vh;
+    }
+
+    .footer_buttons {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    .pikachu{
+        width: 15rem;
+    }
+
+    .footer_button {
+        font-size: 2rem; 
+    }
+    .footer_contact{
+        font-size: 2rem;
+    }
+    .footer_icons img{
+        width: 3.5rem;
+    }
+    .foot_satellite{
+        width: 10%;
+    }
+    .footer_flare{
+        height: 15rem;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .footer_container {
+        max-width: 60rem;   
+    }
+    .footer{
+        max-height: 78vh;
+    }
+}
