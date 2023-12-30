@@ -17,7 +17,7 @@ const Sponsors = () => {
       {Cards &&
         Cards.map((item) => (
           <div key={item.id} className={styles.mn_fr_container}>
-            <img src="images/frame.png" />
+            <img className={styles.frame} src="images/frame.png" />
             <img className={styles.fr_container} src={item.company} />
           </div>
         ))}
