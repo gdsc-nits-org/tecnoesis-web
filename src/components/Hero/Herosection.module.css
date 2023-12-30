@@ -1,4 +1,3 @@
-
 .heroSection {
   height: 100vh;
   width: 100%;
@@ -12,14 +11,13 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;  
+  left: 0;
   z-index: -25;
 
   animation-duration: 2s;
   animation-name: zoomeffect2;
   animation-iteration-count: 1;
   animation-direction: alternate;
-  
 }
 
 .lightsImg {
@@ -28,7 +26,7 @@
   bottom: 0;
   right: 0;
   z-index: -30;
-  
+
   animation-duration: 2s;
   animation-name: comeleft;
   animation-iteration-count: 1;
@@ -36,23 +34,20 @@
 }
 
 @keyframes comeleft {
-
-   from {
-     width: 50vw;
-    }
-    to{
-      width: 100vw;
-   
- } 
+  from {
+    width: 50vw;
+  }
+  to {
+    width: 100vw;
+  }
 }
 
-.starsImg{
+.starsImg {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -100;
-
 
   animation-duration: 2s;
   animation-name: zoomeffect;
@@ -60,10 +55,7 @@
   animation-direction: alternate;
 }
 
-
-
 .tecComing {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +63,6 @@
 }
 
 .tecLogo {
-
   width: 60%;
   z-index: 20;
   animation-duration: 2s;
@@ -123,68 +114,64 @@
   left: 48%;
   &::before,
   &::after {
-      position: absolute;
-      top: -35px;
-      display: block;
-      border-radius: 50%;
-      content: "";
-      height: 0px;
-      width: 0px;
+    position: absolute;
+    top: -35px;
+    display: block;
+    border-radius: 50%;
+    content: "";
+    height: 0px;
+    width: 0px;
   }
 
   &::before {
-      animation: chunk-top .5s ease infinite;
-      border: 35px solid #FFCC00;
-      border-left-color: transparent;
-      border-bottom-color: transparent;
+    animation: chunk-top 0.5s ease infinite;
+    border: 35px solid #ffcc00;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
   }
 
   &::after {
-      animation: chunk-bottom .5s ease infinite;
-      border: 35px solid #FFCC00;
-      border-right-color: transparent;
-      border-top-color: transparent;
+    animation: chunk-bottom 0.5s ease infinite;
+    border: 35px solid #ffcc00;
+    border-right-color: transparent;
+    border-top-color: transparent;
   }
 }
 
-
 @keyframes hide {
   100% {
-      background: transparent;
+    background: transparent;
   }
 }
 
 @keyframes chunk-top {
   0%,
   100% {
-      transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
   50% {
-      transform: rotate(-80deg);
+    transform: rotate(-80deg);
   }
 }
 
 @keyframes chunk-bottom {
   0%,
   100% {
-      transform: rotate(-40deg);
+    transform: rotate(-40deg);
   }
   50% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
 @keyframes eating-path {
   0% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   100% {
-      transform: translateX(50%);
+    transform: translateX(50%);
   }
 }
-
-
-
 
 .arrowLottie {
   position: absolute;
@@ -192,7 +179,7 @@
   right: 45%;
   width: 8%;
   transform: rotate(270deg);
-  
+
   z-index: 999;
   animation-duration: 6s;
   animation-name: hide;
@@ -232,8 +219,6 @@
   }
 }
 
-
-
 @keyframes slidein {
   0% {
     transform: translateY(300%);
@@ -258,13 +243,9 @@
   }
 }
 
-
-
-
 @media screen and (max-width: 1180px) {
-
   .starsImg {
-    transform: scale(1,1.75);
+    transform: scale(1, 1.75);
   }
   @keyframes zoomeffect {
     0% {
@@ -280,54 +261,57 @@
       transform: scale(1, 1.75);
     }
   }
-  
 
-  .comingSoon{
+  .comingSoon {
     width: 40%;
   }
-  .pacmanContainer{
-    transform: scale(0.75,0.75);
+  .pacmanContainer {
+    transform: scale(0.75, 0.75);
   }
-
 }
-
 
 @media screen and (max-width: 800px) {
   .tecComing {
     margin-top: 16rem;
   }
-  /* .heroSection {
-    background-image: url(../../../public/images/mobback.png);
-  } */
-  .mobBack{
-    /* width: 100%; */
+
+  .mobBack {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -30;
 
-
     animation-duration: 2s;
-    animation-name: zoomeffect;
+    animation-name: zoomeffect3;
     animation-iteration-count: 1;
     animation-direction: alternate;
-
+  }
+  @keyframes zoomeffect3 {
+    0% {
+      background-position: center;
+      transform: scale(2, 2);
+    }
+    50% {
+      background-position: center;
+    }
+    100% {
+      background-position: center;
+    }
   }
   .starsImg {
-    display:none;
+    display: none;
   }
 
   .arrowLottie {
     bottom: 10%;
   }
 
-  .pacmanContainer{
+  .pacmanContainer {
     margin-top: -8%;
-    transform: scale(0.4,0.4);
+    transform: scale(0.4, 0.4);
   }
   .pacmanLottie {
     width: 50%;
   }
- 
 }
