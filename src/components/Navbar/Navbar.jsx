@@ -27,7 +27,7 @@ const Navbar = () => {
   }, [showNavbar]);
 
   return (
-    <nav ref={navbarRef} className={styles.navbar}>
+    <nav ref={navbarRef} className={`${styles.navbar} ${showNavbar && styles.active}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
           <img src={techno_logo} alt="Logo" />
@@ -44,7 +44,7 @@ const Navbar = () => {
           <ul>
             <li className={styles.nav_button_style}>
               <Link
-                to="sponsor"
+                to="hero"
                 spy={true}
                 smooth={true}
                 hashSpy={true}

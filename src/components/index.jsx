@@ -4,5 +4,10 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import Sponsors from "./Sponsors/Sponsors";
 import About from "./About/About";
+import Hero from "./Hero/Hero";
 
-export { Button, Input, Sponsors, Navbar, Footer,About };
+
+
+
+
+export { Button, Input, Hero, Sponsors, About,Navbar, Footer};

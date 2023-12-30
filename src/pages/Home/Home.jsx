@@ -1,4 +1,5 @@
-import { Sponsors, About } from "../../components";
+
+import {Hero, Sponsors, About } from "../../components";
 
 
 
@@ -6,8 +7,9 @@ const Home = () => {
 
   return (
     <>
-      <About />
-      <Sponsors />
+      <Hero />
+      <About/>
+      <Sponsors/>
     </>
   );
 };
