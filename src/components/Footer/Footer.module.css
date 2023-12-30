@@ -3,7 +3,7 @@
     width: 100%;
     background: var(--footer-blue-4-100);
     height:87vh;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .footer_container {
