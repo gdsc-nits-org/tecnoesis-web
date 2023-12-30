@@ -50,3 +50,7 @@
   font-family: PixeloidSans;
   src: url("/fonts/PixeloidSans-mLxMm.ttf");
 }
+@font-face { 
+  font-family: JetBrainsMono; 
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf"); 
+}
