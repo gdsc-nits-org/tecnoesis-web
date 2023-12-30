@@ -6,7 +6,7 @@ import '../../App.css'; // Import app.css
 
 const Sponsors = () => {
   return (
-    <section className={styles.main_container}>
+    <section className={styles.main_container} id='sponsor' >
       <img
         className={styles.bg_container}
         src="images/bg_landing_stars.svg"

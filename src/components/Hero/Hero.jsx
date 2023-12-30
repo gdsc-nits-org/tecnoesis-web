@@ -1,13 +1,14 @@
 import React from "react";
-
 import Lottie from "lottie-react";
 import home_arror from "../../lotties/home_arror.json";
 import dots from "../../lotties/dots.json";
 import styles from "./Herosection.module.css";
+import { Link } from 'react-scroll';
+
 
 function Herosection() {
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} id='hero'>
       <img
         className={styles.buildImg}
         src="images/build.svg"
@@ -47,10 +48,20 @@ function Herosection() {
           <Lottie className={styles.pacmanLottie} animationData={dots} />
         </div>
       </div>
+      <Link
+        to="about"
+        spy={true}
+        smooth={true}
+        hashSpy={true}
+        offset={50}
+        duration={500}
+      >
+        <a >
+          <Lottie className={styles.arrowLottie} animationData={home_arror} />
+        </a>
+      </Link>
 
-      <a href="#about">
-        <Lottie className={styles.arrowLottie} animationData={home_arror} />
-      </a>
+
     </section>
   );
 }
