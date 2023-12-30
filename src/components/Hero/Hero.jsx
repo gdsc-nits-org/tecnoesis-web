@@ -13,6 +13,7 @@ function Herosection () {
       <img className= {styles.buildImg} src="images/build.svg" alt="" loading='lazy'/>
       <img className= {styles.starsImg} src="images/bg landing stars.svg" alt="" loading='lazy'/>
       <img className= {styles.lightsImg} src="images/lights.svg" alt="" loading='lazy'/>
+      <img className= {styles.mobBack} src="images/mobback.png" alt="" loading='lazy'/>
 
 
       <div className={styles.tecComing}>
