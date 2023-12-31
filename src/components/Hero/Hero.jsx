@@ -3,12 +3,11 @@ import Lottie from "lottie-react";
 import home_arror from "../../lotties/home_arror.json";
 import dots from "../../lotties/loading.json";
 import styles from "./Herosection.module.css";
-import { Link } from 'react-scroll';
-
+import { Link } from "react-scroll";
 
 function Herosection() {
   return (
-    <section className={styles.heroSection} id='hero'>
+    <section className={styles.heroSection} id="hero">
       <img
         className={styles.starsImg}
         src="images/bg landing stars.svg"
@@ -36,7 +35,7 @@ function Herosection() {
 
       <div className={styles.tecComing}>
         <div className={styles.tecLogo}>
-          <img src="images/tecneosis.svg" alt="" loading="lazy" />
+          <img src="images/Tecno 24 logo.png" alt="" loading="lazy" />
         </div>
 
         <div className={styles.comingSoon}>
@@ -55,12 +54,10 @@ function Herosection() {
         offset={50}
         duration={500}
       >
-        <a >
+        <a>
           <Lottie className={styles.arrowLottie} animationData={home_arror} />
         </a>
       </Link>
-
-
     </section>
   );
 }
