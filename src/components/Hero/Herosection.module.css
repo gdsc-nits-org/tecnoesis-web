@@ -227,6 +227,9 @@
     bottom: 10%;
     left: 42%;
   }
+  .pacmanContainer {
+    width: 30%;
+  }
 }
 
 @media (min-width: 3800px) {
@@ -242,6 +245,6 @@
 
  @media (min-aspect-ratio: 6/10) and (max-aspect-ratio: 1.5) {
    .tecComing {
-     margin-top: 32%;
+     margin-top: 42%;
    }
 } 
