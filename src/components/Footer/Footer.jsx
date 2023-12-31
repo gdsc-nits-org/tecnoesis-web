@@ -19,28 +19,25 @@ const Footer = () => {
                     <img src={techno_logo} className={styles.footer_logo} alt="Techno Logo" />
                     <img src={pikachu} className={styles.pikachu} alt="pikachu" />
                     <div className={styles.foot_buttons}>
-                        <a href="#" target="_blank" rel="noopener noreferrer ">
+                        <a href="https://drive.google.com/file/d/1i53pZdSVj15uRAoAib6ypxKeV18z4K4F/view?usp=drivesdk" target="_blank" rel="noopener noreferrer ">
                             <button className={styles.footer_button}>
                                 DOWNLOAD BROCHURE
                             </button>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmnmsbM5qv12sPe8ZdAP4cupGOHjMtxzNnKuslO8acKCqSAQ/viewform?usp=pp_url" target="_blank" rel="noopener noreferrer">
                             <button className={styles.footer_button}>
                                 <div className={styles.footer_button_style}>
                                     BECOME OUR CAMPUS AMBASSADOR
                                 </div>
                             </button>
-
-
                         </a>
                     </div>
                     <div className={styles.footer_contact}>CONTACT US</div>
                     <div className={styles.black_flare}></div>
                     <div className={styles.footer_icons}>
-                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={facebook} alt='facebook' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer "><img src={instagram} alt='instagram' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer "><img src={mail} style={{ backgroundColor: "white", borderRadius: "10px" }} alt='mail' /></a>
+                        <a href="https://www.facebook.com/tecnoesis.nits" target="_blank" rel="noopener noreferrer " ><img src={facebook} alt='facebook' /></a>
+                        <a href="https://www.instagram.com/tecnoesis.nits/" target="_blank" rel="noopener noreferrer "><img src={instagram} alt='instagram' /></a>
+                        <a href="mailto:Tecnoesis@nits.ac.in" target="_blank" rel="noopener noreferrer "><img src={mail} style={{ backgroundColor: "white", borderRadius: "10px" }} alt='mail' /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer " ><img src={linkedin} alt='linkedin' /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer " ><img src={twitter} alt='twitter' /></a>
                     </div>
