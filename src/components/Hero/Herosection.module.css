@@ -63,7 +63,7 @@
 }
 
 .tecLogo {
-  width: 62%;
+  width: 70%;
   z-index: 20;
   animation-duration: 2s;
   animation-name: slidein;
@@ -83,17 +83,13 @@
   z-index: 20;
 }
 
-
 .pacmanContainer {
-
   width: 20%;
-
 
   animation-duration: 6s;
   animation-name: hide;
   animation-iteration-count: 1;
-} 
-
+}
 
 .arrowLottie {
   position: absolute;
@@ -167,30 +163,29 @@
 
 @media ((min-width: 800px) and (max-width: 1180px)) {
   .starsImg {
-    transform: scale(2, 2.5);
+    transform: scale(3, 6);
   }
   @keyframes zoomeffect {
     0% {
       background-position: center;
-      transform: scale(4, 4);
+      transform: scale(6, 9);
     }
     50% {
       background-position: center;
-      transform: scale(2, 2.5);
+      transform: scale(3, 6);
     }
     100% {
       background-position: center;
-      transform: scale(2, 2.5);
+      transform: scale(3, 6);
     }
   }
 
   .comingSoon {
     width: 40%;
   }
-  
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .tecComing {
     transform: scale(1.5, 1.5);
     margin-top: 20rem;
@@ -198,7 +193,6 @@
   .comingSoon {
     width: 42%;
   }
-
 
   .mobBack {
     display: block;
@@ -233,19 +227,66 @@
     bottom: 10%;
     left: 42%;
   }
-
 }
 
 @media (min-width: 3800px) {
   .tecComing {
-    margin-top: 30rem;
+    display: flex;
+    align-items: center;
+    margin-top: 35rem;
   }
+  .tecLogo {
+    transform: scale(2, 2);
+
+    animation-duration: 2s;
+    animation-name: slidein2;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slidein2 {
+    0% {
+      transform: translateY(500%);
+      margin-left: 60%;
+    }
+
+    100% {
+      transform: translateY(0%);
+      transform: scale(2, 2);
+      margin-left: 75%;
+    }
+  }
+
   .comingSoon {
-    transform: scale(2.5,2.5);
+    transform: scale(2.5, 2.5);
     position: absolute;
     top: 52%;
     left: 43%;
   }
+  .pacmanContainer {
+    margin-top: 10%;
+  }
+}
 
-  
+@media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 1.5) {
+  .starsImg {
+    display: none;
+  }
+  .tecComing {
+    margin-top: 32%;
+    transform: scale(1.25, 1.25);
+  }
+  .mobBack {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -300;
+    transform: scale(2.5, 1);
+
+    animation-duration: 2s;
+    animation-name: zoomeffect3;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
 }
