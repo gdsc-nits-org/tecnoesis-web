@@ -38,8 +38,8 @@ const Footer = () => {
                         <a href="https://www.facebook.com/tecnoesis.nits" target="_blank" rel="noopener noreferrer " ><img src={facebook} alt='facebook' /></a>
                         <a href="https://www.instagram.com/tecnoesis.nits/" target="_blank" rel="noopener noreferrer "><img src={instagram} alt='instagram' /></a>
                         <a href="mailto:Tecnoesis@nits.ac.in" target="_blank" rel="noopener noreferrer "><img src={mail} style={{ backgroundColor: "white", borderRadius: "10px" }} alt='mail' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={linkedin} alt='linkedin' /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer " ><img src={twitter} alt='twitter' /></a>
+                        <a href="https://www.linkedin.com/company/tecnoesis-nit-silchar/" target="_blank" rel="noopener noreferrer " ><img src={linkedin} alt='linkedin' /></a>
+                        <a href="https://x.com/tecnoesis_nits?s=20" target="_blank" rel="noopener noreferrer " ><img src={twitter} alt='twitter' /></a>
                     </div>
                     <div className={styles.footer_flare}></div>
                 </div>
