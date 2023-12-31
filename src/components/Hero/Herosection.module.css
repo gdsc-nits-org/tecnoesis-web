@@ -163,7 +163,7 @@
 
 @media ((min-width: 800px) and (max-width: 1180px)) {
   .starsImg {
-    transform: scale(3, 6);
+    transform: scale(4, 8);
   }
   @keyframes zoomeffect {
     0% {
@@ -243,6 +243,9 @@
 
   .comingSoon {
     transform: scale(2.5, 2.5);
+    position: absolute;
+    top: 52%;
+    left: 43%;
   }
 
 }
