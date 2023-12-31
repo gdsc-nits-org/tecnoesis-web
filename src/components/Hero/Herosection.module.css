@@ -198,6 +198,10 @@
   .comingSoon {
     width: 42%;
   }
+  .pacmanContainer{
+    padding-top: 1rem;
+    width: 35%;
+  }
 
 
   .mobBack {
