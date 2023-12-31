@@ -35,7 +35,7 @@ function Herosection() {
 
       <div className={styles.tecComing}>
         <div className={styles.tecLogo}>
-          <img src="images/tecneosis.svg" alt="" loading="lazy" />
+          <img src="images/Tecno 24 logo.png" alt="" loading="lazy" />
         </div>
 
         <div className={styles.comingSoon}>
