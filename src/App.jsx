@@ -1,7 +1,21 @@
+import { Home, Error } from "./pages";
+import { Routes, Route } from "react-router-dom";
+import { Navbar, Footer } from "./components";
+
 import "./App.css";
 
+
 function App() {
-  return <h1> Tecnoesis 2024</h1>;
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer/>
+    </>
+  );
 }
 
 export default App;
