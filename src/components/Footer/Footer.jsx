@@ -5,13 +5,13 @@ import instagram from "/elements/social_insta.svg";
 import mail from "/elements/social_mail.svg";
 import linkedin from "/elements/social_lin.svg";
 import twitter from "/elements/social_twit.svg";
-import satellite from "/elements/satellite.svg";
+// import satellite from "/elements/satellite.svg";
 import Button_page from "../Button_page/Button_page";
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <img src={satellite} className={styles.foot_satellite} alt="satellite" />
+      {/* <img src={satellite} className={styles.foot_satellite} alt="satellite" /> */}
       <div className={styles.footer_container}>
         <div className={styles.footer_content}>
           <img
@@ -83,7 +83,7 @@ const Footer = () => {
               <img src={twitter} alt="twitter" />
             </a>
           </div>
-          <div className={styles.footer_flare}></div>
+          {/* <div className={styles.footer_flare}></div> */}
         </div>
       </div>
     </div>

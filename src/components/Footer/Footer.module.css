@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background: var(--footer-blue-4-100);
+  background: url('/elements/footerbg.png') center/cover no-repeat;
   height: 87vh;
   overflow: hidden;
 }
@@ -33,11 +33,11 @@
 }
 
 
-.foot_satellite {
+/* .foot_satellite {
   position: absolute;
   margin-top: 110px;
   margin-left: 150px;
-}
+} */
 
 .foot_buttons {
   display: flex;
@@ -79,7 +79,7 @@
   border-radius: 9999px;
   filter: blur(2.75rem);
 }
-
+/* 
 .footer_flare {
   width: 100vw;
   z-index: 5;
@@ -88,7 +88,7 @@
   filter: blur(5.75rem);
   position: absolute;
   margin-top: 62vh;
-}
+} */
 
 @media (max-width: 768px) {
   .foot_satellite {
