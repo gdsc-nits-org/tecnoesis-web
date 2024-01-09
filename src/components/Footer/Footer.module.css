@@ -32,14 +32,6 @@
   clip-path: polygon(0% 0%, 100% 15%, 100% 80%, 10% 100%, 0% 80%);
 }
 
-.foot_buttons {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  z-index: 7;
-}
 
 .foot_satellite {
   position: absolute;
@@ -47,37 +39,16 @@
   margin-left: 150px;
 }
 
-.footer_button {
-  background: linear-gradient(
-    to right,
-    var(--footer-blue-1-100),
-    var(--footer-blue-3-100)
-  );
-  border: 1px solid var(--tecno-brown-1-100);
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.foot_buttons {
   display: flex;
-  color: #4debf6;
-  flex-direction: column;
-  font-family: "Roboto", sans-serif;
-  justify-content: center;
   align-items: center;
-  display: inline-flex;
-  outline: none;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
   z-index: 7;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  margin-bottom: 1.3rem;
+  gap: 0.5rem;
 }
 
-.footer_button:hover {
-  background: linear-gradient(to right, var(--tecno-brown-1-100), #f36196);
-  color: var(--tecno-light-1-100);
-  outline: none;
-  transition: all 300ms ease-in-out;
-}
 
 .footer_contact {
   margin-top: 1.75rem;
