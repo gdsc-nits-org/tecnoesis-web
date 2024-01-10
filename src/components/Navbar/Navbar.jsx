@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Slant as Hamburger } from "hamburger-react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-scroll";
-import Button_page from "../Button/Button_page";
+import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
 
@@ -183,7 +183,7 @@ const Navbar = () => {
                 offset={0}
                 duration={500}
               >
-                <Button_page comp="home">
+                <Button_page rounded="round">
                   <div className={styles.navbuttonpage}>REGISTER</div>
                 </Button_page>
               </Link>
@@ -197,7 +197,7 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page comp="home">
+                <Button_page rounded="round">
                   <div className={styles.navbuttonpage}>SIGN IN</div>
                 </Button_page>
               </Link>
