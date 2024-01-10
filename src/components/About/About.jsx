@@ -30,6 +30,12 @@ function About() {
     slidesToShow: 1,
     // arrows: false,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnFocus : true,
+    // cssEase: "linear"
+
+    // autoplayDuration: 1000
     // nextArrow: <SampleNextArrow/>
   };
 

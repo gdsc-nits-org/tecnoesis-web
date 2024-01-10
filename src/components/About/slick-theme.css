@@ -45,12 +45,15 @@
 .slick-prev
 {
     left: -75px;
-    transform: rotate(180deg);
 
 }
 
 .slick-prev:before
-{
+{    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
     content: url(/images/module_arrow.svg);
 }
 
@@ -62,8 +65,31 @@
 
 .slick-next:before
 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     content: url(/images/module_arrow.svg);
     
 }
+@media screen and (max-width: 700px) {
+    .slick-prev{
+        left:-55px;
+    }
+    .slick-next{
+       right: -55px;
+    }
+    .slick-prev:before
+    {    
+       
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.8);
 
+    }
+    
+    
+    .slick-next:before
+    {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+     }
 

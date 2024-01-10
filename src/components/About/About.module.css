@@ -66,15 +66,18 @@
   margin-left: auto;
   margin-right: auto;
   /* max-width: 80rem; */
-  width: 85%;
+  /* width: 85%; */
+  width: 82%;
   padding-left: 3rem;
   padding-right: 2.5rem;
 }
 
 .aboutUsText {
   /* max-width: 48rem;  */
-  width: 62%;
-  font-size: 3rem;
+  /* width: 62%; */
+  width: 80%;
+  /* font-size: 3rem; */
+  font-size: 2.5rem;
 }
 
 .techFestText {
@@ -102,7 +105,8 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   text-align: justify;
 }
 .spaceBoxParent {
-  width: 12%;
+  /* width: 12%; */
+  width: 10%;
 }
 .spaceBox {
   margin-left: auto;
@@ -114,7 +118,8 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
 .lottieContainerParent {
   display: flex;
   flex-direction: column;
-  width: 10%;
+  /* width: 10%; */
+  width: 7%;
 }
 
 .lottieContainer {
@@ -172,8 +177,11 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
 }
 
 @media screen and (max-width: 1180px) {
+  .textContainer {
+    width: 90%;
+  }
   .aboutUsText {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -276,14 +284,15 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 82%;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
 .aboutNitText {
-  width: 69.5%;
-  font-size: 3rem;
+  width: 78%;
+  /* font-size: 3rem; */
+  font-size: 2.5rem;
 }
 
 .techFestText2 {
@@ -323,7 +332,7 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
 .lottieContainerParent2 {
   margin-left: auto;
   margin-right: auto;
-  width: 26.5%;
+  width: 18%;
 }
 .lottieContainer2 {
   margin-top: auto;
@@ -336,8 +345,11 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   white-space: normal; /* Allow wrapping after the inserted space */
 }
 @media screen and (max-width: 1180px) {
+  .textContainer2 {
+    width: 95%;
+  }
   .aboutNitText {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -413,14 +425,18 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
 
 /*------------------->MODULES <---------------*/
 .moduleContainer{
-margin-top: 5rem;
-margin-bottom: 5rem;
+  margin:auto;
+padding-top: 5rem;
+padding-bottom: 5rem;
+font-size: 2.5rem;
+width:82%;
+
 
 }
 .moduletext {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: 3rem;
+  font-size: 1em;
   line-height: 1;
   font-weight: bold;
   font-family: PixeloidSansBold, serif;
@@ -433,27 +449,53 @@ margin-bottom: 5rem;
 
 
 .eventText3 {
-  width: 80%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.5rem;
+  font-size: 0.5em;
   line-height: 1.5;
   color: #ffffff;
   font-family: JetBrainsMono, sans;
   text-align: center;
 }
+@media screen and (max-width: 1180px) {
+ 
+  .moduleContainer {
+    width: 90%;
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  
+  .moduleContainer {
+    width: 95%;
+    font-size: 2.1rem;
+  }
+}
 
+@media screen and (max-width: 700px) {
+  .eventText3{
+    text-align: justify;
+  }
+  .moduleContainer{
+    font-size: 2.1rem;
+  }
+ 
+}
 /*------------------->PHOTo GALLERY <---------------*/
 
 .photoContainer{
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-size: 2.5rem;
   }
   
   .carouselContainer {
+    
     width: 50%; /* Adjust the width as needed */
     margin: 0 auto;
+    padding-top: 5rem;
+  padding-bottom: 5rem;
   }
   
   .carouselImage {
@@ -461,6 +503,22 @@ margin-bottom: 5rem;
     height: 100%;
     object-fit: cover;
   }
-  .arrow{
+  /* .arrow{
     width: 5%;
+  } */
+  @media screen and (max-width: 1180px) {
+ .carouselContainer{
+  width: 64%;
+ }
+    .photoContainer {
+      /* width: 90%; */
+      font-size: 2.2rem;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    
+    .photoContainer {
+      /* width: 95%; */
+      font-size: 2.1rem;
+    }
   }
