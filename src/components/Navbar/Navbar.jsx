@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Slant as Hamburger } from "hamburger-react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-scroll";
-import Button_page from "../Button_page/Button_page";
+import Button_page from "../Button/Button_page";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
 
@@ -63,7 +63,7 @@ const Navbar = () => {
                 spy={true}
                 smooth={true}
                 hashSpy={true}
-                offset={50}
+                offset={-50}
                 duration={500}
               >
                 <Button_page>
@@ -73,7 +73,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="about"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -87,7 +87,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="about"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -105,7 +105,7 @@ const Navbar = () => {
                 spy={true}
                 smooth={true}
                 hashSpy={true}
-                offset={50}
+                offset={-60}
                 duration={500}
               >
                 <Button_page >
@@ -115,7 +115,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="events"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -129,7 +129,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="gallery"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -143,7 +143,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="gallery"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
