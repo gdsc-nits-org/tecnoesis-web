@@ -6,7 +6,7 @@ import mail from "/elements/social_mail.svg";
 import linkedin from "/elements/social_lin.svg";
 import twitter from "/elements/social_twit.svg";
 import satellite from "/elements/satellite.svg";
-import Button_page from "../Button_page/Button_page";
+import Button_page from "../Button/Button";
 
 const Footer = () => {
   return (
