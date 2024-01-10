@@ -52,9 +52,9 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page>
-                  <div className={styles.navbuttonpage_side}>SIGN IN</div>
-                </Button_page>
+                <div className={styles.button_sign_content}>
+                    <div className={styles.btn_signin}>SIGN IN</div>
+                </div>
               </Link>
             </li>
             <li>
