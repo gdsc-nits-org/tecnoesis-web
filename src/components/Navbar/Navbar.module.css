@@ -56,6 +56,9 @@
 .nav_logo {
   display: none;
 }
+.register_dock{
+  display: none;
+}
 
 .navbuttonpage {
   font-family: PixeloidSans, serif;
@@ -125,7 +128,7 @@
   text-align: center;
   align-items: center;
   list-style: none;
-  
+
 }
 
 @keyframes slideInFromLeft {
@@ -176,13 +179,21 @@
 
 
 @media (max-width: 768px) {
-  
-  .nav_sidebar{
+  .nav_links{
+    padding-top: 5rem;
+  }
+  .register_dock{
+    display: block;
+  }
+
+  .nav_sidebar {
     justify-content: center;
   }
-  .close_button{
+
+  .close_button {
     margin-right: 20rem;
   }
+
   .menu_icon {
     cursor: pointer;
     display: block;
@@ -221,6 +232,16 @@
 
   }
 
+}
+
+@media screen and (min-width: 768px) {
+  .menu_icon {
+    padding-bottom: 1rem;
+  }
+
+  .nav_content {
+    padding-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 2500px) {

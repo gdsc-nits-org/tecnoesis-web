@@ -58,6 +58,20 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
+            <li className={styles.register_dock}>
+              <Link
+                to=""
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={500}
+              >
+                <div className={styles.button_sign_content}>
+                  <div className={styles.btn_signin}>REGISTER</div>
+                </div>
+              </Link>
+            </li>
             <li>
               <Link
                 to="/"
