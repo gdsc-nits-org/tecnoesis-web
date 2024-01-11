@@ -15,6 +15,7 @@
   /* Add transition property */
 }
 
+
 .moveUp {
   transform: translateY(-100%);
 }
@@ -176,7 +177,12 @@
 
 @media (max-width: 768px) {
   
-
+  .nav_sidebar{
+    justify-content: center;
+  }
+  .close_button{
+    margin-right: 20rem;
+  }
   .menu_icon {
     cursor: pointer;
     display: block;

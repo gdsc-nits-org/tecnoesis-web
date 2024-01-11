@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
+// import { Link as RouterLink } from "react-router-dom";
 
 
 
@@ -45,7 +46,7 @@ const Navbar = () => {
           <ul className={styles.nav_links}>
             <li>
               <Link
-                to="about"
+                to=""
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -53,13 +54,13 @@ const Navbar = () => {
                 duration={500}
               >
                 <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>SIGN IN</div>
+                  <div className={styles.btn_signin}>SIGN IN</div>
                 </div>
               </Link>
             </li>
             <li>
               <Link
-                to="about"
+                to="/"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
