@@ -6,7 +6,7 @@ import mail from "/elements/social_mail.svg";
 import linkedin from "/elements/social_lin.svg";
 import twitter from "/elements/social_twit.svg";
 import satellite from "/elements/satellite.svg";
-import Button_page from "../Button/Button";
+import Button from "../Button/Button";
 
 const Footer = () => {
   return (
@@ -26,18 +26,18 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer "
             >
-              <Button_page>
+              <Button>
                 DOWNLOAD BROCHURE
-              </Button_page>
+              </Button>
             </a>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdmnmsbM5qv12sPe8ZdAP4cupGOHjMtxzNnKuslO8acKCqSAQ/viewform?usp=pp_url"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button_page>
+              <Button>
                 BECOME OUR CAMPUS AMBASSADOR
-              </Button_page>
+              </Button>
             </a>
           </div>
           <div className={styles.footer_contact}>CONTACT US</div>
