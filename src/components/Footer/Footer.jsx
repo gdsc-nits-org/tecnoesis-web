@@ -26,7 +26,8 @@ const Footer = () => {
               rel="noopener noreferrer "
             >
               <Button_page>
-                DOWNLOAD BROCHURE
+                <div className={styles.foot_btn}>DOWNLOAD BROCHURE</div>
+
               </Button_page>
             </a>
             <a
@@ -34,8 +35,9 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button_page>
-                BECOME OUR CAMPUS AMBASSADOR
+              <Button_page >
+                <div className={styles.foot_btn}>BECOME OUR CAMPUS AMBASSADOR</div>
+
               </Button_page>
             </a>
           </div>

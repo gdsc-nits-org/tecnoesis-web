@@ -175,6 +175,7 @@
 
 
 @media (max-width: 768px) {
+  
 
   .menu_icon {
     cursor: pointer;
@@ -196,7 +197,8 @@
 
   .nav_logo {
     display: block;
-    width: 6rem;
+    width: 5rem;
+    padding-bottom: 1.5rem;
 
   }
 
