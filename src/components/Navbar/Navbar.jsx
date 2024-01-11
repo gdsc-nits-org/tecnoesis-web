@@ -183,7 +183,7 @@ const Navbar = () => {
                 offset={0}
                 duration={500}
               >
-                <Button_page rounded="round">
+                <Button_page rounded>
                   <div className={styles.navbuttonpage}>REGISTER</div>
                 </Button_page>
               </Link>
@@ -197,7 +197,7 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page rounded="round">
+                <Button_page rounded>
                   <div className={styles.navbuttonpage}>SIGN IN</div>
                 </Button_page>
               </Link>
