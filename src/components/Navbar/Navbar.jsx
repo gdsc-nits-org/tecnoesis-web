@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [showNavbar]);
 
   return (
-    <nav className={showNavbar ? `${styles.nav_container} ${styles.nav_container_active}` : styles.nav_container}>
+    <nav>
       {showNavbar && (
         <div className={styles.nav_sidebar}>
           <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>

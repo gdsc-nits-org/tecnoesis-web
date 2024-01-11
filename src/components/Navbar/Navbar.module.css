@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   padding: 0vh 5vw;
   display: flex;
@@ -8,13 +8,13 @@
   z-index: 100;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0.5vh;
-  background: url('/elements/navbg.png') center/cover no-repeat;
+  background: url('/elements/navbg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(100% + 20px) !important; 
   opacity: 1;
   transition: transform 0.5s ease;
-  /* Add transition property */
 }
-
 
 .moveUp {
   transform: translateY(-100%);
@@ -185,7 +185,9 @@
   .register_dock{
     display: block;
   }
-
+  .container {
+    background-size: cover !important;
+  }
   .nav_sidebar {
     justify-content: center;
   }
@@ -234,11 +236,13 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1200px) {
   .menu_icon {
     padding-bottom: 1rem;
   }
-
+  .container {
+    background-size: cover !important;
+  }
   .nav_content {
     padding-bottom: 1rem;
   }
@@ -248,7 +252,7 @@
   .container {
     padding: 2vh 6vw;
   }
-
+ 
   .logo img {
     width: 9rem;
 
