@@ -1,45 +1,70 @@
-.gifBackground{
-
+.gifBackground {
   position: relative;
   overflow: hidden;
-  background-image: url(/home_bg_Crop.gif);
+  background-image: url(/home_bg_desk.gif);
   height: 100vh;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  justify-content: center;
 }
-.tecnoLogo{
+.tecnoLogo {
   width: 70%;
   margin: auto;
-  margin-bottom: 4rem;
- 
+  /* margin-bottom: 4rem; */
 }
 .dateTecno {
- 
   font-size: 2.5rem;
   /* line-height: 1; */
   font-weight: bold;
   font-family: PixeloidSansBold, serif;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(#312F2F,#312F2F );
+  background: linear-gradient(#312f2f, #312f2f);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 0.4rem transparent;
-  
+  -webkit-text-stroke: 0.16em transparent;
 }
 .arrowLottieContainer {
+  position: absolute;
+  bottom: 0;
   margin-top: 3rem;
-   margin-bottom: 2rem;
-    height: 7rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  margin-bottom: 2rem;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrowLottie {
+  height: 100%;
   transform: rotate(-90deg);
+}
+@media screen and (max-width: 700px) {
+  .tecnoLogo {
+    width: 85%;
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .gifBackground {
+    background-image: url(/home_bg_mob.gif);
+  }
+  .dateTecno {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .dateTecno {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 2500px) {
+  .dateTecno {
+    font-size: 8rem;
+  }
 }
 
 /*-------------->About<------------*/
@@ -73,10 +98,7 @@
 }
 
 .aboutUsText {
-  /* max-width: 48rem;  */
-  /* width: 62%; */
   width: 80%;
-  /* font-size: 3rem; */
   font-size: 2.5rem;
 }
 
@@ -87,14 +109,10 @@
   font-weight: bold;
   font-family: PixeloidSansBold, serif;
   color: #ffffff;
-  background: linear-gradient(#FF004C,black );
+  background: linear-gradient(#ff004c, black);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 0.3rem transparent;
+  -webkit-text-stroke: 0.12em transparent;
 }
-/* border: 2.72px solid;
-
-border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.96%); */
-
 
 .eventText {
   font-size: 0.5em;
@@ -192,6 +210,12 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     font-size: 2.1rem;
   }
 }
+@media screen and (max-width: 800px) {
+  .aboutUsText {
+    font-size: 1.8rem;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .textContainer {
     width: auto;
@@ -226,17 +250,16 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .techFestText{
+  .techFestText {
     line-height: 1.2;
     font-size: 0.9em;
   }
-  .eventText{
+  .eventText {
     line-height: 1.7;
   }
-  .aboutUsText{
+  .aboutUsText {
     font-size: 2.1rem;
   }
-
 }
 @media screen and (min-width: 1500px) {
   .translateLottie {
@@ -248,7 +271,7 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     translate: 0 -13rem;
   }
   .aboutUsText {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 }
 @media screen and (min-width: 2500px) {
@@ -256,15 +279,18 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     translate: 0 -16rem;
   }
   .aboutUsText {
-    font-size: 5rem;
+    font-size: 4.8rem;
   }
 }
 @media screen and (min-width: 3500px) {
   .translateLottie {
     translate: 0 -21rem;
   }
+  .textContainer {
+    width: 74%;
+  }
   .aboutUsText {
-    font-size: 7rem;
+    font-size: 5.4rem;
   }
 }
 
@@ -275,7 +301,6 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   padding-top: 4rem;
   position: relative;
 }
-
 
 .textContainer2 {
   display: flex;
@@ -304,11 +329,10 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   font-family: PixeloidSansBold, serif;
   color: #ffffff;
   text-align: end;
-  background: linear-gradient(#FF004C,black );
+  background: linear-gradient(#ff004c, black);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 0.3rem transparent;
+  -webkit-text-stroke: 0.12em transparent;
   white-space: nowrap;
-
 }
 
 .eventText2 {
@@ -360,6 +384,11 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     font-size: 2.1rem;
   }
 }
+@media screen and (max-width: 800px) {
+  .aboutNitText {
+    font-size: 1.8rem;
+  }
+}
 @media screen and (max-width: 700px) {
   .textContainer2 {
     display: block;
@@ -386,7 +415,6 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
   .lottieContainerParent2 {
     width: 80%;
   }
- 
 }
 @media screen and (max-width: 480px) {
   .textContainer2 {
@@ -394,44 +422,42 @@ border-image-source: linear-gradient(180deg, #FF004C 0%, rgba(255, 0, 76, 0) 82.
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .techFestText2{
+  .techFestText2 {
     line-height: 1.2;
     font-size: 0.9em;
   }
-  .eventText2{
+  .eventText2 {
     line-height: 1.7;
   }
-  .aboutNitText{
+  .aboutNitText {
     font-size: 2.1rem;
   }
-
 }
 @media screen and (min-width: 1900px) {
   .aboutNitText {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 }
 @media screen and (min-width: 2500px) {
   .aboutNitText {
-    font-size: 5rem;
+    font-size: 4.8rem;
   }
 }
 @media screen and (min-width: 3500px) {
+  .textContainer2 {
+    width: 74%;
+  }
   .aboutNitText {
-    font-size: 7rem;
+    font-size: 5.4rem;
   }
 }
 
-
 /*------------------->MODULES <---------------*/
-.moduleContainer{
-  margin:auto;
-padding-top: 5rem;
-padding-bottom: 5rem;
-font-size: 2.5rem;
-width:82%;
-
-
+.moduleContainer {
+  margin: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-size: 2.5rem;
 }
 .moduletext {
   margin-top: 2rem;
@@ -442,16 +468,17 @@ width:82%;
   font-family: PixeloidSansBold, serif;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(#FF004C,black );
+  background: linear-gradient(#ff004c, black);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 0.3rem transparent;
+  -webkit-text-stroke: 0.12em transparent;
 }
 
-
 .eventText3 {
-  width: 95%;
+  width: 82%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   font-size: 0.5em;
   line-height: 1.5;
   color: #ffffff;
@@ -459,66 +486,125 @@ width:82%;
   text-align: center;
 }
 @media screen and (max-width: 1180px) {
- 
+  .eventText3 {
+    width: 95%;
+  }
   .moduleContainer {
-    width: 90%;
     font-size: 2.2rem;
   }
 }
 @media screen and (max-width: 1000px) {
-  
+  .eventText3 {
+    width: 90%;
+  }
   .moduleContainer {
-    width: 95%;
     font-size: 2.1rem;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .eventText3{
+  .eventText3 {
     text-align: justify;
+    width: auto;
   }
-  .moduleContainer{
+  .moduleContainer {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .eventText3 {
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .moduletext {
+    line-height: 1.2;
+    font-size: 0.9em;
+  }
+
+  .moduleContainer {
     font-size: 2.1rem;
   }
- 
 }
+@media screen and (min-width: 1900px) {
+  .moduleContainer {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (min-width: 2500px) {
+  .moduleContainer {
+    font-size: 4.8rem;
+  }
+}
+@media screen and (min-width: 3500px) {
+  .eventText3 {
+    width: 74%;
+  }
+  .moduleContainer {
+    font-size: 5.4rem;
+  }
+}
+
 /*------------------->PHOTo GALLERY <---------------*/
 
-.photoContainer{
+.photoContainer {
   padding-top: 5rem;
   padding-bottom: 5rem;
   font-size: 2.5rem;
-  }
-  
-  .carouselContainer {
-    
-    width: 50%; /* Adjust the width as needed */
-    margin: 0 auto;
-    padding-top: 5rem;
+}
+
+.carouselContainer {
+  width: 50%; /* Adjust the width as needed */
+  margin: 0 auto;
+  padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1180px) {
+  .carouselContainer {
+    width: 64%;
   }
-  
-  .carouselImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .photoContainer {
+    font-size: 2.2rem;
   }
-  /* .arrow{
-    width: 5%;
-  } */
-  @media screen and (max-width: 1180px) {
- .carouselContainer{
-  width: 64%;
- }
-    .photoContainer {
-      /* width: 90%; */
-      font-size: 2.2rem;
-    }
+}
+@media screen and (max-width: 1000px) {
+  .photoContainer {
+    font-size: 2.1rem;
   }
-  @media screen and (max-width: 1000px) {
-    
-    .photoContainer {
-      /* width: 95%; */
-      font-size: 2.1rem;
-    }
+}
+@media screen and (max-width: 700px) {
+  .carouselContainer {
+    width: 78%;
   }
+  .photoContainer {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .photoContainer {
+    font-size: 2.1rem;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .photoContainer {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (min-width: 2500px) {
+  .photoContainer {
+    font-size: 4.8rem;
+  }
+}
+@media screen and (min-width: 3500px) {
+  .photoContainer {
+    font-size: 5.4rem;
+  }
+}

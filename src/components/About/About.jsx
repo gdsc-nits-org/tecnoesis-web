@@ -60,7 +60,7 @@ function About() {
                   <Lottie
                     animationData={home_arrow}
                     loop={true}
-                    style={{ width: '7rem', height: 'auto' }}
+                    style={{ width: 'auto', height: '100%' }}
                   />
               </div>
               </div>
