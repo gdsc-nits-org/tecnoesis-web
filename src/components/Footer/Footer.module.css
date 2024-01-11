@@ -93,7 +93,9 @@
 } */
 
 @media (max-width: 768px) {
-  
+  .pikachu{
+    width: 7rem;
+  }
  
   .foot_btn{
     font-size: small;
