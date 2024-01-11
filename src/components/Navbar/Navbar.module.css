@@ -180,6 +180,7 @@
   .menu_icon {
     cursor: pointer;
     display: block;
+    padding-bottom: 1rem;
   }
 
   .navbuttonpage_side {
