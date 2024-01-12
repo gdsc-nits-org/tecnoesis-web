@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 import pikachu from "/elements/pikachu.gif";
 import facebook from "/elements/social_fb.svg";
 import instagram from "/elements/social_insta.svg";
-import mail from "/elements/social_mail.svg";
+import mail from "/elements/email_s.png";
 import linkedin from "/elements/social_lin.svg";
 import twitter from "/elements/social_twit.svg";
 import Button_page from "../Button/Button";
@@ -10,7 +10,6 @@ import Button_page from "../Button/Button";
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      {/* <img src={satellite} className={styles.foot_satellite} alt="satellite" /> */}
       <div className={styles.footer_container}>
         <div className={styles.footer_content}>
           <img
@@ -65,7 +64,7 @@ const Footer = () => {
             >
               <img
                 src={mail}
-                style={{ backgroundColor: "white", borderRadius: "10px" }}
+                style={{width:'2.5rem'}}
                 alt="mail"
               />
             </a>
@@ -84,7 +83,7 @@ const Footer = () => {
               <img src={twitter} alt="twitter" />
             </a>
           </div>
-          {/* <div className={styles.footer_flare}></div> */}
+
         </div>
       </div>
     </div>
