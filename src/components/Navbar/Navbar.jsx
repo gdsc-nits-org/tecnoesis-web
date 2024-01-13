@@ -199,7 +199,7 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}>LOGIN WIRH GOOGLE</div>
+                  <div className={styles.navbuttonpage}>LOGIN WITH GOOGLE</div>
                 </Button_page>
               </Link>
             </li>
