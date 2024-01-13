@@ -199,21 +199,7 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}>REGISTER</div>
-                </Button_page>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-              >
-                <Button_page rounded>
-                  <div className={styles.navbuttonpage}>SIGN IN</div>
+                  <div className={styles.navbuttonpage}>LOGIN WIRH GOOGLE</div>
                 </Button_page>
               </Link>
             </li>
