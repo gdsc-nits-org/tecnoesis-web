@@ -1,0 +1,127 @@
+.boxContainerParent {
+  /* background-image: url('/module_page_bg.gif'); */
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.boxContainer {
+  width: 80%;
+  font-size: 80vw;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.moduleContainer {
+  padding-top: 0.05em;
+  padding-bottom: 0.05em;
+  font-size: 1em;
+}
+
+.modulestext {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  font-size: 0.04em;
+  line-height: 1;
+  font-weight: bold;
+  font-family: PixeloidSansBold, serif;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(#ff004c, black);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+.moduleFrames {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+}
+.moduleImg {
+  flex: 0 0 30%;
+  aspect-ratio: 1; /* Maintains a 1:1 aspect ratio (adjust as needed) */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/elements/module_page_frame.svg");
+}
+
+
+.rightFrame {
+  width: 20%;
+  font-size: 20vw;
+
+  background-image: url("/elements/module_page_right_frame.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.moduleNamesHeading {
+  font-size: 0.12em;
+  margin-top: 2.25em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff002f, black);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+.moduleName {
+  font-size: 0.08em;
+  font-family: PixeloidSans, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  position: relative;
+}
+.moduleName:hover {
+    color: yellow;
+    transition-property: color;
+    transition-delay: 0.25s;
+    transition-duration: 0.25s;
+  }
+.lottieAnimation {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  transform: scale(1.5);
+  opacity: 1;
+  z-index: 1;
+  left: 0;
+  transition: left 0.5s, opacity 0s linear 0s;
+}
+/* transition: property duration timing-function delay|initial|inherit; */
+
+.lottieAnimation2 {
+  width: 100%;
+  opacity: 0;
+  height: auto;
+  position: absolute;
+  transform: scale(1.5);
+  /* translate: -20rem 0; */
+  z-index: 1;
+
+  left: -10vw;
+  transition: left 0.5s, opacity 0.25s linear 0.25s;
+}
+@media screen and (max-width: 725px) {
+    .boxContainer{
+        width: 100%;
+    }
+    .moduleFrames{
+        flex-direction: column;
+        width: 80%;
+    }
+    .rightFrame{
+        display: none;
+        /* width:0%; */
+    }
+}
