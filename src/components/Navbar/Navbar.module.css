@@ -185,6 +185,9 @@
   .register_dock{
     display: block;
   }
+  .nav_sidebar{
+    background-size: contain;
+  }
   .container {
     background-size: cover !important;
   }
