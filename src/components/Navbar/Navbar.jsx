@@ -54,11 +54,11 @@ const Navbar = () => {
                 duration={500}
               >
                 <div className={styles.button_sign_content}>
-                  <div className={styles.btn_signin}>SIGN IN</div>
+                  <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
                 </div>
               </Link>
             </li>
-            <li className={styles.register_dock}>
+            {/* <li className={styles.register_dock}>
               <Link
                 to=""
                 spy={true}
@@ -71,7 +71,7 @@ const Navbar = () => {
                   <div className={styles.btn_signin}>REGISTER</div>
                 </div>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/"
