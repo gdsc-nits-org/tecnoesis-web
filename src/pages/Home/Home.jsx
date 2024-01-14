@@ -1,11 +1,12 @@
 import { Hero, Sponsors, About } from "../../components";
 
+
 const Home = () => {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero/>
       <About />
-      {/* <Sponsors /> */}
+      <Sponsors />
     </>
   );
 };

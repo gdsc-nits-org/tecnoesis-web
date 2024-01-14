@@ -1,85 +1,17 @@
-.gifBackground {
-  position: relative;
-  overflow: hidden;
-  background-image: url(/home_bg_desk.gif);
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: flex-end; */
-  justify-content: center;
-}
-.tecnoLogo {
-  width: 70%;
-  margin: auto;
-  /* margin-bottom: 4rem; */
-}
-.dateTecno {
-  font-size: 2.5rem;
-  /* line-height: 1; */
-  font-weight: bold;
-  font-family: PixeloidSansBold, serif;
-  text-align: center;
-  color: #ffffff;
-  background: linear-gradient(#312f2f, #312f2f);
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.16em transparent;
-}
-.arrowLottieContainer {
-  position: absolute;
-  bottom: 0;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  height: 10%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.arrowLottie {
-  height: 100%;
-  transform: rotate(-90deg);
-}
-@media screen and (max-width: 700px) {
-  .tecnoLogo {
-    width: 85%;
-    margin-bottom: 3rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  .gifBackground {
-    background-image: url(/home_bg_mob.gif);
-  }
-  .dateTecno {
-    font-size: 1.8rem;
-  }
-}
-
-@media screen and (min-width: 1900px) {
-  .dateTecno {
-    font-size: 6rem;
-  }
-}
-@media screen and (min-width: 2500px) {
-  .dateTecno {
-    font-size: 8rem;
-  }
-}
 
 /*-------------->About<------------*/
 .bgContainer {
   position: relative;
   overflow: hidden;
   background-image: url("/images/homepageBg.png");
-  /* background-attachment: fixed; */
   background-repeat: repeat;
   background-size: contain;
+  font-size: 8vh;
 }
 
 .contentContainer {
   padding-bottom: 4rem;
-  padding-top: 4rem;
+  padding-top: 8rem;
   position: relative;
 }
 
@@ -93,6 +25,7 @@
   /* max-width: 80rem; */
   /* width: 85%; */
   width: 82%;
+  font-size: 82vw;
   padding-left: 3rem;
   padding-right: 2.5rem;
 }
@@ -103,6 +36,7 @@
 }
 
 .techFestText {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 1em;
   line-height: 1;
@@ -138,6 +72,7 @@
   flex-direction: column;
   /* width: 10%; */
   width: 7%;
+  font-size: 0.07em;
 }
 
 .lottieContainer {
@@ -148,30 +83,31 @@
   display: flex;
   flex-direction: column;
 
-  height: 25rem;
+  font-size: 1em;
   position: relative;
 }
 .mb4 {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin-bottom: 0.3em;
   position: absolute;
   width: 100%;
   bottom: 0;
 }
 
 .translateLottie {
-  /* translate: 0 -1rem; */
-  translate: 0 -8rem;
+  
+  translate: 0 -1.25em;
   opacity: 1;
   transition: translate 0.25s, opacity 0.25s;
 }
 .retranslateLottie {
   opacity: 0;
-  /* translate: 0 6rem; */
-  translate: 0 2rem;
+ 
+  translate: 0 0.25em;
   transition: translate 0.25s, opacity 0.25s;
 }
 .translate {
-  translate: 0 2rem;
+  translate: 0 0.25em;
   transition: translate 0.25s;
 }
 .retranslate {
@@ -180,9 +116,11 @@
 }
 .coinboxImageParent {
   margin-top: auto;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
+  margin-bottom: 0.6em;
   position: relative;
   height: 100%;
+  font-size: 1em;
 }
 .coinboxImage {
   position: absolute;
@@ -197,6 +135,8 @@
 @media screen and (max-width: 1180px) {
   .textContainer {
     width: 90%;
+    font-size: 90vw;
+
   }
   .aboutUsText {
     font-size: 2.2rem;
@@ -205,6 +145,8 @@
 @media screen and (max-width: 1000px) {
   .textContainer {
     width: 95%;
+    font-size: 95vw;
+
   }
   .aboutUsText {
     font-size: 2.1rem;
@@ -261,33 +203,32 @@
     font-size: 2.1rem;
   }
 }
-@media screen and (min-width: 1500px) {
-  .translateLottie {
-    translate: 0 -10rem;
-  }
-}
+
 @media screen and (min-width: 1900px) {
-  .translateLottie {
-    translate: 0 -13rem;
-  }
+  .contentContainer{
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+  
   .aboutUsText {
     font-size: 3.2rem;
   }
+  .techFestText{
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+  }
 }
 @media screen and (min-width: 2500px) {
-  .translateLottie {
-    translate: 0 -16rem;
-  }
+  
   .aboutUsText {
     font-size: 4.8rem;
   }
 }
 @media screen and (min-width: 3500px) {
-  .translateLottie {
-    translate: 0 -21rem;
-  }
+  
   .textContainer {
     width: 74%;
+    font-size: 74vw;
   }
   .aboutUsText {
     font-size: 5.4rem;
@@ -396,6 +337,7 @@
   }
   .contentContainer2 {
     padding-top: 5rem;
+    padding-bottom: 0;
   }
   .techFestText2 {
     text-align: center;
@@ -434,8 +376,16 @@
   }
 }
 @media screen and (min-width: 1900px) {
+  .contentContainer2{
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
   .aboutNitText {
     font-size: 3.2rem;
+  }
+  .techFestText2{
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
   }
 }
 @media screen and (min-width: 2500px) {
@@ -453,11 +403,28 @@
 }
 
 /*------------------->MODULES <---------------*/
-.moduleContainer {
-  margin: auto;
+.contentContainer3{
   padding-top: 5rem;
   padding-bottom: 5rem;
+  position: relative;
+
+}
+.moduleContainer {
+  margin: auto;
   font-size: 2.5rem;
+  position: relative;
+
+}
+.alienLottieContainer{
+  position: absolute;
+  width: 28vw;
+  top:0;
+}
+.heartLottieContainer{
+  position: absolute;
+  width: 9vw;
+  bottom: -4.5vw;
+  right: 0;
 }
 .moduletext {
   margin-top: 2rem;
@@ -485,9 +452,20 @@
   font-family: JetBrainsMono, sans;
   text-align: center;
 }
+@media screen and (min-width: 1180px){
+  .contentContainer3{
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  
+  }
+} 
 @media screen and (max-width: 1180px) {
   .eventText3 {
     width: 95%;
+  }
+  .heartLottieContainer{
+    width: 8vw;
+    bottom: -1.25vw;
   }
   .moduleContainer {
     font-size: 2.2rem;
@@ -497,12 +475,26 @@
   .eventText3 {
     width: 90%;
   }
+  .heartLottieContainer{
+    width: 10vw;
+    bottom: -2.5vw;
+  }
   .moduleContainer {
     font-size: 2.1rem;
   }
 }
+@media screen and (max-width: 800px) {
+  
+  .moduleContainer {
+    font-size: 1.8rem;
+  }
+}
 
 @media screen and (max-width: 700px) {
+  .contentContainer3 {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
   .eventText3 {
     text-align: justify;
     width: auto;
@@ -528,8 +520,16 @@
   }
 }
 @media screen and (min-width: 1900px) {
+  .contentContainer3{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
   .moduleContainer {
     font-size: 3.2rem;
+  }
+  .moduletext{
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
   }
 }
 @media screen and (min-width: 2500px) {
@@ -549,16 +549,15 @@
 /*------------------->PHOTo GALLERY <---------------*/
 
 .photoContainer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+ 
   font-size: 2.5rem;
 }
 
 .carouselContainer {
-  width: 50%; /* Adjust the width as needed */
+  width: 50%; 
   margin: 0 auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 1.4em;
+  padding-bottom: 1.4em;
 }
 
 .carouselImage {
@@ -580,6 +579,12 @@
     font-size: 2.1rem;
   }
 }
+@media screen and (max-width: 800px) {
+  
+  .photoContainer {
+    font-size: 1.8rem;
+  }
+}
 @media screen and (max-width: 700px) {
   .carouselContainer {
     width: 78%;
@@ -597,6 +602,7 @@
   .photoContainer {
     font-size: 3.2rem;
   }
+  
 }
 @media screen and (min-width: 2500px) {
   .photoContainer {

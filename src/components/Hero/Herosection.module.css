@@ -1,4 +1,4 @@
-.heroSection {
+/* .heroSection {
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -254,4 +254,72 @@
    .tecComing {
      margin-top: 42%;
    }
-} 
+}  */
+.gifBackground {
+  position: relative;
+  overflow: hidden;
+  background-image: url(/home_bg_desk.gif);
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  justify-content: center;
+}
+.tecnoLogo {
+  width: 70%;
+  margin: auto;
+  /* margin-bottom: 4rem; */
+}
+.dateTecno {
+  font-size: 2.5rem;
+  /* line-height: 1; */
+  font-weight: bold;
+  font-family: PixeloidSansBold, serif;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(#312f2f, #312f2f);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.16em transparent;
+}
+.arrowLottieContainer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowLottie {
+  height: 100%;
+  transform: rotate(-90deg);
+}
+@media screen and (max-width: 700px) {
+  .tecnoLogo {
+    width: 85%;
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .gifBackground {
+    background-image: url(/home_bg_mob.gif);
+  }
+  .dateTecno {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .dateTecno {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 2500px) {
+  .dateTecno {
+    font-size: 8rem;
+  }
+}

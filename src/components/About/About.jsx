@@ -4,7 +4,8 @@ import "./slick-theme.css";
 import Lottie from "lottie-react";
 import aboutus_pc from "../../assets/aboutus_pc.json";
 import aboutus_coin from "../../assets/aboutus_coin.json";
-import home_arrow from "../../assets/home_arrow.json";
+import alien_near_module_section from "../../assets/alien_near_module_section.json";
+import heart from "../../assets/heart.json";
 import styles from "./About.module.css";
 import Slider from "react-slick";
 
@@ -39,35 +40,12 @@ function About() {
     // nextArrow: <SampleNextArrow/>
   };
 
-
   
 
   return (
     <>
       <div id='about' >
-      <div className={styles.gifBackground}>
-     <div>
-      <img src="images/Tecno 24 logo.png" alt="Tecnoesis 2024"  className={styles.tecnoLogo}/>
-      </div>
-        <div className={styles.dateTecno}>
-          01. 02. 03. 04
-        </div>
-        <div className={styles.dateTecno}>
-          FEBRUARY
-        </div>
-        <div className={styles.arrowLottieContainer}>
-        <div className={styles.arrowLottie}>
-                  <Lottie
-                    animationData={home_arrow}
-                    loop={true}
-                    style={{ width: 'auto', height: '100%' }}
-                  />
-              </div>
-              </div>
-        <div>
-
-        </div>
-      </div>
+     
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
            
@@ -149,7 +127,23 @@ function About() {
               </div>
             </div>
           </div>
+          <div className={styles.contentContainer3}>
+          <div className={styles.alienLottieContainer}>
+                  <Lottie
+                    animationData={alien_near_module_section}
+                    loop={true}
+                    style={style2}
+                  />
+                </div>
 <div className={styles.moduleContainer}>
+<div className={styles.heartLottieContainer}>
+                  <Lottie
+                    animationData={heart}
+                    loop={true}
+                    style={style2}
+                  />
+                </div>
+
           <div className={styles.moduletext}>MODULES</div>
           <div className={styles.eventText3}>
                   A bright future requires a bright start. NITS abides by this
@@ -162,7 +156,9 @@ function About() {
                   transformed into a sought out centre of learning.
                 </div>
                 </div>
+                </div>
 
+                <div className={styles.contentContainer3}>
 
   <div className={styles.photoContainer}>
                    <div className={styles.moduletext}>PHOTO GALLERY</div>
@@ -172,13 +168,14 @@ function About() {
           <img src="/images/bg_landing.svg" alt="Image 1" className={styles.carouselImage} />
         </div>
         <div>
-          <img src="/images/bg22.svg" alt="Image 2" className={styles.carouselImage} />
+          <img src="/images/bg_landing_stars.svg" alt="Image 2" className={styles.carouselImage} />
         </div>
         <div>
-          <img src="/images/bg_landing_stars.svg" alt="Image 3" className={styles.carouselImage} />
+          <img src="/images/bg22.svg" alt="Image 3" className={styles.carouselImage} />
         </div>
       </Slider>
     </div>
+                </div>
                 </div>
         </div>
       </div>
