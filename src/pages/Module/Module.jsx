@@ -124,16 +124,25 @@ function Module() {
         <div className={styles.moduleFrames}>
         <Slider {...settings}>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
            <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
@@ -144,16 +153,25 @@ function Module() {
       ) : (
         <div className={styles.moduleFrames}>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
                <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
@@ -178,16 +196,25 @@ function Module() {
         <div className={styles.moduleFrames}>
         <Slider {...settings}>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
            <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
@@ -198,16 +225,25 @@ function Module() {
       ) : (
         <div className={styles.moduleFrames}>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
                <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
@@ -222,16 +258,25 @@ function Module() {
         <div className={styles.moduleFrames}>
         <Slider {...settings}>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
            <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
           </div>
           <div className={styles.moduleImg} >
+          <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
           <div  className={styles.moduleImgContent}>
                ROBOWAR
             </div>
@@ -242,16 +287,25 @@ function Module() {
       ) : (
         <div className={styles.moduleFrames}>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
                <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
               </div>
               <div className={styles.moduleImg} >
+              <div className={styles.moduleImgInContent}>
+                   <img src="/elements/module_page_frame.svg" alt="img1" style={{width:'100%',height:'100%',objectFit:'cover'} }/>
+                </div>
               <div  className={styles.moduleImgContent}>
                    ROBOWAR
                 </div>
