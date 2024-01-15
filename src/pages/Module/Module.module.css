@@ -1,10 +1,10 @@
 .boxContainerParent {
-  /* background-image: url('/module_page_bg.gif'); */
+  background-image: url('/module_page_bg.gif');
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  background-position: left top;
+  background-position: center;
 }
 
 .boxContainer {
