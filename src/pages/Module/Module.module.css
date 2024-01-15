@@ -4,6 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  background-position: left top;
 }
 
 .boxContainer {
@@ -39,27 +40,80 @@
   margin-left: 10%;
 }
 .moduleImg {
-  flex: 0 0 30%;
-  aspect-ratio: 1; /* Maintains a 1:1 aspect ratio (adjust as needed) */
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url("/elements/module_page_frame.svg");
+  width: 100%;
+    flex: 0 0 30%;
+    aspect-ratio: 1.26;
+    margin-top: 2rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/elements/module_page_frame.svg);
+    color: white;
+    /* font-size: 10px; */
+    position: relative;
+    overflow: hidden;
+}
+.moduleImg:hover .moduleImgContent{
+  bottom: 0;
+  transform: scale(1);
+  transition: bottom 0.5s , transform 0.5s;
+
+}
+.moduleImgContent{
+  width: 100%;
+  height: 5vw;
+  bottom: -7vw;
+  background-color: white;
+  opacity: 0.5;
+  color: red;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transform: scale(1.5);
+  transition: bottom 0.5s , transform 0.5s;
 }
 
 
-.rightFrame {
-  width: 20%;
-  font-size: 20vw;
-
-  background-image: url("/elements/module_page_right_frame.svg");
+.moduleImgMob{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+.carouselitem {
+  background-image: url("/elements/module_page_frame.svg");
+  height: 300px; /* Adjust the height as needed */
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  flex-direction: column;
-  color: white;
+}
+/* .rightFrameParent{
+  width:20vw;
+}
+.rightFrameParent:hover + .rightFrame {
+  position: unset;
+top: unset;
+} */
+
+.rightFrame {
+  width: 20vw;
+    height: 60.9vw;
+    margin-top: 2rem;
+    font-size: 20vw;
+    background-image: url(/elements/module_page_right_frame.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    position: sticky;
+    top: 2rem;
+    right: 0;
+}
+.sticky{
+  position: fixed;
 }
 .moduleNamesHeading {
   font-size: 0.12em;
@@ -82,12 +136,20 @@
   display: flex;
   position: relative;
 }
-.moduleName:hover {
+.link:hover {
     color: yellow;
-    transition-property: color;
-    transition-delay: 0.25s;
-    transition-duration: 0.25s;
+    /* transition-property: color;
+    transition-delay: 0.25s; */
+    /* transition-duration: 0.25s; */
   }
+   .link{
+    z-index: 2;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* transition-property: color;
+    transition-delay: 0.4s; */
+   }
 .lottieAnimation {
   width: 100%;
   height: auto;
@@ -117,11 +179,22 @@
         width: 100%;
     }
     .moduleFrames{
-        flex-direction: column;
-        width: 80%;
+display:block;
+        width: 62%;
+        margin-left:19%;
+        aspect-ratio: 1.1;
     }
     .rightFrame{
         display: none;
-        /* width:0%; */
+         width:0%; 
+    }
+    .modulestext{
+      font-size:0.08em;
+      -webkit-text-stroke: 0.2em transparent;
+    }
+    .moduleImgContent{
+      height: 14vw;
+      bottom: -18vw;
+
     }
 }
