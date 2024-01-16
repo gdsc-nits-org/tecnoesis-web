@@ -8,6 +8,9 @@ import alien_near_module_section from "../../assets/alien_near_module_section.js
 import heart from "../../assets/heart.json";
 import styles from "./About.module.css";
 import Slider from "react-slick";
+import Button from "../Button/Button";
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -154,6 +157,14 @@ function About() {
                   requisite support and encouragement via various cultural and
                   academic activities to shape the body and soul. It has
                   transformed into a sought out centre of learning.
+                </div>
+          
+                <div className={styles.buttonContainer}>
+                <Link to="/modules">
+                  <Button>
+                    Show Modules
+                  </Button>
+                  </Link>
                 </div>
                 </div>
                 </div>

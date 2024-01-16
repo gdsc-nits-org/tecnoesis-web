@@ -452,6 +452,14 @@
   font-family: JetBrainsMono, sans;
   text-align: center;
 }
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  padding-top: 6vw;
+
+}
 @media screen and (min-width: 1180px){
   .contentContainer3{
     padding-top: 7rem;
@@ -501,6 +509,16 @@
   }
   .moduleContainer {
     font-size: 2.3rem;
+  }
+  .heartLottieContainer{
+    display: none;
+  }
+  .alienLottieContainer{
+    top:unset;
+  }
+  .buttonContainer{
+    font-size: 1.5vh;
+    padding-top: 6vh;
   }
 }
 @media screen and (max-width: 480px) {
