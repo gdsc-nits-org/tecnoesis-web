@@ -75,11 +75,6 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/modules"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
@@ -89,11 +84,7 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/events"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+                
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
@@ -117,11 +108,6 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/team"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>TEAM</div>
@@ -145,11 +131,6 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/contactus"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
