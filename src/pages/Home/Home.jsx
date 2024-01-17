@@ -4,10 +4,10 @@ import Module from "../Module/Module";
 const Home = () => {
   return (
     <>
-      <Module/>
-      {/* <Hero /> */}
-      {/* <About />
-      <Sponsors /> */}
+      {/* <Module/> */}
+       <Hero /> 
+       <About />
+      <Sponsors /> 
     </>
   );
 };

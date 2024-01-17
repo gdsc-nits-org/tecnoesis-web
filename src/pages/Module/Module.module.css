@@ -1,17 +1,18 @@
 .boxContainerParent {
   background-image: url('/module_page_bg.gif');
+  background-attachment: fixed;;
   background-color: rgb(95, 95, 95);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  background-position: center;
+  background-position: right;
 }
 
 .boxContainer {
   width: 80%;
   font-size: 80vw;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
 }
 .moduleContainer {
   padding-top: 0.05em;
@@ -25,9 +26,9 @@
   font-size: 0.04em;
   line-height: 1;
   font-weight: bold;
-  font-family: PixeloidSansBold, serif;
   text-align: center;
   color: #ffffff;
+  font-family: PixeloidSansBold, serif;
   background: linear-gradient(#ff004c, black);
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.12em transparent;
@@ -71,16 +72,32 @@
   bottom: -7vw;
   background-color: white;
   opacity: 0.5;
-  color: red;
-  position: absolute;
+  /* color: red; */
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+
+  position: absolute;
+ 
+  font-size: 2vw;
   transform: scale(1.5);
   transition: bottom 0.5s , transform 0.5s;
-}
 
+  
+}
+.subModules{
+  width:100%;
+  font-size:1em;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff004c, black);
+  background-clip: text;
+  -webkit-text-stroke: 0.1em transparent;
+}
 
 .moduleImgMob{
   width: 100%;
@@ -101,11 +118,36 @@
   position: unset;
 top: unset;
 } */
+.rightFrameParent{
+  height: 100vh;
+  overflow:auto;
+  overflow-x: hidden;
+ 
+  position: fixed;
+  right:0;
+}
+/* for chrome*/
+.rightFrameParent::-webkit-scrollbar {
+ display: none;
+}
+.rightFrameParent::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*for firefox*/
+.rightFrameParent{
+  scrollbar-width :none;
+  scrollbar-color: transparent transparent;
+}
+/*ms edge*/
+.rightFrameParent{
+  -ms-overflow-style: none;
+}
 
 .rightFrame {
   width: 20vw;
-    height: 60.9vw;
-    margin-top: 2rem;
+    /* height: 60.9vw; */
+    aspect-ratio:0.328;
+    margin-top: 6.4rem;
     font-size: 20vw;
     background-image: url(/elements/module_page_right_frame.svg);
     background-size: contain;
@@ -115,9 +157,30 @@ top: unset;
     flex-direction: column;
     color: white;
     position: sticky;
-    top: 2rem;
+    top: 6.4rem;
     right: 0;
 }
+.rightFrameBg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:20vw;
+  /* transform: scaleX(1.2); */
+}
+/* .rightFrame::after{
+  width: 20vw;
+  height: 60.9vw;
+  margin-top: 6.4rem;
+  font-size: 20vw;
+  background-image: url(/elements/module_page_right_frame.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  color: white;
+  position: sticky;
+  top: 6.4rem;
+  right: 0;
+} */
 .sticky{
   position: fixed;
 }
@@ -202,6 +265,18 @@ top: unset;
     font-size: 0.05em;
   }
   }
+  @media screen and (max-width: 1200px) {
+    .rightFrame{
+      margin-top: 7.2rem;
+      top: 7.2rem;
+  }
+  }
+  @media screen and (max-width: 768px) {
+    .rightFrame{
+      margin-top: 6.4rem;
+      top:6.4rem;
+  }
+  }
 @media screen and (max-width: 725px) {
     .boxContainer{
         width: 100%;
@@ -226,3 +301,4 @@ display:block;
 
     }
 }
+
