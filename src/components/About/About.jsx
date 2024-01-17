@@ -21,7 +21,6 @@ function About() {
   };
   const style2 = {
     height: "auto",
-    // width: "25rem"
   };
   const handleEvent = () => {
     setCoinbox(!coinbox);
@@ -32,15 +31,11 @@ function About() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    // arrows: false,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnFocus : true,
-    // cssEase: "linear"
-
-    // autoplayDuration: 1000
-    // nextArrow: <SampleNextArrow/>
+   
   };
 
   
