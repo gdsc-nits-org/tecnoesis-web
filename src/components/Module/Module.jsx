@@ -11,7 +11,7 @@ import "./slick-theme.css";
 // import "slick-carousel/slick/slick-theme.css";
 
 
-function Module() {
+const Module = () => {
   const [showRing1, setShowRing1] = useState(false);
   const [showRing2, setShowRing2] = useState(false);
   const [showRing3, setShowRing3] = useState(false);
@@ -206,3 +206,4 @@ function Module() {
 }
 
 export default Module;
+
