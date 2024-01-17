@@ -14,8 +14,7 @@ import statusData from "../../assets/statusData";
 import camera from "/images/camera.svg";
 import vector3 from "/images/Vector3.png";
 import vector4 from "/images/Vector4.png";
-import Lottie from 'lottie-react';
-import profile_dashboard_bg from '../../lotties/profile_dashboard_bg.json';
+
 
 
 
@@ -63,14 +62,13 @@ export default function Dashboard() {
       
     }, [isExpanded]);
     
+    const trimText = (text) => {
+      return text.length > 6 ? text.slice(0, 6) : text;
+  };
+    
     return (
     <div className={styles.container}>
-         <div className={styles.lottie}> <Lottie
-        animationData={profile_dashboard_bg}
-        loop
-        autoplay
-        style={{ width: '100%',height:'100%' }}
-    />  </div>
+       
     <div className={styles.texture}>
    <div className={styles.left}>
     <div className={styles.image}>
@@ -131,99 +129,52 @@ export default function Dashboard() {
             {isExpanded[index] && (
         <div className={styles.expanded_content}>
           
-          {/*<div className={styles.expanded_heading}>
-           <p className={styles.expanded_heading_text}> Name </p>
-           <p className={styles.expanded_heading_text}> Username </p>
-           
-           <p className={styles.expanded_heading_text}> Status</p>
-           </div>
-           <div className={styles.line}></div>
-           <div className={styles.members}>
-            <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name}</p>
-            <p className={styles.expanded_members_text}> {event.username} </p>
-            
-            <p className={styles.expanded_members_text}><img src={vector4} alt="" /> </p>
-          </div>
-          <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name}</p>
-            <p className={styles.expanded_members_text}> {event.username}</p>
-            
-            <p className={styles.expanded_members_text}> <img src={vector4} alt="" /></p>
-          </div>
-          <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name} </p>
-            <p className={styles.expanded_members_text}>{event.username} </p>
-           
-            <p className={styles.expanded_members_text}> <img src={vector4} alt="" /></p>
-          </div>
-            </div>*/}
-            {/*<table>
-              <tr className={styles.expanded_heading}>
-                <td className={styles.expanded_heading_text}>Name</td>
-                <td className={styles.expanded_heading_text}>Username</td>
-                <td className={styles.expanded_heading_text}>Status</td>
-                </tr>
-                <tr className={styles.line}></tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-          </table>*/}
-          <table className={styles.table}>
-  <tbody>
-    <tr className={styles.expanded_heading}>
-      <td colSpan="3" className={styles.expanded_heading_text}>
+          
+          <table>
+  <thead>
+    <tr>
+      <th >
         Name
-      </td>
+      </th>
     
-      <td colSpan="3" className={styles.expanded_heading_text}>
+      <th >
         Username
-      </td>
+      </th>
       
-      <td colSpan="3" className={styles.expanded_heading_text}>
+      <th >
         Status
-      </td>
-   
- 
+      </th>
+   </tr>
+   </thead>
+   <tbody>
+    <tr >
+        
+    
     </tr>
-    <tr ><td className={styles.line}></td>
-    </tr>
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    <tr >
+      <td >{trimText(event.name)}</td>
+      <td >{trimText(event.username)}</td>
+      <td >
         <img src={vector4} alt="" />
       </td>
     </tr>
 
     
     
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    <tr>
+      <td>{trimText(event.name)}</td>
+      <td>{trimText(event.username)}</td>
+      <td >
         <img src={vector4} alt="" />
       </td>
     </tr>
 
     
     
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    <tr >
+      <td >{trimText(event.name)}</td>
+      <td >{trimText(event.username)}</td>
+      <td>
         <img src={vector4} alt="" />
       </td>
     </tr>
@@ -272,104 +223,58 @@ export default function Dashboard() {
           </div>
           {isExpanded[index] && (
         <div className={styles.expanded_content}>
-         {/*<div className={styles.expanded_heading}>
-           <p className={styles.expanded_heading_text}> Name </p>
-           <p className={styles.expanded_heading_text}> Username </p>
-           
-           <p className={styles.expanded_heading_text}> Status</p>
-           </div>
-           <div className={styles.line}></div>
-           <div className={styles.members}>
-            <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name}</p>
-            <p className={styles.expanded_members_text}> {event.username} </p>
-            <p className={styles.expanded_members_text}><img src={vector4} alt="" /> </p>
-          </div>
-          <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name}</p>
-            <p className={styles.expanded_members_text}> {event.username}</p>
-            
-            <p className={styles.expanded_members_text}> <img src={vector4} alt="" /></p>
-          </div>
-          <div className={styles.member1}>
-            <p className={styles.expanded_members_text}> {event.name} </p>
-            <p className={styles.expanded_members_text}>{event.username} </p>
-            
-            <p className={styles.expanded_members_text}> <img src={vector4} alt="" /></p>
-          </div>
-          </div>*/}
-           {/*<table>
-              <tr className={styles.expanded_heading}>
-                <td className={styles.expanded_heading_text}>Name</td>
-                <td className={styles.expanded_heading_text}>Username</td>
-                <td className={styles.expanded_heading_text}>Status</td>
-                </tr>
-                <tr className={styles.line}></tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-              <tr className={styles.member1}>
-                <td className={styles.expanded_members_text}>{event.name}</td>
-                <td className={styles.expanded_members_text}>{event.username}</td>
-                <td className={styles.expanded_members_text}><img src={vector4} alt="" /></td>
-              </tr>
-        </table>*/}
-        <table className={styles.table}>
-  <tbody>
-    <tr className={styles.expanded_heading}>
-      <td colSpan="3" className={styles.expanded_heading_text}>
+         
+        <table>
+  <thead>
+    <tr>
+      <th >
         Name
-      </td>
+      </th>
     
-      <td colSpan="3" className={styles.expanded_heading_text}>
+      <th >
         Username
-      </td>
+      </th>
       
-      <td colSpan="3" className={styles.expanded_heading_text}>
+      <th >
         Status
-      </td>
-   
- 
-    </tr>
-    <tr ><td className={styles.line}></td>
-    </tr>
+      </th>
+   </tr>
+   </thead>
+   <tbody>
+    <tr >
+        
     
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    </tr>
+    <tr >
+      <td >{trimText(event.name)}</td>
+      <td >{trimText(event.username)}</td>
+      <td >
         <img src={vector4} alt="" />
       </td>
     </tr>
 
     
     
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    <tr>
+      <td>{trimText(event.name)}</td>
+      <td>{trimText(event.username)}</td>
+      <td >
         <img src={vector4} alt="" />
       </td>
     </tr>
 
     
-   
-    <tr className={styles.member1}>
-      <td colSpan="3" className={styles.expanded_members_text}>{event.name}</td>
-      <td className={styles.expanded_members_text}>{event.username}</td>
-      <td className={styles.expanded_members_text}>
+    
+    <tr >
+      <td >{trimText(event.name)}</td>
+      <td >{trimText(event.username)}</td>
+      <td>
         <img src={vector4} alt="" />
       </td>
     </tr>
   </tbody>
 </table>
+
 
 
 

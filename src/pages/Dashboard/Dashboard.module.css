@@ -5,13 +5,13 @@
     justify-content: center;
     align-items: center;
     /* background-color: black; */
-   /* background-image: url("/images/mainbg.png"); */
-   /* background-size: cover; */
-    /* background-position: center; */
-    /* background-attachment: fixed; */
-    /* background-repeat: no-repeat; */
-    padding: 4rem;
-
+   background-image: url("/images/ezgif2.gif");
+    background-size: cover; 
+     background-position: center; 
+     /* background-attachment: fixed;  */
+    background-repeat: no-repeat; 
+    padding: 4rem; 
+padding-top: 9rem;
    
 }
 .lottie{
@@ -28,7 +28,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 80%;
-position: relative; 
+/* position: relative;  */
 background-image: url("/images/Texture.png");
 
 z-index: 2;
@@ -129,6 +129,10 @@ margin-right: 1rem;
     padding-left: 1rem;
     padding-right: 1rem
 }
+.button1:hover,.button3:hover{
+    color: black;
+    background: linear-gradient(90deg, #14FF00 0%, #047A94 171.08%);
+}
 .button2{
     display: flex;
     justify-content: center;
@@ -141,6 +145,11 @@ margin-right: 1rem;
     padding-left: 1rem;
     padding-right: 1rem
 }
+.button2:hover,.button4:hover{
+    color: white;
+    background: linear-gradient(90deg, #FF0303 0%, #022e38 171.08%);
+}
+
 .right{
     display: flex;
     flex-direction: column;
@@ -239,21 +248,13 @@ margin-bottom: 1rem;
     color: #FCFC53;
 text-align: center;
 font-family: PixeloidSans;
-font-size: 1rem;
+font-size:1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
 padding-bottom: 0.5rem;
 }
-.event_team p{
-    color: #FFF;
-    text-align: center;
-    font-family: PixeloidSans;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
+
 .event_team {
     color: #FFF;
     font-family: PixeloidSans;
@@ -261,23 +262,29 @@ padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  
 }
+
+
 .end_div{
 display: flex;
-justify-content: center;
-align-items: center;
-padding: 1rem;
+justify-content:center;
+align-items:center;
+padding: 1rem; 
+
 }
 .end_div p{
     color: #FFF;
-text-align: center;
+ text-align: center; 
+justify-content: center;
+align-items: end;
 font-family: PixeloidSans;
 font-size: 0.9rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-padding-left: 1rem;
-padding-right: 0.5rem;
+ padding-left: 0.7rem; 
+padding-right: 0.5rem; 
 }
 .end_div img{
     cursor: pointer;
@@ -287,8 +294,8 @@ padding-right: 0.5rem;
     justify-content:center;
     align-items: center;
     display: flex;
-    padding-left: 1.9rem;
-    padding-right: 2.2rem;
+    padding-left: 3.9rem;
+    padding-right: 1rem;
 }
 .button3{
     border: 1.5px solid #24FF00;
@@ -333,12 +340,26 @@ line-height: normal;
 }
 .line{
     background-color:  #AEAEAE;
-    width: 1.1rem;
+    width: 4rem;
 height: 0.1rem;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
+table { 
+    border-collapse: collapse; 
+  }
+tr:nth-child(1) { 
+ 
+    border-bottom: 0.1rem solid #AEAEAE;
+}
+th{
+    padding: 0.2rem 0.7rem;
+}
+td img{
+    padding-left: 40%;
+}
+
 .members{
     flex-direction: column;
     justify-content: center;
@@ -362,6 +383,27 @@ padding-bottom: 0.4rem;
      padding-right: 1rem;
      padding-left: 0;
 }
+th{
+    color: #51F1FB;
+text-align: center;
+font-family: PixeloidSans;
+font-size: 0.8rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+td{
+    color: #FFF;
+text-align: center;
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+justify-content: center;
+align-items: center;
+
+}
 .buttons_responsive{
 display: none;
 flex: 2;
@@ -376,13 +418,15 @@ margin-bottom: 1.2rem;
 }
 .container{
     width: 100%;
+    padding: 0;
+    padding-top: 7rem;
 }
 .buttons{
     display: none;
 }
 .texture{
     flex-direction: column;
-    width: 160%;
+    /* width: 160%; */
     /* padding: 1rem; */
    
 }
@@ -445,6 +489,104 @@ padding-right: 0.2rem;
         width: 100%;
     }
     .texture{
-        width:100%
+        width:95%
+    }
+}
+@media (max-width:470px){
+    .event_title{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:281px){
+    .event_title{
+        font-size: 0.6rem;
+    }
+    .event_team{
+        font-size: 0.6rem;
+    }
+    .end_div p{
+        font-size: 0.6rem;
+        padding-left: 0.1rem;
+    }
+    .end_div{
+        padding-right: 0.1rem;
+    }
+    th{
+        font-size: 0.6rem;
+    }
+    td{
+        font-size: 0.6rem;
+    }
+}
+@media (max-width:350px){
+th{
+    padding: 0.39rem;
+}
+}
+@media(min-width:768px) and (max-width:1300px){
+    th{
+        padding: 0.39rem;
+    }
+    .texture{
+        width: 100%;
+    }
+}
+@media (min-width:768px)and (max-width:1330px){
+    .event_title{
+        font-size: 0.8rem;
+    }
+    .event_team{
+        font-size: 0.7rem;
+    }
+    .end_div{
+        padding-left: 0.7rem;
+    }
+    .end_div p{
+        padding-left: 0.7rem;
+        font-size: 0.8rem;
+    }
+}
+@media (min-width:600px)and (max-width:768px){
+    .events{
+        width: 80%;
+    }
+}
+@media (min-width:282px)and (max-width:345px){
+.event_title{
+    font-size: 0.7rem;
+}
+.event_team{
+    font-size: 0.6rem;
+}
+.end_div p{
+    font-size: 0.6rem;
+    padding-left: 0.2rem;
+}
+.end_div{
+    padding-right: 0.2rem;
+}
+
+}
+@media(min-width:2500px){
+    .container{
+        padding-top: 15rem;
+        height: 100vh;
+    }
+    .texture{
+        width: 50%;
+        height: 60%;
+    }
+    .events{
+        width: 50%;
+    }
+}
+@media(max-width:410px){
+    .end_div2{
+        padding-left: 1rem;
+    }
+}
+@media(min-width:768px)and (max-width:1045px){
+    .end_div2{
+        padding-left: 1rem;
     }
 }
