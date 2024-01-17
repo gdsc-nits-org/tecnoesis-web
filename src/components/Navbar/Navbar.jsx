@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 
 
@@ -44,20 +44,6 @@ const Navbar = () => {
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
-            {/* <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-              >
-                <div className={styles.button_sign_content}>
-                  <div className={styles.btn_signin}>SIGN IN</div>
-                </div>
-              </Link>
-            </li> */}
             <li className={styles.register_dock}>
               <Link
                 to=""
@@ -74,7 +60,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="about"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -87,8 +73,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
+              <RouterLink
+                to="/modules"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -98,11 +84,11 @@ const Navbar = () => {
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
             <li>
-              <Link
-                to=""
+              <RouterLink
+                to="/events"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -112,7 +98,7 @@ const Navbar = () => {
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
             <li>
               <Link
@@ -129,8 +115,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
+              <RouterLink
+                to="/team"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -140,7 +126,7 @@ const Navbar = () => {
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
             <li>
               <Link
@@ -157,8 +143,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
+              <RouterLink
+                to="/contactus"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
@@ -168,7 +154,7 @@ const Navbar = () => {
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
           </ul>
         </div>
