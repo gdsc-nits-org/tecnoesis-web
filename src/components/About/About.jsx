@@ -125,7 +125,7 @@ function About() {
               </div>
             </div>
           </div>
-          <div className={styles.contentContainer3}>
+          <div className={ `${styles.contentContainer3} ${styles.containerPadding}` } >
           <div className={styles.alienLottieContainer}>
                   <Lottie
                     animationData={alien_near_module_section}

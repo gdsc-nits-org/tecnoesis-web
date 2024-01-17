@@ -498,10 +498,14 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   .contentContainer3 {
     padding-top: 3rem;
     padding-bottom: 0;
+  }
+  .containerPadding{
+    padding-top: 4rem;
+
   }
   .eventText3 {
     text-align: justify;
@@ -514,12 +518,14 @@
     display: none;
   }
   .alienLottieContainer{
-    top:unset;
+    top:3vh;
+    width: 28vh;
   }
   .buttonContainer{
     font-size: 1.5vh;
     padding-top: 6vh;
   }
+  
 }
 @media screen and (max-width: 480px) {
   .eventText3 {

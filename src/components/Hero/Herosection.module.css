@@ -42,10 +42,13 @@
   height: 100%;
   transform: rotate(-90deg);
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   .tecnoLogo {
     width: 85%;
     margin-bottom: 3rem;
+  }
+  .arrowLottieContainer{
+    bottom: 4vh;
   }
 }
 @media screen and (max-width: 450px) {
