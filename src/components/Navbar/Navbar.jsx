@@ -5,8 +5,8 @@ import { Link } from "react-scroll";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import { UserContext } from "../../globals/authprovider";
-import { useContext } from "react";
+// import { UserContext } from "../../globals/authprovider";
+// import { useContext } from "react";
 // import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const { signup, signin } = useContext(UserContext);
+  // const { signup, signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&

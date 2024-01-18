@@ -156,9 +156,9 @@ const AuthProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        // user,
+        user,
         setUser,
-        // token,
+        token,
         setToken,
         signup,
         logout,
