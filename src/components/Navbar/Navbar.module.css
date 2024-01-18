@@ -158,7 +158,7 @@
   top: 0;
   left: -100%;
   bottom: 0;
-  width: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1114" height="1174" viewBox="0 0 1114 1174" fill="none"><path d="M0 0H1113.16V1205.76H0V0Z" fill="url(%23paint0_linear_1577_3911)" fill-opacity="0.79"/><defs><linearGradient id="paint0_linear_1577_3911" x1="159.901" y1="542.399" x2="1197.72" y2="542.399" gradientUnits="userSpaceOnUse"><stop offset="0.351217"/><stop offset="0.921918" stop-opacity="0"/></linearGradient></defs></svg>');

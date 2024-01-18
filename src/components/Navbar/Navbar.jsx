@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div className={styles.nav_sidebar}>
+        <div  className={styles.nav_sidebar}>
           <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
             <img src={cross_logo} alt="cross_button" />
           </button>
@@ -52,6 +52,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <div className={styles.button_sign_content}>
                   <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
@@ -66,6 +67,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={-50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
@@ -75,6 +77,7 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/modules"
+                onClick={handleShowNavbar}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
@@ -84,6 +87,7 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/events"
+                onClick={handleShowNavbar}
                 
               >
                 <Button_page>
@@ -99,6 +103,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={-60}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
@@ -108,6 +113,7 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/team"
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>TEAM</div>
@@ -122,6 +128,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
@@ -131,6 +138,7 @@ const Navbar = () => {
             <li>
               <RouterLink
                 to="/contactus"
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
