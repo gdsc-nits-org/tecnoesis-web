@@ -232,12 +232,18 @@
 @media screen and (min-width: 3500px) {
   .container {
     padding: 2vh 6vw;
+    height: 18rem !important;
+  }
+  .navbuttonpage{
+    padding: 1vh 1vw;
+    font-size: 2.5em;
   }
 
   .logo img {
     width: 12rem;
 
   }
+  
 
 }
 
@@ -247,6 +253,7 @@
   }
   .container {
     background-size: cover !important;
+    
   }
   .nav_content {
     padding-bottom: 1rem;
@@ -256,8 +263,12 @@
 @media screen and (min-width: 2500px) {
   .container {
     padding: 2vh 6vw;
+    height: 13rem !important;
   }
- 
+  .navbuttonpage{
+    padding: 0.5vh 0.5vw;
+    font-size: 1.5em;
+  }
   .logo img {
     width: 9rem;
 
