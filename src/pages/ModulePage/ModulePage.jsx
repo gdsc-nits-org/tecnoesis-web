@@ -1,12 +1,13 @@
-import {Module} from "../../components";
+import Module from "../../components/Module/Module";
 
 
 
-export default function ModulePage(){
+const ModulePage = () => {
   return (
     <>
     <Module/>
     </>
-  )
-}
+  );
+};
+export default ModulePage;
 
