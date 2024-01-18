@@ -1,4 +1,4 @@
-import { Home, Error } from "./pages";
+import { Home, Error, Registration } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
 
@@ -11,9 +11,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
