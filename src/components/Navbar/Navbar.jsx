@@ -5,9 +5,9 @@ import { Link } from "react-scroll";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
+import { UserContext } from "../../globals/authprovider";
+import { useContext } from "react";
 // import { Link as RouterLink } from "react-router-dom";
-
-
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -17,6 +17,7 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
+  const { signup, signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -26,7 +27,6 @@ const Navbar = () => {
       setShowNavbar(false);
     }
   };
-
 
   useEffect(() => {
     document.addEventListener("click", closeNavbarOnOutsideClick);
@@ -40,7 +40,10 @@ const Navbar = () => {
     <nav>
       {showNavbar && (
         <div className={styles.nav_sidebar}>
-          <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
+          <button
+            className={`${styles.close_button} ${showNavbar && styles.active}`}
+            onClick={handleShowNavbar}
+          >
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
@@ -123,7 +126,7 @@ const Navbar = () => {
                 offset={-60}
                 duration={500}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button_page>
               </Link>
@@ -137,7 +140,7 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
               </Link>
@@ -151,7 +154,7 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
                 </Button_page>
               </Link>
@@ -165,7 +168,7 @@ const Navbar = () => {
                 offset={50}
                 duration={500}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
               </Link>
@@ -174,17 +177,16 @@ const Navbar = () => {
         </div>
       )}
       <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
-        <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
-          onClick={handleShowNavbar}>
-
+        <div
+          className={`${styles.menu_icon} ${showNavbar && styles.active}`}
+          onClick={handleShowNavbar}
+        >
           <Hamburger
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
             toggled={showNavbar}
           />
-
-
         </div>
 
         <div>
@@ -199,7 +201,17 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}>LOGIN WITH GOOGLE</div>
+                  <div className={styles.navbuttonpage}     
+                    onClick={async () => {
+                      let res = await signin();
+                      if (res == "User not found") {
+                        <Link to="/form" />;
+                        res = await signup(data); //data from frontend form
+                      } else if (res) {
+                        //display error
+                      }
+                    }}
+                  >LOGIN WITH GOOGLE</div>
                 </Button_page>
               </Link>
             </li>

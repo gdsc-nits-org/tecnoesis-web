@@ -21,20 +21,58 @@ const AuthProvider = ({ children }) => {
 
   const auth = getAuth();
 
-  let api_url = BASE_URL + `/api/auth/signup`;
+  let api_url = BASE_URL + `/api/user/signup`;
   let api_url_me = BASE_URL + `/api/user/me`;
 
-  const signup = async () => {
+  const extractUserDetails = (user) => {
+    const { firstName, middleName, lastName } = splitDisplayName(
+      user.displayName
+    );
+    let data = {
+      firstName: firstName,
+      middleName: middleName,
+      lastName: lastName,
+      collegeName: "NITS",
+      email: user.email,
+      imageUrl: user.photoUrl,
+    };
+    return data;
+  };
+  function splitDisplayName(displayName) {
+    const words = displayName.split(" ");
+    const nameCount = words.length;
+
+    if (nameCount === 1) {
+      return {
+        firstName: words[0],
+        middleName: "",
+        lastName: "",
+      };
+    } else if (nameCount === 2) {
+      return {
+        firstName: words[0],
+        middleName: "",
+        lastName: words[1],
+      };
+    } else if (nameCount === 3) {
+      return {
+        firstName: words[0],
+        middleName: words[1],
+        lastName: words[2],
+      };
+    } else {
+      return {
+        firstName: words[0],
+        middleName: words.slice(1, -1).join(" "),
+        lastName: words[words.length - 1],
+      };
+    }
+  }
+
+  const signup = async (data) => {
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({});
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      setUser(user);
-      let token = await user.getIdToken();
-      setToken(token);
-      localStorage.setItem("token", JSON.stringify(token));
-      await signUpbackend(data, token);
+      let newUser = {...user, ...data};
+      await signUpbackend(newUser, token); 
     } catch (error) {
       console.log(error);
     }
@@ -42,16 +80,26 @@ const AuthProvider = ({ children }) => {
 
   const signin = async () => {
     try {
+      await GoogleSignin();
+      await signinbackend(token);
+    } catch (error) {
+      if (error.status === 404) {
+        return "User not found";
+      }
+      return error.data;
+    }
+  };
+
+  const GoogleSignin = async () => {
+    try {
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({});
       const result = await signInWithPopup(auth, provider);
-      console.log(result);
-      const user = result.user;
-      setUser(user);
-      let token = await user.getIdToken();
+      const newUser = extractUserDetails(result.user.reloadUserInfo);
+      setUser(newUser);
+      let token = await result.user.getIdToken();
       setToken(token);
       localStorage.setItem("token", JSON.stringify(token));
-      await signinbackend(token);
     } catch (error) {
       console.log(error);
     }
@@ -64,14 +112,6 @@ const AuthProvider = ({ children }) => {
     navigate("/");
   };
 
-  const data = {
-    username: "",
-    firstName: "",
-    lastName: "",
-    collegeName: "",
-    email: "",
-    phoneNumber: "",
-  };
 
   const signinbackend = async (token) => {
     const header = {
@@ -116,9 +156,9 @@ const AuthProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        user,
+        // user,
         setUser,
-        token,
+        // token,
         setToken,
         signup,
         logout,
@@ -129,5 +169,5 @@ const AuthProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
-
+export { UserContext };
 export default AuthProvider;
