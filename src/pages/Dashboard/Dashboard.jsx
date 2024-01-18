@@ -14,6 +14,9 @@ import statusData from "../../assets/statusData";
 import camera from "/images/camera.svg";
 import vector3 from "/images/Vector3.png";
 import vector4 from "/images/Vector4.png";
+import ellipse2 from "/images/Ellipse2.svg"
+import img123456 from "/images/img123456.jpg"
+
 
 
 
@@ -63,7 +66,7 @@ export default function Dashboard() {
     }, [isExpanded]);
     
     const trimText = (text) => {
-      return text.length > 6 ? text.slice(0, 6) : text;
+      return text.length > 10 ? text.slice(0, 10) : text;
   };
     
     return (
@@ -72,7 +75,7 @@ export default function Dashboard() {
     <div className={styles.texture}>
    <div className={styles.left}>
     <div className={styles.image}>
-        <img src={profile} alt="" />
+        <img className={styles.main_img} src={img123456} alt="" />
         <img className={styles.camera} src={camera} alt="" />
     </div>
     <div className={styles.profile}>
@@ -292,6 +295,7 @@ export default function Dashboard() {
 
     </div>
     </div>
+    <div className={styles.pink_shade}><img src={ellipse2} alt="" /></div>
     </div>
   
     
