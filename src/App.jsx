@@ -1,7 +1,6 @@
-import { Error, Home} from "./pages";
+import { Error, Home, ModulePage} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
-import ModulePage from "./pages/ModulePage/ModulePage";
 
 import "./App.css";
 
