@@ -1,5 +1,6 @@
 .container {
   width: 100vw;
+  height: var(--navbar-height);
   margin: 0 auto;
   padding: 0vh 5vw;
   display: flex;
@@ -221,6 +222,7 @@
   .nav_logo {
     display: block;
     width: 5rem;
+    padding-top: 0.5rem;
     padding-bottom: 1.5rem;
 
   }
@@ -230,11 +232,30 @@
 @media screen and (min-width: 3500px) {
   .container {
     padding: 2vh 6vw;
+    height: 18rem !important;
+  }
+  .navbuttonpage_side{
+    width: 60rem;
+    height: 8rem;
+    padding-top: 1.2rem;
+    font-size: 3rem;
+  }
+  .close_button{
+    width: 20rem;
+    height: 10rem;
+    left: 2rem;
+  }
+  .navbuttonpage{
+    padding: 1vh 1vw;
+    font-size: 2.5em;
   }
 
   .logo img {
     width: 12rem;
 
+  }
+  .menu_icon{
+    
   }
 
 }
@@ -245,6 +266,7 @@
   }
   .container {
     background-size: cover !important;
+    
   }
   .nav_content {
     padding-bottom: 1rem;
@@ -254,8 +276,28 @@
 @media screen and (min-width: 2500px) {
   .container {
     padding: 2vh 6vw;
+    height: 13rem !important;
   }
- 
+  .navbuttonpage_side{
+    width: 28rem;
+    height: 5rem;
+    padding-top: 1.2rem;
+    font-size: 2rem;
+  }
+  .close_button{
+    width: 20rem;
+    height: 10rem;
+    left: 2rem;
+  }
+  .navbuttonpage{
+    padding: 1vh 1vw;
+    font-size: 2.5em;
+  }
+
+  .navbuttonpage{
+    padding: 0.5vh 0.5vw;
+    font-size: 1.5em;
+  }
   .logo img {
     width: 9rem;
 
