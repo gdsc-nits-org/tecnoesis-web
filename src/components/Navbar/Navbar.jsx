@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div  className={styles.nav_sidebar}>
+        <div  className={styles.nav_sidebar} onClick={handleShowNavbar}>
           <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
             <img src={cross_logo} alt="cross_button" />
           </button>
@@ -148,15 +148,16 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
+      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`} >
         <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
           onClick={handleShowNavbar}>
 
-          <Hamburger
+          <Hamburger className={styles.hambur}
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
             toggled={showNavbar}
+            size={window.innerWidth >= 3500 ? 70 : 30}
           />
 
 
