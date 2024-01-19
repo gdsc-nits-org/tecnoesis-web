@@ -76,7 +76,7 @@ export default function Dashboard() {
    <div className={styles.left}>
     <div className={styles.image}>
         <img className={styles.main_img} src={img123456} alt="" />
-        <img className={styles.camera} src={camera} alt="" />
+        
     </div>
     <div className={styles.profile}>
         <div className={styles.name}>

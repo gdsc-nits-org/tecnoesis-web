@@ -42,9 +42,7 @@ backdrop-filter: blur(25.4000000953674316px);
     flex: 3;
     justify-content: center;
     align-items: center;
-    display: inline-block;
-    position: relative;
-    
+    display: flex;
     
 }
 .main_img{
@@ -58,11 +56,7 @@ margin: 3rem 2rem;
 
    
 }
-.camera{
-    position:absolute;
-    right: 19%;
-    bottom: 25%;
-}
+
 .profile{
     flex: 5;
     flex-direction: column;
@@ -427,7 +421,7 @@ justify-content: center;
 align-items: center;
 font-family: "PixeloidSans";
 margin-bottom: 1.2rem;
-margin-top: 0.9rem;
+margin-top: 2.8rem;
 transition: all 200ms ease-in-out;
 }
 .pink_shade{
@@ -440,6 +434,9 @@ position: absolute;
 @media (max-width:768px) {
 .buttons_responsive{
     display: flex;
+}
+.left{
+    padding-right: 0;
 }
 .profile{
     padding-left: 0.6rem;
@@ -466,7 +463,7 @@ position: absolute;
     width: 100%;
 }
 .events{
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 100%;
 }
 .expanded_content{
@@ -486,11 +483,7 @@ padding-right: 0.2rem;
 padding-left: 0.3rem;
 padding-right: 0.2rem;
 }
-.lottie{
-    height: 100vh;
-    inset: 0; 
-    width: 100vw;
-}
+
 }
 @media (width<=1400px)and(width>769px){
     .expanded_content{
@@ -526,9 +519,31 @@ padding-right: 0.2rem;
         font-size: 0.8rem;
     }
 }
-@media (max-width:281px){
+@media(max-width:388px){
+    .buttons_responsive{
+        flex-direction: column;
+
+    }
+    .button2{
+        padding-left:1.9rem ;
+        padding-right: 1.9rem;
+    }
+}
+@media(min-width:769px)and (max-width:821px){
+    .button1{
+        padding-left:0.3rem;
+        padding-right: 0.3rem;
+    }
+}
+@media (max-width:300px){
     .event_title{
         font-size: 0.6rem;
+    }
+    .buttons_responsive{
+        flex-direction: column;
+    }
+    .events{
+        width: 100%;
     }
     .event_team{
         font-size: 0.6rem;
@@ -602,11 +617,83 @@ th{
         height: 100vh;
     }
     .texture{
-        width: 50%;
-        height: 60%;
+        width: 65%;
+     backdrop-filter: blur(320px);
+     padding: 2rem;
+    }
+    .main_img{
+        width: 18.25rem;
+        height: 18.25rem;
+    }
+    .repeating_box{
+        border: 3px dashed #FFF;
+    }
+    .profile_text{
+        font-size: 3.3rem;
+      margin-left: 1.5rem;
+    }
+    .profile{
+        padding-top: 1.5rem;
+    }
+    
+    .profile_icons{
+        width: 2.9rem;
+        height: 2.9rem;
+        margin-left: 1.6rem;
+    }
+    .left{
+        padding-right: 0;
+    }
+    .button1{
+        padding: 1.6rem 2.9rem;
+        font-size: 2rem;
+    }
+    .button2{
+        padding: 1.6rem 3.5rem;
+        font-size: 2rem;
+    }
+    .buttons{
+        margin-top: 3.6rem;
     }
     .events{
-        width: 50%;
+        width: 75%;
+        height: 55rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        border: 3px solid rgba(150, 150, 150, 0.81);
+    }
+    .heading p{
+        font-size: 3.3rem;
+    }
+    .heading img{
+        width: 2rem;
+    }
+    .event_title{
+        font-size: 2.5rem;
+       
+    }
+    .middle{
+        padding-left: 1rem;
+    }
+    .event_team{
+        font-size: 2rem;
+    }
+    .end_div p{
+padding-left: 2.9rem;
+font-size: 2rem;
+    }
+    th{
+        font-size: 2.1rem;
+    }
+    td{
+        font-size: 2rem;
+    }
+    .end_div2{
+        padding-left: 6rem;
+    }
+    .end_div img{
+        width: 1.4rem;
+
     }
 }
 @media(max-width:410px){
@@ -623,5 +710,13 @@ th{
     .main_img{
         width: 8.4rem;
         height: 8.4rem;
+    }
+}
+@media(max-width:600px){
+    .events{
+        margin-left:1rem;
+        margin-right: 1rem;
+        margin-top: 2rem;
+        width: 92%;
     }
 }
