@@ -21,8 +21,9 @@ const AuthProvider = ({ children }) => {
 
   const auth = getAuth();
 
-  let api_url = BASE_URL + `/api/user/signup`;
-  let api_url_me = BASE_URL + `/api/user/me`;
+  const BASE_URL = `http://localhost:5001`;
+  let api_url = `${BASE_URL}/api/auth/signup`;
+  let api_url_me = `${BASE_URL}api/user/me`;
 
   const extractUserDetails = (user) => {
     const { firstName, middleName, lastName } = splitDisplayName(
@@ -71,8 +72,8 @@ const AuthProvider = ({ children }) => {
 
   const signup = async (data) => {
     try {
-      let newUser = {...user, ...data};
-      await signUpbackend(newUser, token); 
+      let newUser = { ...user, ...data };
+      let res = await signUpbackend(newUser, token);
     } catch (error) {
       console.log(error);
     }
@@ -83,7 +84,7 @@ const AuthProvider = ({ children }) => {
       await GoogleSignin();
       await signinbackend(token);
     } catch (error) {
-      if (error.status === 404) {
+      if (error.response.status === 404) {
         return "User not found";
       }
       return error.data;
@@ -91,18 +92,14 @@ const AuthProvider = ({ children }) => {
   };
 
   const GoogleSignin = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({});
-      const result = await signInWithPopup(auth, provider);
-      const newUser = extractUserDetails(result.user.reloadUserInfo);
-      setUser(newUser);
-      let token = await result.user.getIdToken();
-      setToken(token);
-      localStorage.setItem("token", JSON.stringify(token));
-    } catch (error) {
-      console.log(error);
-    }
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({});
+    const result = await signInWithPopup(auth, provider);
+    const newUser = extractUserDetails(result.user.reloadUserInfo);
+    setUser(newUser);
+    let token = await result.user.getIdToken();
+    setToken(token);
+    localStorage.setItem("token", JSON.stringify(token));
   };
 
   const logout = async () => {
@@ -112,21 +109,16 @@ const AuthProvider = ({ children }) => {
     navigate("/");
   };
 
-
   const signinbackend = async (token) => {
     const header = {
       authorization: `Bearer ${token}`,
     };
-    try {
-      let res = await axios.get(api_url_me, {
-        headers: header,
-      });
-      if (res.ok) {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        setUser(res.data);
-      }
-    } catch (error) {
-      throw new Error("User not found");
+    let res = await axios.get(api_url_me, {
+      headers: header,
+    });
+    if (res.ok) {
+      localStorage.setItem("user", JSON.stringify(res.data));
+      setUser(res.data);
     }
   };
 

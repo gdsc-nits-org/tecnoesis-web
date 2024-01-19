@@ -1,14 +1,14 @@
 import { Home, Error } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
-// import UserContext from "./globals/authprovider";
+import UserContext from "./globals/authprovider";
 import Form from "./pages/Form/Form";
 import "./App.css";
 
 function App() {
   return (
     <>
-      {/* <UserContext> */}
+      <UserContext>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
           <Route path="/form" element={<Form />} />
         </Routes>
         <Footer />
-      {/* </UserContext> */}
+      </UserContext>
     </>
   );
 }

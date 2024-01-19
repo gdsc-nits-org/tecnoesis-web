@@ -5,19 +5,21 @@ import { Link } from "react-scroll";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-// import { UserContext } from "../../globals/authprovider";
-// import { useContext } from "react";
+import { UserContext } from "../../globals/authprovider";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 // import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  // const { signup, signin } = useContext(UserContext);
+  const {signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -201,17 +203,19 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}     
+                  <div
+                    className={styles.navbuttonpage}
                     onClick={async () => {
                       let res = await signin();
                       if (res == "User not found") {
-                        <Link to="/form" />;
-                        res = await signup(data); //data from frontend form
+                        // navigate("/signup")
                       } else if (res) {
                         //display error
                       }
                     }}
-                  >LOGIN WITH GOOGLE</div>
+                  >
+                    LOGIN WITH GOOGLE
+                  </div>
                 </Button_page>
               </Link>
             </li>
