@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "./slick.css"; 
 import "./slick-theme.css";
 import axios from "axios";
+import data from './data.json';
 // import "slick-carousel/slick/slick.css"; 
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -114,11 +115,11 @@ const Module = () => {
   useEffect(() => {
     const getModules = async () => {
       try {
-        const response = await axios.get('url');
-         console.log(response);
+        const response = await axios.get('https://tecnoesis-api.onrender.com/api/module/');
         const jsonData = response.data;
+        console.log(jsonData.msg);
 
-        setModulesData(jsonData);
+        setModulesData(jsonData.msg);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -126,81 +127,118 @@ const Module = () => {
 
     getModules();
   }, []); 
+  // const modulesData=data.msg; 
+  // console.log(modulesData);
      
-  const sections = [
-    { id: 'section1', text: 'ROBOWARS' },
-    { id: 'section2', text: 'V-WARS' },
-    { id: 'section3', text: 'SHOWCASE' },
-  ];
   
-  const moduleData = [
-    { content: 'ROBOWAR', imgSrc: '/elements/module_page_frame.svg' },
-    { content: 'ROBOWAR', imgSrc: '/elements/module_page_frame.svg' },
-    { content: 'ROBOWAR', imgSrc: '/elements/module_page_frame.svg' },
-  ];
-  const modules = [
-    { id: 1, section: 'section1', name: 'Robotron', events: [handleEvent1, handleEvent11], showRing: showRing1 },
-    { id: 2, section: 'section2', name: 'V-Wars', events: [handleEvent2, handleEvent22], showRing: showRing2 },
-    { id: 3, section: 'section3', name: 'Showcase', events: [handleEvent3, handleEvent33], showRing: showRing3 },
-    { id: 4, name: 'Amazers', events: [handleEvent4, handleEvent44], showRing: showRing4 },
-    { id: 5, name: 'Cyberwrap', events: [handleEvent5, handleEvent55], showRing: showRing5 },
-    { id: 6, name: 'Myndsnare', events: [handleEvent6, handleEvent66], showRing: showRing6 },
-    { id: 7, name: 'Smartcity', events: [handleEvent7, handleEvent77], showRing: showRing7 },
-  ];
+  const handleEvent= [[handleEvent1,handleEvent11],[handleEvent2,handleEvent22],[handleEvent3,handleEvent33],[handleEvent4,handleEvent44],[handleEvent5,handleEvent55],[handleEvent6,handleEvent66],[handleEvent7,handleEvent77]];
+  const showRing = [showRing1, showRing2,showRing3,showRing4,showRing5,showRing6,showRing7 ]
+
+
+  for (let i = 0; i < modulesData.length; i++) {
+    modulesData[i].sequence = i + 1;
+  }
+  console.log(modulesData);
   return (
     <>
       <div className={styles.boxContainerParent} >
         
 
-<div className={styles.boxContainer}>
-      {sections.map((section) => (
-        <div key={section.id} id={section.id} className={styles.moduleContainer}>
-          <div className={styles.modulestext}>{section.text}</div>
+{/* <div className={styles.boxContainer}>
+      {modulesData.map((moduleName) => (
+        <div key={moduleName.id} id={moduleName.id} className={styles.moduleContainer}>
+          <div className={styles.modulestext}>{moduleName.name}</div>
 
           {isSmallScreen ? (
             <div className={styles.moduleFrames}>
               <Slider {...settings}>
-                {moduleData.map((module, index) => (
-                  <div key={index} className={styles.moduleImg}>
+                {moduleName.map((event) => (
+                  <div key={event.id} className={styles.moduleImg}>
                     <div className={styles.moduleImgInContent}>
                       <img
-                        src={module.imgSrc}
+                        src='/elements/module_page_frame.svg'
                         alt={`img${index + 1}`}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     </div>
                     <div className={styles.moduleImgContent}>
-                    <div className={styles.subModules}>{module.content}</div></div>
+                    <div className={styles.subModules}>{event.name}</div></div>
                   </div>
                 ))}
               </Slider>
             </div>
           ) : (
             <div className={styles.moduleFrames}>
-              {moduleData.map((module, index) => (
-                <div key={index} className={styles.moduleImg}>
+              {moduleName.map((event) => (
+                <div key={event.id} className={styles.moduleImg} style={''}>
                   <div className={styles.moduleImgInContent}>
                     <img
-                      src={module.imgSrc}
+                      src='/elements/module_page_frame.svg'
                       alt={`img${index + 1}`}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
                   <div className={styles.moduleImgContent}>
-                    <div className={styles.subModules}>{module.content}</div></div>
+                    <div className={styles.subModules}>{event.name}</div></div>
                 </div>
               ))}
             </div>
           )}
         </div>
       ))}
+    </div> */}
+    <div className={styles.boxContainer}>
+  {modulesData.map((moduleName) => (
+    <div key={moduleName.id} id={moduleName.id} className={styles.moduleContainer}>
+      <div className={styles.modulestext}>{moduleName.name}</div>
+
+      {isSmallScreen ? (
+        <div className={styles.moduleFrames}>
+          <Slider {...settings}>
+            {moduleName.events.map((event) => (
+              <div key={event.id} className={styles.moduleImg} style={{ backgroundImage: `url(${event.posterImage})` }}>
+                <div className={styles.moduleImgInContent} style={{ backgroundImage: `url(${event.posterImage})` ,backgroundSize:'cover'}}>
+                  <img
+                    src='/elements/module_page_frame.svg'
+                    alt={`img${event.id}`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+                <div className={styles.moduleImgContent}>
+                  <div className={styles.subModules}>{event.name}</div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      ) : (
+        <div className={styles.moduleFrames}>
+          {moduleName.events.map((event) => (
+            <div key={event.id} className={styles.moduleImg} style={{ backgroundImage: `url(${event.posterImage})` }}>
+              <div className={styles.moduleImgInContent}>
+                <img
+                  src='/elements/module_page_frame.svg'
+                  alt={`img${event.id}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div className={styles.moduleImgContent}>
+                <div className={styles.subModules}>
+                  <div style={{overflow: 'hidden' , textOverflow:'ellipsis',maxWidth:'13ch'}}>{event.name}</div></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
+  ))}
+</div>
+
 
         
 
-<div className={styles.rightFrameParent}>
+{/* <div className={styles.rightFrameParent}>
       <div className={styles.rightFrame}>
-        {/* <img src="/elements/module_page_right_frame.svg" alt="" className={styles.rightFrameBg} /> */}
         <div className={styles.moduleNamesHeading}>MODULES</div>
 
         {modules.map(({ id, section, name, events, showRing }) => (
@@ -214,6 +252,26 @@ const Module = () => {
               className={`${styles.lottieAnimation} ${showRing ? '' : styles.lottieAnimation2}`}
             />{" "}
           </div>
+        ))}
+      </div>
+    </div> */}
+
+<div className={styles.rightFrameParent}>
+      <div className={styles.rightFrame}>
+        <div className={styles.moduleNamesHeading}>MODULES</div>
+
+        {modulesData.map((moduleName) => (
+          <div key={moduleName.id} className={styles.moduleName}>
+            <a href={`#${moduleName.id}`} onMouseOver={handleEvent[moduleName.sequence][0]} onMouseOut={handleEvent[moduleName.sequence][1]} className={styles.link}>
+              {moduleName.name}
+            </a>{" "}
+            <Lottie
+              animationData={module_page_ring_animation}
+              loop={false}
+              className={`${styles.lottieAnimation} ${showRing[moduleName.sequence] ? '' : styles.lottieAnimation2}`}
+            />{" "}
+          </div>
+         
         ))}
       </div>
     </div>
