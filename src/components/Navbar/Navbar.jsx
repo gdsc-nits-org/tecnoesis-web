@@ -7,6 +7,7 @@ import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
 import img123456 from "/images/img123456.jpg";
 
+
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
