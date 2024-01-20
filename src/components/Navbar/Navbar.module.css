@@ -12,7 +12,7 @@
   background: url('/elements/navbg.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: calc(100% + 20px) !important; 
+  background-size: calc(100% + 20px) !important;
   opacity: 1;
   transition: transform 0.5s ease;
 }
@@ -57,8 +57,23 @@
 .nav_logo {
   display: none;
 }
-.register_dock{
+
+.register_dock {
   display: none;
+}
+.nav_profile{
+  padding-bottom: 1.5rem;
+}
+
+.main_img {
+  border-radius: 50%;
+  box-shadow: 0px 0px 54.1px -1px #409fed;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  margin: 3rem 2rem;
+
+
 }
 
 .navbuttonpage {
@@ -180,18 +195,22 @@
 
 
 @media (max-width: 768px) {
-  .nav_links{
+  .nav_links {
     padding-top: 5rem;
   }
-  .register_dock{
+
+  .register_dock {
     display: block;
   }
-  .nav_sidebar{
+
+  .nav_sidebar {
     background-size: contain;
   }
+
   .container {
     background-size: cover !important;
   }
+
   .nav_sidebar {
     justify-content: center;
   }
@@ -234,18 +253,21 @@
     padding: 2vh 6vw;
     height: 18rem !important;
   }
-  .navbuttonpage_side{
+
+  .navbuttonpage_side {
     width: 60rem;
     height: 8rem;
     padding-top: 1.2rem;
     font-size: 3rem;
   }
-  .close_button{
+
+  .close_button {
     width: 20rem;
     height: 10rem;
     left: 2rem;
   }
-  .navbuttonpage{
+
+  .navbuttonpage {
     padding: 1vh 1vw;
     font-size: 2.5em;
   }
@@ -254,9 +276,6 @@
     width: 12rem;
 
   }
-  .menu_icon{
-    
-  }
 
 }
 
@@ -264,10 +283,12 @@
   .menu_icon {
     padding-bottom: 1rem;
   }
+
   .container {
     background-size: cover !important;
-    
+
   }
+
   .nav_content {
     padding-bottom: 1rem;
   }
@@ -278,26 +299,30 @@
     padding: 2vh 6vw;
     height: 13rem !important;
   }
-  .navbuttonpage_side{
+
+  .navbuttonpage_side {
     width: 28rem;
     height: 5rem;
     padding-top: 1.2rem;
     font-size: 2rem;
   }
-  .close_button{
+
+  .close_button {
     width: 20rem;
     height: 10rem;
     left: 2rem;
   }
-  .navbuttonpage{
+
+  .navbuttonpage {
     padding: 1vh 1vw;
     font-size: 2.5em;
   }
 
-  .navbuttonpage{
+  .navbuttonpage {
     padding: 0.5vh 0.5vw;
     font-size: 1.5em;
   }
+
   .logo img {
     width: 9rem;
 

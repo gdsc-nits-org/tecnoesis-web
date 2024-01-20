@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import { Link as RouterLink } from "react-router-dom";
-
-
+import img123456 from "/images/img123456.jpg";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -27,7 +25,6 @@ const Navbar = () => {
     }
   };
 
-
   useEffect(() => {
     document.addEventListener("click", closeNavbarOnOutsideClick);
 
@@ -39,8 +36,11 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div  className={styles.nav_sidebar} onClick={handleShowNavbar}>
-          <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
+        <div className={styles.nav_sidebar} onClick={handleShowNavbar}>
+          <button
+            className={`${styles.close_button} ${showNavbar && styles.active}`}
+            onClick={handleShowNavbar}
+          >
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
@@ -60,29 +60,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={-50}
-                duration={500}
-                onClick={handleShowNavbar}
-              >
+              <Link to="/#about">
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
                 </Button_page>
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/modules"
-                onClick={handleShowNavbar}
-              >
+              <Link to="/modules" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
             <li>
               <Link
@@ -96,43 +85,36 @@ const Navbar = () => {
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>DASHBOARD</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
             <li>
-              <RouterLink
-                to="/events"
-                onClick={handleShowNavbar}
-                
-              >
+              <Link to="/events" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
             <li>
               <Link
-                to="sponsor"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={-60}
-                duration={500}
-                onClick={handleShowNavbar}
+                to="/"
+                // spy={true}
+                // smooth={true}
+                // hashSpy={true}
+                // offset={-60}
+                // duration={500}
+                // onClick={handleShowNavbar}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button_page>
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/team"
-                onClick={handleShowNavbar}
-              >
-                <Button_page >
+              <Link to="/team" onClick={handleShowNavbar}>
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
             <li>
               <Link
@@ -144,37 +126,34 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
                 </Button_page>
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/contactus"
-                onClick={handleShowNavbar}
-              >
-                <Button_page >
+              <Link to="/contactus" onClick={handleShowNavbar}>
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
           </ul>
         </div>
       )}
-      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`} >
-        <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
-          onClick={handleShowNavbar}>
-
-          <Hamburger className={styles.hambur}
+      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
+        <div
+          className={`${styles.menu_icon} ${showNavbar && styles.active}`}
+          onClick={handleShowNavbar}
+        >
+          <Hamburger
+            className={styles.hambur}
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
             toggled={showNavbar}
             size={window.innerWidth >= 3500 ? 70 : 30}
           />
-
-
         </div>
 
         <div>
@@ -193,6 +172,11 @@ const Navbar = () => {
                 </Button_page>
               </Link>
             </li>
+            {/* <li className={styles.nav_profile}>
+              <a href="">
+                <img className={styles.main_img} src={img123456} alt="" />
+              </a>
+            </li> */}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />
