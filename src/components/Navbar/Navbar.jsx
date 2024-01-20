@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 
 
@@ -39,25 +39,11 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div className={styles.nav_sidebar}>
+        <div  className={styles.nav_sidebar} onClick={handleShowNavbar}>
           <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
-            {/* <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-              >
-                <div className={styles.button_sign_content}>
-                  <div className={styles.btn_signin}>SIGN IN</div>
-                </div>
-              </Link>
-            </li> */}
             <li className={styles.register_dock}>
               <Link
                 to=""
@@ -66,6 +52,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <div className={styles.button_sign_content}>
                   <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
@@ -74,12 +61,13 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="about"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
                 offset={-50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
@@ -87,18 +75,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+              <RouterLink
+                to="/modules"
+                onClick={handleShowNavbar}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
             <li>
               <Link
@@ -136,6 +120,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={-60}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
@@ -143,18 +128,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+              <RouterLink
+                to="/team"
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
             <li>
               <Link
@@ -164,6 +145,7 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
@@ -171,31 +153,28 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+              <RouterLink
+                to="/contactus"
+                onClick={handleShowNavbar}
               >
                 <Button_page >
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
-              </Link>
+              </RouterLink>
             </li>
           </ul>
         </div>
       )}
-      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
+      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`} >
         <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
           onClick={handleShowNavbar}>
 
-          <Hamburger
+          <Hamburger className={styles.hambur}
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
             toggled={showNavbar}
+            size={window.innerWidth >= 3500 ? 70 : 30}
           />
 
 
