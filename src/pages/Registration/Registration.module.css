@@ -11,10 +11,23 @@
 .regCont {
     background: url('https://res.cloudinary.com/dhry5xscm/image/upload/v1705320359/tecnoesis/techno-bg_ssqzdb.svg');
     overflow-x: hidden;
+    background-repeat: no-repeat;
     padding-top: 8rem;
     min-height: 100vh;
     background-color: #000000;
     font-family: PixeloidSans;
+}
+
+@media screen and (min-width:2570px) {
+    .regCont {
+        background-size: cover;
+        padding-top: 18rem;
+    }
+
+    .innerCont {
+        margin: 0 auto;
+        width: 80vw;
+    }
 }
 
 .parent {
@@ -32,6 +45,13 @@
     overflow-y: hidden;
 }
 
+@media screen and (min-width:2570px) {
+    .parent {
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
 .mainHeading {
     color: #ffffff;
     font-size: 1rem;
@@ -44,6 +64,12 @@
     }
 }
 
+@media screen and (min-width:2570px) {
+    .mainHeading {
+        font-size: 6rem;
+    }
+}
+
 .innerCont {
     display: flex;
     flex-direction: column;
@@ -51,8 +77,14 @@
     justify-content: space-around;
 }
 
-.lottieCont {
+.lottieCont .alienComp {
     scale: 0.6;
+}
+
+@media screen and (min-width:2570px) {
+    .lottieCont .alienComp {
+        scale: 3;
+    }
 }
 
 @media screen and (min-width:700px) {
@@ -90,12 +122,25 @@
     }
 }
 
+@media screen and (min-width:2570px) {
+    .memberName {
+        font-size: 4rem;
+    }
+}
+
 .memberInfo {
     display: flex;
     flex-direction: column;
     align-items: start;
     width: 100%;
     padding-left: 0.5rem;
+}
+
+@media screen and (min-width:2570px) {
+    .memberInfo {
+
+        padding-left: 2.5rem;
+    }
 }
 
 .memberInfo .memberInput {
@@ -130,6 +175,8 @@
     padding: 1rem;
 }
 
+
+
 .leftPortion {
     font-size: 0.3rem;
     display: flex;
@@ -142,6 +189,7 @@
 
 
 
+
 @media screen and (min-width:700px) {
     .memberInfo .memberInput {
 
@@ -149,7 +197,12 @@
     }
 }
 
-
+@media screen and (min-width:2570px) {
+    .memberInfo .memberInput {
+        font-size: 4rem;
+        width: 100%;
+    }
+}
 
 .addMember {
     border: 2px solid var(--blue-button-gradient-light, #56F4FD);
@@ -181,6 +234,12 @@
     }
 }
 
+@media screen and (min-width:2570px) {
+    .teamName {
+        font-size: 5rem;
+    }
+}
+
 .teamField {
     background-color: transparent;
     border-bottom: 1px solid #ffffff;
@@ -189,6 +248,12 @@
     border-right: none;
     width: 80%;
     color: #ffffff;
+}
+
+@media screen and (min-width:2570px) {
+    .teamField {
+        font-size: 3.5rem;
+    }
 }
 
 .subCont {
@@ -217,5 +282,13 @@
 @media screen and (min-width:700px) {
     .submit {
         padding: 0.2rem 4.5rem;
+    }
+}
+
+@media screen and (min-width:2570px) {
+    .submit {
+        padding: 1rem 6.5rem;
+        font-size: 4rem;
+        margin-top: 2rem;
     }
 }
