@@ -9,6 +9,7 @@ import "./slick.css";
 import "./slick-theme.css";
 import axios from "axios";
 import data from './data.json';
+// import VITE_BASE_URL from 
 // import "slick-carousel/slick/slick.css"; 
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -115,7 +116,7 @@ const Module = () => {
   useEffect(() => {
     const getModules = async () => {
       try {
-        const response = await axios.get('https://tecnoesis-api.onrender.com/api/module/');
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/module/`);
         const jsonData = response.data;
         console.log(jsonData.msg);
 
