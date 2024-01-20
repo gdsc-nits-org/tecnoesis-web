@@ -31,7 +31,7 @@ const EventDescription = () => {
       <div className={styles.robowars}>
       <Link to="">
       <div className={styles.backIcon}><img  alt="" src={backIcon} /></div></Link>
-         <div className={styles.robowars_img}> <img src={robowarsImage} alt="Robowars"></img></div>
+         <div className={styles.robowars_img}> ROBOWARS</div>
         </div>
     
         <div className={styles.moduleWrapper}>

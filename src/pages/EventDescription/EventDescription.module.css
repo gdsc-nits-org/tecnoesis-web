@@ -30,11 +30,24 @@
     display: flex;
     padding-top: 2rem;
     
+   
   }
    .robowars_img{
-    
-    width: 80%;
-    height: 90%;
+     background: linear-gradient(180deg, #F00 0%, #000 87.46%);  
+ background-clip: text; 
+  -webkit-background-clip: text;  
+ -webkit-text-fill-color: transparent;  
+ -webkit-text-stroke-width: 3.000000238418579;  
+  -webkit-text-stroke-color: #e80a0a;  
+ /* color: rgb(211, 22, 22);  */
+font-family: "PixeloidSans";
+font-size: 580%;
+
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+     width: 100%; 
+    height: 90%; 
   }
    .moduleWrapper{
     flex: 1;
@@ -78,9 +91,10 @@
     line-height: normal;
     padding: 1rem;
     padding-left: 3rem;
-    background-color: #000000d3; 
+    background-color: #00000086; 
     border-radius: 12px; 
     backdrop-filter: blur(59px);  
+    box-shadow: 0 0 20px rgb(0, 0, 0); 
      /* z-index: 4; */
     
    }
@@ -160,6 +174,7 @@ cursor: pointer;
       left: 0.7rem;
       padding-right: 0.3rem;
     }
+   
   }
   @media (min-width: 1500px) {
     .text{
@@ -195,6 +210,7 @@ cursor: pointer;
     .robowars_img{
       width: 120%;
       height: 120%;
+      font-size: 880%;
     }
     .moduleWrapper{
       font-size: 280%;
@@ -211,6 +227,7 @@ cursor: pointer;
     .robowars_img{
       width: 150%;
       height: 140%;
+      font-size: 980%;
     }
     .moduleWrapper{
       font-size: 300%;
@@ -256,5 +273,20 @@ margin-bottom: 3rem;
     .button{
       padding: 2rem 9rem;
       margin-top: 3rem;
+    }
+  }
+  @media(max-width:660px){
+    .robowars_img{
+      font-size: 380%;
+    }
+  }
+  @media(max-width:430px){
+    .robowars_img{
+      font-size: 200%;
+    }
+  }
+  @media(max-width:290px){
+    .backIcon{
+      top: 2.7rem;
     }
   }
