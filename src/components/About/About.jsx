@@ -157,7 +157,7 @@ function About() {
                 <div className={styles.buttonContainer}>
                 <Link to="/modules">
                   <Button>
-                    Show Modules
+                   <a className={styles.moduleButton}>PLAY MODULES</a>
                   </Button>
                   </Link>
                 </div>

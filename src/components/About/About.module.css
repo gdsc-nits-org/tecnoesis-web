@@ -3,7 +3,7 @@
 .bgContainer {
   position: relative;
   overflow: hidden;
-  background-image: url("/images/homepageBg.png");
+  background-image: url("/images/homebg.jpeg");
   background-repeat: repeat;
   background-size: contain;
   font-size: 8vh;
@@ -460,6 +460,11 @@
   padding-top: 6vw;
 
 }
+.moduleButton{
+  font-family: PixeloidSans, sans;
+
+}
+
 @media screen and (min-width: 1180px){
   .contentContainer3{
     padding-top: 7rem;
