@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Form />} />
+        <Route path="/signup" element={<Form/>} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
