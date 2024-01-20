@@ -21,9 +21,8 @@ const AuthProvider = ({ children }) => {
 
   const auth = getAuth();
 
-  const BASE_URL = `http://localhost:5001`;
-  let api_url = `${BASE_URL}/api/auth/signup`;
-  let api_url_me = `${BASE_URL}api/user/me`;
+  let api_url = `${import.meta.env.BASE_URL}/api/auth/signup`;
+  let api_url_me = `${import.meta.env.BASE_URL}api/user/me`;
 
   const extractUserDetails = (user) => {
     const { firstName, middleName, lastName } = splitDisplayName(
@@ -84,8 +83,8 @@ const AuthProvider = ({ children }) => {
       await GoogleSignin();
       await signinbackend(token);
     } catch (error) {
-      if (error.response.status === 404) {
-        return "User not found";
+      if (error.response.status !== 200) {
+        throw new Error("User not found");
       }
       return error.data;
     }

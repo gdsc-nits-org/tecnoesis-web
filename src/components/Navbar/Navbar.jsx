@@ -19,7 +19,7 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const {signin } = useContext(UserContext);
+  const { signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -80,10 +80,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/modules"
-                onClick={handleShowNavbar}
-              >
+              <RouterLink to="/modules" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button_page>
@@ -133,10 +130,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/team"
-                onClick={handleShowNavbar}
-              >
+              <RouterLink to="/team" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
@@ -158,10 +152,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/contactus"
-                onClick={handleShowNavbar}
-              >
+              <RouterLink to="/contactus" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
@@ -170,11 +161,13 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`} >
-        <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
-          onClick={handleShowNavbar}>
-
-          <Hamburger className={styles.hambur}
+      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
+        <div
+          className={`${styles.menu_icon} ${showNavbar && styles.active}`}
+          onClick={handleShowNavbar}
+        >
+          <Hamburger
+            className={styles.hambur}
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
@@ -198,11 +191,11 @@ const Navbar = () => {
                   <div
                     className={styles.navbuttonpage}
                     onClick={async () => {
-                      let res = await signin();
-                      if (res == "User not found") {
-                        // navigate("/signup")
-                      } else if (res) {
+                      try {
+                        let res = await signin();
                         //display error
+                      } catch (err) {
+                        // navigate("/signup")
                       }
                     }}
                   >
