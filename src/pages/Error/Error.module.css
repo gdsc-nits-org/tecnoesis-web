@@ -1,3 +1,55 @@
-.error {
-  color: red;
+.error_container{
+  position: relative;
+  overflow: hidden;
+}
+.txt{
+  position: absolute;
+  top: 0;
+  margin-top: 10rem;
+  margin-left: 22rem;
+  left: 0;
+  z-index: 5;
+}
+.sub_txt{
+  position: absolute;
+  top: 0;
+  margin-top: 10rem;
+  margin-left: 10rem;
+  left: 0;
+  font-family: PixeloidSans;
+}
+
+.error_btn{
+  position: absolute;
+  top: 0;
+  margin-top: 38rem;
+  margin-left: 36em;
+  left: 0;  
+  font-family: PixeloidSans;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .txt {
+    padding: 5rem;
+    margin-top: 12rem;
+    margin-left: 0.5rem;
+  }
+
+  .sub_txt {
+    font-size:small!important;
+    margin-top: 7rem;
+    margin-left: 4rem;
+  }
+
+  .error_btn {
+    font-size:x-small!important;
+    margin-top: 30rem;
+    margin-left: 4em;
+  }
+  .btn_error_container{
+    width: 75%;
+  }
 }
