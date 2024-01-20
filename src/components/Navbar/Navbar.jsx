@@ -5,18 +5,21 @@ import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
+import { UserContext } from "../../globals/authprovider";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
-
-
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
+  const { signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -26,7 +29,6 @@ const Navbar = () => {
       setShowNavbar(false);
     }
   };
-
 
   useEffect(() => {
     document.addEventListener("click", closeNavbarOnOutsideClick);
@@ -39,8 +41,11 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div  className={styles.nav_sidebar} onClick={handleShowNavbar}>
-          <button className={`${styles.close_button} ${showNavbar && styles.active}`} onClick={handleShowNavbar}>
+        <div className={styles.nav_sidebar}>
+          <button
+            className={`${styles.close_button} ${showNavbar && styles.active}`}
+            onClick={handleShowNavbar}
+          >
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
@@ -75,10 +80,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/modules"
-                onClick={handleShowNavbar}
-              >
+              <RouterLink to="/modules" onClick={handleShowNavbar}>
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button_page>
@@ -122,17 +124,14 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button_page>
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/team"
-                onClick={handleShowNavbar}
-              >
-                <Button_page >
+              <RouterLink to="/team" onClick={handleShowNavbar}>
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button_page>
               </RouterLink>
@@ -147,17 +146,14 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page >
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
                 </Button_page>
               </Link>
             </li>
             <li>
-              <RouterLink
-                to="/contactus"
-                onClick={handleShowNavbar}
-              >
-                <Button_page >
+              <RouterLink to="/contactus" onClick={handleShowNavbar}>
+                <Button_page>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
                 </Button_page>
               </RouterLink>
@@ -165,19 +161,19 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`} >
-        <div className={`${styles.menu_icon} ${showNavbar && styles.active}`}
-          onClick={handleShowNavbar}>
-
-          <Hamburger className={styles.hambur}
+      <div className={`${styles.container} ${showNavbar ? styles.moveUp : ""}`}>
+        <div
+          className={`${styles.menu_icon} ${showNavbar && styles.active}`}
+          onClick={handleShowNavbar}
+        >
+          <Hamburger
+            className={styles.hambur}
             color="linear-gradient(to bottom, #41D4E8, #0C6CA5)"
             easing="ease-in"
             rounded
             toggled={showNavbar}
             size={window.innerWidth >= 3500 ? 70 : 30}
           />
-
-
         </div>
 
         <div>
@@ -192,7 +188,19 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}>LOGIN WITH GOOGLE</div>
+                  <div
+                    className={styles.navbuttonpage}
+                    onClick={async () => {
+                      try {
+                        let res = await signin();
+                        //display error
+                      } catch (err) {
+                        // navigate("/signup")
+                      }
+                    }}
+                  >
+                    LOGIN WITH GOOGLE
+                  </div>
                 </Button_page>
               </Link>
             </li>
