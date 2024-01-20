@@ -1,4 +1,4 @@
-import { Home, Error, Dashboard,EventDescription } from "./pages";
+import { Home, Error, Dashboard,EventDescription , Form} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
 import UserContext from "./globals/authprovider";
@@ -13,6 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/event" element={<EventDescription/>} />
+          <Route path="/signup" element={<Form/>}/>
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

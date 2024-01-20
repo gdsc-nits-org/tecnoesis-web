@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState , useEffect} from "react";
 import styles from "./Form.module.css";
+import { UserContext } from "../../globals/authprovider";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+
+  const {signup} = useContext(UserContext);
+  const navigate = useNavigate();
+
+
   const [formData, setFormData] = useState({
     email: '',
     ScholarId: '',
@@ -24,10 +32,21 @@ const Form = () => {
     return !isNaN(parseFloat(input)) && isFinite(input);
   };
 
+const userSignup=()=>{
+  signup(formData.email,formData.ScholarId,formData.Phone)
+  .then((res)=>{
+    console.log(res);
+    navigate("/dashboard");
+  })
+  .catch((err)=>{
+    console.log(err);
+    navigate("/")
+  })
+}
+
   useEffect(() => {
-    console.log(formError);
     if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(formData);
+      userSignup();
     }
   }, [formError]);
 
