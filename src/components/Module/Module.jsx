@@ -8,10 +8,9 @@ import Slider from "react-slick";
 import "./slick.css"; 
 import "./slick-theme.css";
 import axios from "axios";
+import { Link } from "react-scroll";
 import data from './data.json';
-// import VITE_BASE_URL from 
-// import "slick-carousel/slick/slick.css"; 
-// import "slick-carousel/slick/slick-theme.css";
+
 
 
 const Module = () => {
@@ -130,64 +129,23 @@ const Module = () => {
   }, []); 
   // const modulesData=data.msg; 
   // console.log(modulesData);
+
      
   
   const handleEvent= [[handleEvent1,handleEvent11],[handleEvent2,handleEvent22],[handleEvent3,handleEvent33],[handleEvent4,handleEvent44],[handleEvent5,handleEvent55],[handleEvent6,handleEvent66],[handleEvent7,handleEvent77]];
   const showRing = [showRing1, showRing2,showRing3,showRing4,showRing5,showRing6,showRing7 ]
 
 
-  for (let i = 0; i < modulesData.length; i++) {
+  for (let i = 0; i < modulesData?.length; i++) {
     modulesData[i].sequence = i + 1;
   }
-  console.log(modulesData);
+  // console.log(modulesData);
   return (
     <>
       <div className={styles.boxContainerParent} >
         
 
-{/* <div className={styles.boxContainer}>
-      {modulesData.map((moduleName) => (
-        <div key={moduleName.id} id={moduleName.id} className={styles.moduleContainer}>
-          <div className={styles.modulestext}>{moduleName.name}</div>
 
-          {isSmallScreen ? (
-            <div className={styles.moduleFrames}>
-              <Slider {...settings}>
-                {moduleName.map((event) => (
-                  <div key={event.id} className={styles.moduleImg}>
-                    <div className={styles.moduleImgInContent}>
-                      <img
-                        src='/elements/module_page_frame.svg'
-                        alt={`img${index + 1}`}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                    </div>
-                    <div className={styles.moduleImgContent}>
-                    <div className={styles.subModules}>{event.name}</div></div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          ) : (
-            <div className={styles.moduleFrames}>
-              {moduleName.map((event) => (
-                <div key={event.id} className={styles.moduleImg} style={''}>
-                  <div className={styles.moduleImgInContent}>
-                    <img
-                      src='/elements/module_page_frame.svg'
-                      alt={`img${index + 1}`}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  </div>
-                  <div className={styles.moduleImgContent}>
-                    <div className={styles.subModules}>{event.name}</div></div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
-    </div> */}
     <div className={styles.boxContainer}>
   {modulesData.map((moduleName) => (
     <div key={moduleName.id} id={moduleName.id} className={styles.moduleContainer}>
@@ -197,7 +155,7 @@ const Module = () => {
         <div className={styles.moduleFrames}>
           <Slider {...settings}>
             {moduleName.events.map((event) => (
-              <div key={event.id} className={styles.moduleImg} style={{ backgroundImage: `url(${event.posterImage})` }}>
+              <div key={event.id} className={styles.moduleImg} >
                 <div className={styles.moduleImgInContent} style={{ backgroundImage: `url(${event.posterImage})` ,backgroundSize:'cover'}}>
                   <img
                     src='/elements/module_page_frame.svg'
@@ -206,8 +164,8 @@ const Module = () => {
                   />
                 </div>
                 <div className={styles.moduleImgContent}>
-                  <div className={styles.subModules}>{event.name}</div>
-                </div>
+                  <div className={styles.subModules}>
+                  <div style={{overflow: 'hidden' , textOverflow:'ellipsis',maxWidth:'13ch'}}>{event.name}</div></div>                </div>
               </div>
             ))}
           </Slider>
@@ -238,24 +196,7 @@ const Module = () => {
 
         
 
-{/* <div className={styles.rightFrameParent}>
-      <div className={styles.rightFrame}>
-        <div className={styles.moduleNamesHeading}>MODULES</div>
 
-        {modules.map(({ id, section, name, events, showRing }) => (
-          <div key={id} className={styles.moduleName}>
-            <a href={`#${section}`} onMouseOver={events[0]} onMouseOut={events[1]} className={styles.link}>
-              {name}
-            </a>{" "}
-            <Lottie
-              animationData={module_page_ring_animation}
-              loop={false}
-              className={`${styles.lottieAnimation} ${showRing ? '' : styles.lottieAnimation2}`}
-            />{" "}
-          </div>
-        ))}
-      </div>
-    </div> */}
 
 <div className={styles.rightFrameParent}>
       <div className={styles.rightFrame}>
@@ -263,9 +204,17 @@ const Module = () => {
 
         {modulesData.map((moduleName) => (
           <div key={moduleName.id} className={styles.moduleName}>
-            <a href={`#${moduleName.id}`} onMouseOver={handleEvent[moduleName.sequence][0]} onMouseOut={handleEvent[moduleName.sequence][1]} className={styles.link}>
-              {moduleName.name}
-            </a>{" "}
+            <Link
+                to={`${moduleName.id}`}
+                spy="true"
+                smooth="true"
+                hashspy="true"
+                offset={-80}
+                duration={400}
+                onMouseOver={handleEvent[moduleName.sequence][0]} onMouseOut={handleEvent[moduleName.sequence][1]} className={styles.link}
+              >{moduleName.name}
+                </Link>
+            
             <Lottie
               animationData={module_page_ring_animation}
               loop={false}

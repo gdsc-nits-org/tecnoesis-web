@@ -55,6 +55,7 @@
     /* background-color: black; */
     color: white;
     /* font-size: 10px; */
+    cursor: pointer;
     position: relative;
     overflow: hidden;
 }
@@ -150,7 +151,7 @@ top: unset;
   width: 16vw;
     /* height: 60.9vw; */
     aspect-ratio:0.328;
-    margin-top: 6.4rem;
+    margin-top: var(--navbar-height);
     font-size: 16vw;
     background-image: url(/elements/module_page_right_frame.svg);
     background-size: contain;
@@ -160,7 +161,7 @@ top: unset;
     flex-direction: column;
     color: white;
     position: sticky;
-    top: 6.4rem;
+    top: var(--navbar-height);
     right: 0;
 }
 .rightFrameBg{
@@ -219,6 +220,7 @@ top: unset;
     text-decoration: none;
     color: white;
     cursor: pointer;
+    top: 7rem;
     /* transition-property: color;
     transition-delay: 0.4s; */
    }
@@ -269,16 +271,16 @@ top: unset;
   }
   }
   @media screen and (max-width: 1200px) {
-    .rightFrame{
+    /* .rightFrame{
       margin-top: 7.2rem;
       top: 7.2rem;
-  }
+  } */
   }
   @media screen and (max-width: 768px) {
-    .rightFrame{
+    /* .rightFrame{
       margin-top: 6.4rem;
       top:6.4rem;
-  }
+  } */
   }
 @media screen and (max-width: 725px) {
     .boxContainer{
@@ -301,7 +303,15 @@ display:block;
     .moduleImgContent{
       height: 14vw;
       bottom: -18vw;
-
+    font-size:2.5vh;
     }
 }
-
+@media screen and (min-width: 2500px) {
+  .boxContainer{
+    padding-top: 13rem;
+  }
+  .rightFrame{
+    margin-top: 13rem;
+    top:13rem;
+}
+}
