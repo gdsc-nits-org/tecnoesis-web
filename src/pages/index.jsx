@@ -1,4 +1,7 @@
 import Home from "./Home/Home";
 import Error from "./Error/Error";
 
-export { Home, Error };
+import Dashboard from "./Dashboard/Dashboard";
+
+
+export { Home, Error,Dashboard};
