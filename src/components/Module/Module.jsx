@@ -127,8 +127,10 @@ const Module = () => {
 
     getModules();
   }, []); 
+
+
+
   // const modulesData=data.msg; 
-  // console.log(modulesData);
 
      
   
