@@ -1,5 +1,6 @@
 import styles from "./Dashboard.module.css";
 import { useState ,useEffect} from "react";
+import {Link} from "react-router-dom";
 import profile from "/images/Profile.png";
 import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
@@ -101,7 +102,7 @@ export default function Dashboard() {
         </div>
         </div>
         <div className={styles.buttons}>
-        <button className={styles.button1}>GO TO HOME</button>
+        <Link to="/" style={{ textDecoration: 'none'}}><button className={styles.button1}>GO TO HOME</button></Link>
         <button className={styles.button2}>LOGOUT</button>
 
     </div>
@@ -290,7 +291,7 @@ export default function Dashboard() {
     </div>
     </div>      
     <div className={styles.buttons_responsive}>
-        <button className={styles.button1}>GO TO HOME</button>
+       <Link to="/" style={{ textDecoration: 'none'}}> <button className={styles.button1}>GO TO HOME</button></Link>
         <button className={styles.button2}>LOGOUT</button>
 
     </div>

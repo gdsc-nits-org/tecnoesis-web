@@ -23,11 +23,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 80%;
-/* position: relative;  */
-background-image: url("/images/Texture.png");
+
+/* background-image: url("/images/Texture.png"); */
 border-radius: 20px;
 z-index: 2;
-backdrop-filter: blur(25.4000000953674316px);
+/* backdrop-filter: blur(320px); */
+background: linear-gradient(113deg, rgba(18, 17, 17, 0.47) 0%, rgba(119, 115, 115, 0.00) 110.84%);
+             
+
+ backdrop-filter: blur(27px); 
+
 
 }
 .left{
@@ -121,6 +126,10 @@ margin-right: 1rem;
     margin-bottom: 1.2rem;
     font-family:"PixeloidSans";
     margin-top: 1rem;
+    text-decoration: none;
+}
+Link{
+text-decoration: none;
 }
 .button1{
     display: flex;
@@ -133,7 +142,7 @@ margin-right: 1rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
     transition: all 200ms ease-in-out;
-
+text-decoration: none;
 }
 .button1:hover,.button3:hover{
     color: black;
