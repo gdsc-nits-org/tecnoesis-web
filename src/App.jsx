@@ -1,4 +1,4 @@
-import { Home, Error } from "./pages";
+import { Home, Error,Dashboard} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
 
@@ -8,10 +8,12 @@ import Form from "./pages/Form/Form";
 function App() {
   return (
     <>
-      <Navbar />
+       <Navbar /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Form/>} />
+        
+        <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

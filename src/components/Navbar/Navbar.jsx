@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Slant as Hamburger } from "hamburger-react";
 import styles from "./Navbar.module.css";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
@@ -85,15 +85,32 @@ const Navbar = () => {
               </RouterLink>
             </li>
             <li>
-              <RouterLink
-                to="/events"
-                onClick={handleShowNavbar}
-                
+              <Link
+                to="/dashboard"
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={500}
+              >
+                <Button_page>
+                  <div className={styles.navbuttonpage_side}>DASHBOARD</div>
+                </Button_page>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to=""
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={50}
+                duration={500}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
                 </Button_page>
-              </RouterLink>
+              </Link>
             </li>
             <li>
               <Link
