@@ -3,7 +3,10 @@ import error_txt from "/elements/404_text.svg"
 // import { Link } from "react-router-dom";
 
 
-const Error = () => {
+const Error = ({ hideNavbar }) => {
+  if (hideNavbar) {
+    hideNavbar();
+  }
   return (
     <div className={styles.error_container}>
       <div className={styles.err_txt}>
