@@ -53,12 +53,6 @@ const Navbar = () => {
             <li className={styles.register_dock}>
               <Link
                 to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-                onClick={handleShowNavbar}
               >
                 <div className={styles.button_sign_content} onClick={async () => {
                   try {
@@ -108,7 +102,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/#sponsor"
               // spy={true}
               // smooth={true}
               // hashSpy={true}
@@ -130,7 +124,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to=""
+                to="/"
                 spy={true}
                 smooth={true}
                 hashSpy={true}
