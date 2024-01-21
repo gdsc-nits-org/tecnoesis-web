@@ -1,14 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Slant as Hamburger } from "hamburger-react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import { UserContext } from "../../globals/authprovider";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link as RouterLink } from "react-router-dom";
+import UserContext from "../../globals/authcontext";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -19,7 +18,7 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const { signin } = useContext(UserContext);
+  const { signin, logout, loggedin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -86,20 +85,22 @@ const Navbar = () => {
                 </Button_page>
               </RouterLink>
             </li>
-            <li>
-              <Link
-                to="/dashboard"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-              >
-                <Button_page>
-                  <div className={styles.navbuttonpage_side}>DASHBOARD</div>
-                </Button_page>
-              </Link>
-            </li>
+            {loggedin && (
+              <li>
+                <Link
+                  to="/dashboard"
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={50}
+                  duration={500}
+                >
+                  <Button_page>
+                    <div className={styles.navbuttonpage_side}>DASHBOARD</div>
+                  </Button_page>
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to=""
@@ -178,31 +179,62 @@ const Navbar = () => {
 
         <div>
           <ul className={styles.nav_content}>
-            <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={0}
-                duration={500}
-              >
-                <Button_page rounded>
-                  <div
-                    className={styles.navbuttonpage}
-                    onClick={async () => {
-                      try {
-                        let res = await signin();
-                      } catch (err) {
-                        navigate("/signup");
-                      }
-                    }}
-                  >
-                    LOGIN WITH GOOGLE
-                  </div>
-                </Button_page>
-              </Link>
-            </li>
+            {loggedin ? (
+              <li>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <Button_page rounded>
+                    <div
+                      className={styles.navbuttonpage}
+                      onClick={async () => {
+                        logout();
+                        toast("Logged out successfully");
+                      }}
+                    >
+                      LOGOUT
+                    </div>
+                  </Button_page>
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <Button_page rounded>
+                    <div
+                      className={styles.navbuttonpage}
+                      onClick={async () => {
+                        const { status, message } = await signin();
+                        console.log(message);
+                        toast(message);
+                        if (status === 200) {
+                          navigate("/dashboard");
+                        } else if (status === 404 || status === 409) {
+                          // if no user exists or username already taken
+                          navigate("/signup");
+                        } else {
+                          navigate("/");
+                        }
+                      }}
+                    >
+                      LOGIN WITH GOOGLE
+                    </div>
+                  </Button_page>
+                </Link>
+              </li>
+            )}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />
