@@ -60,8 +60,14 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <div className={styles.button_sign_content}>
-                  <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                <div className={styles.button_sign_content} onClick={async () => {
+                  try {
+                    let res = await signin();
+                  } catch (err) {
+                    navigate("/signup");
+                  }
+                }}>
+                  <div className={styles.btn_signin} >LOGIN WITH GOOGLE</div>
                 </div>
               </Link>
             </li>
@@ -103,12 +109,12 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                // spy={true}
-                // smooth={true}
-                // hashSpy={true}
-                // offset={-60}
-                // duration={500}
-                // onClick={handleShowNavbar}
+              // spy={true}
+              // smooth={true}
+              // hashSpy={true}
+              // offset={-60}
+              // duration={500}
+              // onClick={handleShowNavbar}
               >
                 <Button_page>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
@@ -164,7 +170,7 @@ const Navbar = () => {
 
         <div>
           <ul className={styles.nav_content}>
-          <li>
+            <li>
               <Link
                 to=""
                 spy={true}
