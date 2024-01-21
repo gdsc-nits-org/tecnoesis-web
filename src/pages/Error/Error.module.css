@@ -55,6 +55,37 @@
 
   }
   .sub_txt{
-    line-height: 3;
+    line-height: 2.5 !important;
+  }
+}
+
+@media screen and (min-width: 2500px){
+  .err_txt{
+    margin-top: 7rem;
+  }
+  .err_txt img{
+    width: 80rem;
+
+  }
+  .sub_txt{
+    font-size: 2rem;
+  }
+  .btn_signin{
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 3500px){
+  .err_txt{
+    margin-top: 30rem;
+  }
+  .err_txt img{
+    width: 100rem;
+
+  }
+  .sub_txt{
+    font-size: 3rem;
+  }
+  .btn_signin{
+    font-size: 3rem;
   }
 }
