@@ -193,9 +193,8 @@ const Navbar = () => {
                     onClick={async () => {
                       try {
                         let res = await signin();
-                        //display error
                       } catch (err) {
-                        // navigate("/signup")
+                        navigate("/signup");
                       }
                     }}
                   >
