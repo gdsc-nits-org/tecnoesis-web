@@ -1,6 +1,9 @@
 import Home from "./Home/Home";
 import Error from "./Error/Error";
-import EventDescription from "./EventDescription/EventDescription";
+import ModulePage from "./ModulePage/ModulePage";
 import Dashboard from "./Dashboard/Dashboard";
+import EventDescription from "./EventDescription/EventDescription";
 
-export { Home, Error, Dashboard, EventDescription};
+
+
+export { Home, Error, Dashboard, ModulePage,EventDescription};
