@@ -6,16 +6,21 @@ import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
 import img123456 from "/images/img123456.jpg";
+import { UserContext } from "../../globals/authprovider";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
+  const { signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -159,7 +164,7 @@ const Navbar = () => {
 
         <div>
           <ul className={styles.nav_content}>
-            <li>
+          <li>
               <Link
                 to=""
                 spy={true}
@@ -169,7 +174,18 @@ const Navbar = () => {
                 duration={500}
               >
                 <Button_page rounded>
-                  <div className={styles.navbuttonpage}>LOGIN WITH GOOGLE</div>
+                  <div
+                    className={styles.navbuttonpage}
+                    onClick={async () => {
+                      try {
+                        let res = await signin();
+                      } catch (err) {
+                        navigate("/signup");
+                      }
+                    }}
+                  >
+                    LOGIN WITH GOOGLE
+                  </div>
                 </Button_page>
               </Link>
             </li>
