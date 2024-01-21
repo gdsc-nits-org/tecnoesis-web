@@ -158,7 +158,10 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 725px) {
+  .bgContainer{
+    background-image: url('/images/homeBgMob.jpeg');
+  }
   .textContainer {
     width: auto;
   }
