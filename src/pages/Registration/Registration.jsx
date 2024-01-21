@@ -1,6 +1,7 @@
 import styles from './Registration.module.css';
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
+const BACKEND_URL = import.meta.env.VITE_BASE_URL;
 const Card = ({ id, setMembers, name }) => {
     const [active, setActive] = useState(false);
     const toggleStatement = useRef(null);
@@ -40,11 +41,12 @@ const Registration = () => {
     const [teamName, setTeamName] = useState("");
     const [members, setMembers] = useState([]);
     const [eventId, seteventId] = useState('65a5849d3232bd1424b3ef55');
+    const [loadingMsg, setloadingMsg] = useState("Loading fields......");
     async function submitForm(e) {
         e.preventDefault();
         let filter = members.filter((item) => item != "");
         // let response = await fetch("https://tecnoesis-api.onrender.com/api/team/event/65a5849d3232bd1424b3ef55/add", {
-        let response = await fetch("http://localhost:4000/api/team/event/65a5849d3232bd1424b3ef55/add", {
+        let response = await fetch(`${BACKEND_URL}/api/team/event/65a5849d3232bd1424b3ef55/add`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -56,19 +58,27 @@ const Registration = () => {
                 "extrainformation": "This team specialises in AI and machine learning projects"
             })
         });
-
-        if (response.status == 200) {
-            console.log(response.status)
+        if (!response) {
+            console.log("Processing");
+        }
+        else {
+            if (response.status == 200) {
+                alert("Successfully registered!!");
+            }
+            else {
+                alert("Problem in registration! Retry after a few minutes.");
+            }
         }
     }
     async function fetchData() {
         // let response = await fetch("https://tecnoesis-api.onrender.com/api/event", { method: 'GET' });
-        let response = await fetch("http://localhost:4000/api/event", { method: 'GET' });
+        let response = await fetch(`${BACKEND_URL}/api/event`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let arrFilter = arr.filter((item) => item.id = eventId);
         let msg = arrFilter[0].maxTeamSize;
         setmaxMember(msg);
+        setloadingMsg(null);
         // console.log(msg);
         let temp = Array.from({ length: msg - 1 }, () => "");
         setMembers(temp);
@@ -91,9 +101,10 @@ const Registration = () => {
                         <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder="Enter your team name here.." />
                     </div>
                     <div className={styles.memberCont}>
+                        <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                         {
                             members.map((member, index) =>
-                                <Card key={index} id={index} name={member} setMembers={setMembers} />
+                                <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} setMembers={setMembers} />
                             )
                         }
 

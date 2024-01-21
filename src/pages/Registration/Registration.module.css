@@ -271,6 +271,7 @@
     font-weight: 400;
     padding: 0.1rem 1.5rem;
     transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 .submit:hover {
