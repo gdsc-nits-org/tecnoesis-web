@@ -160,5 +160,5 @@ const AuthProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
-export { UserContext };
+
 export default AuthProvider;

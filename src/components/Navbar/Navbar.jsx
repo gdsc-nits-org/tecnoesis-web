@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button_page from "../Button/Button";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import { UserContext } from "../../globals/authprovider";
+import UserContext from "../../globals/authcontext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";

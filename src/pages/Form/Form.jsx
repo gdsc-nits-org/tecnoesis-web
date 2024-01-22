@@ -1,19 +1,17 @@
-import React, {useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Form.module.css";
-import { UserContext } from "../../globals/authprovider";
+import UserContext from "../../globals/authcontext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-
-  const {signup} = useContext(UserContext);
+  const { signup } = useContext(UserContext);
   const navigate = useNavigate();
 
-
   const [formData, setFormData] = useState({
-    email: '',
-    ScholarId: '',
-    Phone: '',
+    email: "",
+    ScholarId: "",
+    Phone: "",
   });
   const [formError, setFormError] = useState({});
   const changeHandler = (e) => {
@@ -32,17 +30,17 @@ const Form = () => {
     return !isNaN(parseFloat(input)) && isFinite(input);
   };
 
-const userSignup=()=>{
-  signup(formData.email,formData.ScholarId,formData.Phone)
-  .then((res)=>{
-    console.log(res);
-    navigate("/dashboard");
-  })
-  .catch((err)=>{
-    console.log(err);
-    navigate("/")
-  })
-}
+  const userSignup = () => {
+    signup(formData.email, formData.ScholarId, formData.Phone)
+      .then((res) => {
+        console.log(res);
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+        navigate("/");
+      });
+  };
 
   useEffect(() => {
     if (Object.keys(formError).length === 0 && isSubmit) {
@@ -54,20 +52,20 @@ const userSignup=()=>{
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.email) {
-      errors.email = 'Email is required!';
+      errors.email = "Email is required!";
     } else if (!regex.test(values.email)) {
-      errors.email = 'This is not a valid email format!';
+      errors.email = "This is not a valid email format!";
     }
     if (!values.ScholarId || !isNumeric(values.ScholarId)) {
-      errors.ScholarId = 'ScholarId is required';
+      errors.ScholarId = "ScholarId is required";
     } else if (values.ScholarId.length != 7) {
-      errors.ScholarId = 'Invalid Scholar Id';
+      errors.ScholarId = "Invalid Scholar Id";
     }
 
     if (!values.Phone) {
-      errors.Phone = 'Phone Number is required';
+      errors.Phone = "Phone Number is required";
     } else if (values.Phone.length != 10 || !isNumeric(values.Phone)) {
-      errors.Phone = 'Invalid Phone Number';
+      errors.Phone = "Invalid Phone Number";
     }
 
     return errors;
