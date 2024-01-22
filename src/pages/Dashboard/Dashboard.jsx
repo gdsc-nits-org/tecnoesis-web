@@ -87,6 +87,26 @@ export default function Dashboard() {
       return newExpandedState;
     });
   };
+
+  const handleResponse = async (id, status) => {
+    const api_url = `${import.meta.env.VITE_BASE_URL}/api/team/${id}/respond`;
+    const body = { status };
+    const headers = {
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    };
+    try {
+      const res = await axios.patch(api_url, body, { headers });
+      if (res?.data?.status === 200) {
+        toast(res?.data?.msg);
+        window.location.reload();
+      } else {
+        toast("Update Failed");
+      }
+    } catch (error) {
+      toast(error?.response?.data?.msg);
+    }
+  };
+
   useEffect(() => {
     const getUserData = async () => {
       try {
@@ -118,6 +138,7 @@ export default function Dashboard() {
             "CANCELLED",
             response.data.msg.username
           );
+          console.log(pendingEvents);
           setRegisteredEvents(registeredEvents);
           setPendingEvents(pendingEvents);
           setRejectedEvents(rejectedEvents);
@@ -270,8 +291,22 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className={styles.end_div2}>
-                      <button className={styles.button3}>Accept</button>
-                      <button className={styles.button4}>Reject</button>
+                      <button
+                        className={styles.button3}
+                        onClick={() => {
+                          handleResponse(events.id, "REGISTERED");
+                        }}
+                      >
+                        Accept
+                      </button>
+                      <button
+                        className={styles.button4}
+                        onClick={() => {
+                          handleResponse(events.id, "CANCELLED");
+                        }}
+                      >
+                        Reject
+                      </button>
                     </div>
                   </div>
                 ))}
