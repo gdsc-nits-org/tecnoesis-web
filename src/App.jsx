@@ -18,7 +18,7 @@ function App() {
   const { setLoggedin } = useContext(UserContext);
 
   useEffect(() => {
-    if (localStorage.getItem("token") && localStorage.getItem("user")) {
+    if (localStorage.getItem("token")) {
       setLoggedin(true);
     }
   }, []);

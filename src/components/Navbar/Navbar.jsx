@@ -217,7 +217,6 @@ const Navbar = () => {
                       className={styles.navbuttonpage}
                       onClick={async () => {
                         const { status, message } = await signin();
-                        console.log(message);
                         toast(message);
                         if (status === 200) {
                           navigate("/dashboard");

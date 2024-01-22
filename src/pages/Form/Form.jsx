@@ -13,7 +13,6 @@ const Form = () => {
     firstName: "",
     lastName: "",
     collegeName: "",
-    email: "",
     phoneNumber: "",
   });
 
@@ -50,12 +49,6 @@ const Form = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format!";
-    }
     if (!values.phoneNumber) {
       errors.phoneNumber = "Phone Number is required";
     } else if (
@@ -68,7 +61,7 @@ const Form = () => {
   };
 
   useEffect(() => {
-    if (loggedin) {
+    if (loggedin || !localStorage.getItem("token")) {
       navigate("/");
     }
   }, [loggedin]);
@@ -121,17 +114,6 @@ const Form = () => {
             ></input>
             <label className={styles.labels}>ENTER COLLEGE NAME</label>
           </div>
-          <div className={styles.inputBox}>
-            <input
-              className={styles.input}
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={changeHandler}
-            ></input>
-            <label className={styles.labels}>ENTER EMAIL</label>
-          </div>
-          <p className={styles.error}>{formError.email}</p>
           <div className={styles.inputBox}>
             <input
               className={styles.input}
