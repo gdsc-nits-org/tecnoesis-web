@@ -101,6 +101,7 @@ export default function Dashboard() {
           headers,
         });
         if (response.data.status === 200) {
+          localStorage.setItem("user", JSON.stringify(response.data.msg));
           setUserData(response.data.msg);
           const registeredEvents = getTeams(
             response.data.msg.teamsRegistered,
@@ -129,8 +130,8 @@ export default function Dashboard() {
           //token not found error
           toast(error.message);
         }
-        setloggedin(false);
         navigate("/");
+        setloggedin(false);
       }
     };
     getUserData();
