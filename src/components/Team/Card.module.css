@@ -1,0 +1,70 @@
+.frame {
+  position: relative;
+  height: 587px;
+  width: 407px;
+  overflow: hidden;
+  margin-left: 4px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.dp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  scale: 0.989;
+  transition: all 0.3s ease-in ;
+}
+
+.frame:hover{
+  .dp{
+    filter: grayscale(1);
+  }
+  .profile{
+    bottom: 32px;
+  }
+}
+
+
+.imageFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tecnoSid{
+    position: absolute;
+    top: 210px;
+    left: 0px;  
+}
+
+.profile{
+  position: absolute;
+  width: 100%;
+  color: white;
+  /* bottom: 32px; */
+  bottom: -55px;
+  left: 55px;
+
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 39.12px;
+  transition: all 0.3s ease-in;
+
+}
+
+
+.profile .prProfile{
+  font-family: PixeloidSansBold, serif;
+  font-size: 31px;
+  font-weight: 700;
+  margin-top: -0.06px;
+  gap: 6.67px;
+}
+
+.SocialProfile{
+  display: inline-flex;
+  gap: 48.58px;
+    
+}

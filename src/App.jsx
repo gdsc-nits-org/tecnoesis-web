@@ -5,6 +5,7 @@ import {
   ModulePage,
   EventDescription,
   Form,
+  TeamPage
 } from "./pages";
 import { useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Form />} />
         <Route path="/event/:id" element={<EventDescription />} />
+        <Route path="/Team" element={<TeamPage />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

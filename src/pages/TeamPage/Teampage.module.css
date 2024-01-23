@@ -1,0 +1,116 @@
+.wrapper {
+  width: 100%;
+  background-color: black;
+  background-image: url(../../../public/images/teamPage/bg.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.wrapper .teamCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headingDiv {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 30px;
+}
+
+.heading {
+  -webkit-text-stroke-width: 2.7799999713897705;
+  -webkit-text-stroke-color: #000;
+
+  font-family: PixeloidSansBold, serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  background: linear-gradient(180deg, #f00 0%, #fff 36.46%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 20px;
+}
+
+.teamName {
+  color: #fff;
+
+  font-family: PixeloidSansBold, serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.teamHeading {
+  font-size: 0.12em;
+  margin-top: 2.25em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff002f, black);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+
+.rightFrameParent {
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+/* for chrome*/
+.rightFrameParent::-webkit-scrollbar {
+  display: none;
+}
+.rightFrameParent::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*for firefox*/
+.rightFrameParent {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+/*ms edge*/
+.rightFrameParent {
+  -ms-overflow-style: none;
+}
+
+.rightFrame {
+  width: 16vw;
+  aspect-ratio: 0.328;
+  margin-top: var(--navbar-height);
+  font-size: 16vw;
+  background-image: url(../../../public/images/teamPage/rightFrame.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: sticky;
+  top: var(--navbar-height);
+  right: 0;
+}
+
+.teamName {
+  font-size: 0.08em;
+  font-family: PixeloidSans, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  position: relative;
+}
