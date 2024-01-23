@@ -188,12 +188,21 @@ border: 1px solid rgba(150, 150, 150, 0.81);
 overflow: auto;
  /* For Firefox */
  scrollbar-width: thin; 
- scrollbar-color: #888 #f5f5f5; 
+ scrollbar-color:linear-gradient(113deg, rgba(18, 17, 17, 0.47) 0%, rgba(119, 115, 115, 0.00) 110.84%); 
 
  /* For WebKit browsers like Chrome and Safari */
  &::-webkit-scrollbar {
    width: 0.4rem;
  }
+ &::-webkit-scrollbar-track{
+    background: linear-gradient(113deg, rgba(18, 17, 17, 0.47) 0%, rgba(119, 115, 115, 0.00) 110.84%);
+    border-radius: 2%;
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: linear-gradient(113deg, rgba(18, 17, 17, 0.47) 0%, rgba(119, 115, 115, 0.00) 110.84%);
+    border-radius: 2%;
+  }
 
 }
 .heading{
