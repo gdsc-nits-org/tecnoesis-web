@@ -4,10 +4,10 @@ import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
-import cross_logo from "/elements/cross.png";
+// import cross_logo from "/elements/cross.png";
 import UserContext from "../../globals/authcontext";
 // import { Link as RouterLink } from "react-router-dom";
-import img123456 from "/images/img123456.jpg";
+// import img123456 from "/images/img123456.jpg";
 
 import styles from "./Navbar.module.css";
 
@@ -67,7 +67,7 @@ const Navbar = () => {
             className={`${styles.close_button} ${showNavbar && styles.active}`}
             onClick={handleShowNavbar}
           >
-            <img src={cross_logo} alt="cross_button" />
+            <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/fflloqnphs0nyn1cimlz" alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
             {loggedin ? (
