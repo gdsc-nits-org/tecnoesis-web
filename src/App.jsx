@@ -35,7 +35,7 @@ function App() {
         theme="dark"
         transition:Bounce
       />
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/modules" element={<ModulePage/>} />
@@ -45,7 +45,7 @@ function App() {
           <Route path="/event/:id" element={<EventDescription/>} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         </AuthProvider>
       </LoadingProvider>
      

@@ -18,7 +18,7 @@ function Loading() {
                    style={{ width: '100%', height: '100%' }}
                  />
      </div>
-        <img src="/elements/frame.svg" alt="" className={styles.bgImage}/>
+        {/* <img src="/elements/frame.svg" alt="" className={styles.bgImage}/> */}
         <div>
      <img src="images/Tecno 24 logo.png" alt="Tecnoesis 2024"  className={styles.tecnoLogo}/>
      </div>
