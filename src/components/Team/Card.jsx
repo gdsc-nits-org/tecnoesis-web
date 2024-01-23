@@ -28,9 +28,7 @@ export const Card = () => {
 
         <div className={styles.dp}>
           <img src={member} alt="Image Frame" />
-        </div>
-
-
+          
         <div className={styles.profile}>
           <div className={styles.prProfile}>
             <div className={styles.name}>Name</div>
@@ -42,6 +40,9 @@ export const Card = () => {
             <div className={styles.facebook}><img src={facebook}/></div>
           </div>
         </div>
+        </div>
+
+
 
       </div>
 

@@ -1,27 +1,38 @@
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+  height: 50vw;
+  width: 30vw;
+}
 .frame {
   position: relative;
-  height: 587px;
-  width: 407px;
   overflow: hidden;
   margin-left: 4px;
   margin-right: 4px;
-  cursor: pointer;
 }
 
 .dp {
-  position: absolute;
+  position: relative;
+  width: 100%;
+  height: auto;
   top: 0;
   left: 0;
   scale: 0.989;
+  overflow: hidden;
   transition: all 0.3s ease-in ;
+  z-index: 0;
 }
 
-.frame:hover{
-  .dp{
-    filter: grayscale(1);
-  }
+
+.dp:hover{
   .profile{
     bottom: 32px;
+  }
+  .SocialProfile{
+    opacity: 1;
   }
 }
 
@@ -35,7 +46,7 @@
 .tecnoSid{
     position: absolute;
     top: 210px;
-    left: 0px;  
+    left: 0px; 
 }
 
 .profile{
@@ -43,21 +54,23 @@
   width: 100%;
   color: white;
   /* bottom: 32px; */
-  bottom: -55px;
-  left: 55px;
+  bottom: -4.5vw;
 
   display:flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 39.12px;
+  gap: 2vw;
   transition: all 0.3s ease-in;
+
+  padding-left: 5vw;
+  z-index: 99;
 
 }
 
 
 .profile .prProfile{
   font-family: PixeloidSansBold, serif;
-  font-size: 31px;
+  font-size: 2.5vw;
   font-weight: 700;
   margin-top: -0.06px;
   gap: 6.67px;
@@ -65,6 +78,23 @@
 
 .SocialProfile{
   display: inline-flex;
-  gap: 48.58px;
+  gap: 2vw;
+  opacity: 0;
+  transition: all 0.3s ease-in ;
+
     
+}
+
+@media (max-width: 600px) {
+  .frame {
+     
+    height: 400px;
+    width: 300px;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .frame {
+     height: 350px;
+     width: 250px;
+  }
 }

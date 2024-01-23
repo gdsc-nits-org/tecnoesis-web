@@ -12,9 +12,6 @@ const Teampage = () => {
         <div className={styles.heading}>
           <h1>MEET THE TEAM</h1>
         </div>
-        <div className={styles.teamName}>
-          <h3>Team Name</h3>
-        </div>
       </div>
       <div className={styles.teamCards}> 
         <Card/>
