@@ -7,11 +7,11 @@ import '../../App.css'; // Import app.css
 const Sponsors = () => {
   return (
     <section className={styles.main_container} id='sponsor' >
-      <img
+      {/* <img
         className={styles.bg_container}
-        src="images/bg_landing_stars.svg"
+        src="/images/homepageBg.png"
         alt="Background stars"
-      />
+      /> */}
       <h1 className={styles.text_container}>OUR PAST SPONSORS</h1> 
 
       {Cards &&

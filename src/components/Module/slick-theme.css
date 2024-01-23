@@ -1,0 +1,124 @@
+
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+
+/* .slick-prev:before,
+.slick-next:before
+{
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+} */
+
+.slick-prev
+{
+    left: -75px;
+}
+
+
+
+.slick-prev:before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    content: url(/images/module_arrow.svg);
+  }
+  
+  .slick-next {
+    right: -75px;
+  }
+  
+  .slick-next:before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: url(/images/module_arrow.svg);
+  }
+  @media screen and (max-width: 650px) {
+    .slick-prev {
+      left: -55px;
+    }
+    .slick-next {
+      right: -55px;
+    }  
+    .slick-prev:before {
+      transform: translate(-50%, -50%) rotate(180deg) scale(0.8);
+
+    }
+    .slick-next:before {
+      transform: translate(-50%, -50%) scale(0.8);
+
+    }
+
+  }
+  @media screen and (max-width: 470px) {
+    .slick-prev {
+      left: -45px;
+    }
+    .slick-next {
+      right: -45px;
+    }  
+    .slick-prev:before {
+      transform: translate(-50%, -50%) rotate(180deg) scale(0.7);
+
+    }
+    .slick-next:before {
+      transform: translate(-50%, -50%) scale(0.7);
+
+    }
+
+  }
+  @media screen and (max-width: 350px) {
+    .slick-prev {
+      left: -35px;
+    }
+    .slick-next {
+      right: -35px;
+    }  
+    .slick-prev:before {
+      transform: translate(-50%, -50%) rotate(180deg) scale(0.5);
+
+    }
+    .slick-next:before {
+      transform: translate(-50%, -50%) scale(0.5);
+
+    }
+
+  }
+
+
+
+

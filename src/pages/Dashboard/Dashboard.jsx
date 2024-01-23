@@ -1,20 +1,43 @@
 import styles from "./Dashboard.module.css";
+<<<<<<< HEAD
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
 import callblack from "/images/call_black.png";
+=======
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+// import profile from "/images/Profile.png";
+import contact from "/images/contact.png";
+import schoolblack from "/images/school_black.png";
+import callblack from "/images/call_black.png";
+import location from "/images/location.png";
+// import pin from "/images/pin.png";
+>>>>>>> e8e985328e5fade0056c26a51dc131f4e3a88499
 import vector_right from "/images/Vector1.png";
 import vector_left from "/images/Vector.png";
 import ellipse from "/images/Ellipse.svg";
 import vector from "/images/Vector.svg";
 import statusData from "../../assets/statusData";
+<<<<<<< HEAD
 import vector3 from "/images/Vector3.png";
 import tick from "/images/Vector4.png";
 import pending from "/elements/pending.svg";
 import ellipse2 from "/images/Ellipse2.svg";
 import axios from "axios";
+=======
+// import camera from "/images/camera.svg";
+import vector3 from "/images/Vector3.png";
+import vector4 from "/images/Vector4.png";
+import ellipse2 from "/images/Ellipse2.svg";
+// import img123456 from "/images/img123456.jpg";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+>>>>>>> e8e985328e5fade0056c26a51dc131f4e3a88499
 import UserContext from "../../globals/authcontext";
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
@@ -36,7 +59,11 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const { setloggedin } = useContext(UserContext);
 
+<<<<<<< HEAD
   let api_url_me = ${import.meta.env.VITE_BASE_URL}/api/user/me;
+=======
+  let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
+>>>>>>> e8e985328e5fade0056c26a51dc131f4e3a88499
 
   const [currentStatus, setCurrentStatus] = useState("registered");
   const [registeredEvents, setRegisteredEvents] = useState([]);
@@ -83,10 +110,10 @@ export default function Dashboard() {
   };
 
   const handleResponse = async (id, status) => {
-    const api_url = ${import.meta.env.VITE_BASE_URL}/api/team/${id}/respond;
+    const api_url = `${import.meta.env.VITE_BASE_URL}/api/team/${id}/respond`;
     const body = { status };
     const headers = {
-      authorization: Bearer ${localStorage.getItem("token")},
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     };
     try {
       const res = await axios.patch(api_url, body, { headers });
@@ -121,7 +148,7 @@ export default function Dashboard() {
           throw Error("No token found");
         }
         const headers = {
-          Authorization: Bearer ${token},
+          Authorization: `Bearer ${token}`,
         };
         const response = await axios.get(api_url_me, {
           headers,
@@ -196,11 +223,7 @@ export default function Dashboard() {
               </p>
             </div>
             <div className={styles.address}>
-              <img
-                className={styles.profile_icons}
-                src="/elements/email_s.png"
-                alt=""
-              />
+              <img className={styles.profile_icons} src={location} alt="" />
               <p className={styles.profile_text}>{userData?.email}</p>
             </div>
           </div>
@@ -366,7 +389,7 @@ export default function Dashboard() {
                                 <td>{trimText(member.user.firstName)}</td>
                                 <td>{trimText(member.user.username)}</td>
                                 <td>
-                                  <img src={tick} alt="" />
+                                  <img src={vector4} alt="" />
                                 </td>
                               </tr>
                             ))}
