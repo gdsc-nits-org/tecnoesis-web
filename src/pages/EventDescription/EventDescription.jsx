@@ -4,15 +4,20 @@ import backIcon from "/images/backIcon.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import LoadingContext from "../../globals/loading/loadingContext";
+import { useContext } from "react";
+import { Loading } from "../../components";
 
 const EventDescription = () => {
   const { id } = useParams();
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
   const [name, setName] = useState("");
   const [moduleName, setModuleName] = useState("");
   const [description, setDescription] = useState("");
   const [posterImage, setPosterImage] = useState("");
 
   const getEvent = async () => {
+    setIsLoading(true);
     const url = `${import.meta.env.VITE_BASE_URL}/api/event/${id}`;
     const response = await axios(url, {
       headers: { Authorization: "Bearer 1000000" },
@@ -24,6 +29,7 @@ const EventDescription = () => {
       setModuleName(msg.module.name);
       setDescription(msg.description);
       setPosterImage(msg.posterImage);
+      setIsLoading(false);
     }
   };
 
@@ -31,11 +37,15 @@ const EventDescription = () => {
     getEvent();
   }, []);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.gradient}>
         <div className={styles.robowars}>
-          <Link to="/">
+          <Link to="/modules">
             <div className={styles.backIcon}>
               <img alt="" src={backIcon} />
             </div>

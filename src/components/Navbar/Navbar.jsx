@@ -3,11 +3,11 @@ import { useNavigate, Link } from "react-router-dom";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
-import UserContext from "../../globals/authcontext";
 
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import styles from "./Navbar.module.css";
+import UserContext from "../../globals/authcontext";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const { signin, logout, loggedin } = useContext(UserContext);
