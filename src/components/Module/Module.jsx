@@ -9,7 +9,9 @@ import "./slick.css";
 import "./slick-theme.css";
 import axios from "axios";
 import { Link } from "react-scroll";
+// import {Link as RouterLink} from "react-router-dom";
 import data from "./data.json";
+import { useNavigate } from "react-router-dom";
 
 const Module = () => {
   const [showRing1, setShowRing1] = useState(false);
@@ -19,6 +21,8 @@ const Module = () => {
   const [showRing5, setShowRing5] = useState(false);
   const [showRing6, setShowRing6] = useState(false);
   const [showRing7, setShowRing7] = useState(false);
+  const navigate = useNavigate();
+
 
   const delayTime = 400;
 
@@ -116,6 +120,7 @@ const Module = () => {
           `${import.meta.env.VITE_BASE_URL}/api/module/`
         );
         const jsonData = response.data;
+        console.log(jsonData.msg);
 
         setModulesData(jsonData.msg);
       } catch (error) {
@@ -150,6 +155,10 @@ const Module = () => {
   for (let i = 0; i < modulesData?.length; i++) {
     modulesData[i].sequence = i + 1;
   }
+  const handleRoute=(id)=>{
+    console.log(id);
+    navigate(`/event/id:${id}`);  }
+
   return (
     <>
       <div className={styles.boxContainerParent}>
@@ -166,7 +175,7 @@ const Module = () => {
                 <div className={styles.moduleFrames}>
                   <Slider {...settings}>
                     {moduleName.events.map((event) => (
-                      <div key={event.id} className={styles.moduleImg}>
+                      <div key={event.id} className={styles.moduleImg}  onClick={() => handleRoute(event.id)}>
                         <div
                           className={styles.moduleImgInContent}
                           style={{
@@ -204,10 +213,12 @@ const Module = () => {
               ) : (
                 <div className={styles.moduleFrames}>
                   {moduleName.events.map((event) => (
+                    
                     <div
                       key={event.id}
                       className={styles.moduleImg}
                       style={{ backgroundImage: `url(${event.posterImage})` }}
+                      onClick={() => handleRoute(event.id)}
                     >
                       <div className={styles.moduleImgInContent}>
                         <img
@@ -234,6 +245,7 @@ const Module = () => {
                         </div>
                       </div>
                     </div>
+                    
                   ))}
                 </div>
               )}
