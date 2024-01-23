@@ -99,7 +99,7 @@ const Navbar = () => {
                 onClick={handleShowNavbar}
               >
                 <Button>
-                  <div className={styles.navbuttonpage_side}>ABOUT</div>
+                  <div className={styles.navbuttonpage_side}>HOME</div>
                 </Button>
               </Link>
             </li>
@@ -129,16 +129,6 @@ const Navbar = () => {
               >
                 <Button>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                onClick={handleShowNavbar}
-              >
-                <Button>
-                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
               </Link>
             </li>
