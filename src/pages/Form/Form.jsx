@@ -1,58 +1,70 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Form.module.css";
+import UserContext from "../../globals/authcontext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    ScholarId: '',
-    Phone: '',
-  });
+  const { signup, loggedin } = useContext(UserContext);
+  const navigate = useNavigate();
   const [formError, setFormError] = useState({});
+  const [formData, setFormData] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    collegeName: "",
+    phoneNumber: "",
+  });
+
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setFormError(validate(formData));
-    setIsSubmit(true);
+    const errors = validate(formData);
+    if (Object.keys(errors).length === 0) {
+      userSignup();
+    } else {
+      setFormError(errors);
+    }
   };
 
   const isNumeric = (input) => {
     return !isNaN(parseFloat(input)) && isFinite(input);
   };
 
-  useEffect(() => {
-    console.log(formError);
-    if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(formData);
+  const userSignup = async () => {
+    const { status, message } = await signup(formData);
+    toast(message);
+    if (status === 200) {
+      navigate("/dashboard");
+    } else if (status === 409) {
+      navigate("/signup");
+    } else {
+      navigate("/");
     }
-  }, [formError]);
+  };
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.email) {
-      errors.email = 'Email is required!';
-    } else if (!regex.test(values.email)) {
-      errors.email = 'This is not a valid email format!';
+    if (!values.phoneNumber) {
+      errors.phoneNumber = "Phone Number is required";
+    } else if (
+      values.phoneNumber.length != 10 ||
+      !isNumeric(values.phoneNumber)
+    ) {
+      errors.phoneNumber = "Invalid Phone Number";
     }
-    if (!values.ScholarId || !isNumeric(values.ScholarId)) {
-      errors.ScholarId = 'ScholarId is required';
-    } else if (values.ScholarId.length != 7) {
-      errors.ScholarId = 'Invalid Scholar Id';
-    }
-
-    if (!values.Phone) {
-      errors.Phone = 'Phone Number is required';
-    } else if (values.Phone.length != 10 || !isNumeric(values.Phone)) {
-      errors.Phone = 'Invalid Phone Number';
-    }
-
     return errors;
   };
+
+  useEffect(() => {
+    if (loggedin || !localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [loggedin]);
 
   return (
     <div className={styles.wrapper}>
@@ -65,38 +77,55 @@ const Form = () => {
           <div className={styles.inputBox}>
             <input
               className={styles.input}
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="username"
+              value={formData.username}
               onChange={changeHandler}
             ></input>
             <label className={styles.labels}>ENTER YOUR USERNAME</label>
           </div>
-          <p className={styles.error}>{formError.email}</p>
           <div className={styles.inputBox}>
             <input
               className={styles.input}
               type="text"
-              name="ScholarId"
-              value={formData.ScholarId}
+              name="firstName"
+              value={formData.firstName}
               onChange={changeHandler}
             ></input>
-            <label className={styles.labels}>ENTER SCHOLAR ID</label>
+            <label className={styles.labels}>ENTER FIRST NAME</label>
           </div>
-          <p className={styles.error}>{formError.ScholarId}</p>
           <div className={styles.inputBox}>
             <input
               className={styles.input}
               type="text"
-              name="Phone"
-              value={formData.Phone}
+              name="lastName"
+              value={formData.lastName}
+              onChange={changeHandler}
+            ></input>
+            <label className={styles.labels}>ENTER LAST NAME</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input
+              className={styles.input}
+              type="text"
+              name="collegeName"
+              value={formData.collegeName}
+              onChange={changeHandler}
+            ></input>
+            <label className={styles.labels}>ENTER COLLEGE NAME</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input
+              className={styles.input}
+              type="text"
+              name="phoneNumber"
+              value={formData.phoneNumber}
               onChange={changeHandler}
             ></input>
             <label className={styles.labels}>ENTER PHONE NUMBER</label>
           </div>
-          <p className={styles.error}>{formError.Phone}</p>
+          <p className={styles.error}>{formError.phoneNumber}</p>
         </div>
-
         <button className={styles.button}>
           <div className={styles.layertext}>SUBMIT</div>
         </button>

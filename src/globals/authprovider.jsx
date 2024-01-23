@@ -1,128 +1,106 @@
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-} from "firebase/auth";
-import { useState } from "react";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./authcontext";
 
-const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState(
-    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
-  );
+const getToken = () => {
+  const token = localStorage.getItem("token") || "";
+  return token;
+};
 
+const AuthProvider = ({ children }) => {
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  const [loggedin, setLoggedin] = useState(false);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : ""
   );
+  const [email, setEmail] = useState("");
+  let api_url = `${import.meta.env.VITE_BASE_URL}/api/auth/signup`;
+  let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
-  const auth = getAuth();
-
-  let api_url = BASE_URL + `/api/auth/signup`;
-  let api_url_me = BASE_URL + `/api/user/me`;
-
-  const signup = async () => {
+  const signup = async (data) => {
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({});
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      setUser(user);
-      let token = await user.getIdToken();
-      setToken(token);
-      localStorage.setItem("token", JSON.stringify(token));
-      await signUpbackend(data, token);
+      await signUpbackend({ ...data, email });
+      return {
+        message: "User logged in successfully",
+        status: 200,
+      };
     } catch (error) {
-      console.log(error);
+      return {
+        message: error?.response?.data?.msg,
+        status: error?.response?.data?.status || error?.response?.status || 500,
+      };
     }
   };
 
   const signin = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({});
-      const result = await signInWithPopup(auth, provider);
-      console.log(result);
-      const user = result.user;
-      setUser(user);
-      let token = await user.getIdToken();
-      setToken(token);
-      localStorage.setItem("token", JSON.stringify(token));
-      await signinbackend(token);
+      await GoogleSignin();
+      await signinbackend();
+      return {
+        message: "User logged in successfully",
+        status: 200,
+      };
     } catch (error) {
-      console.log(error);
+      return {
+        message: error?.response?.data?.msg,
+        status: error?.response?.data?.status || error?.response?.status || 500,
+      };
     }
   };
 
-  const logout = async () => {
-    setUser(undefined);
-    await signOut(auth);
+  const GoogleSignin = async () => {
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({});
+    const result = await signInWithPopup(auth, provider);
+    setEmail(result.user.email);
+    let token = await result.user.getIdToken();
+    setToken(token);
+    localStorage.setItem("token", token);
+  };
+
+  const logout = () => {
+    setLoggedin(false);
     localStorage.removeItem("token");
     navigate("/");
   };
 
-  const data = {
-    username: "",
-    firstName: "",
-    lastName: "",
-    collegeName: "",
-    email: "",
-    phoneNumber: "",
-  };
-
-  const signinbackend = async (token) => {
+  const signinbackend = async () => {
     const header = {
-      authorization: `Bearer ${token}`,
+      authorization: `Bearer ${getToken()}`,
     };
-    try {
-      let res = await axios.get(api_url_me, {
-        headers: header,
-      });
-      if (res.ok) {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        setUser(res.data);
-      }
-    } catch (error) {
-      throw new Error("User not found");
+    let res = await axios.get(api_url_me, {
+      headers: header,
+    });
+    if (res.status >= 200 && res.status < 300) {
+      setLoggedin(true);
     }
   };
 
-  const signUpbackend = async (data, token) => {
-    try {
-      if (user) {
-        const header = {
-          authorization: `Bearer ${token}`,
-        };
-        let res = await axios.post(api_url, data, {
-          headers: header,
-        });
-        if (res.ok) {
-          localStorage.setItem("user", JSON.stringify(res.data));
-          setUser(res.data);
-        }
-      }
-    } catch (error) {
-      if (error.response.status === 409) {
-        throw new Error("User already exists");
-      }
-      let errMessage = error.response.data.msg;
-      errMessage = errMessage.toLowerCase();
+  const signUpbackend = async (data) => {
+    const header = {
+      authorization: `Bearer ${getToken()}`,
+    };
+    let res = await axios.post(api_url, data, {
+      headers: header,
+    });
+    if (res.status >= 200 && res.status < 300) {
+      setLoggedin(true);
     }
   };
 
   return (
     <UserContext.Provider
       value={{
-        user,
-        setUser,
         token,
-        setToken,
         signup,
         logout,
         signin,
+        loggedin,
+        setLoggedin,
       }}
     >
       {children}
