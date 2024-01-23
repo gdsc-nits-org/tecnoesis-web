@@ -1,92 +1,54 @@
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-} from "firebase/auth";
-import { useState } from "react";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./authcontext";
 
-const AuthProvider = ({ children }) => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState(
-    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
-  );
+const getToken = () => {
+  const token = localStorage.getItem("token") || "";
+  return token;
+};
 
+const AuthProvider = ({ children }) => {
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  const [loggedin, setLoggedin] = useState(false);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : ""
   );
-
-  const auth = getAuth();
-
-  let api_url = `${import.meta.env.BASE_URL}/api/auth/signup`;
-  let api_url_me = `${import.meta.env.BASE_URL}api/user/me`;
-
-  const extractUserDetails = (user) => {
-    const { firstName, middleName, lastName } = splitDisplayName(
-      user.displayName
-    );
-    let data = {
-      firstName: firstName,
-      middleName: middleName,
-      lastName: lastName,
-      collegeName: "NITS",
-      email: user.email,
-      imageUrl: user.photoUrl,
-    };
-    return data;
-  };
-  function splitDisplayName(displayName) {
-    const words = displayName.split(" ");
-    const nameCount = words.length;
-
-    if (nameCount === 1) {
-      return {
-        firstName: words[0],
-        middleName: "",
-        lastName: "",
-      };
-    } else if (nameCount === 2) {
-      return {
-        firstName: words[0],
-        middleName: "",
-        lastName: words[1],
-      };
-    } else if (nameCount === 3) {
-      return {
-        firstName: words[0],
-        middleName: words[1],
-        lastName: words[2],
-      };
-    } else {
-      return {
-        firstName: words[0],
-        middleName: words.slice(1, -1).join(" "),
-        lastName: words[words.length - 1],
-      };
-    }
-  }
+  const [email, setEmail] = useState("");
+  let api_url = `${import.meta.env.VITE_BASE_URL}/api/auth/signup`;
+  let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
   const signup = async (data) => {
     try {
-      let newUser = { ...user, ...data };
-      let res = await signUpbackend(newUser, token);
+      await signUpbackend({ ...data, email });
+      return {
+        message: "User logged in successfully",
+        status: 200,
+      };
     } catch (error) {
-      console.log(error);
+      return {
+        message: error?.response?.data?.msg,
+        status: error?.response?.data?.status || error?.response?.status || 500,
+      };
     }
   };
 
   const signin = async () => {
     try {
       await GoogleSignin();
-      await signinbackend(token);
+      await signinbackend();
+      return {
+        message: "User logged in successfully",
+        status: 200,
+      };
     } catch (error) {
-      if (error.response.status !== 200) {
-        throw new Error("User not found");
-      }
-      return error.data;
+      return {
+        message: error?.response?.data?.msg,
+        status: error?.response?.data?.status || error?.response?.status || 500,
+      };
     }
   };
 
@@ -94,71 +56,56 @@ const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({});
     const result = await signInWithPopup(auth, provider);
-    const newUser = extractUserDetails(result.user.reloadUserInfo);
-    setUser(newUser);
+    setEmail(result.user.email);
     let token = await result.user.getIdToken();
     setToken(token);
-    localStorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("token", token);
   };
 
-  const logout = async () => {
-    setUser(undefined);
-    await signOut(auth);
+  const logout = () => {
+    setLoggedin(false);
     localStorage.removeItem("token");
     navigate("/");
   };
 
-  const signinbackend = async (token) => {
+  const signinbackend = async () => {
     const header = {
-      authorization: `Bearer ${token}`,
+      authorization: `Bearer ${getToken()}`,
     };
     let res = await axios.get(api_url_me, {
       headers: header,
     });
-    if (res.ok) {
-      localStorage.setItem("user", JSON.stringify(res.data));
-      setUser(res.data);
+    if (res.status >= 200 && res.status < 300) {
+      setLoggedin(true);
     }
   };
 
-  const signUpbackend = async (data, token) => {
-    try {
-      if (user) {
-        const header = {
-          authorization: `Bearer ${token}`,
-        };
-        let res = await axios.post(api_url, data, {
-          headers: header,
-        });
-        if (res.ok) {
-          localStorage.setItem("user", JSON.stringify(res.data));
-          setUser(res.data);
-        }
-      }
-    } catch (error) {
-      if (error.response.status === 409) {
-        throw new Error("User already exists");
-      }
-      let errMessage = error.response.data.msg;
-      errMessage = errMessage.toLowerCase();
+  const signUpbackend = async (data) => {
+    const header = {
+      authorization: `Bearer ${getToken()}`,
+    };
+    let res = await axios.post(api_url, data, {
+      headers: header,
+    });
+    if (res.status >= 200 && res.status < 300) {
+      setLoggedin(true);
     }
   };
 
   return (
     <UserContext.Provider
       value={{
-        user,
-        setUser,
         token,
-        setToken,
         signup,
         logout,
         signin,
+        loggedin,
+        setLoggedin,
       }}
     >
       {children}
     </UserContext.Provider>
   );
 };
-export { UserContext };
+
 export default AuthProvider;

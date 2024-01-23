@@ -1,17 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Slant as Hamburger } from "hamburger-react";
-import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
-import Button_page from "../Button/Button";
+import { toast } from "react-toastify";
+import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
 import img123456 from "/images/img123456.jpg";
 import { UserContext } from "../../globals/authprovider";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
+
+
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const { signin, logout, loggedin } = useContext(UserContext);
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
   const navigate = useNavigate();
@@ -20,7 +22,6 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const { signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -29,6 +30,26 @@ const Navbar = () => {
     ) {
       setShowNavbar(false);
     }
+  };
+
+  const handleLogin = async () => {
+    const { status, message } = await signin();
+    toast(message);
+    setShowNavbar(false);
+    if (status === 200) {
+      navigate("/dashboard");
+    } else if (status === 404 || status === 409) {
+      // if no user exists or username already taken
+      navigate("/signup");
+    } else {
+      navigate("/");
+    }
+  };
+
+  const handleLogout = async () => {
+    logout();
+    setShowNavbar(false);
+    toast("Logged out successfully");
   };
 
   useEffect(() => {
@@ -67,81 +88,80 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/#about">
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link to="/modules" onClick={handleShowNavbar}>
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link
                 to="/dashboard"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+                onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>DASHBOARD</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
+            {loggedin && (
+              <li>
+                <Link
+                  to="/dashboard"
+                  onClick={handleShowNavbar}
+                >
+                  <Button>
+                    <div className={styles.navbuttonpage_side}>DASHBOARD</div>
+                  </Button>
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/events" onClick={handleShowNavbar}>
-                <Button_page>
+                
+    
+                <Button>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link
                 to="/#sponsor"
-              // spy={true}
-              // smooth={true}
-              // hashSpy={true}
-              // offset={-60}
-              // duration={500}
-              // onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link to="/team" onClick={handleShowNavbar}>
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link
                 to="/"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
               <Link to="/contactus" onClick={handleShowNavbar}>
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
           </ul>
@@ -167,11 +187,6 @@ const Navbar = () => {
             <li>
               <Link
                 to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={0}
-                duration={500}
               >
                 <Button_page rounded>
                   <div

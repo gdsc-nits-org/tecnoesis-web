@@ -1,76 +1,60 @@
-import { Home, Error, Dashboard, ModulePage, EventDescription, Form } from "./pages";
+import {
+  Home,
+  Error,
+  Dashboard,
+  ModulePage,
+  EventDescription,
+  Form,
+} from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
-import React, { useState } from "react";
-import UserContext from "./globals/authprovider";
+import { useEffect, useContext } from "react";
+import { Navbar, Footer, Loading } from "./components";
+import AuthProvider from "./globals/authprovider";
+import LoadingProvider from "./globals/loading/loadingProvider";
+import UserContext from "./globals/authcontext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const [showNavbar, setShowNavbar] = useState(true);
+  const { setLoggedin } = useContext(UserContext);
 
-  const toggleNavbar = () => {
-    setShowNavbar((prev) => !prev);
-  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setLoggedin(true);
+    }
+  }, []);
 
   return (
     <>
-      <UserContext>
-
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                {showNavbar && <Navbar />}
-                <Home />
-                <Footer />
-              </>
-            }
+      <LoadingProvider>
+        <AuthProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition:Bounce
           />
-          <Route
-            path="/modules"
-            element={
-              <>
-                {showNavbar && <Navbar />}
-                <ModulePage />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <>
-                {showNavbar && <Navbar />}
-                <Dashboard />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <>
-                {showNavbar && <Navbar />}
-                <Form />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/event/:id"
-            element={
-              <>
-                {showNavbar && <Navbar />}
-                <EventDescription />
-                <Footer />
-              </>
-            }
-          />
-          <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
-        </Routes>
-            
-      </UserContext>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/modules" element={<ModulePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Loading" element={<Loading />} />
+            <Route path="/signup" element={<Form />} />
+            <Route path="/event/:id" element={<EventDescription />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </AuthProvider>
+      </LoadingProvider>
     </>
   );
 }
