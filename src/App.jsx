@@ -6,9 +6,11 @@ import {
   EventDescription,
   Form,
 } from "./pages";
-import { useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
+import { useEffect, useContext } from "react";
+import { Navbar, Footer, Loading } from "./components";
+import AuthProvider from "./globals/authprovider";
+import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,29 +27,34 @@ function App() {
 
   return (
     <>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        transition:Bounce
-      />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/modules" element={<ModulePage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/signup" element={<Form />} />
-        <Route path="/event/:id" element={<EventDescription />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
+      <LoadingProvider>
+        <AuthProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition:Bounce
+          />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/modules" element={<ModulePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Loading" element={<Loading />} />
+            <Route path="/signup" element={<Form />} />
+            <Route path="/event/:id" element={<EventDescription />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </AuthProvider>
+      </LoadingProvider>
     </>
   );
 }

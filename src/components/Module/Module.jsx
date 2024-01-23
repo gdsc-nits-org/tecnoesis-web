@@ -9,7 +9,10 @@ import "./slick.css";
 import "./slick-theme.css";
 import axios from "axios";
 import { Link } from "react-scroll";
-// import {Link as RouterLink} from "react-router-dom";
+import LoadingContext from "../../globals/loading/loadingContext";
+import { useContext } from "react";
+import Loading from "../Loading/Loading";
+import { Link as NavigateLink } from "react-router-dom";
 import data from "./data.json";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +24,8 @@ const Module = () => {
   const [showRing5, setShowRing5] = useState(false);
   const [showRing6, setShowRing6] = useState(false);
   const [showRing7, setShowRing7] = useState(false);
+
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
   const navigate = useNavigate();
 
 
@@ -120,37 +125,26 @@ const Module = () => {
           `${import.meta.env.VITE_BASE_URL}/api/module/`
         );
         const jsonData = response.data;
-        console.log(jsonData.msg);
 
-        setModulesData(jsonData.msg);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
+      setModulesData(jsonData.msg);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+    setIsLoading(false);
+  };
+  useEffect(() => {
     getModules();
-  }, []);
+  }, []); 
 
-  // const modulesData=data.msg;
 
-  const handleEvent = [
-    [handleEvent1, handleEvent11],
-    [handleEvent2, handleEvent22],
-    [handleEvent3, handleEvent33],
-    [handleEvent4, handleEvent44],
-    [handleEvent5, handleEvent55],
-    [handleEvent6, handleEvent66],
-    [handleEvent7, handleEvent77],
-  ];
-  const showRing = [
-    showRing1,
-    showRing2,
-    showRing3,
-    showRing4,
-    showRing5,
-    showRing6,
-    showRing7,
-  ];
+
+  // const modulesData=data.msg; 
+
+     
+  
+  const handleEvent= [[handleEvent1,handleEvent11],[handleEvent2,handleEvent22],[handleEvent3,handleEvent33],[handleEvent4,handleEvent44],[handleEvent5,handleEvent55],[handleEvent6,handleEvent66],[handleEvent7,handleEvent77]];
+  const showRing = [showRing1, showRing2,showRing3,showRing4,showRing5,showRing6,showRing7 ]
+
 
   for (let i = 0; i < modulesData?.length; i++) {
     modulesData[i].sequence = i + 1;
@@ -159,6 +153,11 @@ const Module = () => {
     console.log(id);
     navigate(`/event/id:${id}`);  }
 
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  // console.log(modulesData);
   return (
     <>
       <div className={styles.boxContainerParent}>
@@ -175,7 +174,7 @@ const Module = () => {
                 <div className={styles.moduleFrames}>
                   <Slider {...settings}>
                     {moduleName.events.map((event) => (
-                      <div key={event.id} className={styles.moduleImg}  onClick={() => handleRoute(event.id)}>
+                      <div key={event.id} className={styles.moduleImg}>
                         <div
                           className={styles.moduleImgInContent}
                           style={{
