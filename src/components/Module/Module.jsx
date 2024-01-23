@@ -116,9 +116,9 @@ const Module = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const [modulesData, setModulesData] = useState([]);
+  // const [modulesData, setModulesData] = useState([]);
 
-  useEffect(() => {
+  
     const getModules = async () => {
       try {
         const response = await axios.get(
@@ -138,7 +138,7 @@ const Module = () => {
 
 
 
-  // const modulesData=data.msg; 
+  const modulesData=data.msg; 
 
      
   
@@ -285,6 +285,6 @@ const Module = () => {
       </div>
     </>
   );
-};
+                }
 
 export default Module;
