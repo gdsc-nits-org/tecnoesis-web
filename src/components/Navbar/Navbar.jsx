@@ -5,10 +5,9 @@ import { toast } from "react-toastify";
 import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
+import UserContext from "../../globals/authcontext";
+// import { Link as RouterLink } from "react-router-dom";
 import img123456 from "/images/img123456.jpg";
-import { UserContext } from "../../globals/authprovider";
-
-
 
 import styles from "./Navbar.module.css";
 
@@ -63,7 +62,7 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div className={styles.nav_sidebar} onClick={handleShowNavbar}>
+        <div className={styles.nav_sidebar}  onClick={handleShowNavbar}>
           <button
             className={`${styles.close_button} ${showNavbar && styles.active}`}
             onClick={handleShowNavbar}
@@ -71,23 +70,34 @@ const Navbar = () => {
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
-            <li className={styles.register_dock}>
-              <Link
-                to=""
-              >
-                <div className={styles.button_sign_content} onClick={async () => {
-                  try {
-                    let res = await signin();
-                  } catch (err) {
-                    navigate("/signup");
-                  }
-                }}>
-                  <div className={styles.btn_signin} >LOGIN WITH GOOGLE</div>
-                </div>
-              </Link>
-            </li>
+            {loggedin ? (
+              <li className={styles.register_dock}>
+                <Link
+                  to=""
+                  onClick={handleLogout}
+                >
+                  <div className={styles.button_sign_content}>
+                    <div className={styles.btn_signin}>LOGOUT</div>
+                  </div>
+                </Link>
+              </li>
+            ) : (
+              <li className={styles.register_dock}>
+                <Link
+                  to=""
+                  onClick={handleLogin}
+                >
+                  <div className={styles.button_sign_content}>
+                    <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                  </div>
+                </Link>
+              </li>
+            )}
             <li>
-              <Link to="/#about">
+              <Link
+                to="/"
+                onClick={handleShowNavbar}
+              >
                 <Button>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
                 </Button>
@@ -97,16 +107,6 @@ const Navbar = () => {
               <Link to="/modules" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/dashboard"
-                onClick={handleShowNavbar}
-              >
-                <Button>
-                  <div className={styles.navbuttonpage_side}>DASHBOARD</div>
                 </Button>
               </Link>
             </li>
@@ -123,9 +123,10 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <Link to="/events" onClick={handleShowNavbar}>
-                
-    
+              <Link
+                to=""
+                onClick={handleShowNavbar}
+              >
                 <Button>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
                 </Button>
@@ -133,7 +134,8 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/#sponsor"
+                to="/"
+                onClick={handleShowNavbar}
               >
                 <Button>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
@@ -184,27 +186,35 @@ const Navbar = () => {
 
         <div>
           <ul className={styles.nav_content}>
-            <li>
-              <Link
-                to=""
-              >
-                <Button_page rounded>
-                  <div
-                    className={styles.navbuttonpage}
-                    onClick={async () => {
-                      try {
-                        let res = await signin();
-                      } catch (err) {
-                        navigate("/signup");
-                      }
-                    }}
-                  >
-                    LOGIN WITH GOOGLE
-                  </div>
-                </Button_page>
-              </Link>
-            </li>
-            {/* <li className={styles.nav_profile}>
+            {loggedin ? (
+              <li>
+                <Link
+                  to=""
+                >
+                  <Button rounded>
+                    <div
+                      className={styles.navbuttonpage}
+                      onClick={handleLogout}
+                    >
+                      LOGOUT
+                    </div>
+                  </Button>
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link
+                  to=""
+                >
+                  <Button rounded>
+                    <div className={styles.navbuttonpage} onClick={handleLogin}>
+                      LOGIN WITH GOOGLE
+                    </div>
+                  </Button>
+                </Link>
+              </li>
+            )}
+             {/* <li className={styles.nav_profile}>
               <a href="">
                 <img className={styles.main_img} src={img123456} alt="" />
               </a>
