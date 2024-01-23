@@ -9,6 +9,8 @@ import cross_logo from "/elements/cross.png";
 import UserContext from "../../globals/authcontext";
 import { Link as RouterLink } from "react-router-dom";
 
+import styles from "./Navbar.module.css";
+
 const Navbar = () => {
   const { signin, logout, loggedin } = useContext(UserContext);
   const [showNavbar, setShowNavbar] = useState(false);
