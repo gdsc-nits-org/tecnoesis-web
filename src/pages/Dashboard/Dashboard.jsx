@@ -138,7 +138,6 @@ export default function Dashboard() {
             "CANCELLED",
             response.data.msg.username
           );
-          console.log(pendingEvents);
           setRegisteredEvents(registeredEvents);
           setPendingEvents(pendingEvents);
           setRejectedEvents(rejectedEvents);

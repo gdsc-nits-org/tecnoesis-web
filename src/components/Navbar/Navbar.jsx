@@ -25,7 +25,6 @@ const Navbar = () => {
       navbarRef.current &&
       !navbarRef.current.contains(event.target)
     ) {
-      console.log("clicked outside");
       setShowNavbar(false);
     }
   };
