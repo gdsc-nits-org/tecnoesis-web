@@ -1,6 +1,6 @@
 import styles from './Registration.module.css';
 import { useState, useEffect, useRef } from 'react';
-
+import { useParams } from 'react-router-dom';
 const BACKEND_URL = import.meta.env.VITE_BASE_URL;
 const Card = ({ id, setMembers, name }) => {
     const [active, setActive] = useState(false);
@@ -37,37 +37,47 @@ const Card = ({ id, setMembers, name }) => {
     );
 }
 const Registration = () => {
+    const { id } = useParams();
     const [maxMember, setmaxMember] = useState();
     const [teamName, setTeamName] = useState("");
+    const [typeofevent, setTypeofevent] = useState("TEAM NAME");
     const [members, setMembers] = useState([]);
-    const [eventId, seteventId] = useState('65a5849d3232bd1424b3ef55');
     const [loadingMsg, setloadingMsg] = useState("Loading fields......");
+    const [error, setError] = useState(null);
     async function submitForm(e) {
         e.preventDefault();
         let filter = members.filter((item) => item != "");
-        // let response = await fetch("https://tecnoesis-api.onrender.com/api/team/event/65a5849d3232bd1424b3ef55/add", {
-        let response = await fetch(`${BACKEND_URL}/api/team/event/65a5849d3232bd1424b3ef55/add`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer 1000000"
-            },
-            body: JSON.stringify({
-                "name": teamName,
-                "members": filter,
-                "extrainformation": "This team specialises in AI and machine learning projects"
-            })
-        });
-        if (!response) {
-            console.log("Processing");
-        }
-        else {
-            if (response.status == 200) {
-                alert("Successfully registered!!");
+        try {
+            // let response = await fetch("https://tecnoesis-api.onrender.com/api/team/event/65a5849d3232bd1424b3ef55/add", {
+            let response = await fetch(`${BACKEND_URL}/api/team/event/${id}/add`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${import.meta.env.SECRET_TOKEN}`
+                },
+                body: JSON.stringify({
+                    "name": teamName,
+                    "members": filter,
+                    "extrainformation": "This team specialises in AI and machine learning projects"
+                })
+            });
+            if (!response) {
+                console.log("Processing");
             }
             else {
-                alert("Problem in registration! Retry after a few minutes.");
+                if (response.status == 200) {
+                    setError("Successfully registered!!");
+                }
+                else if (response.status == 409) {
+                    setError("Error! Conflict in registration!!");
+                }
+                else {
+                    setError("Problem in registration!!");
+                }
             }
+        } catch (err) {
+            setError(err.message);
+            alert(err.message);
         }
     }
     async function fetchData() {
@@ -75,10 +85,13 @@ const Registration = () => {
         let response = await fetch(`${BACKEND_URL}/api/event`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
-        let arrFilter = arr.filter((item) => item.id = eventId);
+        let arrFilter = arr.filter((item) => item.id = id);
         let msg = arrFilter[0].maxTeamSize;
         setmaxMember(msg);
         setloadingMsg(null);
+        if (msg === 1) {
+            setTypeofevent("TEAM NAME");
+        }
         // console.log(msg);
         let temp = Array.from({ length: msg - 1 }, () => "");
         setMembers(temp);
@@ -97,10 +110,11 @@ const Registration = () => {
                 </div>
                 <form className={styles.formCont}>
                     <div className={styles.teamNameCont}>
-                        <h1 className={styles.teamName}>TEAM NAME</h1>
-                        <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder="Enter your team name here.." />
+                        <h1 className={styles.teamName}>{typeofevent}</h1>
+                        <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
                     </div>
                     <div className={styles.memberCont}>
+                        <h1 style={{ color: '#ffffff' }}>{error}</h1>
                         <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                         {
                             members.map((member, index) =>
