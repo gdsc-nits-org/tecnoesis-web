@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
   margin-top: 6rem;
-   }
+}
    .gradient{
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
  background-clip: text; 
   -webkit-background-clip: text;  
  -webkit-text-fill-color: transparent;  
- -webkit-text-stroke-width: 3.000000238418579;  
+  -webkit-text-stroke-width: 3.000000238418579;   
   -webkit-text-stroke-color: #e80a0a;  
  /* color: rgb(211, 22, 22);  */
 font-family: "PixeloidSans";
