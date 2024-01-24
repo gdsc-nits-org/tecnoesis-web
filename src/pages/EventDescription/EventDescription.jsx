@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./EventDescription.module.css";
 import backIcon from "/images/backIcon.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import UserContext from "../../globals/authcontext";
 const EventDescription = () => {
   const { id } = useParams();
   const [name, setName] = useState("");
   const [moduleName, setModuleName] = useState("");
   const [description, setDescription] = useState("");
   const [posterImage, setPosterImage] = useState("");
-
+  const { setloggedin } = useContext(UserContext);
   const getEvent = async () => {
     const url = `${import.meta.env.VITE_BASE_URL}/api/event/${id}`;
     const response = await axios(url, {
@@ -30,7 +31,14 @@ const EventDescription = () => {
   useEffect(() => {
     getEvent();
   }, []);
-
+  const regBtn = () => {
+    if (!localStorage.getItem("token")) {
+      toast("Not here!! Go to the login/signup");
+    }
+    else {
+      window.location.href = `/event/${id}/registration`;
+    }
+  }
   return (
     <div className={styles.container}>
       <div className={styles.gradient}>
@@ -52,7 +60,10 @@ const EventDescription = () => {
             <img alt="robologo_demo.png" src={posterImage} />
           </div>
         </div>
-        <button className={styles.button}>Register</button>
+        {localStorage.getItem("token") ?
+          <button className={styles.button} onClick={regBtn}>Register</button> :
+          <button className={styles.button} style={{ fontSize: '1rem' }} onClick={regBtn}>Login to register</button>
+        }
       </div>
     </div>
   );
