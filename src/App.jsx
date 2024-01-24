@@ -18,15 +18,9 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const { token,
-    signup,
-    logout,
-    signin,
-    loggedin,
-    setLoggedin } = useContext(UserContext);
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      setLoggedin(true);
+      localStorage.setItem("loggedin", true);
     }
   }, []);
 

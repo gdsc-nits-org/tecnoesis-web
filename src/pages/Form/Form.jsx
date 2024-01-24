@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Form = () => {
-
-  const { signup, loggedin } = useContext(UserContext);
+  const { signup } = useContext(UserContext);
+  const loggedin = localStorage.getItem("loggedin");
   const navigate = useNavigate();
   const [formError, setFormError] = useState({});
   const [formData, setFormData] = useState({
