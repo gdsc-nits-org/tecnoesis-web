@@ -50,6 +50,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/Loading" element={<Loading />} />
             <Route path="/signup" element={<Form />} />
+            <Route path="/team" element={<TeamPage />} />
             <Route path="/event/:id" element={<EventDescription />} />
             <Route path="*" element={<Error />} />
           </Routes>
