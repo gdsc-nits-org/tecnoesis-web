@@ -16,15 +16,26 @@ import UserContext from "./globals/authcontext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     if (localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
       localStorage.setItem("loggedin", 0);
     }
+
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
