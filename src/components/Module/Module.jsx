@@ -116,7 +116,7 @@ const Module = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // const [modulesData, setModulesData] = useState([]);
+  const [modulesData, setModulesData] = useState([]);
 
   
     const getModules = async () => {
@@ -132,13 +132,13 @@ const Module = () => {
       console.error("Error fetching data:", error);
     }
   };
-  // useEffect(() => {
-  //   getModules();
-  // }, []); 
+  useEffect(() => {
+    getModules();
+  }, []); 
 
 
 
-  const modulesData=data.msg; 
+  // const modulesData=data.msg; 
 
      
   
