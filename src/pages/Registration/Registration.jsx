@@ -29,7 +29,7 @@ const Card = ({ id, setMembers, name }) => {
                 <div className={styles.leftPortion}>
                     <h1 className={styles.memberName}>USERNAME</h1>
                     <div className={styles.memberInfo}>
-                        <input type="text" placeholder='Enter your name' value={name} onChange={handleChange} className={styles.memberInput} />
+                        <input type="text" placeholder='Enter username' value={name} onChange={handleChange} className={styles.memberInput} />
                     </div>
                 </div>
             </div>
@@ -115,6 +115,7 @@ const Registration = () => {
                             <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
                         </div>
                         <div className={styles.memberCont}>
+                            <h1 style={{ color: '#ffffff' }}>ADD MEMBERS</h1>
                             <h1 style={{ color: '#ffffff' }}>{error}</h1>
                             <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                             {

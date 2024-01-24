@@ -7,7 +7,7 @@ import {
   Registration,
   Form,
 } from "./pages";
-import { useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer, Loading } from "./components";
 import AuthProvider from "./globals/authprovider";
@@ -18,8 +18,12 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const { setLoggedin } = useContext(UserContext);
-
+  const { token,
+    signup,
+    logout,
+    signin,
+    loggedin,
+    setLoggedin } = useContext(UserContext);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setLoggedin(true);
@@ -31,7 +35,12 @@ function App() {
       <AuthProvider>
         <LoadingProvider>
           <UserContext.Provider value={{
-            setLoggedin
+            token,
+            signup,
+            logout,
+            signin,
+            loggedin,
+            setLoggedin,
           }}>
             <ToastContainer
               position="bottom-right"

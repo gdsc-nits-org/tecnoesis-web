@@ -4,7 +4,6 @@ import LoadingContext from "../../globals/loading/loadingContext";
 import UserContext from "../../globals/authcontext";
 import { Loading } from "../../components";
 import styles from "./EventDescription.module.css";
-import backIcon from "/images/backIcon.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -18,11 +17,13 @@ const EventDescription = () => {
   const [description, setDescription] = useState("");
   const [posterImage, setPosterImage] = useState("");
   const { setloggedin } = useContext(UserContext);
+  const { token } = useContext(UserContext);
   const getEvent = async () => {
+
     setIsLoading(true);
     const url = `${import.meta.env.VITE_BASE_URL}/api/event/${id}`;
     const response = await axios(url, {
-      headers: { Authorization: "Bearer 1000000" },
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     if (response.status === 200) {
@@ -43,7 +44,7 @@ const EventDescription = () => {
       toast("Not here! Go to login/signup section");
     }
     else {
-      window.location.href = `event/${id}/registration`;
+      window.location.href = `/event/${id}/registration`;
     }
   }
   return (
@@ -52,7 +53,7 @@ const EventDescription = () => {
         <div className={styles.robowars}>
           <Link to="/modules">
             <div className={styles.backIcon}>
-              <img alt="" src={backIcon} />
+              <img alt="" src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105932/tecnoesis/backIcon_maax0n.png" />
             </div>
           </Link>
           <div className={styles.robowars_img}> {name}</div>
