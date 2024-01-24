@@ -1,18 +1,13 @@
 import { useState } from "react";
-import "./slick.css"; 
-import "./slick-theme.css";
 import Lottie from "lottie-react";
 import aboutus_pc from "../../assets/aboutus_pc.json";
 import aboutus_coin from "../../assets/aboutus_coin.json";
 import alien_near_module_section from "../../assets/alien_near_module_section.json";
 import heart from "../../assets/heart.json";
 import styles from "./About.module.css";
-import Slider from "react-slick";
 import Button from "../Button/Button";
-import { Link } from 'react-router-dom';
-
-
-
+import { Link } from "react-router-dom";
+import HomeCarousel from '../HomeCarousel/HomeCarousel.jsx'
 
 function About() {
   const [coinbox, setCoinbox] = useState(false);
@@ -34,19 +29,14 @@ function About() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    pauseOnFocus : true,
-   
+    pauseOnFocus: true,
   };
-
-  
 
   return (
     <>
-      <div id='about' >
-     
+      <div id="about">
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
-           
             <div className={styles.textContainer}>
               <div className={styles.aboutUsText}>
                 <div className={styles.techFestText}>ABOUT US</div>
@@ -125,64 +115,51 @@ function About() {
               </div>
             </div>
           </div>
-          <div className={ `${styles.contentContainer3} ${styles.containerPadding}` } >
-          <div className={styles.alienLottieContainer}>
-                  <Lottie
-                    animationData={alien_near_module_section}
-                    loop={true}
-                    style={style2}
-                  />
-                </div>
-<div className={styles.moduleContainer}>
-<div className={styles.heartLottieContainer}>
-                  <Lottie
-                    animationData={heart}
-                    loop={true}
-                    style={style2}
-                  />
-                </div>
+          <div
+            className={`${styles.contentContainer3} ${styles.containerPadding}`}
+          >
+            <div className={styles.alienLottieContainer}>
+              <Lottie
+                animationData={alien_near_module_section}
+                loop={true}
+                style={style2}
+              />
+            </div>
+            <div className={styles.moduleContainer}>
+              <div className={styles.heartLottieContainer}>
+                <Lottie animationData={heart} loop={true} style={style2} />
+              </div>
 
-          <div className={styles.moduletext}>MODULES</div>
-          <div className={styles.eventText3}>
-                  A bright future requires a bright start. NITS abides by this
-                  mantra. The institute believes in equipping students with the
-                  knowledge and skills in their chosen streams, inculcate
-                  values, identify hidden talents, and provide opportunities for
-                  students to realize their full potential. It facilitates the
-                  requisite support and encouragement via various cultural and
-                  academic activities to shape the body and soul. It has
-                  transformed into a sought out centre of learning.
-                </div>
-          
-                <div className={styles.buttonContainer}>
+              <div className={styles.moduletext}>MODULES</div>
+              <div className={styles.eventText3}>
+                A bright future requires a bright start. NITS abides by this
+                mantra. The institute believes in equipping students with the
+                knowledge and skills in their chosen streams, inculcate values,
+                identify hidden talents, and provide opportunities for students
+                to realize their full potential. It facilitates the requisite
+                support and encouragement via various cultural and academic
+                activities to shape the body and soul. It has transformed into a
+                sought out centre of learning.
+              </div>
+
+              <div className={styles.buttonContainer}>
                 <Link to="/modules">
                   <Button>
-                   <a className={styles.moduleButton}>PLAY MODULES</a>
+                    <a className={styles.moduleButton}>PLAY MODULES</a>
                   </Button>
-                  </Link>
-                </div>
-                </div>
-                </div>
+                </Link>
+              </div>
+            </div>
+          </div>
 
-                <div className={styles.contentContainer3}>
+          <div className={styles.contentContainer3} id="gallery" >
+            <div className={styles.photoContainer}>
+              <div className={styles.moduletext}>PHOTO GALLERY</div>
+              
+               <HomeCarousel/>
 
-  <div className={styles.photoContainer}>
-                   <div className={styles.moduletext}>PHOTO GALLERY</div>
-                   <div className={styles.carouselContainer}>
-      <Slider {...settings}>
-        <div>
-          <img src="/images/bg_landing.svg" alt="Image 1" className={styles.carouselImage} />
-        </div>
-        <div>
-          <img src="/images/bg_landing_stars.svg" alt="Image 2" className={styles.carouselImage} />
-        </div>
-        <div>
-          <img src="/images/bg22.svg" alt="Image 3" className={styles.carouselImage} />
-        </div>
-      </Slider>
-    </div>
-                </div>
-                </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

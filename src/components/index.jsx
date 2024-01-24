@@ -6,9 +6,10 @@ import Sponsors from "./Sponsors/Sponsors";
 import About from "./About/About";
 import Hero from "./Hero/Hero";
 import Loading from "./Loading/Loading";
+import HomeCarousel from "./HomeCarousel/HomeCarousel";
 
 
 
 
 
-export { Button, Input, Hero, Sponsors, About,Navbar, Footer,Loading};
+export { Button, Input, Hero, Sponsors, About,Navbar, Footer,Loading,HomeCarousel};
