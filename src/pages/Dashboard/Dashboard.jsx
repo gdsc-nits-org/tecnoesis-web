@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
 import callblack from "/images/call_black.png";
+import location from "/images/location.png";
+// import pin from "/images/pin.png";
 import vector_right from "/images/Vector1.png";
 import vector_left from "/images/Vector.png";
 import ellipse from "/images/Ellipse.svg";
@@ -34,9 +36,9 @@ const getTeams = (teamsRegistered, status, currentUsername) => {
 export default function Dashboard() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
-  const { setloggedin } = useContext(UserContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
 
-  let api_url_me = ${import.meta.env.VITE_BASE_URL}/api/user/me;
+  let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
   const [currentStatus, setCurrentStatus] = useState("registered");
   const [registeredEvents, setRegisteredEvents] = useState([]);
@@ -52,6 +54,9 @@ export default function Dashboard() {
         case "pending":
           setCurrentStatus("rejected");
           break;
+        case "rejected":
+          setCurrentStatus("registered");
+          break;
 
         default:
           break;
@@ -63,6 +68,9 @@ export default function Dashboard() {
           break;
         case "pending":
           setCurrentStatus("registered");
+          break;
+        case "registered":
+          setCurrentStatus("rejected");
           break;
 
         default:
@@ -83,10 +91,10 @@ export default function Dashboard() {
   };
 
   const handleResponse = async (id, status) => {
-    const api_url = ${import.meta.env.VITE_BASE_URL}/api/team/${id}/respond;
+    const api_url = `${import.meta.env.VITE_BASE_URL}/api/team/${id}/respond`;
     const body = { status };
     const headers = {
-      authorization: Bearer ${localStorage.getItem("token")},
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     };
     try {
       const res = await axios.patch(api_url, body, { headers });
@@ -101,27 +109,16 @@ export default function Dashboard() {
     }
   };
 
-  const giveIcon = (status) => {
-    switch (status) {
-      case "REGISTERED":
-        return tick;
-      case "PENDING":
-        return pending;
-
-      default:
-        break;
-    }
-  };
-
   useEffect(() => {
     const getUserData = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("token");
         if (!token) {
           throw Error("No token found");
         }
         const headers = {
-          Authorization: Bearer ${token},
+          Authorization: `Bearer ${token}`,
         };
         const response = await axios.get(api_url_me, {
           headers,
@@ -157,8 +154,9 @@ export default function Dashboard() {
           toast(error.message);
         }
         navigate("/");
-        setloggedin(false);
+        localStorage.setItem("loggedin", 0);
       }
+      setIsLoading(false);
     };
     getUserData();
   }, []);
@@ -166,6 +164,10 @@ export default function Dashboard() {
   const trimText = (text) => {
     return text.length > 10 ? text.slice(0, 10) : text;
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>
@@ -196,11 +198,7 @@ export default function Dashboard() {
               </p>
             </div>
             <div className={styles.address}>
-              <img
-                className={styles.profile_icons}
-                src="/elements/email_s.png"
-                alt=""
-              />
+              <img className={styles.profile_icons} src={location} alt="" />
               <p className={styles.profile_text}>{userData?.email}</p>
             </div>
           </div>
@@ -274,10 +272,7 @@ export default function Dashboard() {
                                 <td>{trimText(member.user.firstName)}</td>
                                 <td>{trimText(member.user.username)}</td>
                                 <td>
-                                  <img
-                                    src={giveIcon(member.registrationStatus)}
-                                    alt=""
-                                  />
+                                  <img src={vector4} alt="" />
                                 </td>
                               </tr>
                             ))}
@@ -366,7 +361,7 @@ export default function Dashboard() {
                                 <td>{trimText(member.user.firstName)}</td>
                                 <td>{trimText(member.user.username)}</td>
                                 <td>
-                                  <img src={tick} alt="" />
+                                  <img src={vector4} alt="" />
                                 </td>
                               </tr>
                             ))}

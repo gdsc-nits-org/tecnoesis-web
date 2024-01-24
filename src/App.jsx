@@ -1,22 +1,71 @@
-import { Home, Error, Dashboard,EventDescription } from "./pages";
+import {
+  Home,
+  Error,
+  Dashboard,
+  ModulePage,
+  EventDescription,
+  Registration,
+  Form,
+} from "./pages";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
-import UserContext from "./globals/authprovider";
+import { Navbar, Footer, Loading } from "./components";
+import AuthProvider from "./globals/authprovider";
+import LoadingProvider from "./globals/loading/loadingProvider";
+import UserContext from "./globals/authcontext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+    if (localStorage.getItem("token")) {
+      localStorage.setItem("loggedin", 1);
+    } else {
+      localStorage.setItem("loggedin", 0);
+    }
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <>
-      <UserContext>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/event" element={<EventDescription/>} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Footer />
-      </UserContext>
+      <AuthProvider>
+        <LoadingProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition:Bounce
+          />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/modules" element={<ModulePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/signup" element={<Form />} />
+            <Route path="/event/:id" element={<EventDescription />} />
+            <Route path="/event/:id/registration" element={<Registration />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </LoadingProvider>
+      </AuthProvider>
     </>
   );
 }

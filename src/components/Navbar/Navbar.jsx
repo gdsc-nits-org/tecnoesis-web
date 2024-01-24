@@ -1,16 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Slant as Hamburger } from "hamburger-react";
-import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
-import Button_page from "../Button/Button";
+import { toast } from "react-toastify";
+import { Button } from "../../components";
+
 import logo from "/elements/tecno-Logo.svg";
 import cross_logo from "/elements/cross.png";
-import { UserContext } from "../../globals/authprovider";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import UserContext from "../../globals/authcontext";
 import { Link as RouterLink } from "react-router-dom";
 
+import styles from "./Navbar.module.css";
+
 const Navbar = () => {
+  const { signin, logout } = useContext(UserContext);
+  const loggedin = parseInt(localStorage.getItem("loggedin"));
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
   const navigate = useNavigate();
@@ -19,7 +22,6 @@ const Navbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const { signin } = useContext(UserContext);
   const closeNavbarOnOutsideClick = (event) => {
     if (
       showNavbar &&
@@ -28,6 +30,26 @@ const Navbar = () => {
     ) {
       setShowNavbar(false);
     }
+  };
+
+  const handleLogin = async () => {
+    const { status, message } = await signin();
+    toast(message);
+    setShowNavbar(false);
+    if (status === 200) {
+      navigate("/dashboard");
+    } else if (status === 404 || status === 409) {
+      // if no user exists or username already taken
+      navigate("/signup");
+    } else {
+      navigate("/");
+    }
+  };
+
+  const handleLogout = async () => {
+    logout();
+    setShowNavbar(false);
+    toast("Logged out successfully");
   };
 
   useEffect(() => {
@@ -49,21 +71,39 @@ const Navbar = () => {
             <img src={cross_logo} alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
-            <li className={styles.register_dock}>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-                onClick={handleShowNavbar}
-              >
-                <div className={styles.button_sign_content}>
-                  <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
-                </div>
-              </Link>
-            </li>
+            {loggedin ? (
+              <li className={styles.register_dock}>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={50}
+                  duration={500}
+                  onClick={handleLogout}
+                >
+                  <div className={styles.button_sign_content}>
+                    <div className={styles.btn_signin}>LOGOUT</div>
+                  </div>
+                </Link>
+              </li>
+            ) : (
+              <li className={styles.register_dock}>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={50}
+                  duration={500}
+                  onClick={handleLogin}
+                >
+                  <div className={styles.button_sign_content}>
+                    <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                  </div>
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to="about"
@@ -74,32 +114,35 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
-              <RouterLink to="/modules" onClick={handleShowNavbar}>
-                <Button_page>
+              <Link to="/modules" onClick={handleShowNavbar}>
+                <Button>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
-                </Button_page>
-              </RouterLink>
-            </li>
-            <li>
-              <Link
-                to="/dashboard"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-              >
-                <Button_page>
-                  <div className={styles.navbuttonpage_side}>DASHBOARD</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
+            {loggedin && (
+              <li>
+                <Link
+                  to="/dashboard"
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={50}
+                  duration={500}
+                  onClick={handleShowNavbar}
+                >
+                  <Button>
+                    <div className={styles.navbuttonpage_side}>DASHBOARD</div>
+                  </Button>
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to=""
@@ -108,10 +151,11 @@ const Navbar = () => {
                 hashSpy={true}
                 offset={50}
                 duration={500}
+                onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
@@ -124,17 +168,17 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
-              <RouterLink to="/team" onClick={handleShowNavbar}>
-                <Button_page>
+              <Link to="/team" onClick={handleShowNavbar}>
+                <Button>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
-                </Button_page>
-              </RouterLink>
+                </Button>
+              </Link>
             </li>
             <li>
               <Link
@@ -146,17 +190,17 @@ const Navbar = () => {
                 duration={500}
                 onClick={handleShowNavbar}
               >
-                <Button_page>
+                <Button>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button_page>
+                </Button>
               </Link>
             </li>
             <li>
-              <RouterLink to="/contactus" onClick={handleShowNavbar}>
-                <Button_page>
+              <Link to="/contactus" onClick={handleShowNavbar}>
+                <Button>
                   <div className={styles.navbuttonpage_side}>CONTACT US</div>
-                </Button_page>
-              </RouterLink>
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -178,32 +222,44 @@ const Navbar = () => {
 
         <div>
           <ul className={styles.nav_content}>
-            <li>
-              <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={0}
-                duration={500}
-              >
-                <Button_page rounded>
-                  <div
-                    className={styles.navbuttonpage}
-                    onClick={async () => {
-                      try {
-                        let res = await signin();
-                        //display error
-                      } catch (err) {
-                        // navigate("/signup")
-                      }
-                    }}
-                  >
-                    LOGIN WITH GOOGLE
-                  </div>
-                </Button_page>
-              </Link>
-            </li>
+            {loggedin ? (
+              <li>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <Button rounded>
+                    <div
+                      className={styles.navbuttonpage}
+                      onClick={handleLogout}
+                    >
+                      LOGOUT
+                    </div>
+                  </Button>
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <Button rounded>
+                    <div className={styles.navbuttonpage} onClick={handleLogin}>
+                      LOGIN WITH GOOGLE
+                    </div>
+                  </Button>
+                </Link>
+              </li>
+            )}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />

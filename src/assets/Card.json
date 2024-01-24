@@ -1,27 +1,26 @@
 [
   {
     "id": 1,
-    "company": "images/coca_cola_logo.png"
+    "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105904/tecnoesis/coca_cola_logo_lxd1po.png"
   },
   {
     "id": 2,
-    "company": "images/amul_logo.png"
+    "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105864/tecnoesis/amul_logo_vnwfww.png"
   },
   {
     "id": 3,
-    "company": "images/zebronics_logo.png"
+    "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105861/tecnoesis/zebronics_logo_syvjwl.png"
   },
   {
     "id": 4,
-    "company": "images/royal_enfield_logo.png"
+    "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105853/tecnoesis/royal_enfield_logo_fve7cu.png"
   },
   {
     "id": 5,
-    "company": "images/unacademy_logo.png"
+    "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105857/tecnoesis/unacademy_logo_vxpo88.png"
   },
   {
     "id": 6,
     "company": "images/heaven_logo.png"
   }
 ]
-
