@@ -45,7 +45,7 @@ const images = [
     url: "/galleryimg/imgp18.jpg"
   },
   {
-    url: "/galleryimg/imgp12.jpg"
+    url: "/galleryimg/imgp19.jpg"
   },
 
 ]
