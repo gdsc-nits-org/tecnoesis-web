@@ -1,15 +1,13 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Link as SectionLink } from "react-scroll";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
 import UserContext from "../../globals/authcontext";
-
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar2 = () => {
   const { signin, logout } = useContext(UserContext);
   const loggedin = parseInt(localStorage.getItem("loggedin"));
   const [showNavbar, setShowNavbar] = useState(false);
@@ -90,11 +88,11 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <SectionLink to="about" onClick={handleShowNavbar}>
+              <Link to="/#about" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
                 </Button>
-              </SectionLink>
+              </Link>
             </li>
             <li>
               <Link to="/modules" onClick={handleShowNavbar}>
@@ -112,6 +110,7 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+
             <li>
               <Link to="/team" onClick={handleShowNavbar}>
                 <Button>
@@ -120,18 +119,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <SectionLink to="gallery" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button>
-              </SectionLink>
-            </li>
-            <li>
-              <SectionLink to="sponsor" onClick={handleShowNavbar}>
+              <Link to="/#sponsor" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
-              </SectionLink>
+              </Link>
+            </li>
+            <li>
+              <Link to="/#gallery" onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>GALLERY</div>
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -177,6 +176,7 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+            
             {/* <li className={styles.nav_profile}>
               <a href="">
                 <img className={styles.main_img} src={img123456} alt="" />
@@ -192,4 +192,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
