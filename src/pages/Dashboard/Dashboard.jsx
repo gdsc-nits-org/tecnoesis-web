@@ -6,18 +6,16 @@ import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
 import callblack from "/images/call_black.png";
 import location from "/images/location.png";
-// import pin from "/images/pin.png";
 import vector_right from "/images/Vector1.png";
 import vector_left from "/images/Vector.png";
 import ellipse from "/images/Ellipse.svg";
 import vector from "/images/Vector.svg";
 import statusData from "../../assets/statusData";
 import vector3 from "/images/Vector3.png";
-import tick from "/images/Vector4.png";
-import pending from "/elements/pending.svg";
 import ellipse2 from "/images/Ellipse2.svg";
 import axios from "axios";
-import UserContext from "../../globals/authcontext";
+import LoadingContext from "../../globals/loading/loadingContext";
+import {Loading} from "../../components"
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -230,6 +228,7 @@ export default function Dashboard() {
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
+               (registeredEvents && registeredEvents.length > 0 ? (
                 registeredEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div className={styles.event_rect}>
@@ -281,9 +280,14 @@ export default function Dashboard() {
                       </div>
                     )}
                   </div>
+                ))
+                
+                ) : (
+                  <p className={styles.content_text}>No registered events</p>
                 ))}
 
               {currentStatus === "pending" &&
+               (pendingEvents && pendingEvents.length > 0 ? (
                 pendingEvents?.map((events) => (
                   <div key={events.event.id} className={styles.event_rect2}>
                     <div className={styles.circle}>
@@ -316,9 +320,14 @@ export default function Dashboard() {
                       </button>
                     </div>
                   </div>
+                ))
+              
+                ) : (
+                  <p className={styles.content_text}>No pending events</p>
                 ))}
 
               {currentStatus === "rejected" &&
+              (rejectedEvents && rejectedEvents.length > 0 ? (
                 rejectedEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div key={events.event.id} className={styles.event_rect}>
@@ -370,6 +379,10 @@ export default function Dashboard() {
                       </div>
                     )}
                   </div>
+                ))
+                
+                ) : (
+                  <p className={styles.content_text}>No rejected events</p>
                 ))}
             </div>
           </div>

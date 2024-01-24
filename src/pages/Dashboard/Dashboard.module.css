@@ -47,6 +47,14 @@
   align-items: center;
   display: flex;
 }
+.content_text{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PixeloidSans;
+  padding-top: 40%;
+}
 .main_img {
   border-radius: 50%;
   box-shadow: 0px 0px 54.1px -1px #ed40c7;
@@ -620,6 +628,10 @@ td {
     padding-top: 15rem;
     height: 100vh;
   }
+  .content_text{
+    padding-top: 40%;
+    font-size: 1.9rem;
+  }
   .texture {
     width: 65%;
     backdrop-filter: blur(320px);
@@ -697,6 +709,10 @@ td {
   .end_div img {
     width: 1.4rem;
   }
+  .address, .name, .college, .contact{
+    flex-wrap: wrap;
+    white-space: normal;
+  }
 }
 @media (max-width: 410px) {
   .end_div2 {
@@ -722,3 +738,22 @@ td {
     width: 92%;
   }
 }
+@media(max-width:400px){
+  .address, .college, .name, .contact{
+ flex-wrap: wrap;
+ white-space: normal;
+ }
+ .profile_text{
+   font-size: 1rem;
+ }
+ }
+ @media(max-width:350px){
+  .profile_text{
+   font-size: 0.9rem;
+  }}
+@media(max-width:2500px)and (min-width:1860px){
+  .content_text{
+    padding-top: 30%;
+    font-size: 1.4rem;
+  }
+  }
