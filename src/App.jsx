@@ -7,7 +7,7 @@ import {
   Registration,
   Form,
 } from "./pages";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer, Loading } from "./components";
 import AuthProvider from "./globals/authprovider";
@@ -16,7 +16,6 @@ import UserContext from "./globals/authcontext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { useState } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
