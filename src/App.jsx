@@ -20,7 +20,9 @@ import "./App.css";
 function App() {
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      localStorage.setItem("loggedin", true);
+      localStorage.setItem("loggedin", 1);
+    } else {
+      localStorage.setItem("loggedin", 0);
     }
   }, []);
 

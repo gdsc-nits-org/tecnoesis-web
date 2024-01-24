@@ -160,7 +160,7 @@ export default function Dashboard() {
           toast(error.message);
         }
         navigate("/");
-        localStorage.setItem("loggedin", false);
+        localStorage.setItem("loggedin", 0);
       }
       setIsLoading(false);
     };

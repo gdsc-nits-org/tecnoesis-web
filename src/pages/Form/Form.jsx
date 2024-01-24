@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const Form = () => {
   const { signup } = useContext(UserContext);
-  const loggedin = localStorage.getItem("loggedin");
+  const loggedin = parseInt(localStorage.getItem("loggedin"));
   const navigate = useNavigate();
   const [formError, setFormError] = useState({});
   const [formData, setFormData] = useState({

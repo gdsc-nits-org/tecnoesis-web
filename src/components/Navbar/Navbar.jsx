@@ -13,7 +13,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { signin, logout } = useContext(UserContext);
-  const loggedin = localStorage.getItem("loggedin");
+  const loggedin = parseInt(localStorage.getItem("loggedin"));
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
   const navigate = useNavigate();

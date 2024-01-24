@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.setItem("loggedin",false);
+    localStorage.setItem("loggedin",0);
     localStorage.removeItem("token");
     navigate("/");
   };
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
       headers: header,
     });
     if (res.status >= 200 && res.status < 300) {
-      localStorage.setItem("loggedin",true);
+      localStorage.setItem("loggedin",1);
     }
   };
 
@@ -87,7 +87,7 @@ const AuthProvider = ({ children }) => {
       headers: header,
     });
     if (res.status >= 200 && res.status < 300) {
-      localStorage.setItem("loggedin",true);
+      localStorage.setItem("loggedin",1);
     }
   };
 
