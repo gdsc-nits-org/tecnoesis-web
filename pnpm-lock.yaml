@@ -11,6 +11,9 @@ dependencies:
   dom:
     specifier: ^0.0.3
     version: 0.0.3
+  dotenv:
+    specifier: ^16.3.2
+    version: 16.4.1
   firebase:
     specifier: ^10.7.1
     version: 10.7.1
@@ -1638,6 +1641,11 @@ packages:
 
   /dom@0.0.3:
     resolution: {integrity: sha512-Uzda1zIAXO8JG2fm6IbJcdzBrRaC5Q308HTIjCXCQHh7ZVACJOeQzYYvd99plJ2/HUpZQk9IxNI/Y+QrO6poIQ==}
+    dev: false
+
+  /dotenv@16.4.1:
+    resolution: {integrity: sha512-CjA3y+Dr3FyFDOAMnxZEGtnW9KBR2M0JvvUtXNW+dYJL5ROWxP9DUHCwgFqpMk0OXCc0ljhaNTr2w/kutYIcHQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /electron-to-chromium@1.4.635:

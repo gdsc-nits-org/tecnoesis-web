@@ -4,10 +4,11 @@ import {
   Dashboard,
   ModulePage,
   EventDescription,
+  Registration,
   Form,
 } from "./pages";
+import { useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useContext, useState } from "react";
 import { Navbar, Footer, Loading } from "./components";
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
@@ -23,18 +24,30 @@ function App() {
   const toggleNavbar = () => {
     setShowNavbar((prev) => !prev);
   };
-  const { setLoggedin } = useContext(UserContext);
+  // const { setLoggedin } = useContext(UserContext);
 
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     if (localStorage.getItem("token")) {
-      setLoggedin(true);
+      localStorage.setItem("loggedin", 1);
+    } else {
+      localStorage.setItem("loggedin", 0);
     }
+
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
-      <LoadingProvider>
-        <AuthProvider>
+      <AuthProvider>
+        <LoadingProvider>
           <ToastContainer
             position="bottom-right"
             autoClose={3000}
@@ -48,7 +61,7 @@ function App() {
             theme="dark"
             transition:Bounce
           />
-          
+
           <Routes>
             <Route
               path="/"
@@ -103,8 +116,8 @@ function App() {
             />
             <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
-        </AuthProvider>
-      </LoadingProvider>
+        </LoadingProvider>
+      </AuthProvider>
     </>
   );
 }
