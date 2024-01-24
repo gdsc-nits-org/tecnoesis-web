@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background-image: url("/images/homepageBg.png");
+    background-image: url("/images/homebg.jpeg");
   background-repeat: repeat;
   background-size: contain;
 }

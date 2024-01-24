@@ -80,6 +80,26 @@
     width:27%;
 }
 }
+@media screen and (min-width: 1300px) {
+  .carouselContainer {
+    width: 50%;
+   
+  }
+  
+  .carouselImage {
+    width: 50vw;
+  }
+  .buttonContainer{
+    width:25vw;
+  }
+
+  .prev{
+    width:22%;
+}
+.next{
+    width:22%;
+}
+}
 @media screen and (min-width: 1500px) {
   .carouselImage{
      height:40vw;
