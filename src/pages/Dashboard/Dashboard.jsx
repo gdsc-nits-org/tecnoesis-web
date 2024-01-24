@@ -5,17 +5,17 @@ import { toast } from "react-toastify";
 import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
 import callblack from "/images/call_black.png";
+import location from "/images/location.png";
 import vector_right from "/images/Vector1.png";
 import vector_left from "/images/Vector.png";
 import ellipse from "/images/Ellipse.svg";
 import vector from "/images/Vector.svg";
 import statusData from "../../assets/statusData";
 import vector3 from "/images/Vector3.png";
-import tick from "/images/Vector4.png";
-import pending from "/elements/pending.svg";
 import ellipse2 from "/images/Ellipse2.svg";
 import axios from "axios";
-import UserContext from "../../globals/authcontext";
+import LoadingContext from "../../globals/loading/loadingContext";
+import {Loading} from "../../components"
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -34,7 +34,7 @@ const getTeams = (teamsRegistered, status, currentUsername) => {
 export default function Dashboard() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
-  const { setloggedin } = useContext(UserContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
@@ -52,6 +52,9 @@ export default function Dashboard() {
         case "pending":
           setCurrentStatus("rejected");
           break;
+        case "rejected":
+          setCurrentStatus("registered");
+          break;
 
         default:
           break;
@@ -63,6 +66,9 @@ export default function Dashboard() {
           break;
         case "pending":
           setCurrentStatus("registered");
+          break;
+        case "registered":
+          setCurrentStatus("rejected");
           break;
 
         default:
@@ -115,6 +121,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const getUserData = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("token");
         if (!token) {
@@ -157,8 +164,9 @@ export default function Dashboard() {
           toast(error.message);
         }
         navigate("/");
-        setloggedin(false);
+        localStorage.setItem("loggedin", 0);
       }
+      setIsLoading(false);
     };
     getUserData();
   }, []);
@@ -166,6 +174,10 @@ export default function Dashboard() {
   const trimText = (text) => {
     return text.length > 10 ? text.slice(0, 10) : text;
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>
@@ -232,7 +244,7 @@ export default function Dashboard() {
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
-                (registeredEvents && registeredEvents.length > 0 ? (
+               (registeredEvents && registeredEvents.length > 0 ? (
                 registeredEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div className={styles.event_rect}>
@@ -275,10 +287,7 @@ export default function Dashboard() {
                                 <td>{trimText(member.user.firstName)}</td>
                                 <td>{trimText(member.user.username)}</td>
                                 <td>
-                                  <img
-                                    src={giveIcon(member.registrationStatus)}
-                                    alt=""
-                                  />
+                                  <img src={vector4} alt="" />
                                 </td>
                               </tr>
                             ))}
@@ -288,13 +297,13 @@ export default function Dashboard() {
                     )}
                   </div>
                 ))
+                
                 ) : (
                   <p className={styles.content_text}>No registered events</p>
-                ))
-              }
+                ))}
 
               {currentStatus === "pending" &&
-                 (pendingEvents && pendingEvents.length > 0 ? (
+               (pendingEvents && pendingEvents.length > 0 ? (
                 pendingEvents?.map((events) => (
                   <div key={events.event.id} className={styles.event_rect2}>
                     <div className={styles.circle}>
@@ -328,12 +337,13 @@ export default function Dashboard() {
                     </div>
                   </div>
                 ))
+              
                 ) : (
                   <p className={styles.content_text}>No pending events</p>
                 ))}
 
               {currentStatus === "rejected" &&
-                (rejectedEvents && rejectedEvents.length > 0 ? (
+              (rejectedEvents && rejectedEvents.length > 0 ? (
                 rejectedEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div key={events.event.id} className={styles.event_rect}>
@@ -376,7 +386,7 @@ export default function Dashboard() {
                                 <td>{trimText(member.user.firstName)}</td>
                                 <td>{trimText(member.user.username)}</td>
                                 <td>
-                                  <img src={tick} alt="" />
+                                  <img src={vector4} alt="" />
                                 </td>
                               </tr>
                             ))}
@@ -386,6 +396,7 @@ export default function Dashboard() {
                     )}
                   </div>
                 ))
+                
                 ) : (
                   <p className={styles.content_text}>No rejected events</p>
                 ))}
