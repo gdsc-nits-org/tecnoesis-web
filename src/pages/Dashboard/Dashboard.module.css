@@ -247,6 +247,14 @@ padding: 0.9rem;
 
 
 }
+.content_text{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PixeloidSans;
+  padding-top: 40%;
+}
 .repeating_box{
   flex-direction: column;
   justify-content: center;
@@ -661,6 +669,10 @@ th{
       width: 18.25rem;
       height: 18.25rem;
   }
+  .content_text{
+    padding-top: 40%;
+    font-size: 1.9rem;
+  }
   .repeating_box{
       border: 3px dashed #FFF;
   }
@@ -776,3 +788,9 @@ white-space: normal;
   font-size: 0.9rem;
  }
  }
+ @media(max-width:2500px)and (min-width:1860px){
+  .content_text{
+    padding-top: 30%;
+    font-size: 1.4rem;
+  }
+  }

@@ -232,6 +232,7 @@ export default function Dashboard() {
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
+                (registeredEvents && registeredEvents.length > 0 ? (
                 registeredEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div className={styles.event_rect}>
@@ -286,9 +287,14 @@ export default function Dashboard() {
                       </div>
                     )}
                   </div>
-                ))}
+                ))
+                ) : (
+                  <p className={styles.content_text}>No registered events</p>
+                ))
+              }
 
               {currentStatus === "pending" &&
+                 (pendingEvents && pendingEvents.length > 0 ? (
                 pendingEvents?.map((events) => (
                   <div key={events.event.id} className={styles.event_rect2}>
                     <div className={styles.circle}>
@@ -321,9 +327,13 @@ export default function Dashboard() {
                       </button>
                     </div>
                   </div>
+                ))
+                ) : (
+                  <p className={styles.content_text}>No pending events</p>
                 ))}
 
               {currentStatus === "rejected" &&
+                (rejectedEvents && rejectedEvents.length > 0 ? (
                 rejectedEvents?.map((events, index) => (
                   <div key={events.event.id} className={styles.repeating_box}>
                     <div key={events.event.id} className={styles.event_rect}>
@@ -375,6 +385,9 @@ export default function Dashboard() {
                       </div>
                     )}
                   </div>
+                ))
+                ) : (
+                  <p className={styles.content_text}>No rejected events</p>
                 ))}
             </div>
           </div>
