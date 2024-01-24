@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Form from "./Form/Form"
 import EventDescription from "./EventDescription/EventDescription";
 import TeamPage from "./TeamPage/Teampage"
+import { Loading } from "../components";
 
 
-export { Home, Error, Dashboard, ModulePage, EventDescription, Form , TeamPage};
+export { Home, Error, Dashboard, ModulePage, EventDescription, Form,Loading , TeamPage};
