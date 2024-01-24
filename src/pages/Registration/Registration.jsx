@@ -1,7 +1,6 @@
 import styles from './Registration.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast } from "react-toastify";
 const BACKEND_URL = import.meta.env.VITE_BASE_URL;
 const Card = ({ id, setMembers, name }) => {
     const [active, setActive] = useState(false);
@@ -136,7 +135,6 @@ const Registration = () => {
     }
     else {
         window.location.href = '/';
-        setTimeout(() => toast("First You have to Login to register!"), 5000);
     }
 }
 export default Registration;

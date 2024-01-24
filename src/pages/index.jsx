@@ -5,5 +5,5 @@ import ModulePage from "./ModulePage/ModulePage";
 import Dashboard from "./Dashboard/Dashboard";
 import Registration from "./Registration/Registration";
 import Form from "./Form/Form"
-
-export { Home, Error, Dashboard, EventDescription, ModulePage, Form, Registration };
+import { Loading } from "../components";
+export { Home, Error, Dashboard, ModulePage, EventDescription, Registration, Form, Loading };
