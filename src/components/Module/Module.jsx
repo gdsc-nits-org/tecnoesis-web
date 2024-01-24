@@ -116,7 +116,7 @@ const Module = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // const [modulesData, setModulesData] = useState([]);
+  const [modulesData, setModulesData] = useState([]);
 
   
     const getModules = async () => {
@@ -138,7 +138,7 @@ const Module = () => {
 
 
 
-  const modulesData=data.msg; 
+  // const modulesData=data.msg; 
 
      
   
