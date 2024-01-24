@@ -22,6 +22,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../globals/authcontext";
+import LoadingContext from "../../globals/loading/loadingContext";
+import { Loading } from "../../components";
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -40,7 +42,7 @@ const getTeams = (teamsRegistered, status, currentUsername) => {
 export default function Dashboard() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
-  const { setloggedin } = useContext(UserContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
@@ -58,6 +60,9 @@ export default function Dashboard() {
         case "pending":
           setCurrentStatus("rejected");
           break;
+        case "rejected":
+          setCurrentStatus("registered");
+          break;
 
         default:
           break;
@@ -69,6 +74,9 @@ export default function Dashboard() {
           break;
         case "pending":
           setCurrentStatus("registered");
+          break;
+        case "registered":
+          setCurrentStatus("rejected");
           break;
 
         default:
@@ -109,6 +117,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const getUserData = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("token");
         if (!token) {
@@ -151,8 +160,9 @@ export default function Dashboard() {
           toast(error.message);
         }
         navigate("/");
-        setloggedin(false);
+        localStorage.setItem("loggedin", 0);
       }
+      setIsLoading(false);
     };
     getUserData();
   }, []);
@@ -160,6 +170,10 @@ export default function Dashboard() {
   const trimText = (text) => {
     return text.length > 10 ? text.slice(0, 10) : text;
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>

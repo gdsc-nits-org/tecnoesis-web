@@ -125,10 +125,10 @@ const Module = () => {
       console.log(jsonData.msg);
 
       setModulesData(jsonData.msg);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-    setIsLoading(false);
   };
   useEffect(() => {
     getModules();

@@ -12,7 +12,8 @@ import { Link as RouterLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const { signin, logout, loggedin } = useContext(UserContext);
+  const { signin, logout } = useContext(UserContext);
+  const loggedin = parseInt(localStorage.getItem("loggedin"));
   const [showNavbar, setShowNavbar] = useState(false);
   const navbarRef = useRef(null);
   const navigate = useNavigate();
