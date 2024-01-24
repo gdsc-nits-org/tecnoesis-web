@@ -12,9 +12,6 @@ const images = [
 
   },
   {
-    url: "/galleryimg/imgp6.jpg"
-  },
-  {
     url: "/galleryimg/imgp8.jpg"
   },
   {
@@ -24,7 +21,10 @@ const images = [
     url: "/galleryimg/imgp10.jpg"
   },
   {
-    url: "/galleryimg/imgp11.jpg"
+    url: "/galleryimg/imgp2.jpg"
+  },
+  {
+    url: "/galleryimg/imgp4.jpg"
   },
   {
     url: "/galleryimg/imgp13.jpg"
@@ -45,7 +45,7 @@ const images = [
     url: "/galleryimg/imgp18.jpg"
   },
   {
-    url: "/galleryimg/imgp12.jpg"
+    url: "/galleryimg/imgp23.jpg"
   },
 
 ]
