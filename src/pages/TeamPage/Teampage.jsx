@@ -369,7 +369,7 @@ const Teampage = () => {
         {
           id: "38",
           name: "Gracie G Rabha ",
-          designation: "UI/UX designer ",
+          designation: "UI/UX Designer ",
           linkedin: "https://www.linkedin.com/in/gracie-g-rabha-4472621aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100087872117590&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/gracie__ruth?igsh=N3UyNzRyZDA2Nmhy",
@@ -378,7 +378,7 @@ const Teampage = () => {
         {
           id: "35",
           name: "Siddharth Ghosh",
-          designation: "UI/UX",
+          designation: "UI/UX Designer",
           linkedin: "https://www.linkedin.com/in/siddharth-ghosh-18ba29251/",
           facebook: "https://www.facebook.com/profile.php?id=100070117330528",
           inst: "https://www.instagram.com/z_maniac_sidd/",
