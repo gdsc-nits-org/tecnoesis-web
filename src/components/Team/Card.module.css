@@ -81,11 +81,12 @@
   font-family: PixeloidSansBold, serif;
   font-weight: 700;
   gap: 6.67px;
+  z-index: 100;
 }
 
 .name{
   font-size: 1.3rem;
-  z-index: 5;
+  z-index: 50;
 }
 
 .position{

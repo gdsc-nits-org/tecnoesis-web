@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
-import toggleLeft from "../../../public/images/teamPage/toggle1.svg";
-import toggleRight from "../../../public/images/teamPage/toggleRight.svg";
+import toggleLeft from "/images/teamPage/toggle1.svg";
+import toggleRight from "/images/teamPage/toggleRight.svg";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -75,15 +75,15 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/jyotishka-b-32995712b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100005647038947",
           inst: "https://www.instagram.com/_jyo.tishka_?igsh=MTdlMWw5aDA3NHU5cw==",
-          image: "https://drive.google.com/open?id=1ltZ5rYgXfDc9X5uccF1ALeI0_WNFz5BD"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204614/IMG_20240121_104534038_HDR_-_Jyotishka_Bhattacharjee_v2vvwn.jpg"
         },
         {
           id: "10",
-          name: "DEBASISH KONWAR",
+          name: "Debashish Konwar",
           designation: "EXECUTIVE HEAD",
           linkedin: "https://www.linkedin.com/in/debasishkonwar/",
           facebook: "https://www.facebook.com/debasish.konwar.25",
-          image: "https://drive.google.com/open?id=1alrwdnFe7pKotgiYGjHXWu9nK4qMIzQV"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706206024/DSC_0174_2_-_Debasish_Konwar_qwqaq9.jpg"
         },
         {
           id: "3",
@@ -92,7 +92,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/pankaj-meena-8305aa269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100084255485902&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/pankaj56_06?igsh=MTBydXZ2YW5iam5nZQ==",
-          image: "https://drive.google.com/open?id=17kF6PJcvzKKGzPsyaPWYENMJvTERbbxv"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg"
         },
         {
           id: "2",
@@ -128,7 +128,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/truptee-vinod-undre-9847b1187/",
           facebook: "https://www.facebook.com/truptee.undre?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/_truptee__/",
-          image: "https://drive.google.com/open?id=1tvMR714TnIFXYNUMZvCmvX9_IqQ4SJUw"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205163/IMG20231013164902-removebg-preview_1_-_EEB-098_Truptee_Undre_cu2uby.png"
         },
         {
           id: "29",
@@ -137,7 +137,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/syed-intekhab-0b257a205/",
           facebook: "https://www.facebook.com/syedintekhab.hussain.9",
           inst: "https://www.instagram.com/inte_khaab_/",
-          image: "https://drive.google.com/open?id=1LFplJg9Vlf7h8CwN2yAXF3Z1loxEj60z"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212700/IMG_20230102_130503_-_SYED_INTEKHAB_HUSSAIN_rxkftn.jpg"
         },
         {
           id: "6",
@@ -146,7 +146,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/bhaskar-wary/",
           facebook: "https://www.facebook.com/bhaskar.wary.10/",
           inst: "https://www.behance.net/bhaskarwary",
-          image: "https://drive.google.com/open?id=1OgabuQ-MXNtMpAw0a-HDyGd-JmNrLl6H"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205317/Wary_Profile_-_Bhaskar_Wary_ijpbdt.jpg"
         },
         {
           id: "9",
@@ -155,7 +155,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/eisha-halder-a42367200/",
           facebook: "https://www.facebook.com/eisha.halder.16",
           inst: "https://www.instagram.com/eisha_s.halder/",
-          image: "https://drive.google.com/open?id=1cQInye3YG8BZxQ311rRdQmpfujE83cmo"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205888/WhatsApp_Image_2024-01-22_at_00.04.54_-_CSE_045_Eisha_Halder_n4nmyh.jpg"
         },
 
 
@@ -175,7 +175,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/gupta--ayush/",
           facebook: "https://www.facebook.com/profile.php?id=100058445922286",
           inst: "https://www.instagram.com/a_y_u_s_h_g__/",
-          image: "https://drive.google.com/open?id=10atD9YwrTXzo-JNSMjlkcErGxqBA5cr3"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213457/WhatsApp_Image_2023-12-12_at_18.47.34_1_-_Ayush_Gupta_pk5pwv.jpg"
         },
         {
           id: "18",
@@ -202,7 +202,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/anshumathe/",
           facebook: "https://www.facebook.com/ansh.umathe/",
           inst: "https://www.instagram.com/ansh.umathe/",
-          image: "https://drive.google.com/open?id=109pl9YgruMCYPwXesNEgjBNjRrsVtlex"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205817/PPTIMG_-_EE-B_131_Ansh_Umathe_sjvlxq.jpg"
         },
         {
           id: "22",
@@ -211,7 +211,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/priya-pal-477449208",
           facebook: "https://www.facebook.com/profile.php?id=100061192114590&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/priiya_pal?igsh=dGV2b2ljeWJ0dG83",
-          image: "https://drive.google.com/open?id=1MhUEqIw7m2Uz9bYicRPIJYxo_6TOawO-"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706211967/IMG_20231008_021040_984_-_EE-B_118_Priya_Pal_px70bz.jpg"
         },
 
         {
@@ -221,7 +221,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/rishikesh-kumar-narayan-sinha-751552160?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/rishikesh.krnarayansinha/",
           inst: "https://www.instagram.com/rishikesh_018/tagged/",
-          image: "https://drive.google.com/open?id=1kMFtUVBYQyFvHiIJPkTBFqc-oS34hAHB"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213207/WhatsApp_Image_2024-01-23_at_14.13.34_-_R.K.N._Sinha_cxkckb.jpg"
         },
       ],
     },
@@ -237,9 +237,17 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/",
           facebook: "https://www.facebook.com/bijay.jiwrajka.1",
           git: "https://github.com/bj-jiwrajka",
-          image: "https://drive.google.com/open?id=1IqKPG7DjgE1Yur-aguH0xVfYh0cLUePG"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212091/IMG_20240121_230459_-_Bijay_Jiwrajka_w6vif9.jpg"
         },
-
+        {
+          id: "16",
+          name: "Priyabrat Duarah",
+          designation: "Web Developer",
+          linkedin: "https://www.linkedin.com/in/priyabratduarah/",
+          facebook: "https://www.facebook.com/profile.php?id=100076231446828",
+          git: "https://github.com/Prybrt06",
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210750/tecnoesis/IMG_1316-removebg-preview_1_-_Priyabrat_i1tqs1.webp"
+        },
         {
           id: "2",
           name: "Swarup Chanda",
@@ -247,7 +255,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/swarup-chanda-23053724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/swarup.chanda.984",
           git: "https://github.com/swarupecenits",
-          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/ja3fyklkiijk1zoa3tzb"
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/tsy2gxw8hoadnjus0mao"
         },
         {
           id: "30",
@@ -256,7 +264,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/zinal-potphode-0484b8262",
           facebook: "https://www.facebook.com/profile.php?id=100089288271108&mibextid=ZbWKwL",
           git: "https://github.com/ZinalPotphode",
-          image: "https://drive.google.com/open?id=1x68oG9RUQQDd_pn2HYReknIK4tyid1Cr"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213050/IMG_20230902_114735_063_-_Zinal_Potphode_oiia2f.jpg"
         },
         {
           id: "4",
@@ -265,7 +273,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/barnil-sarma-34383a255?trk=contact-info",
           facebook: "https://m.facebook.com/profile.php/?id=100056956539956",
           git: "https://github.com/barnilsarma",
-          image: "https://drive.google.com/open?id=1q2gz5O1_gWEztAL6IKfSpe9JEKBt23Ag"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205056/Screenshot_2024-01-16-17-55-56-476_com.whatsapp-edit_-_Barnil_Sarma_uapdbl.jpg"
         },
         {
           id: "7",
@@ -274,7 +282,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/dhiraj-das-a26042249/",
           facebook: "https://www.instagram.com/dheerajdas19/",
           git: "https://github.com/dheeraj1922d",
-          image: "https://drive.google.com/open?id=142Y-E4fjCdEnFaKD-C3yCVuVz8a6r1Mj"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205523/myPhoto_-_dhiraj_das_i68slq.png"
         },
         {
           id: "12",
@@ -311,7 +319,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/gitsentinel/",
           facebook: "https://www.facebook.com/jacinth.mahanta/",
           git: "https://github.com/GitSentinel",
-          image: "https://drive.google.com/open?id=1KSCtMFJFvIQp_7_o5TvDyfQtlY-pGYpJ"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212181/me_-_Jacinth_Mahanta_n999iy.webp"
         },
         {
           id: "39",
@@ -320,7 +328,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/kaustav-dev-429123248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100087939076312&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/dev.kaustav?igsh=cm5jND\n\nN3bDV0emdo",
-          image: "https://drive.google.com/open?id=1sJZIb-H00U_5KVmR5UnBJZtGMIypxBRt"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706214492/IMG_20240116_111745_-_Kaustav_Dev_cr558z.jpg"
         },
         {
           id: "38",
@@ -329,7 +337,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/gracie-g-rabha-4472621aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100087872117590&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/gracie__ruth?igsh=N3UyNzRyZDA2Nmhy",
-          image: "https://drive.google.com/open?id=1s85eYXfG1sONTpiQ3sMv9ah7NtbBhXnY"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706214239/IMG_20240124_195007_-_CSE_012__Gracie_mznup5.jpg"
         },
         {
           id: "35",
@@ -338,7 +346,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/siddharth-ghosh-18ba29251/",
           facebook: "https://www.facebook.com/profile.php?id=100070117330528",
           inst: "https://www.instagram.com/z_maniac_sidd/",
-          image: "https://drive.google.com/open?id=1jCJAPqpE-9cwa1B2EKwh16M9wahr5O0R"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213760/IMG_20230730_162639_resized_1_-_EI_044_SIDDHARTH_GHOSH_xpynhp.jpg"
         },
         {
           id: "34",
@@ -347,17 +355,9 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/samarjit-roy-368071257/",
           facebook: "https://www.facebook.com/profile.php?id=100087733476599&mibextid=9R9pXO",
           git: "https://github.com/Samarjit25",
-          image: "https://drive.google.com/open?id=1EYjT0AdPM7mM8c84LAL-PrVAaMvIqKH7"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213561/dcdcf409-64f0-44ef-8175-26e67b1ab432-removebg-preview-removebg-preview_2_-_Samarjit_Roy_cfjjzs.png"
         },
-        {
-          id: "16",
-          name: "Priyabrat Duarah",
-          designation: "Web Developer",
-          linkedin: "https://www.linkedin.com/in/priyabratduarah/",
-          facebook: "https://www.facebook.com/profile.php?id=100076231446828",
-          git: "https://github.com/Prybrt06",
-          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210750/tecnoesis/IMG_1316-removebg-preview_1_-_Priyabrat_i1tqs1.webp"
-        },
+
         {
           id: "21",
           name: "Ayush Shahi ",
@@ -365,7 +365,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/ayush-shahi-5412b8123?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100087912133756&mibextid=JRoKGi",
           git: "https://github.com/AyuTechLive",
-          image: "https://drive.google.com/open?id=1U423s0eXVLTxIf__6oV5U8qC477HBJOt"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706211845/IMG_20240102_215228_524_-_Ayush_Shahi_ucus0p.heic"
         },
         {
           id: "26",
@@ -374,7 +374,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/sameer-zaidi-541261226/",
           facebook: "https://www.facebook.com/SyedSameerZaidi123",
           git: "https://github.com/Interstellar07",
-          image: "https://drive.google.com/open?id=1lf7PKmInbioCSSFge9ljFo1lb4iHoGiD"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212423/DSC_0068_-_Sameer_Zaidi_snorlt.jpg"
         },
         {
           id: "27",
@@ -383,7 +383,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/navneet-raj-08a720228/",
           facebook: "https://www.facebook.com/profile.php?id=100080411300265",
           git: "https://github.com/navneet098",
-          image: "https://drive.google.com/open?id=12TRcVYfh1tOoD6OF5uiLftxepUuCZlSx"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212519/unnamed_-_Navneet_Raj_jlptjx.jpg"
         },
         {
           id: "28",
@@ -392,7 +392,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/diptangshu-chakraborty-463b77250",
           facebook: "NIL",
           git: "https://github.com/Diptanghsu-DC",
-          image: "https://drive.google.com/open?id=1Bed6-V0SxnSLEZWW9ep8kJeiifIZBlRl"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212591/PSX_20240116_132155_-_Diptangshu_Chakraborty_kroftk.jpg"
         },
         {
           id: "36",
@@ -401,7 +401,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/kanika-punia-5b15a5210/",
           facebook: ".",
           git: "https://github.com/KanikaPunia119",
-          image: "https://drive.google.com/open?id=1-sUoiC0laB-c1TafDBmp_Szu7dmdc6e3"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706214043/WhatsApp_Image_2024-01-23_at_20.52.22_-_Kanika_Punia_kwovcy.jpg"
         },
         {
           id: "37",
@@ -410,7 +410,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/diptabh-medhi-4836a8229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100076196678788&mibextid=9R9pXO",
           git: "https://github.com/diptabhm",
-          image: "https://drive.google.com/open?id=1pMtpnVzUnr5GfMMn1Ekn5jEmoZFihc2M"
+          image: "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706214109/WhatsApp_Image_2024-01-24_at_3.58.45_AM_-_Diptabh_Medhi_fqz8mj.jpg"
         },
       ],
     },
