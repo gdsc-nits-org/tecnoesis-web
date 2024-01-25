@@ -34,7 +34,7 @@
   -webkit-text-stroke-color: #000;
 
   font-family: PixeloidSansBold, serif;
-  font-size: 3vw;
+  font-size: 2vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -48,7 +48,7 @@
 }
 
 .teamName {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-family: PixeloidSans, serif;
   padding-top: 1em;
   padding-bottom: 1em;
