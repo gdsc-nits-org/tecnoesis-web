@@ -99,9 +99,9 @@ const Teampage = () => {
           id: "2",
           name: "Shayan Debroy",
           designation: "Web Team Head",
-          linkedin: " ",
-          facebook: " ",
-          git: " ",
+          linkedin: "https://www.linkedin.com/in/shayan-debroy?trk=contact-info",
+          facebook: "https://www.facebook.com/shayan.debroy.90",
+          git: "https://github.com/shayan-cyber",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/ijk4s35qv06jbumfqrvl"
         },
         {
