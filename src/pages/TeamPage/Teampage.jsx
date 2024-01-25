@@ -89,6 +89,24 @@ const Teampage = () => {
           image: "https://drive.google.com/open?id=17kF6PJcvzKKGzPsyaPWYENMJvTERbbxv"
         },
         {
+          id: "13",
+          name: "Pratik Majumdar",
+          designation: "Web Team Head",
+          linkedin: "https://www.linkedin.com/in/codadept/",
+          facebook: "https://facebook.com/itspratikmaj",
+          git: "https://www.github.com/codadept",
+          image: "https://drive.google.com/open?id=1HiJd1EURgLv6Z2174rdQCWT59r_eAhNo"
+        },
+        {
+          id: "17",
+          name: "Saurav Pal",
+          designation: "Web Team Head",
+          linkedin: "https://www.linkedin.com/in/resyfer",
+          facebook: "https://www.facebook.com/resyfer.dev",
+          git: "https://github.com/resyfer",
+          image: "https://drive.google.com/open?id=1A77g7YVzfOgltOmVY0qBOu04i5o3y__y"
+        },
+        {
           id: "5",
           name: "Truptee Vinod Undre",
           designation: " Marketing Head",
@@ -96,6 +114,15 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/truptee.undre?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/_truptee__/",
           image: "https://drive.google.com/open?id=1tvMR714TnIFXYNUMZvCmvX9_IqQ4SJUw"
+        },
+        {
+          id: "29",
+          name: "Syed Intekhab Hussain",
+          designation: "Marketing Head",
+          linkedin: "https://www.linkedin.com/in/syed-intekhab-0b257a205/",
+          facebook: "https://www.facebook.com/syedintekhab.hussain.9",
+          inst: "https://www.instagram.com/inte_khaab_/",
+          image: "https://drive.google.com/open?id=1LFplJg9Vlf7h8CwN2yAXF3Z1loxEj60z"
         },
         {
           id: "6",
@@ -115,37 +142,12 @@ const Teampage = () => {
           inst: "https://www.instagram.com/eisha_s.halder/",
           image: "https://drive.google.com/open?id=1cQInye3YG8BZxQ311rRdQmpfujE83cmo"
         },
-        {
-          id: "8",
-          name: "Ansh Umathe",
-          designation: "Logistics Co-Head",
-          linkedin: "https://www.linkedin.com/in/anshumathe/",
-          facebook: "https://www.facebook.com/ansh.umathe/",
-          inst: "https://www.instagram.com/ansh.umathe/",
-          image: "https://drive.google.com/open?id=109pl9YgruMCYPwXesNEgjBNjRrsVtlex"
-        },
-        {
-          id: "13",
-          name: "Pratik Majumdar",
-          designation: "Web Head",
-          linkedin: "https://www.linkedin.com/in/codadept/",
-          facebook: "https://facebook.com/itspratikmaj",
-          git: "https://www.github.com/codadept",
-          image: "https://drive.google.com/open?id=1HiJd1EURgLv6Z2174rdQCWT59r_eAhNo"
-        },
-        {
-          id: "17",
-          name: "Saurav Pal",
-          designation: "Web Team Coordinator",
-          linkedin: "https://www.linkedin.com/in/resyfer",
-          facebook: "https://www.facebook.com/resyfer.dev",
-          git: "https://github.com/resyfer",
-          image: "https://drive.google.com/open?id=1A77g7YVzfOgltOmVY0qBOu04i5o3y__y"
-        },
+
+
         {
           id: "14",
           name: "Biju Borah",
-          designation: "App team Head",
+          designation: "App Team Head",
           linkedin: "https://www.linkedin.com/in/biju-borah-1bb78620a",
           facebook: "https://www.facebook.com/biju.borah.77582?mibextid=ZbWKwL",
           git: "https://github.com/biju-borah",
@@ -154,7 +156,7 @@ const Teampage = () => {
         {
           id: "33",
           name: "Ayush Gupta ",
-          designation: "App team head",
+          designation: "App Team head",
           linkedin: "https://www.linkedin.com/in/gupta--ayush/",
           facebook: "https://www.facebook.com/profile.php?id=100058445922286",
           inst: "https://www.instagram.com/a_y_u_s_h_g__/",
@@ -179,6 +181,15 @@ const Teampage = () => {
           image: "https://drive.google.com/open?id=1OehjfH6FDvnJBO728gvn_X-Iu8ZFtM7_"
         },
         {
+          id: "8",
+          name: "Ansh Umathe",
+          designation: "Logistics Co-Head",
+          linkedin: "https://www.linkedin.com/in/anshumathe/",
+          facebook: "https://www.facebook.com/ansh.umathe/",
+          inst: "https://www.instagram.com/ansh.umathe/",
+          image: "https://drive.google.com/open?id=109pl9YgruMCYPwXesNEgjBNjRrsVtlex"
+        },
+        {
           id: "22",
           name: "Priya Pal ",
           designation: "Hospitality Head",
@@ -187,15 +198,7 @@ const Teampage = () => {
           inst: "https://www.instagram.com/priiya_pal?igsh=dGV2b2ljeWJ0dG83",
           image: "https://drive.google.com/open?id=1MhUEqIw7m2Uz9bYicRPIJYxo_6TOawO-"
         },
-        {
-          id: "29",
-          name: "Syed Intekhab Hussain",
-          designation: "Marketing Head",
-          linkedin: "https://www.linkedin.com/in/syed-intekhab-0b257a205/",
-          facebook: "https://www.facebook.com/syedintekhab.hussain.9",
-          inst: "https://www.instagram.com/inte_khaab_/",
-          image: "https://drive.google.com/open?id=1LFplJg9Vlf7h8CwN2yAXF3Z1loxEj60z"
-        },
+
         {
           id: "32",
           name: "Rishikesh Kumar Narayan Sinha",
@@ -204,7 +207,7 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/rishikesh.krnarayansinha/",
           inst: "https://www.instagram.com/rishikesh_018/tagged/",
           image: "https://drive.google.com/open?id=1kMFtUVBYQyFvHiIJPkTBFqc-oS34hAHB"
-       },
+        },
       ],
     },
     {
@@ -279,11 +282,11 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/zhang.jike.311/",
           git: "https://github.com/Jugya07",
           image: "https://drive.google.com/open?id=19IwITPXblUN-0-bew1zTU8mC2bfWm_ns"
-       },
+        },
         {
           id: "2",
           name: "Swarup Chanda",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/swarup-chanda-23053724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/swarup.chanda.984",
           git: "https://github.com/swarupecenits",
@@ -292,7 +295,7 @@ const Teampage = () => {
         {
           id: "30",
           name: "Zinal Potphode ",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/zinal-potphode-0484b8262",
           facebook: "https://www.facebook.com/profile.php?id=100089288271108&mibextid=ZbWKwL",
           git: "https://github.com/ZinalPotphode",
@@ -301,7 +304,7 @@ const Teampage = () => {
         {
           id: "4",
           name: "Barnil Sarma",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/barnil-sarma-34383a255?trk=contact-info",
           facebook: "https://m.facebook.com/profile.php/?id=100056956539956",
           git: "https://github.com/barnilsarma",
@@ -310,7 +313,7 @@ const Teampage = () => {
         {
           id: "7",
           name: "Dhiraj Das",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/dhiraj-das-a26042249/",
           facebook: "https://www.instagram.com/dheerajdas19/",
           git: "https://github.com/dheeraj1922d",
@@ -319,7 +322,7 @@ const Teampage = () => {
         {
           id: "12",
           name: "Vivek Kumar Sahni",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/vivek-sahni-87b6a822b/",
           facebook: "https://www.facebook.com/profile.php?id=100076320845128",
           git: "https://github.com/VivekKumarSahni",
@@ -328,7 +331,7 @@ const Teampage = () => {
         {
           id: "15",
           name: "Rajdristant Ghose",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/rajdristant-ghose-286061231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100076066695970&mibextid=ZbWKwL",
           git: "https://github.com/Raj217",
@@ -337,13 +340,13 @@ const Teampage = () => {
         {
           id: "23",
           name: "Bijay Jiwrajka ",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/",
           facebook: "https://www.facebook.com/bijay.jiwrajka.1",
           git: "https://github.com/bj-jiwrajka",
           image: "https://drive.google.com/open?id=1IqKPG7DjgE1Yur-aguH0xVfYh0cLUePG"
         },
-        
+
         {
           id: "24",
           name: "Jacinth Mahanta",
@@ -361,7 +364,7 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/profile.php?id=100087939076312&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/dev.kaustav?igsh=cm5jND\n\nN3bDV0emdo",
           image: "https://drive.google.com/open?id=1sJZIb-H00U_5KVmR5UnBJZtGMIypxBRt"
-       },
+        },
         {
           id: "38",
           name: "Gracie G Rabha ",
@@ -370,7 +373,7 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/profile.php?id=100087872117590&mibextid=ZbWKwL",
           inst: "https://www.instagram.com/gracie__ruth?igsh=N3UyNzRyZDA2Nmhy",
           image: "https://drive.google.com/open?id=1s85eYXfG1sONTpiQ3sMv9ah7NtbBhXnY"
-       },
+        },
         {
           id: "35",
           name: "Siddharth Ghosh",
@@ -379,7 +382,7 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/profile.php?id=100070117330528",
           inst: "https://www.instagram.com/z_maniac_sidd/",
           image: "https://drive.google.com/open?id=1jCJAPqpE-9cwa1B2EKwh16M9wahr5O0R"
-       },
+        },
         {
           id: "34",
           name: "Samarjit Roy",
@@ -388,11 +391,11 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/profile.php?id=100087733476599&mibextid=9R9pXO",
           git: "https://github.com/Samarjit25",
           image: "https://drive.google.com/open?id=1EYjT0AdPM7mM8c84LAL-PrVAaMvIqKH7"
-       },
+        },
         {
           id: "16",
           name: "Priyabrat Duarah",
-          designation: "Web Team Member",
+          designation: "Web Developer",
           linkedin: "https://www.linkedin.com/in/priyabratduarah/",
           facebook: "https://www.facebook.com/profile.php?id=100076231446828",
           git: "https://github.com/Prybrt06",
@@ -401,7 +404,7 @@ const Teampage = () => {
         {
           id: "21",
           name: "Ayush Shahi ",
-          designation: "App Team Member",
+          designation: "App Developer",
           linkedin: "https://www.linkedin.com/in/ayush-shahi-5412b8123?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100087912133756&mibextid=JRoKGi",
           git: "https://github.com/AyuTechLive",
@@ -410,7 +413,7 @@ const Teampage = () => {
         {
           id: "26",
           name: "Sameer Zaidi",
-          designation: "App Team Member",
+          designation: "App Developer",
           linkedin: "https://www.linkedin.com/in/sameer-zaidi-541261226/",
           facebook: "https://www.facebook.com/SyedSameerZaidi123",
           git: "https://github.com/Interstellar07",
@@ -419,7 +422,7 @@ const Teampage = () => {
         {
           id: "27",
           name: "Navneet",
-          designation: "App Team Member",
+          designation: "App Developer",
           linkedin: "https://www.linkedin.com/in/navneet-raj-08a720228/",
           facebook: "https://www.facebook.com/profile.php?id=100080411300265",
           git: "https://github.com/navneet098",
@@ -428,7 +431,7 @@ const Teampage = () => {
         {
           id: "28",
           name: "Diptangshu Chakraborty ",
-          designation: "App Team Member ",
+          designation: "App Developer ",
           linkedin: "https://www.linkedin.com/in/diptangshu-chakraborty-463b77250",
           facebook: "NIL",
           git: "https://github.com/Diptanghsu-DC",
@@ -437,21 +440,21 @@ const Teampage = () => {
         {
           id: "36",
           name: "Kanika Punia",
-          designation: "App Team Member",
+          designation: "App Developer",
           linkedin: "https://www.linkedin.com/in/kanika-punia-5b15a5210/",
           facebook: ".",
           git: "https://github.com/KanikaPunia119",
           image: "https://drive.google.com/open?id=1-sUoiC0laB-c1TafDBmp_Szu7dmdc6e3"
-       },
-       {
-        id: "37",
-        name: "Diptabh Medhi",
-        designation: "App Team Member",
-        linkedin: "https://www.linkedin.com/in/diptabh-medhi-4836a8229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        facebook: "https://www.facebook.com/profile.php?id=100076196678788&mibextid=9R9pXO",
-        git: "https://github.com/diptabhm",
-        image: "https://drive.google.com/open?id=1pMtpnVzUnr5GfMMn1Ekn5jEmoZFihc2M"
-     },
+        },
+        {
+          id: "37",
+          name: "Diptabh Medhi",
+          designation: "App Developer",
+          linkedin: "https://www.linkedin.com/in/diptabh-medhi-4836a8229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/profile.php?id=100076196678788&mibextid=9R9pXO",
+          git: "https://github.com/diptabhm",
+          image: "https://drive.google.com/open?id=1pMtpnVzUnr5GfMMn1Ekn5jEmoZFihc2M"
+        },
       ],
     },
     {
