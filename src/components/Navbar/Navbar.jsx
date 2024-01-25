@@ -90,11 +90,25 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <SectionLink to="about" onClick={handleShowNavbar}>
+              <SectionLink to="hero" smooth={true} onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>HOME</div>
+                </Button>
+              </SectionLink>
+            </li>
+            <li>
+              <SectionLink to="about" smooth={true} onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
                 </Button>
               </SectionLink>
+            </li>
+            <li>
+              <Link to="/team" onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>TEAM</div>
+                </Button>
+              </Link>
             </li>
             <li>
               <Link to="/modules" onClick={handleShowNavbar}>
@@ -102,6 +116,28 @@ const Navbar = () => {
                   <div className={styles.navbuttonpage_side}>MODULES</div>
                 </Button>
               </Link>
+            </li>
+            <li>
+              <SectionLink
+                to="gallery"
+                smooth={true}
+                onClick={handleShowNavbar}
+              >
+                <Button>
+                  <div className={styles.navbuttonpage_side}>GALLERY</div>
+                </Button>
+              </SectionLink>
+            </li>
+            <li>
+              <SectionLink
+                to="sponsor"
+                smooth={true}
+                onClick={handleShowNavbar}
+              >
+                <Button>
+                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
+                </Button>
+              </SectionLink>
             </li>
             {loggedin && (
               <li>
@@ -112,27 +148,6 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
-            <li>
-              <Link to="/team" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>TEAM</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <SectionLink to="gallery" smooth={true} onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button>
-              </SectionLink>
-            </li>
-            <li>
-              <SectionLink to="sponsor" smooth={true} onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
-                </Button>
-              </SectionLink>
-            </li>
           </ul>
         </div>
       )}

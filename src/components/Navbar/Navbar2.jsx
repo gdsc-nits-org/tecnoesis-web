@@ -27,7 +27,6 @@ const Navbar2 = () => {
       setShowNavbar(false);
     }
   };
-
   const handleLogin = async () => {
     const { status, message } = await signin();
     toast(message);
@@ -88,9 +87,27 @@ const Navbar2 = () => {
               </li>
             )}
             <li>
-              <Link to="/#about" onClick={handleShowNavbar}>
+              <Link to="/" onClick={handleShowNavbar}>
                 <Button>
+                  <div className={styles.navbuttonpage_side}>HOME</div>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/#about" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#about";
+                  }}
+                >
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/team" onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button>
               </Link>
             </li>
@@ -98,6 +115,28 @@ const Navbar2 = () => {
               <Link to="/modules" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>MODULES</div>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/#gallery" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#gallery";
+                  }}
+                >
+                  <div className={styles.navbuttonpage_side}>GALLERY</div>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/#sponsor" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#sponsor";
+                  }}
+                >
+                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
               </Link>
             </li>
@@ -110,28 +149,6 @@ const Navbar2 = () => {
                 </Link>
               </li>
             )}
-
-            <li>
-              <Link to="/team" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>TEAM</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/#sponsor" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/#gallery" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button>
-              </Link>
-            </li>
           </ul>
         </div>
       )}
@@ -176,7 +193,7 @@ const Navbar2 = () => {
                 </Link>
               </li>
             )}
-            
+
             {/* <li className={styles.nav_profile}>
               <a href="">
                 <img className={styles.main_img} src={img123456} alt="" />
