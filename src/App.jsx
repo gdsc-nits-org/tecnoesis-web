@@ -115,6 +115,7 @@ function App() {
                 </>
               }
             />
+            <Route path="/team" element={<TeamPage/>}/>
             <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
         </LoadingProvider>
