@@ -3,11 +3,11 @@ import { useNavigate, Link } from "react-router-dom";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
-
 import logo from "/elements/tecno-Logo.svg";
-import cross_logo from "/elements/cross.png";
+// import cross_logo from "/elements/cross.png";
 import UserContext from "../../globals/authcontext";
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
+// import img123456 from "/images/img123456.jpg";
 
 import styles from "./Navbar.module.css";
 
@@ -63,23 +63,18 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div className={styles.nav_sidebar}>
+        <div className={styles.nav_sidebar}  onClick={handleShowNavbar}>
           <button
             className={`${styles.close_button} ${showNavbar && styles.active}`}
             onClick={handleShowNavbar}
           >
-            <img src={cross_logo} alt="cross_button" />
+            <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/fflloqnphs0nyn1cimlz" alt="cross_button" />
           </button>
           <ul className={styles.nav_links}>
             {loggedin ? (
               <li className={styles.register_dock}>
                 <Link
                   to=""
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={50}
-                  duration={500}
                   onClick={handleLogout}
                 >
                   <div className={styles.button_sign_content}>
@@ -91,11 +86,6 @@ const Navbar = () => {
               <li className={styles.register_dock}>
                 <Link
                   to=""
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={50}
-                  duration={500}
                   onClick={handleLogin}
                 >
                   <div className={styles.button_sign_content}>
@@ -106,16 +96,11 @@ const Navbar = () => {
             )}
             <li>
               <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={-50}
-                duration={500}
+                to="/"
                 onClick={handleShowNavbar}
               >
                 <Button>
-                  <div className={styles.navbuttonpage_side}>ABOUT</div>
+                  <div className={styles.navbuttonpage_side}>HOME</div>
                 </Button>
               </Link>
             </li>
@@ -130,11 +115,6 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/dashboard"
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={50}
-                  duration={500}
                   onClick={handleShowNavbar}
                 >
                   <Button>
@@ -146,30 +126,10 @@ const Navbar = () => {
             <li>
               <Link
                 to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
                 onClick={handleShowNavbar}
               >
                 <Button>
                   <div className={styles.navbuttonpage_side}>EVENTS</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="sponsor"
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={-60}
-                duration={500}
-                onClick={handleShowNavbar}
-              >
-                <Button>
-                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
               </Link>
             </li>
@@ -182,12 +142,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to=""
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
+                to="/"
                 onClick={handleShowNavbar}
               >
                 <Button>
@@ -226,11 +181,6 @@ const Navbar = () => {
               <li>
                 <Link
                   to=""
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={0}
-                  duration={500}
                 >
                   <Button rounded>
                     <div
@@ -246,11 +196,6 @@ const Navbar = () => {
               <li>
                 <Link
                   to=""
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={0}
-                  duration={500}
                 >
                   <Button rounded>
                     <div className={styles.navbuttonpage} onClick={handleLogin}>
@@ -260,6 +205,11 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+             {/* <li className={styles.nav_profile}>
+              <a href="">
+                <img className={styles.main_img} src={img123456} alt="" />
+              </a>
+            </li> */}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />
