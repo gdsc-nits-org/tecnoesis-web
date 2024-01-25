@@ -77,7 +77,9 @@ const Navbar2 = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogout}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGOUT</div>
+                    <div className={styles.btn_signin} onClick={handleLogout}>
+                      LOGOUT
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -85,7 +87,9 @@ const Navbar2 = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogin}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                    <div className={styles.btn_signin} onClick={handleLogin}>
+                      LOGIN WITH GOOGLE
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -200,11 +204,13 @@ const Navbar2 = () => {
 
             {loggedin && (
               <li>
-                <img
-                  className={styles.main_img}
-                  src={user && user.imageUrl ? user.imageUrl : defaultImg}
-                  alt="pfp"
-                />
+                <Link to="/dashboard">
+                  <img
+                    className={styles.main_img}
+                    src={user && user.imageUrl ? user.imageUrl : defaultImg}
+                    alt="pfp"
+                  />
+                </Link>
               </li>
             )}
           </ul>

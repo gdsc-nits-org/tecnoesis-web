@@ -80,7 +80,9 @@ const Navbar = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogout}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGOUT</div>
+                    <div className={styles.btn_signin} onClick={handleLogout}>
+                      LOGOUT
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -88,7 +90,9 @@ const Navbar = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogin}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                    <div className={styles.btn_signin} onClick={handleLogin}>
+                      LOGIN WITH GOOGLE
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -197,13 +201,13 @@ const Navbar = () => {
               </li>
             )}
             {loggedin && (
-              <li>
-                 <img
-                 className={styles.main_img}
-                 src={user && user.imageUrl ? user.imageUrl : defaultImg}
-                 alt="pfp"
-               />
-              </li>
+              <Link to="/dashboard">
+              <img
+                className={styles.main_img}
+                src={user && user.imageUrl ? user.imageUrl : defaultImg}
+                alt="pfp"
+              />
+            </Link>
             )}
           </ul>
           <div className={styles.nav_logo}>
