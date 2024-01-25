@@ -7,10 +7,10 @@
   --tecno-peach-1-100: #efbbb6;
   --tecno-pink-1-100: #a52e62;
   --tecno-purple-1-100: #1d0b21;
-  --techno-purple-2-100:#cd00fb;
-  --techno-brown-2-100:#F36196;
-  --techno-black-1-100:#000;
-  
+  --techno-purple-2-100: #cd00fb;
+  --techno-brown-2-100: #F36196;
+  --techno-black-1-100: #000;
+
   --footer-blue-1-100: #002358;
   --footer-blue-2-100: #4debf6;
   --footer-blue-3-100: #1D0B21;
@@ -20,8 +20,8 @@
   --navbar-blue-2-100: #1e0352;
   --navbar-cyan-1-100: #56F4FD;
   --navbar-cyan-2-100: #047A94;
-  --navbar-height:6rem;
-  
+  --navbar-height: 6rem;
+
 }
 
 @font-face {
@@ -53,64 +53,45 @@
   font-family: PixeloidSans;
   src: url("/fonts/PixeloidSans-mLxMm.ttf");
 }
-@font-face { 
-  font-family: JetBrainsMono; 
-  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf"); 
+
+@font-face {
+  font-family: JetBrainsMono;
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf");
 }
 
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
 ::-webkit-scrollbar {
-  width: 13px; 
+  width: 13px;
 
 }
 
-::-webkit-scrollbar-thumb{
-  background:url("/images/scroll_logo.svg");
-  /* width: 120rem;   */
-  /* height: 20rem;  */
+::-webkit-scrollbar-thumb {
+  background: url("https://res.cloudinary.com/dfa0k8sry/image/upload/v1706178224/scroll_logo_b3ivcx.svg");
   background-repeat: no-repeat;
-    /* border-radius: 22px;    */
-    background-position: center;       
-   background-size:1.5rem;     
-    /* border:0.2rem solid transparent;  */
-
- /* background-clip: content-box; */
-  
+  background-position: center;
+  background-size: 1.5rem;
   z-index: 9;
 
 }
 
 
 ::-webkit-scrollbar-track {
- border-radius: 22px; 
- background: linear-gradient(180deg, rgba(10, 169, 218, 0.50) 0%, rgba(0, 71, 223, 0.50) 100%);   
-box-shadow: 0px 0px 14.801px 0px #469BD6;
- background-clip:padding-box; 
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(10, 169, 218, 0.50) 0%, rgba(0, 71, 223, 0.50) 100%);
+  box-shadow: 0px 0px 14.801px 0px #469BD6;
+  background-clip: padding-box;
 
 
 }
 
-html{
-scrollbar-width: thin;
-scrollbar-color: rgb(31, 12, 153) #469BD6;
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(31, 12, 153) #469BD6;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
