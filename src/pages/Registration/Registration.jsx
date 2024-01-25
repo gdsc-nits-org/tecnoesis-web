@@ -41,7 +41,7 @@ const Registration = () => {
         try {
             // let response = await fetch("https://tecnoesis-api.onrender.com/api/team/event/65a5849d3232bd1424b3ef55/add", {
             const token = localStorage.getItem("token");
-            for (var i = 0; i < 2; i++) {
+            for (var i = 0; i < minMember - 1; i++) {
                 if (members[i] === '') {
                     setRequired(false);
                     console.log(i);
@@ -125,7 +125,7 @@ const Registration = () => {
                             <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                             {
                                 members.map((member, index) =>
-                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={3} setMembers={setMembers} />
+                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
                                 )
                             }
 
