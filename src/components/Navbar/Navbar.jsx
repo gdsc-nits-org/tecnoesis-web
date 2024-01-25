@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { Link as SectionLink } from "react-scroll";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
-// import cross_logo from "/elements/cross.png";
 import UserContext from "../../globals/authcontext";
-// import { Link as RouterLink } from "react-router-dom";
-// import img123456 from "/images/img123456.jpg";
 
 import styles from "./Navbar.module.css";
 
@@ -63,20 +61,20 @@ const Navbar = () => {
   return (
     <nav>
       {showNavbar && (
-        <div className={styles.nav_sidebar}  onClick={handleShowNavbar}>
+        <div className={styles.nav_sidebar} onClick={handleShowNavbar}>
           <button
             className={`${styles.close_button} ${showNavbar && styles.active}`}
             onClick={handleShowNavbar}
           >
-            <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/fflloqnphs0nyn1cimlz" alt="cross_button" />
+            <img
+              src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/fflloqnphs0nyn1cimlz"
+              alt="cross"
+            />
           </button>
           <ul className={styles.nav_links}>
             {loggedin ? (
               <li className={styles.register_dock}>
-                <Link
-                  to=""
-                  onClick={handleLogout}
-                >
+                <Link to="" onClick={handleLogout}>
                   <div className={styles.button_sign_content}>
                     <div className={styles.btn_signin}>LOGOUT</div>
                   </div>
@@ -84,10 +82,7 @@ const Navbar = () => {
               </li>
             ) : (
               <li className={styles.register_dock}>
-                <Link
-                  to=""
-                  onClick={handleLogin}
-                >
+                <Link to="" onClick={handleLogin}>
                   <div className={styles.button_sign_content}>
                     <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
                   </div>
@@ -95,12 +90,23 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <Link
-                to="/"
-                onClick={handleShowNavbar}
-              >
+              <SectionLink to="hero" smooth={true} onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>HOME</div>
+                </Button>
+              </SectionLink>
+            </li>
+            <li>
+              <SectionLink to="about" smooth={true} onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>ABOUT</div>
+                </Button>
+              </SectionLink>
+            </li>
+            <li>
+              <Link to="/team" onClick={handleShowNavbar}>
+                <Button>
+                  <div className={styles.navbuttonpage_side}>TEAM</div>
                 </Button>
               </Link>
             </li>
@@ -111,52 +117,37 @@ const Navbar = () => {
                 </Button>
               </Link>
             </li>
+            <li>
+              <SectionLink
+                to="gallery"
+                smooth={true}
+                onClick={handleShowNavbar}
+              >
+                <Button>
+                  <div className={styles.navbuttonpage_side}>GALLERY</div>
+                </Button>
+              </SectionLink>
+            </li>
+            <li>
+              <SectionLink
+                to="sponsor"
+                smooth={true}
+                onClick={handleShowNavbar}
+              >
+                <Button>
+                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
+                </Button>
+              </SectionLink>
+            </li>
             {loggedin && (
               <li>
-                <Link
-                  to="/dashboard"
-                  onClick={handleShowNavbar}
-                >
+                <Link to="/dashboard" onClick={handleShowNavbar}>
                   <Button>
                     <div className={styles.navbuttonpage_side}>DASHBOARD</div>
                   </Button>
                 </Link>
               </li>
             )}
-            <li>
-              <Link
-                to=""
-                onClick={handleShowNavbar}
-              >
-                <Button>
-                  <div className={styles.navbuttonpage_side}>EVENTS</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/team" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>TEAM</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                onClick={handleShowNavbar}
-              >
-                <Button>
-                  <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/contactus" onClick={handleShowNavbar}>
-                <Button>
-                  <div className={styles.navbuttonpage_side}>CONTACT US</div>
-                </Button>
-              </Link>
-            </li>
           </ul>
         </div>
       )}
@@ -179,9 +170,7 @@ const Navbar = () => {
           <ul className={styles.nav_content}>
             {loggedin ? (
               <li>
-                <Link
-                  to=""
-                >
+                <Link to="">
                   <Button rounded>
                     <div
                       className={styles.navbuttonpage}
@@ -194,9 +183,7 @@ const Navbar = () => {
               </li>
             ) : (
               <li>
-                <Link
-                  to=""
-                >
+                <Link to="">
                   <Button rounded>
                     <div className={styles.navbuttonpage} onClick={handleLogin}>
                       LOGIN WITH GOOGLE
@@ -205,7 +192,7 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
-             {/* <li className={styles.nav_profile}>
+            {/* <li className={styles.nav_profile}>
               <a href="">
                 <img className={styles.main_img} src={img123456} alt="" />
               </a>

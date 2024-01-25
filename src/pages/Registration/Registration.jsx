@@ -1,21 +1,10 @@
 import styles from './Registration.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-const BACKEND_URL = import.meta.env.VITE_BASE_URL;
-const Card = ({ id, setMembers, name }) => {
-    const [active, setActive] = useState(false);
-    const toggleStatement = useRef(null);
-    const toggleIcon = useRef(null);
-    var t = document.querySelector(':root');
-    var u = window.getComputedStyle(t, null);
-    var closed = u.getPropertyValue('--inactive');
-    var opened = u.getPropertyValue('--active');
-    // const detailsClick = (e) => {
-    //     e.preventDefault();
-    //     e.target.innerHTML = "EDIT";
-    //     setActive(active === false ? true : false);
+import { toast } from "react-toastify";
 
-    // }
+const BACKEND_URL = import.meta.env.VITE_BASE_URL;
+const Card = ({ id, setMembers, name, minMember }) => {
     const handleChange = (e) => {
         setMembers(prevMembers => {
             const newMembers = [...prevMembers];
@@ -29,7 +18,7 @@ const Card = ({ id, setMembers, name }) => {
                 <div className={styles.leftPortion}>
                     <h1 className={styles.memberName}>USERNAME</h1>
                     <div className={styles.memberInfo}>
-                        <input type="text" placeholder='Enter username' value={name} onChange={handleChange} className={styles.memberInput} />
+                        <input type="text" placeholder={`${id < minMember - 1 ? `Member username ${id + 1} (required)` : `Member username ${id + 1}`}`} value={name} onChange={handleChange} className={styles.memberInput} required={id < minMember - 1} />
                     </div>
                 </div>
             </div>
@@ -39,42 +28,56 @@ const Card = ({ id, setMembers, name }) => {
 const Registration = () => {
     const { id } = useParams();
     const [maxMember, setmaxMember] = useState();
+    const [minMember, setminMember] = useState();
     const [teamName, setTeamName] = useState("");
     const [typeofevent, setTypeofevent] = useState("TEAM NAME");
     const [members, setMembers] = useState([]);
     const [loadingMsg, setloadingMsg] = useState("Loading fields......");
     const [error, setError] = useState(null);
+    const [required, setRequired] = useState(true);
     async function submitForm(e) {
         e.preventDefault();
         let filter = members.filter((item) => item != "");
         try {
             // let response = await fetch("https://tecnoesis-api.onrender.com/api/team/event/65a5849d3232bd1424b3ef55/add", {
             const token = localStorage.getItem("token");
-            let response = await fetch(`${BACKEND_URL}/api/team/event/${id}/add`, {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    "name": teamName,
-                    "members": filter,
-                    "extrainformation": "This team specialises in AI and machine learning projects"
-                })
-            });
-            if (!response) {
-                console.log("Processing");
-            }
-            else {
-                if (response.status == 200) {
-                    setError("Successfully registered!!");
+            for (var i = 0; i < 2; i++) {
+                if (members[i] === '') {
+                    setRequired(false);
+                    console.log(i);
+                    break;
                 }
-                else if (response.status == 409) {
-                    setError("Error! Conflict in registration!!");
+            }
+            if (required && teamName !== '') {
+                let response = await fetch(`${BACKEND_URL}/api/team/event/${id}/add`, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        "name": teamName,
+                        "members": filter,
+                        "extrainformation": "This team specialises in AI and machine learning projects"
+                    })
+                });
+                if (!response) {
+                    console.log("Processing");
                 }
                 else {
-                    setError("Problem in registration!!");
+                    if (response.status == 200) {
+                        setError("Successfully registered!!");
+                    }
+                    else if (response.status == 409) {
+                        setError("Error! Conflict in registration!!");
+                    }
+                    else {
+                        setError("Problem in registration!!");
+                    }
                 }
+            }
+            else {
+                toast('Please fill the required fields');
             }
         } catch (err) {
             setError(err.message);
@@ -88,6 +91,8 @@ const Registration = () => {
         let arr = maxNumber.msg;
         let arrFilter = arr.filter((item) => item.id = id);
         let msg = arrFilter[0].maxTeamSize;
+        let minSg = arrFilter[0].minTeamSize;
+        setminMember(minSg);
         setmaxMember(msg);
         setloadingMsg(null);
         if (msg === 1) {
@@ -120,7 +125,7 @@ const Registration = () => {
                             <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                             {
                                 members.map((member, index) =>
-                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} setMembers={setMembers} />
+                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={3} setMembers={setMembers} />
                                 )
                             }
 

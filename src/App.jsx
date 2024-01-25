@@ -8,8 +8,8 @@ import {
   Form,
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer, Loading } from "./components";
-import { useContext, useEffect, useState } from "react"
+import { Navbar, Footer, Loading, Navbar2 } from "./components";
+import { useState, useEffect, useContext } from 'react'
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
@@ -19,7 +19,11 @@ import "./App.css";
 
 function App() {
   const { setLoggedin } = useContext(UserContext);
+  const [showNavbar, setShowNavbar] = useState(true);
   const [loading, setLoading] = useState(true);
+  const toggleNavbar = () => {
+    setShowNavbar((prev) => !prev);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -56,14 +60,68 @@ function App() {
           />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/modules" element={<ModulePage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  {showNavbar && <Navbar />}
+                  <Home />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/modules"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <ModulePage />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <Dashboard />
+                  <Footer />
+                </>
+              }
+            />
             <Route path="/Loading" element={<Loading />} />
-            <Route path="/signup" element={<Form />} />
-            <Route path="/event/:id" element={<EventDescription />} />
-            <Route path="/event/:id/registration" element={<Registration />} />
-            <Route path="*" element={<Error />} />
+            <Route
+              path="/signup"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <Form />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/event/:id"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <EventDescription />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/event/:id/registration"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <Registration />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
           <Footer />
         </LoadingProvider >
