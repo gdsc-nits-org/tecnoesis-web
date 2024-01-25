@@ -115,7 +115,17 @@ function App() {
                 </>
               }
             />
-            <Route path="/team" element={<TeamPage/>}/>
+            <Route
+              path="/team"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <TeamPage />
+                  <Footer />
+                </>
+              }
+            />
+            {/* <Route path="/team" element={<TeamPage/>}/> */}
             <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
         </LoadingProvider>
