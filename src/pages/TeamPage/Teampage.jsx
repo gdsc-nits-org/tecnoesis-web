@@ -60,7 +60,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/mriganga-jyoti-chutia-475b53202?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/mriganga.jyotichutia?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/_mri_ganga_?igsh=djV0ZmVvcHM1NXcx",
-          image: "https://res.cloudinary.com/dagggqd6g/raw/upload/v1706204259/vizbk9isnodnnxq2g3ee"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210678/tecnoesis/IMG20221003210912_-_Mriganga_Jyoti_Chutia_b5c78g.webp"
         },
       ],
     },
@@ -110,7 +110,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/codadept/",
           facebook: "https://facebook.com/itspratikmaj",
           git: "https://www.github.com/codadept",
-          image: "https://drive.google.com/open?id=1HiJd1EURgLv6Z2174rdQCWT59r_eAhNo"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210714/tecnoesis/Pratik_Majumdar_Square_-_Pratik_Majumdar_rnsiga.webp"
         },
         {
           id: "17",
@@ -119,7 +119,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/resyfer",
           facebook: "https://www.facebook.com/resyfer.dev",
           git: "https://github.com/resyfer",
-          image: "https://drive.google.com/open?id=1A77g7YVzfOgltOmVY0qBOu04i5o3y__y"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210758/tecnoesis/IMG_20240122_122121_2_-_Saurav_Pal_uelt1r.webp"
         },
         {
           id: "5",
@@ -166,7 +166,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/biju-borah-1bb78620a",
           facebook: "https://www.facebook.com/biju.borah.77582?mibextid=ZbWKwL",
           git: "https://github.com/biju-borah",
-          image: "https://drive.google.com/open?id=1rmpTFKtfsllMNwvXhNGxHt8MyAqESR1b"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210724/tecnoesis/IMG-20221208-WA0012_1_-_Biju_Borah_h1g3st.webp"
         },
         {
           id: "33",
@@ -184,7 +184,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/rohan-deb-444ab8204",
           facebook: "https://www.facebook.com/rohan.deb.908579?mibextid=9R9pXO",
           inst: "https://www.instagram.com/rohan.pxl?igsh=MWRqM3VjMGh2Y3JseA==",
-          image: "https://drive.google.com/open?id=1x9Q6wbDgOrS_vQGz8Q1J1P_H0WOqTowh"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210775/tecnoesis/1705913533019-01_-_Rohan_Deb_merstq.webp"
         },
         {
           id: "20",
@@ -193,7 +193,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/hannan-afridi-39ab0b203",
           facebook: "https://www.facebook.com/jack.ahmed.9237?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/_the_thunder_emperor________?igsh=cmZmNWh6am05ZjAy",
-          image: "https://drive.google.com/open?id=1OehjfH6FDvnJBO728gvn_X-Iu8ZFtM7_"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210499/tecnoesis/IMG-20230802-WA0001_-_Hannan_Afridi_bdfgue.webp"
         },
         {
           id: "8",
@@ -283,7 +283,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/vivek-sahni-87b6a822b/",
           facebook: "https://www.facebook.com/profile.php?id=100076320845128",
           git: "https://github.com/VivekKumarSahni",
-          image: "https://drive.google.com/open?id=1fYZ2T2wFq8zcD-tgA0UrmbPHUPtAKKWg"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706211096/tecnoesis/IMG_20240122_022345_-_vivek_sahni_iiky8q.webp"
         },
         {
           id: "15",
@@ -292,7 +292,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/rajdristant-ghose-286061231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100076066695970&mibextid=ZbWKwL",
           git: "https://github.com/Raj217",
-          image: "https://drive.google.com/open?id=1tjURlnb74QCwq4j47WgiXRgl75TNnJ5b"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210747/tecnoesis/IMG_20230102_160505_-_035_Rajdristant_Ghose_bhchy6.webp"
         },
         {
           id: "11",
@@ -301,7 +301,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/jugya",
           facebook: "https://www.facebook.com/zhang.jike.311/",
           git: "https://github.com/Jugya07",
-          image: "https://drive.google.com/open?id=19IwITPXblUN-0-bew1zTU8mC2bfWm_ns"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210700/tecnoesis/IMG_1159_1_-_098_Jugya_Kamal_Gogoi_lwuioh.webp"
         },
 
         {
@@ -356,7 +356,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/priyabratduarah/",
           facebook: "https://www.facebook.com/profile.php?id=100076231446828",
           git: "https://github.com/Prybrt06",
-          image: "https://drive.google.com/open?id=1IsLTMLPLF_f6zzCb83jzOSrOTtpySffn"
+          image: "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210750/tecnoesis/IMG_1316-removebg-preview_1_-_Priyabrat_i1tqs1.webp"
         },
         {
           id: "21",
