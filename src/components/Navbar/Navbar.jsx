@@ -120,14 +120,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <SectionLink to="gallery" onClick={handleShowNavbar}>
+              <SectionLink to="gallery" smooth={true} onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
                 </Button>
               </SectionLink>
             </li>
             <li>
-              <SectionLink to="sponsor" onClick={handleShowNavbar}>
+              <SectionLink to="sponsor" smooth={true} onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
