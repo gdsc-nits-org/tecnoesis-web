@@ -53,10 +53,10 @@ const EventDescription = () => {
         <div className={styles.robowars}>
           <Link to="/modules">
             <div className={styles.backIcon}>
-              <img alt="" src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105932/tecnoesis/backIcon_maax0n.png" />
+              <img alt="" src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp" />
             </div>
           </Link>
-          <div className={styles.robowars_img}> {name}</div>
+          <div className={styles.robowars_img}> {name.toUpperCase()}</div>
         </div>
 
         <div className={styles.moduleWrapper}>Module : {moduleName}</div>
