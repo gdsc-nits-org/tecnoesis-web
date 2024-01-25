@@ -96,6 +96,15 @@ const Teampage = () => {
           image: "https://drive.google.com/open?id=17kF6PJcvzKKGzPsyaPWYENMJvTERbbxv"
         },
         {
+          id: "2",
+          name: "Shayan Debroy",
+          designation: "Web Team Head",
+          linkedin: " ",
+          facebook: " ",
+          git: " ",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/ijk4s35qv06jbumfqrvl"
+        },
+        {
           id: "13",
           name: "Pratik Majumdar",
           designation: "Web Team Head",
@@ -239,7 +248,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/swarup-chanda-23053724a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/swarup.chanda.984",
           git: "https://github.com/swarupecenits",
-          image: "https://drive.google.com/open?id=1Ul66DS7cDbu-b29EAGb5lXav42dipQ4s"
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/ja3fyklkiijk1zoa3tzb"
         },
         {
           id: "30",
