@@ -2,17 +2,7 @@ import styles from "./Dashboard.module.css";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import contact from "/images/contact.png";
-import schoolblack from "/images/school_black.png";
-import callblack from "/images/call_black.png";
-import location from "/images/location.png";
-import vector_right from "/images/Vector1.png";
-import vector_left from "/images/Vector.png";
-import ellipse from "/images/Ellipse.svg";
-import vector from "/images/Vector.svg";
 import statusData from "../../assets/statusData";
-import vector3 from "/images/Vector3.png";
-import ellipse2 from "/images/Ellipse2.svg";
 import axios from "axios";
 import LoadingContext from "../../globals/loading/loadingContext";
 import { Loading } from "../../components"
@@ -188,7 +178,7 @@ export default function Dashboard() {
           </div>
           <div className={styles.profile}>
             <div className={styles.name}>
-              <img className={styles.profile_icons} src={contact} alt="" />
+              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167701/contact_zncula.webp" alt="" />
               <p className={styles.profile_text}>
                 {userData?.firstName +
                   " " +
@@ -198,11 +188,11 @@ export default function Dashboard() {
               </p>
             </div>
             <div className={styles.college}>
-              <img className={styles.profile_icons} src={schoolblack} alt="" />
+              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706165592/school_black_zikpij.webp" alt="" />
               <p className={styles.profile_text}>{userData?.collegeName}</p>
             </div>
             <div className={styles.contact}>
-              <img className={styles.profile_icons} src={callblack} alt="" />
+              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167925/call_black_p7gu9x.webp" alt="" />
               <p className={styles.profile_text}>
                 {"+91 " + userData?.phoneNumber}
               </p>
@@ -210,7 +200,7 @@ export default function Dashboard() {
             <div className={styles.address}>
               <img
                 className={styles.profile_icons}
-                src="/elements/email_s.png"
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170954/email_s_sgoqgm.webp"
                 alt=""
               />
               <p className={styles.profile_text}>{userData?.email}</p>
@@ -228,7 +218,7 @@ export default function Dashboard() {
             <div className={styles.heading}>
               <img
                 onClick={() => handleArrowClick("left")}
-                src={vector_left}
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168436/Vector2_optq03.webp"
                 alt=""
               />
               <p>
@@ -237,7 +227,7 @@ export default function Dashboard() {
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
-                src={vector_right}
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168161/Vector1_c26co1.webp"
                 alt=""
               />
             </div>
@@ -248,7 +238,7 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img src={ellipse} alt="" />
+                          <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
@@ -262,7 +252,7 @@ export default function Dashboard() {
                           <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
-                            src={isExpanded[index] ? vector3 : vector}
+                            src={`${isExpanded[index] ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp" : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"}`}
                             alt=""
                           />
                         </div>
@@ -286,7 +276,7 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    <img src={vector4} alt="" />
+                                    <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
                                   </td>
                                 </tr>
                               ))}
@@ -306,7 +296,7 @@ export default function Dashboard() {
                   pendingEvents?.map((events) => (
                     <div key={events.event.id} className={styles.event_rect2}>
                       <div className={styles.circle}>
-                        <img src={ellipse} alt="" />
+                        <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
                       </div>
                       <div className={styles.middle}>
                         <div className={styles.event_title}>
@@ -347,7 +337,7 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div key={events.event.id} className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img src={ellipse} alt="" />
+                          <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
@@ -361,7 +351,8 @@ export default function Dashboard() {
                           <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
-                            src={isExpanded[index] ? vector3 : vector}
+                            src={`${isExpanded[index] ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp" : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"}`}
+
                             alt=""
                           />
                         </div>
@@ -385,7 +376,7 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    <img src={vector4} alt="" />
+                                    <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
                                   </td>
                                 </tr>
                               ))}
@@ -411,7 +402,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className={styles.pink_shade}>
-        <img src={ellipse2} alt="" />
+        <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170585/Ellipse2_izkzim.svg" alt="" />
       </div>
     </div>
   );
