@@ -1,15 +1,13 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Link as SectionLink } from "react-scroll";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
 import logo from "/elements/tecno-Logo.svg";
 import UserContext from "../../globals/authcontext";
-
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar2 = () => {
   const { signin, logout } = useContext(UserContext);
   const loggedin = parseInt(localStorage.getItem("loggedin"));
   const [showNavbar, setShowNavbar] = useState(false);
@@ -29,7 +27,6 @@ const Navbar = () => {
       setShowNavbar(false);
     }
   };
-
   const handleLogin = async () => {
     const { status, message } = await signin();
     toast(message);
@@ -90,18 +87,22 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <SectionLink to="hero" smooth={true} onClick={handleShowNavbar}>
+              <Link to="/" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>HOME</div>
                 </Button>
-              </SectionLink>
+              </Link>
             </li>
             <li>
-              <SectionLink to="about" smooth={true} onClick={handleShowNavbar}>
-                <Button>
+              <Link to="/#about" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#about";
+                  }}
+                >
                   <div className={styles.navbuttonpage_side}>ABOUT</div>
                 </Button>
-              </SectionLink>
+              </Link>
             </li>
             <li>
               <Link to="/team" onClick={handleShowNavbar}>
@@ -118,26 +119,26 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <SectionLink
-                to="gallery"
-                smooth={true}
-                onClick={handleShowNavbar}
-              >
-                <Button>
+              <Link to="/#gallery" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#gallery";
+                  }}
+                >
                   <div className={styles.navbuttonpage_side}>GALLERY</div>
                 </Button>
-              </SectionLink>
+              </Link>
             </li>
             <li>
-              <SectionLink
-                to="sponsor"
-                smooth={true}
-                onClick={handleShowNavbar}
-              >
-                <Button>
+              <Link to="/#sponsor" onClick={handleShowNavbar}>
+                <Button
+                  onClick={() => {
+                    window.location.href = "/#sponsor";
+                  }}
+                >
                   <div className={styles.navbuttonpage_side}>SPONSORS</div>
                 </Button>
-              </SectionLink>
+              </Link>
             </li>
             {loggedin && (
               <li>
@@ -192,6 +193,7 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+
             {/* <li className={styles.nav_profile}>
               <a href="">
                 <img className={styles.main_img} src={img123456} alt="" />
@@ -207,4 +209,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
