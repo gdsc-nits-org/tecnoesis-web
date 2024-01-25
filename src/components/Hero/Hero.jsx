@@ -61,38 +61,36 @@ function Hero() {
     //     </a>
     //   </Link>
     // </section>
-    <div className={styles.gifBackground} >
-    <div>
-     <img src="images/Tecno 24 logo.png" alt="Tecnoesis 2024"  className={styles.tecnoLogo}/>
-     </div>
-       <div className={styles.dateTecno}>
-         01. 02. 03. 04
-       </div>
-       <div className={styles.dateTecno}>
-         FEBRUARY
-       </div>
-       <div className={styles.arrowLottieContainer}>
-       <div className={styles.arrowLottie} >
-         <Link
-        to="about"
-        spy={true}
-        smooth={true}
-        hashSpy={true}
-        offset={0}
-        duration={500}
-      >
-                 <Lottie
-                   animationData={home_arrow}
-                   loop={true}
-                   style={{ width: 'auto', height: '100%' }}
-                 />
-                 </Link>
-             </div>
-             </div>
-       <div>
-
-       </div>
-     </div>
+    <div className={styles.gifBackground} id="hero">
+      <div>
+        <img
+          src="images/Tecno 24 logo.png"
+          alt="Tecnoesis 2024"
+          className={styles.tecnoLogo}
+        />
+      </div>
+      <div className={styles.dateTecno}>01. 02. 03. 04</div>
+      <div className={styles.dateTecno}>FEBRUARY</div>
+      <div className={styles.arrowLottieContainer}>
+        <div className={styles.arrowLottie}>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            hashSpy={true}
+            offset={0}
+            duration={500}
+          >
+            <Lottie
+              animationData={home_arrow}
+              loop={true}
+              style={{ width: "auto", height: "100%" }}
+            />
+          </Link>
+        </div>
+      </div>
+      <div></div>
+    </div>
   );
 }
 

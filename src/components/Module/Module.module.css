@@ -123,12 +123,14 @@
 top: unset;
 } */
 .rightFrameParent{
-  height: 100vh;
-  overflow:auto;
-  overflow-x: hidden;
- 
-  position: fixed;
-  right:0;
+  height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    position: fixed;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 /* for chrome*/
 .rightFrameParent::-webkit-scrollbar {
