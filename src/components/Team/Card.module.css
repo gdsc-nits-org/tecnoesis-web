@@ -132,6 +132,16 @@
     height: 233px;
     width: 161px;
   }
+  .dp{
+    width: 10rem; /* Example width */
+    height: 14rem; /* Example height */
+  }
+  .name{
+    font-size: 0.8rem;
+  }
+  .position{
+    font-size: 0.6rem;
+  }
 
 }
 
