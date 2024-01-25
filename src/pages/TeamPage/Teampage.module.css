@@ -2,7 +2,7 @@
   min-height: 100vh;
   width: 100%;
   background-color: black;
-  background-image: url(../../../public/images/teamPage/bg.svg);
+  background-image: url(/public/images/teamPage/bg.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -80,7 +80,7 @@
   min-height: 90vh;
   overflow: auto;
   overflow-x: hidden;
-  background-image: url(../../../public/images/teamPage/rightFrame.svg);
+  background-image: url(/public/images/teamPage/rightFrame.svg);
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;

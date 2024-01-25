@@ -51,7 +51,7 @@ const Teampage = () => {
   const [teams, setTeams] = useState([
     {
       id: 1,
-      name: "Team Name1",
+      name: "Core Team",
       members: [
         {
           id: 1,
@@ -81,7 +81,7 @@ const Teampage = () => {
     },
     {
       id: 2,
-      name: "Team Name2",
+      name: "Marketing Team",
       members: [
         {
           id: 1,
@@ -111,7 +111,7 @@ const Teampage = () => {
     },
     {
       id: 3,
-      name: "Team Name3",
+      name: "Hospitality",
       members: [
         {
           id: 1,
@@ -141,7 +141,7 @@ const Teampage = () => {
     },
     {
       id: 4,
-      name: "Team Name4",
+      name: "Technical Team",
       members: [
         {
           id: 1,
@@ -171,7 +171,7 @@ const Teampage = () => {
     },
     {
       id: 5,
-      name: "Team Name5",
+      name: "PR Team",
       members: [
         {
           id: 1,
