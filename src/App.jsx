@@ -9,7 +9,7 @@ import {
 } from "./pages";
 import { useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer, Loading } from "./components";
+import { Navbar, Footer, Loading, Navbar2} from "./components";
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
@@ -77,7 +77,7 @@ function App() {
               path="/modules"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <ModulePage />
                   <Footer />
                 </>
@@ -87,7 +87,7 @@ function App() {
               path="/dashboard"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <Dashboard />
                   <Footer />
                 </>
@@ -98,7 +98,7 @@ function App() {
               path="/signup"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <Form />
                   <Footer />
                 </>
@@ -108,7 +108,7 @@ function App() {
               path="/event/:id"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <EventDescription />
                   <Footer />
                 </>

@@ -1,18 +1,13 @@
 import { useState } from "react";
-import "./slick.css";
-import "./slick-theme.css";
 import Lottie from "lottie-react";
 import aboutus_pc from "../../assets/aboutus_pc.json";
 import aboutus_coin from "../../assets/aboutus_coin.json";
 import alien_near_module_section from "../../assets/alien_near_module_section.json";
 import heart from "../../assets/heart.json";
 import styles from "./About.module.css";
-import Slider from "react-slick";
 import Button from "../Button/Button";
-import { Link } from 'react-router-dom';
-
-
-
+import { Link } from "react-router-dom";
+import HomeCarousel from '../HomeCarousel/HomeCarousel.jsx'
 
 function About() {
   const [coinbox, setCoinbox] = useState(false);
@@ -35,18 +30,13 @@ function About() {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnFocus: true,
-
   };
-
-
 
   return (
     <>
-      <div id='about' >
-
+      <div id="about">
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
-
             <div className={styles.textContainer}>
               <div className={styles.aboutUsText}>
                 <div className={styles.techFestText}>ABOUT US</div>
@@ -67,10 +57,11 @@ function About() {
               <div className={styles.lottieContainerParent}>
                 <div className={styles.lottieContainer}>
                   <div
-                    className={`${coinbox
-                      ? styles.translateLottie
-                      : styles.retranslateLottie
-                      } ${styles.mb4}`}
+                    className={`${
+                      coinbox
+                        ? styles.translateLottie
+                        : styles.retranslateLottie
+                    } ${styles.mb4}`}
                   >
                     <Lottie
                       animationData={aboutus_coin}
@@ -82,8 +73,9 @@ function About() {
                     <div
                       onMouseOver={handleEvent}
                       onMouseOut={handleEvent}
-                      className={`${coinbox ? styles.translate : styles.retranslate
-                        } ${styles.coinboxImage}`}
+                      className={`${
+                        coinbox ? styles.translate : styles.retranslate
+                      } ${styles.coinboxImage}`}
                     />
                   </div>
                 </div>
@@ -123,7 +115,9 @@ function About() {
               </div>
             </div>
           </div>
-          <div className={`${styles.contentContainer3} ${styles.containerPadding}`} >
+          <div
+            className={`${styles.contentContainer3} ${styles.containerPadding}`}
+          >
             <div className={styles.alienLottieContainer}>
               <Lottie
                 animationData={alien_near_module_section}
@@ -133,23 +127,19 @@ function About() {
             </div>
             <div className={styles.moduleContainer}>
               <div className={styles.heartLottieContainer}>
-                <Lottie
-                  animationData={heart}
-                  loop={true}
-                  style={style2}
-                />
+                <Lottie animationData={heart} loop={true} style={style2} />
               </div>
 
               <div className={styles.moduletext}>MODULES</div>
               <div className={styles.eventText3}>
                 A bright future requires a bright start. NITS abides by this
                 mantra. The institute believes in equipping students with the
-                knowledge and skills in their chosen streams, inculcate
-                values, identify hidden talents, and provide opportunities for
-                students to realize their full potential. It facilitates the
-                requisite support and encouragement via various cultural and
-                academic activities to shape the body and soul. It has
-                transformed into a sought out centre of learning.
+                knowledge and skills in their chosen streams, inculcate values,
+                identify hidden talents, and provide opportunities for students
+                to realize their full potential. It facilitates the requisite
+                support and encouragement via various cultural and academic
+                activities to shape the body and soul. It has transformed into a
+                sought out centre of learning.
               </div>
 
               <div className={styles.buttonContainer}>
@@ -162,23 +152,12 @@ function About() {
             </div>
           </div>
 
-          <div className={styles.contentContainer3}>
-
+          <div className={styles.contentContainer3} id="gallery" >
             <div className={styles.photoContainer}>
               <div className={styles.moduletext}>PHOTO GALLERY</div>
-              <div className={styles.carouselContainer}>
-                <Slider {...settings}>
-                  <div>
-                    <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105873/tecnoesis/bg_landing_k72qpe.svg" alt="Image 1" className={styles.carouselImage} />
-                  </div>
-                  <div>
-                    <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105883/tecnoesis/bg_landing_stars_r55vdm.svg" alt="Image 2" className={styles.carouselImage} />
-                  </div>
-                  <div>
-                    <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105837/tecnoesis/bg22_ypjl57.svg" alt="Image 3" className={styles.carouselImage} />
-                  </div>
-                </Slider>
-              </div>
+              
+               <HomeCarousel/>
+
             </div>
           </div>
         </div>

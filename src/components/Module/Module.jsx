@@ -14,6 +14,7 @@ import { useContext } from "react";
 import Loading from "../Loading/Loading";
 import { Link as NavigateLink } from "react-router-dom";
 import data from "./data.json";
+import { useNavigate } from "react-router-dom";
 
 const Module = () => {
   const [showRing1, setShowRing1] = useState(false);
@@ -25,6 +26,8 @@ const Module = () => {
   const [showRing7, setShowRing7] = useState(false);
 
   const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const navigate = useNavigate();
+
 
   const delayTime = 400;
 
@@ -91,7 +94,6 @@ const Module = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    // arrows: false,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 4000,
@@ -115,14 +117,13 @@ const Module = () => {
   }, []);
   const [modulesData, setModulesData] = useState([]);
 
-  const getModules = async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/api/module/`
-      );
-      const jsonData = response.data;
-      console.log(jsonData.msg);
+  
+    const getModules = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/api/module/`
+        );
+        const jsonData = response.data;
 
       setModulesData(jsonData.msg);
       setIsLoading(false);
@@ -147,6 +148,10 @@ const Module = () => {
   for (let i = 0; i < modulesData?.length; i++) {
     modulesData[i].sequence = i + 1;
   }
+  const handleRoute=(id)=>{
+    console.log(id);
+    navigate(`/event/id:${id}`);  }
+
 
   if (isLoading) {
     return <Loading />;
@@ -168,53 +173,15 @@ const Module = () => {
                 <div className={styles.moduleFrames}>
                   <Slider {...settings}>
                     {moduleName.events.map((event) => (
-                      <NavigateLink to={`/event/${event.id}`}>
-                        <div key={event.id} className={styles.moduleImg}>
-                          <div
-                            className={styles.moduleImgInContent}
-                            style={{
-                              backgroundImage: `url(${event.posterImage})`,
-                              backgroundSize: "cover",
-                            }}
-                          >
-                            <img
-                              src="/elements/module_page_frame.svg"
-                              alt={`img${event.id}`}
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                              }}
-                            />
-                          </div>
-                          <div className={styles.moduleImgContent}>
-                            <div className={styles.subModules}>
-                              <div
-                                style={{
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                  maxWidth: "13ch",
-                                }}
-                              >
-                                {event.name}
-                              </div>
-                            </div>{" "}
-                          </div>
-                        </div>
-                      </NavigateLink>
-                    ))}
-                  </Slider>
-                </div>
-              ) : (
-                <div className={styles.moduleFrames}>
-                  {moduleName.events.map((event) => (
-                    <NavigateLink to={`/event/${event.id}`}>
-                      <div
-                        key={event.id}
-                        className={styles.moduleImg}
-                        style={{ backgroundImage: `url(${event.posterImage})` }}
+                      <div key={event.id} className={styles.moduleImg} onClick={() => handleRoute(event.id)}
                       >
-                        <div className={styles.moduleImgInContent}>
+                        <div
+                          className={styles.moduleImgInContent}
+                          style={{
+                            backgroundImage: `url(${event.posterImage})`,
+                            backgroundSize: "cover",
+                          }}
+                        >
                           <img
                             src="/elements/module_page_frame.svg"
                             alt={`img${event.id}`}
@@ -236,10 +203,48 @@ const Module = () => {
                             >
                               {event.name}
                             </div>
+                          </div>{" "}
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              ) : (
+                <div className={styles.moduleFrames}>
+                  {moduleName.events.map((event) => (
+                    
+                    <div
+                      key={event.id}
+                      className={styles.moduleImg}
+                      style={{ backgroundImage: `url(${event.posterImage})` }}
+                      onClick={() => handleRoute(event.id)}
+                    >
+                      <div className={styles.moduleImgInContent}>
+                        <img
+                          src="/elements/module_page_frame.svg"
+                          alt={`img${event.id}`}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+                      <div className={styles.moduleImgContent}>
+                        <div className={styles.subModules}>
+                          <div
+                            style={{
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              maxWidth: "13ch",
+                            }}
+                          >
+                            {event.name}
                           </div>
                         </div>
                       </div>
-                    </NavigateLink>
+                    </div>
+                    
                   ))}
                 </div>
               )}
@@ -280,6 +285,6 @@ const Module = () => {
       </div>
     </>
   );
-};
+                }
 
 export default Module;

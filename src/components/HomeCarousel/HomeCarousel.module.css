@@ -1,0 +1,109 @@
+
+.carouselContainerParent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.carouselContainer {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+  display:flex;
+}
+
+.carouselImage {
+  width: 60vw;
+  transition: transform 0.5s ease-in-out; 
+}
+.buttonContainer{
+  width:20vw;
+  height:20vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.carouselButton {
+  
+  width:50%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+ 
+  transition: color 0.3s ease;
+  
+}
+.carouselButton1 {
+ display: flex;
+ justify-content: flex-end;
+}
+
+.carouselButton:hover {
+  color: #555; 
+}
+.prev{
+  width:50%;
+
+  transform: rotate(180deg);
+  content: url(/images/module_arrow.svg);
+}
+.next{
+  width:50%;
+  content: url(/images/module_arrow.svg);
+}
+@media screen and (max-width: 468px) {
+  .carouselContainer{
+      width:90%;
+
+  }
+  .carouselImage{
+    width:90vw;
+  }
+  .prev{
+      width:90%;
+  }
+  .next{
+      width:90%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .carouselButton{
+      width:70%;
+
+  }
+  .prev{
+    width:27%;
+}
+.next{
+    width:27%;
+}
+}
+@media screen and (min-width: 1300px) {
+  .carouselContainer {
+    width: 50%;
+   
+  }
+  
+  .carouselImage {
+    width: 50vw;
+  }
+  .buttonContainer{
+    width:25vw;
+  }
+
+  .prev{
+    width:22%;
+}
+.next{
+    width:22%;
+}
+}
+@media screen and (min-width: 1500px) {
+  .carouselImage{
+     height:40vw;
+
+  }
+}
+
