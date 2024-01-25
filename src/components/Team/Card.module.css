@@ -35,7 +35,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 3vw;
+  height: 2.5vw;
 }
 
 .dp{
@@ -79,11 +79,11 @@
 }
 
 .name{
-  font-size: 1.9375rem;
+  font-size: 1.5rem;
 }
 
 .position{
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .SocialProfile {
