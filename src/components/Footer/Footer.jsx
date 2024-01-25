@@ -34,6 +34,15 @@ const Footer = () => {
               </Button_page>
             </a>
           </div>
+          <div className={styles.centerText}>
+            <span className={styles.whiteText}>DESIGNED IN COLLABORATION WITH </span>
+            <span className={styles.purpleText}>G</span>
+            <span className={styles.yellowText}>D</span>
+            <span className={styles.redText}>S</span>
+            <span className={styles.greenText}>C</span>
+            <span className={styles.whiteText}> </span>
+            <span className={styles.whiteText}>NIT Silchar</span>
+          </div>
           <div className={styles.footer_contact}>CONTACT US</div>
           <div className={styles.black_flare}></div>
           <div className={styles.footer_icons}>
