@@ -1,5 +1,6 @@
 import styles from "./Footer.module.css";
 import Button_page from "../Button/Button";
+import arow from "../../../public/elements/arow.svg"
 
 const Footer = () => {
   return (
@@ -35,13 +36,13 @@ const Footer = () => {
             </a>
           </div>
           <div className={styles.centerText}>
-            <span className={styles.whiteText}>DESIGNED IN COLLABORATION WITH </span>
-            <span className={styles.purpleText}>G</span>
-            <span className={styles.yellowText}>D</span>
-            <span className={styles.redText}>S</span>
-            <span className={styles.greenText}>C</span>
-            <span className={styles.whiteText}> </span>
-            <span className={styles.whiteText}>NIT Silchar</span>
+            <div className={styles.gdsctext}>DESIGNED AND DEVELOPED IN COLLABORATION WITH</div>
+            <div className={styles.gdsctext_pos}>
+              <div className={styles.gdsclogo}><img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hyg5xs9vkkpswxiiidp3" /></div>
+              
+              <div className={styles.gdsctext1}>GDSC NIT SILCHAR</div>
+              <div className={styles.gdsclogoarow}><img src={arow} /></div>
+            </div>
           </div>
           <div className={styles.footer_contact}>CONTACT US</div>
           <div className={styles.black_flare}></div>

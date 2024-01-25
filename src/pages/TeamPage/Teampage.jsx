@@ -60,7 +60,7 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/mriganga-jyoti-chutia-475b53202?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/mriganga.jyotichutia?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/_mri_ganga_?igsh=djV0ZmVvcHM1NXcx",
-          image: "https://drive.google.com/open?id=1798-Bk_8iGVCsIiUkUPz-d5O-mEtlykC"
+          image: "https://res.cloudinary.com/dagggqd6g/raw/upload/v1706204259/vizbk9isnodnnxq2g3ee"
         },
       ],
     },
@@ -68,7 +68,6 @@ const Teampage = () => {
       id: 2,
       name: "Core Team",
       members: [
-
         {
           id: "1",
           name: "Jyotishka Bhattacharjee",
