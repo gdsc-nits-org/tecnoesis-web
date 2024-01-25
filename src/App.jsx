@@ -7,9 +7,9 @@ import {
   Registration,
   Form,
 } from "./pages";
-import { useState, useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer, Loading } from "./components";
+import { useContext, useEffect, useState } from "react"
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
@@ -18,17 +18,24 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const { token,
-    signup,
-    logout,
-    signin,
-    loggedin,
-    setLoggedin } = useContext(UserContext);
+  const { setLoggedin } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     if (localStorage.getItem("token")) {
-      setLoggedin(true);
+      localStorage.setItem("loggedin", 1);
+    } else {
+      localStorage.setItem("loggedin", 0);
     }
+
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -52,13 +59,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/modules" element={<ModulePage />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Loading" element={<Loading />} />
             <Route path="/signup" element={<Form />} />
             <Route path="/event/:id" element={<EventDescription />} />
             <Route path="/event/:id/registration" element={<Registration />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
-        </LoadingProvider>
+        </LoadingProvider >
       </AuthProvider>
     </>
   );
