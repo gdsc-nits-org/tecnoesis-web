@@ -39,9 +39,9 @@ const Footer = () => {
             <div className={styles.gdsctext}>DESIGNED AND DEVELOPED IN COLLABORATION WITH</div>
             <div className={styles.gdsctext_pos}>
               <div className={styles.gdsclogo}><img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hyg5xs9vkkpswxiiidp3" /></div>
-              
+
               <div className={styles.gdsctext1}>GDSC NIT SILCHAR</div>
-              <div className={styles.gdsclogoarow}><img src={arow} /></div>
+              <div className={styles.gdsclogoarow}><a href="https://gdscnits.in" target="_blank" rel="noopener noreferrer"><img src={arow} /></a></div>
             </div>
           </div>
           <div className={styles.footer_contact}>CONTACT US</div>
