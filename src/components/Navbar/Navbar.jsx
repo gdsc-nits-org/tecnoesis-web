@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Link as SectionLink } from "react-scroll";
-import { Link as SectionLink } from "react-scroll";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
