@@ -81,6 +81,8 @@
 .centerText {
   padding: 1rem;
   text-align: center;
+  margin-bottom: -2rem;
+  font-size: 0.9rem;
 }
 
 .gdsctext{
@@ -89,6 +91,7 @@
   line-height: 2rem;
   letter-spacing: 0.10;
   word-wrap:break-word;
+  font-size: 0.9rem;
 }
 .gdsctext_pos{
   margin-left: -4rem;
@@ -102,6 +105,7 @@
   font-family:  PixeloidSans, serif;
   font-weight: 400;
   line-height: 2rem;
+
   letter-spacing: 0.10;
   word-wrap:break-word;
   margin-left: -2rem;
@@ -132,7 +136,9 @@
   .pikachu{
     width: 7rem;
   }
- 
+  .centerText {
+    font-size: 0.8rem;
+  }
   .foot_btn{
     font-size: small;
   }
