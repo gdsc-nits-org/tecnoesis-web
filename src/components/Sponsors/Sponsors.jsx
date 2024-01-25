@@ -12,12 +12,12 @@ const Sponsors = () => {
         src="/images/homepageBg.png"
         alt="Background stars"
       /> */}
-      <h1 className={styles.text_container}>OUR PAST SPONSORS</h1> 
+      <h1 className={styles.text_container}>OUR SPONSORS</h1> 
 
       {Cards &&
         Cards.map((item) => (
           <div key={item.id} className={styles.mn_fr_container}>
-            <img className={styles.frame} src="images/frame.png" />
+            <img className={styles.frame} src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105907/tecnoesis/frame_jgpdkn.png" />
             <img className={styles.fr_container} src={item.company} />
           </div>
         ))}

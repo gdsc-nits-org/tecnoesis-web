@@ -1,27 +1,21 @@
 import styles from "./Dashboard.module.css";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-// import profile from "/images/Profile.png";
+import { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import contact from "/images/contact.png";
 import schoolblack from "/images/school_black.png";
 import callblack from "/images/call_black.png";
 import location from "/images/location.png";
-// import pin from "/images/pin.png";
 import vector_right from "/images/Vector1.png";
 import vector_left from "/images/Vector.png";
 import ellipse from "/images/Ellipse.svg";
 import vector from "/images/Vector.svg";
 import statusData from "../../assets/statusData";
-// import camera from "/images/camera.svg";
 import vector3 from "/images/Vector3.png";
-import vector4 from "/images/Vector4.png";
 import ellipse2 from "/images/Ellipse2.svg";
-// import img123456 from "/images/img123456.jpg";
 import axios from "axios";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import UserContext from "../../globals/authcontext";
+import LoadingContext from "../../globals/loading/loadingContext";
+import { Loading } from "../../components"
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -40,7 +34,7 @@ const getTeams = (teamsRegistered, status, currentUsername) => {
 export default function Dashboard() {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
-  const { setloggedin } = useContext(UserContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   let api_url_me = `${import.meta.env.VITE_BASE_URL}/api/user/me`;
 
@@ -58,6 +52,9 @@ export default function Dashboard() {
         case "pending":
           setCurrentStatus("rejected");
           break;
+        case "rejected":
+          setCurrentStatus("registered");
+          break;
 
         default:
           break;
@@ -69,6 +66,9 @@ export default function Dashboard() {
           break;
         case "pending":
           setCurrentStatus("registered");
+          break;
+        case "registered":
+          setCurrentStatus("rejected");
           break;
 
         default:
@@ -107,8 +107,21 @@ export default function Dashboard() {
     }
   };
 
+  const giveIcon = (status) => {
+    switch (status) {
+      case "REGISTERED":
+        return tick;
+      case "PENDING":
+        return pending;
+
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     const getUserData = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem("token");
         if (!token) {
@@ -151,8 +164,9 @@ export default function Dashboard() {
           toast(error.message);
         }
         navigate("/");
-        setloggedin(false);
+        localStorage.setItem("loggedin", 0);
       }
+      setIsLoading(false);
     };
     getUserData();
   }, []);
@@ -160,6 +174,10 @@ export default function Dashboard() {
   const trimText = (text) => {
     return text.length > 10 ? text.slice(0, 10) : text;
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>
@@ -190,7 +208,11 @@ export default function Dashboard() {
               </p>
             </div>
             <div className={styles.address}>
-              <img className={styles.profile_icons} src={location} alt="" />
+              <img
+                className={styles.profile_icons}
+                src="/elements/email_s.png"
+                alt=""
+              />
               <p className={styles.profile_text}>{userData?.email}</p>
             </div>
           </div>
@@ -198,7 +220,7 @@ export default function Dashboard() {
             <Link to="/" style={{ textDecoration: "none" }}>
               <button className={styles.button1}>GO TO HOME</button>
             </Link>
-            {/* <button className={styles.button2}>LOGOUT</button> */}
+
           </div>
         </div>
         <div className={styles.right}>
@@ -210,9 +232,8 @@ export default function Dashboard() {
                 alt=""
               />
               <p>
-                {`Events ${
-                  currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
-                }`}{" "}
+                {`Events ${currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
+                  }`}{" "}
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
@@ -222,98 +243,68 @@ export default function Dashboard() {
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
-                registeredEvents?.map((events, index) => (
-                  <div key={events.event.id} className={styles.repeating_box}>
-                    <div className={styles.event_rect}>
-                      <div className={styles.circle}>
-                        <img src={ellipse} alt="" />
-                      </div>
-                      <div className={styles.middle}>
-                        <div className={styles.event_title}>
-                          {events.event.name}
+                (registeredEvents && registeredEvents.length > 0 ? (
+                  registeredEvents?.map((events, index) => (
+                    <div key={events.event.id} className={styles.repeating_box}>
+                      <div className={styles.event_rect}>
+                        <div className={styles.circle}>
+                          <img src={ellipse} alt="" />
                         </div>
-                        <div className={styles.event_team}>
-                          Team Name: {events.teamName}
+                        <div className={styles.middle}>
+                          <div className={styles.event_title}>
+                            {events.event.name}
+                          </div>
+                          <div className={styles.event_team}>
+                            Team Name: {events.teamName}
+                          </div>
+                        </div>
+                        <div className={styles.end_div}>
+                          <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={isExpanded[index] ? vector3 : vector}
+                            alt=""
+                          />
                         </div>
                       </div>
-                      <div className={styles.end_div}>
-                        <p> View Team </p>
-                        <img
-                          onClick={() => handleToggle(index)}
-                          src={isExpanded[index] ? vector3 : vector}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    {isExpanded[index] && (
-                      <div className={styles.expanded_content}>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Name</th>
-
-                              <th>Username</th>
-
-                              <th>Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr></tr>
-                            {events.members.map((member) => (
+                      {isExpanded[index] && (
+                        <div className={styles.expanded_content}>
+                          <table>
+                            <thead>
                               <tr>
-                                <td>{trimText(member.user.firstName)}</td>
-                                <td>{trimText(member.user.username)}</td>
-                                <td>
-                                  <img src={vector4} alt="" />
-                                </td>
+                                <th>Name</th>
+
+                                <th>Username</th>
+
+                                <th>Status</th>
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </div>
+                            </thead>
+                            <tbody>
+                              <tr></tr>
+                              {events.members.map((member) => (
+                                <tr>
+                                  <td>{trimText(member.user.firstName)}</td>
+                                  <td>{trimText(member.user.username)}</td>
+                                  <td>
+                                    <img src={vector4} alt="" />
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  ))
+
+                ) : (
+                  <p className={styles.content_text}>No registered events</p>
                 ))}
 
               {currentStatus === "pending" &&
-                pendingEvents?.map((events) => (
-                  <div key={events.event.id} className={styles.event_rect2}>
-                    <div className={styles.circle}>
-                      <img src={ellipse} alt="" />
-                    </div>
-                    <div className={styles.middle}>
-                      <div className={styles.event_title}>
-                        {events.event.name}
-                      </div>
-                      <div className={styles.event_team}>
-                        Team Name: {events.teamName}
-                      </div>
-                    </div>
-                    <div className={styles.end_div2}>
-                      <button
-                        className={styles.button3}
-                        onClick={() => {
-                          handleResponse(events.id, "REGISTERED");
-                        }}
-                      >
-                        Accept
-                      </button>
-                      <button
-                        className={styles.button4}
-                        onClick={() => {
-                          handleResponse(events.id, "CANCELLED");
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </div>
-                  </div>
-                ))}
-
-              {currentStatus === "rejected" &&
-                rejectedEvents?.map((events, index) => (
-                  <div key={events.event.id} className={styles.repeating_box}>
-                    <div key={events.event.id} className={styles.event_rect}>
+                (pendingEvents && pendingEvents.length > 0 ? (
+                  pendingEvents?.map((events) => (
+                    <div key={events.event.id} className={styles.event_rect2}>
                       <div className={styles.circle}>
                         <img src={ellipse} alt="" />
                       </div>
@@ -325,43 +316,88 @@ export default function Dashboard() {
                           Team Name: {events.teamName}
                         </div>
                       </div>
-                      <div className={styles.end_div}>
-                        <p> View Team </p>
-                        <img
-                          onClick={() => handleToggle(index)}
-                          src={isExpanded[index] ? vector3 : vector}
-                          alt=""
-                        />
+                      <div className={styles.end_div2}>
+                        <button
+                          className={styles.button3}
+                          onClick={() => {
+                            handleResponse(events.id, "REGISTERED");
+                          }}
+                        >
+                          Accept
+                        </button>
+                        <button
+                          className={styles.button4}
+                          onClick={() => {
+                            handleResponse(events.id, "CANCELLED");
+                          }}
+                        >
+                          Reject
+                        </button>
                       </div>
                     </div>
-                    {isExpanded[index] && (
-                      <div className={styles.expanded_content}>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Name</th>
+                  ))
 
-                              <th>Username</th>
+                ) : (
+                  <p className={styles.content_text}>No pending events</p>
+                ))}
 
-                              <th>Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr></tr>
-                            {events.members.map((member) => (
-                              <tr>
-                                <td>{trimText(member.user.firstName)}</td>
-                                <td>{trimText(member.user.username)}</td>
-                                <td>
-                                  <img src={vector4} alt="" />
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+              {currentStatus === "rejected" &&
+                (rejectedEvents && rejectedEvents.length > 0 ? (
+                  rejectedEvents?.map((events, index) => (
+                    <div key={events.event.id} className={styles.repeating_box}>
+                      <div key={events.event.id} className={styles.event_rect}>
+                        <div className={styles.circle}>
+                          <img src={ellipse} alt="" />
+                        </div>
+                        <div className={styles.middle}>
+                          <div className={styles.event_title}>
+                            {events.event.name}
+                          </div>
+                          <div className={styles.event_team}>
+                            Team Name: {events.teamName}
+                          </div>
+                        </div>
+                        <div className={styles.end_div}>
+                          <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={isExpanded[index] ? vector3 : vector}
+                            alt=""
+                          />
+                        </div>
                       </div>
-                    )}
-                  </div>
+                      {isExpanded[index] && (
+                        <div className={styles.expanded_content}>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+
+                                <th>Username</th>
+
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr></tr>
+                              {events.members.map((member) => (
+                                <tr>
+                                  <td>{trimText(member.user.firstName)}</td>
+                                  <td>{trimText(member.user.username)}</td>
+                                  <td>
+                                    <img src={vector4} alt="" />
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  ))
+
+                ) : (
+                  <p className={styles.content_text}>No rejected events</p>
                 ))}
             </div>
           </div>
@@ -371,7 +407,7 @@ export default function Dashboard() {
             {" "}
             <button className={styles.button1}>GO TO HOME</button>
           </Link>
-          {/* <button className={styles.button2}>LOGOUT</button> */}
+
         </div>
       </div>
       <div className={styles.pink_shade}>
