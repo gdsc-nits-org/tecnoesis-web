@@ -275,14 +275,15 @@ const Teampage = () => {
       name: "Technical Team",
       members: [
         {
-          id: "11",
-          name: "Jugya Kamal Gogoi",
-          designation: "Cloud Member",
-          linkedin: "https://www.linkedin.com/in/jugya",
-          facebook: "https://www.facebook.com/zhang.jike.311/",
-          git: "https://github.com/Jugya07",
-          image: "https://drive.google.com/open?id=19IwITPXblUN-0-bew1zTU8mC2bfWm_ns"
+          id: "23",
+          name: "Bijay Jiwrajka ",
+          designation: "Web Developer",
+          linkedin: "https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/",
+          facebook: "https://www.facebook.com/bijay.jiwrajka.1",
+          git: "https://github.com/bj-jiwrajka",
+          image: "https://drive.google.com/open?id=1IqKPG7DjgE1Yur-aguH0xVfYh0cLUePG"
         },
+        
         {
           id: "2",
           name: "Swarup Chanda",
@@ -338,13 +339,13 @@ const Teampage = () => {
           image: "https://drive.google.com/open?id=1tjURlnb74QCwq4j47WgiXRgl75TNnJ5b"
         },
         {
-          id: "23",
-          name: "Bijay Jiwrajka ",
-          designation: "Web Developer",
-          linkedin: "https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/",
-          facebook: "https://www.facebook.com/bijay.jiwrajka.1",
-          git: "https://github.com/bj-jiwrajka",
-          image: "https://drive.google.com/open?id=1IqKPG7DjgE1Yur-aguH0xVfYh0cLUePG"
+          id: "11",
+          name: "Jugya Kamal Gogoi",
+          designation: "Cloud Member",
+          linkedin: "https://www.linkedin.com/in/jugya",
+          facebook: "https://www.facebook.com/zhang.jike.311/",
+          git: "https://github.com/Jugya07",
+          image: "https://drive.google.com/open?id=19IwITPXblUN-0-bew1zTU8mC2bfWm_ns"
         },
 
         {
