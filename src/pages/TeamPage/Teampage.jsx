@@ -51,7 +51,7 @@ const Teampage = () => {
   const [teams, setTeams] = useState([
     {
       id: 1,
-      name: "Core Team",
+      name: "Union Body",
       members: [
         {
           id: "19",
@@ -62,6 +62,13 @@ const Teampage = () => {
           inst: "https://www.instagram.com/_mri_ganga_?igsh=djV0ZmVvcHM1NXcx",
           image: "https://drive.google.com/open?id=1798-Bk_8iGVCsIiUkUPz-d5O-mEtlykC"
         },
+      ],
+    },
+    {
+      id: 2,
+      name: "Core Team",
+      members: [
+
         {
           id: "1",
           name: "Jyotishka Bhattacharjee",
@@ -210,36 +217,7 @@ const Teampage = () => {
         },
       ],
     },
-    {
-      id: 2,
-      name: "Marketing Team",
-      members: [
-        {
-          id: 1,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 2,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 3,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 4,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-      ],
-    },
+
     {
       id: 3,
       name: "Hospitality",
@@ -283,7 +261,7 @@ const Teampage = () => {
           git: "https://github.com/bj-jiwrajka",
           image: "https://drive.google.com/open?id=1IqKPG7DjgE1Yur-aguH0xVfYh0cLUePG"
         },
-        
+
         {
           id: "2",
           name: "Swarup Chanda",
