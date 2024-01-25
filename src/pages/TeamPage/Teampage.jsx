@@ -231,7 +231,7 @@ const Teampage = () => {
         className={`${isSticky ? styles.sticky : ""} ${
           styles.rightFrameParent
         }`}
-        style={{ display: isSidebarVisible ? "" : "none" }}
+        style={{ "translate" : isSidebarVisible ? "0px" : "250px"}}
       >
         <div className={styles.rightFrame}>
           {teams.map((TeamName, id) => (
@@ -240,6 +240,9 @@ const Teampage = () => {
               className={styles.teamName}
               onClick={() => {
                 setIndex(id);
+                if(isSmallScreen){
+                  setIsSidebarVisible(false)
+                }
               }}
             >
               {TeamName.name}
