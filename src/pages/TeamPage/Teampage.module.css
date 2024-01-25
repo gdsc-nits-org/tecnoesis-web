@@ -6,15 +6,20 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding-bottom: 20vw;
+
+  display: flex;
+}
+
+.leftFrame {
+  width: 85%;
+  padding: 0 0 0 40px;
 }
 
 .wrapper .teamCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
-
-  margin-right: 100px;
+  justify-content: space-between;
 }
 
 .headingDiv {
@@ -43,20 +48,18 @@
 }
 
 .teamName {
-  color: #fff;
-
-  font-family: PixeloidSansBold, serif;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-size: 1.25rem;
+  font-family: PixeloidSans, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  position: relative;
 }
 
-.teamName:hover{
+.teamName:hover {
   cursor: pointer;
   font-size: 1.2rem;
-  text-shadow: -3px 5px 3px rgba(233,7,7,0.6);
-
+  text-shadow: -3px 5px 3px rgba(233, 7, 7, 0.6);
 }
 
 .teamHeading {
@@ -94,12 +97,12 @@
   transform-origin: right;
 }
 
-.toggle{
+.toggle {
   position: absolute;
   right: 0;
 }
 
-.sticky{
+.sticky {
   position: fixed;
   right: 0;
   top: var(--navbar-height);
@@ -126,11 +129,22 @@
   margin-top: var(--navbar-height);
 }
 
-.teamName {
-  font-size: 0.08em;
-  font-family: PixeloidSans, serif;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  position: relative;
+@media (max-width: 768px) {
+  .leftFrame {
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .leftFrame {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+}
+
+@media (max-width: 256px) {
+  .teamCards {
+    justify-content: center !important;
+  }
 }

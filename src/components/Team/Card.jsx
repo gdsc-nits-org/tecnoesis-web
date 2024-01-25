@@ -9,19 +9,25 @@ import linkedin from "../../../public/images/teamPage/linkedin.svg";
 import facebook from "../../../public/images/teamPage/facebook.svg";
 import github from "../../../public/images/teamPage/github.svg";
 
-export const Card = ({name , designation , image}) => {
+export const Card = ({ name, designation, image }) => {
   return (
     <div className={styles.container}>
       <div className={styles.frame}>
-        <img src={frame} alt="Image Frame" className={styles.imageFrame} />
-        <img src={logo} alt="Image Frame" className={styles.logo} />
-        <img
-          src={frameBorder}
-          alt="Image Frame"
-          className={`${styles.imageFrame} ${styles.frame}`}
-        />
+        <div className={styles.frameChild}>
+          <img src={frame} alt="Image Frame" className={styles.imageFrame} />
+          <img src={logo} alt="Image Frame" className={styles.logo} />
+          <img
+            src={frameBorder}
+            alt="Image Frame"
+            className={`${styles.imageFrame} ${styles.frame}`}
+          />
 
-        <img src={image} alt="Image Frame" className={`${styles.imageFrame} ${styles.dp}`}/>
+          <img
+            src={image}
+            alt="Image Frame"
+            className={`${styles.imageFrame} ${styles.dp}`}
+          />
+        </div>
 
         <div className={styles.profile}>
           <div className={styles.prProfile}>

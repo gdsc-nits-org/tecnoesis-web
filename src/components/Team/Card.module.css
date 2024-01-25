@@ -3,12 +3,13 @@
   flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
+  margin-bottom: 4vw;
 }
 .frame {
   position: relative;
   overflow: hidden;
-  height: 23vw;
-  width: 17vw;
+  height: 404px;
+  width: 280px;
 }
 
 /* .dp {
@@ -73,9 +74,16 @@
 
 .profile .prProfile {
   font-family: PixeloidSansBold, serif;
-  font-size: 1.8vw;
   font-weight: 700;
   gap: 6.67px;
+}
+
+.name{
+  font-size: 1.9375rem;
+}
+
+.position{
+  font-size: 1.15rem;
 }
 
 .SocialProfile {
@@ -102,3 +110,79 @@
     width: 250px;
   }
 } */
+
+
+@media (max-width: 1024px) {
+  .frame{
+    height: 260px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .frame{
+    height: 233px;
+    width: 161px;
+  }
+
+}
+
+@media (max-width: 680px) {
+  .frame{
+    height: 325px;
+    width: 227px;
+  }
+
+}
+
+@media (max-width: 536px) {
+  .frame{
+    height: 272px;
+    width: 191px;
+  }
+
+}
+
+@media (max-width: 477px) {
+  .frame{
+    height: 220px;
+    width: 153px;
+  }
+
+  .container{
+    margin-bottom: 11vw;
+  }
+
+}
+
+@media (max-width: 380px) {
+  .frame{
+    height: 186px;
+    width: 130px;
+  }
+
+}
+
+@media (max-width: 340px) {
+  .frame{
+    height: 155px;
+    width: 108px;
+  }
+
+}
+
+@media (max-width: 296px) {
+  .frame{
+    height: 129px;
+    width: 90px;
+  }
+
+}
+
+@media (max-width: 256px) {
+  .frame{
+    height: 165px;
+    width: 115px;
+  }
+
+}

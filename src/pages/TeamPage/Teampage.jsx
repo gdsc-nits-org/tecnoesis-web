@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
-import toggleLeft from "../../../public/images/teamPage/toggle1.svg"
-import toggleRight from "../../../public/images/teamPage/toggleRight.svg"
+import toggleLeft from "../../../public/images/teamPage/toggle1.svg";
+import toggleRight from "../../../public/images/teamPage/toggleRight.svg";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
-  const [isSmallScreen , setIsSmallScreen ] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -205,24 +205,28 @@ const Teampage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.headingDiv}>
-        <div className={styles.heading}>
-          <h1>MEET THE TEAM</h1>
+      {/* leftFrame */}
+      <div className={styles.leftFrame}>
+        <div className={styles.headingDiv}>
+          <div className={styles.heading}>
+            <h1>MEET THE TEAM</h1>
+          </div>
+
+          <div className={styles.heading}>{teams[index].name}</div>
         </div>
-
-        <div className={styles.heading}>{teams[index].name}</div>
-      </div>
-      <div className={styles.teamCards}>
-        {teams[index].members.map((member, id) => (
-          <Card
-            key={id}
-            name={member.name}
-            designation={member.designation}
-            image={member.image}
-          />
-        ))}
+        <div className={styles.teamCards}>
+          {teams[index].members.map((member, id) => (
+            <Card
+              key={id}
+              name={member.name}
+              designation={member.designation}
+              image={member.image}
+            />
+          ))}
+        </div>
       </div>
 
+      {/* rightFrame */}
       <div
         className={`${isSticky ? styles.sticky : ""} ${
           styles.rightFrameParent
@@ -245,14 +249,18 @@ const Teampage = () => {
 
       </div>
 
-      <div className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`} onClick={hadleToggle}>
-          {
-            isSmallScreen && (isSidebarVisible ? (
-              <img src={toggleRight} alt="img"/>
-            ) :(
-              <img src={toggleLeft} alt="img"/>
-            )) 
-          }
+      
+        {/* toggle */}
+        <div
+          className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
+          onClick={hadleToggle}
+        >
+          {isSmallScreen &&
+            (isSidebarVisible ? (
+              <img src={toggleRight} alt="img" />
+            ) : (
+              <img src={toggleLeft} alt="img" />
+            ))}
         </div>
     </div>
   );
