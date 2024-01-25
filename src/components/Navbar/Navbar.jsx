@@ -30,6 +30,10 @@ const Navbar = () => {
     }
   };
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  const defaultImg =
+    "https://t4.ftcdn.net/jpg/05/42/36/11/360_F_542361185_VFRJWpR2FH5OiAEVveWO7oZnfSccZfD3.jpg";
+
   const handleLogin = async () => {
     const { status, message } = await signin();
     toast(message);
@@ -192,11 +196,15 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
-            {/* <li className={styles.nav_profile}>
-              <a href="">
-                <img className={styles.main_img} src={img123456} alt="" />
-              </a>
-            </li> */}
+            {loggedin && (
+              <li>
+                 <img
+                 className={styles.main_img}
+                 src={user && user.imageUrl ? user.imageUrl : defaultImg}
+                 alt="pfp"
+               />
+              </li>
+            )}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />
