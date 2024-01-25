@@ -15,7 +15,7 @@ import vector3 from "/images/Vector3.png";
 import ellipse2 from "/images/Ellipse2.svg";
 import axios from "axios";
 import LoadingContext from "../../globals/loading/loadingContext";
-import {Loading} from "../../components"
+import { Loading } from "../../components"
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -220,7 +220,7 @@ export default function Dashboard() {
             <Link to="/" style={{ textDecoration: "none" }}>
               <button className={styles.button1}>GO TO HOME</button>
             </Link>
-            {/* <button className={styles.button2}>LOGOUT</button> */}
+
           </div>
         </div>
         <div className={styles.right}>
@@ -232,9 +232,8 @@ export default function Dashboard() {
                 alt=""
               />
               <p>
-                {`Events ${
-                  currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
-                }`}{" "}
+                {`Events ${currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
+                  }`}{" "}
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
@@ -244,109 +243,68 @@ export default function Dashboard() {
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
-               (registeredEvents && registeredEvents.length > 0 ? (
-                registeredEvents?.map((events, index) => (
-                  <div key={events.event.id} className={styles.repeating_box}>
-                    <div className={styles.event_rect}>
-                      <div className={styles.circle}>
-                        <img src={ellipse} alt="" />
-                      </div>
-                      <div className={styles.middle}>
-                        <div className={styles.event_title}>
-                          {events.event.name}
+                (registeredEvents && registeredEvents.length > 0 ? (
+                  registeredEvents?.map((events, index) => (
+                    <div key={events.event.id} className={styles.repeating_box}>
+                      <div className={styles.event_rect}>
+                        <div className={styles.circle}>
+                          <img src={ellipse} alt="" />
                         </div>
-                        <div className={styles.event_team}>
-                          Team Name: {events.teamName}
+                        <div className={styles.middle}>
+                          <div className={styles.event_title}>
+                            {events.event.name}
+                          </div>
+                          <div className={styles.event_team}>
+                            Team Name: {events.teamName}
+                          </div>
+                        </div>
+                        <div className={styles.end_div}>
+                          <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={isExpanded[index] ? vector3 : vector}
+                            alt=""
+                          />
                         </div>
                       </div>
-                      <div className={styles.end_div}>
-                        <p> View Team </p>
-                        <img
-                          onClick={() => handleToggle(index)}
-                          src={isExpanded[index] ? vector3 : vector}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    {isExpanded[index] && (
-                      <div className={styles.expanded_content}>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Name</th>
-
-                              <th>Username</th>
-
-                              <th>Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr></tr>
-                            {events.members.map((member) => (
+                      {isExpanded[index] && (
+                        <div className={styles.expanded_content}>
+                          <table>
+                            <thead>
                               <tr>
-                                <td>{trimText(member.user.firstName)}</td>
-                                <td>{trimText(member.user.username)}</td>
-                                <td>
-                                  <img src={vector4} alt="" />
-                                </td>
+                                <th>Name</th>
+
+                                <th>Username</th>
+
+                                <th>Status</th>
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </div>
-                ))
-                
+                            </thead>
+                            <tbody>
+                              <tr></tr>
+                              {events.members.map((member) => (
+                                <tr>
+                                  <td>{trimText(member.user.firstName)}</td>
+                                  <td>{trimText(member.user.username)}</td>
+                                  <td>
+                                    <img src={vector4} alt="" />
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  ))
+
                 ) : (
                   <p className={styles.content_text}>No registered events</p>
                 ))}
 
               {currentStatus === "pending" &&
-               (pendingEvents && pendingEvents.length > 0 ? (
-                pendingEvents?.map((events) => (
-                  <div key={events.event.id} className={styles.event_rect2}>
-                    <div className={styles.circle}>
-                      <img src={ellipse} alt="" />
-                    </div>
-                    <div className={styles.middle}>
-                      <div className={styles.event_title}>
-                        {events.event.name}
-                      </div>
-                      <div className={styles.event_team}>
-                        Team Name: {events.teamName}
-                      </div>
-                    </div>
-                    <div className={styles.end_div2}>
-                      <button
-                        className={styles.button3}
-                        onClick={() => {
-                          handleResponse(events.id, "REGISTERED");
-                        }}
-                      >
-                        Accept
-                      </button>
-                      <button
-                        className={styles.button4}
-                        onClick={() => {
-                          handleResponse(events.id, "CANCELLED");
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </div>
-                  </div>
-                ))
-              
-                ) : (
-                  <p className={styles.content_text}>No pending events</p>
-                ))}
-
-              {currentStatus === "rejected" &&
-              (rejectedEvents && rejectedEvents.length > 0 ? (
-                rejectedEvents?.map((events, index) => (
-                  <div key={events.event.id} className={styles.repeating_box}>
-                    <div key={events.event.id} className={styles.event_rect}>
+                (pendingEvents && pendingEvents.length > 0 ? (
+                  pendingEvents?.map((events) => (
+                    <div key={events.event.id} className={styles.event_rect2}>
                       <div className={styles.circle}>
                         <img src={ellipse} alt="" />
                       </div>
@@ -358,45 +316,86 @@ export default function Dashboard() {
                           Team Name: {events.teamName}
                         </div>
                       </div>
-                      <div className={styles.end_div}>
-                        <p> View Team </p>
-                        <img
-                          onClick={() => handleToggle(index)}
-                          src={isExpanded[index] ? vector3 : vector}
-                          alt=""
-                        />
+                      <div className={styles.end_div2}>
+                        <button
+                          className={styles.button3}
+                          onClick={() => {
+                            handleResponse(events.id, "REGISTERED");
+                          }}
+                        >
+                          Accept
+                        </button>
+                        <button
+                          className={styles.button4}
+                          onClick={() => {
+                            handleResponse(events.id, "CANCELLED");
+                          }}
+                        >
+                          Reject
+                        </button>
                       </div>
                     </div>
-                    {isExpanded[index] && (
-                      <div className={styles.expanded_content}>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Name</th>
+                  ))
 
-                              <th>Username</th>
+                ) : (
+                  <p className={styles.content_text}>No pending events</p>
+                ))}
 
-                              <th>Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr></tr>
-                            {events.members.map((member) => (
-                              <tr>
-                                <td>{trimText(member.user.firstName)}</td>
-                                <td>{trimText(member.user.username)}</td>
-                                <td>
-                                  <img src={vector4} alt="" />
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+              {currentStatus === "rejected" &&
+                (rejectedEvents && rejectedEvents.length > 0 ? (
+                  rejectedEvents?.map((events, index) => (
+                    <div key={events.event.id} className={styles.repeating_box}>
+                      <div key={events.event.id} className={styles.event_rect}>
+                        <div className={styles.circle}>
+                          <img src={ellipse} alt="" />
+                        </div>
+                        <div className={styles.middle}>
+                          <div className={styles.event_title}>
+                            {events.event.name}
+                          </div>
+                          <div className={styles.event_team}>
+                            Team Name: {events.teamName}
+                          </div>
+                        </div>
+                        <div className={styles.end_div}>
+                          <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={isExpanded[index] ? vector3 : vector}
+                            alt=""
+                          />
+                        </div>
                       </div>
-                    )}
-                  </div>
-                ))
-                
+                      {isExpanded[index] && (
+                        <div className={styles.expanded_content}>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+
+                                <th>Username</th>
+
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr></tr>
+                              {events.members.map((member) => (
+                                <tr>
+                                  <td>{trimText(member.user.firstName)}</td>
+                                  <td>{trimText(member.user.username)}</td>
+                                  <td>
+                                    <img src={vector4} alt="" />
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  ))
+
                 ) : (
                   <p className={styles.content_text}>No rejected events</p>
                 ))}
@@ -408,7 +407,7 @@ export default function Dashboard() {
             {" "}
             <button className={styles.button1}>GO TO HOME</button>
           </Link>
-          {/* <button className={styles.button2}>LOGOUT</button> */}
+
         </div>
       </div>
       <div className={styles.pink_shade}>
