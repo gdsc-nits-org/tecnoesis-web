@@ -94,7 +94,6 @@ const Module = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    // arrows: false,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 4000,
