@@ -220,36 +220,6 @@ const Teampage = () => {
 
     {
       id: 3,
-      name: "Hospitality",
-      members: [
-        {
-          id: 1,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 2,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 3,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 4,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-      ],
-    },
-    {
-      id: 4,
       name: "Technical Team",
       members: [
         {
@@ -436,36 +406,7 @@ const Teampage = () => {
         },
       ],
     },
-    {
-      id: 5,
-      name: "PR Team",
-      members: [
-        {
-          id: 1,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 2,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 3,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-        {
-          id: 4,
-          name: "Name",
-          designation: "developer",
-          image: "",
-        },
-      ],
-    },
+
   ]);
 
   const [index, setIndex] = useState(0);
