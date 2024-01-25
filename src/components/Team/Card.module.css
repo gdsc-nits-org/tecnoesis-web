@@ -10,6 +10,7 @@
   overflow: hidden;
   height: 404px;
   width: 280px;
+  z-index: 1;
 }
 
 /* .dp {
@@ -35,11 +36,15 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   height: 3vw;
 }
 
 .dp{
   transition: all 0.3s ease-in;
+  width: 35rem; /* Example width */
+  height: 25rem; /* Example height */
+  object-fit: cover; 
 }
 
 /* .tecnoSid {
@@ -80,10 +85,12 @@
 
 .name{
   font-size: 1.3rem;
+  z-index: 5;
 }
 
 .position{
   font-size: 0.9rem;
+  z-index: 3;
 }
 
 .SocialProfile {
@@ -91,6 +98,7 @@
   gap: 2vw;
   opacity: 0;
   transition: all 0.3s ease-in;
+  z-index: 2;
 }
 
 .SocialProfile .icon {
