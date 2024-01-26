@@ -124,18 +124,18 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706206024/DSC_0174_2_-_Debasish_Konwar_qwqaq9.jpg",
         },
-        {
-          id: "3",
-          name: "Pankaj kumar meena ",
-          designation: "Event Management Head",
-          linkedin:
-            "https://www.linkedin.com/in/pankaj-meena-8305aa269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          facebook:
-            "https://www.facebook.com/profile.php?id=100084255485902&mibextid=ZbWKwL",
-          inst: "https://www.instagram.com/pankaj56_06?igsh=MTBydXZ2YW5iam5nZQ==",
-          image:
-            "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg",
-        },
+        // {
+        //   id: "3",
+        //   name: "Pankaj kumar meena ",
+        //   designation: "Event Management Head",
+        //   linkedin:
+        //     "https://www.linkedin.com/in/pankaj-meena-8305aa269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        //   facebook:
+        //     "https://www.facebook.com/profile.php?id=100084255485902&mibextid=ZbWKwL",
+        //   inst: "https://www.instagram.com/pankaj56_06?igsh=MTBydXZ2YW5iam5nZQ==",
+        //   image:
+        //     "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg",
+        // },
         {
           id: "44",
           name: "Yuvraj Singh ",

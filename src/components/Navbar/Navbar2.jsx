@@ -168,7 +168,7 @@ const Navbar2 = () => {
               </li>
             )}
 
-            {loggedin && (
+            {loggedin===1 && (
               <li>
                 <Link to="/profile">
                   <img
