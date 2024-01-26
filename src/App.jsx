@@ -28,7 +28,7 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 5000);
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("user") && localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
       localStorage.setItem("loggedin", 0);
@@ -36,7 +36,6 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
   if (loading) {
     return <Loading />;
   }
