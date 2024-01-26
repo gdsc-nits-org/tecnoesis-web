@@ -35,6 +35,7 @@ const Registration = () => {
     const [loadingMsg, setloadingMsg] = useState("Loading fields......");
     const [error, setError] = useState(null);
     const [required, setRequired] = useState(true);
+    const [external, setExternal] = useState();
     async function submitForm(e) {
         e.preventDefault();
         let filter = members.filter((item) => item != "");
@@ -70,17 +71,14 @@ const Registration = () => {
                         window.location.href = `/dashboard`;
                         toast("Successfully registered!");
                     }
-                    else if (response.status == 409) {
-                        setError("Error! Conflict in registration!!");
-                        toast("Error! Conflict in registration!!");
-                    }
                     else {
-                        setError("Problem in registration!!");
-                        toast("Problem in registration!");
+                        const json = await response.json();
+                        toast(json.msg);
                     }
                 }
             }
             else {
+                console.log(required);
                 toast('Please fill the required fields');
             }
         } catch (err) {
@@ -89,14 +87,16 @@ const Registration = () => {
         }
     }
     async function fetchData() {
-        let response = await fetch(`${BACKEND_URL}/api/event/${id}`, { method: 'GET' });
+        let response = await fetch(`${BACKEND_URL}:8080/api/event/${id}`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let msg = arr.maxTeamSize;
         let minSg = arr.minTeamSize;
+        let external_links = arr.thirdPartyURL;
         setmaxMember(msg);
         setminMember(minSg);
         setloadingMsg(null);
+        setExternal(external_links);
         if (msg === 1) {
             setTypeofevent("NAME");
         }
@@ -117,6 +117,7 @@ const Registration = () => {
                     </div>
                     <form className={styles.formCont}>
                         <div className={styles.teamNameCont}>
+                            <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1><br /><br />
                             <h1 className={styles.teamName}>{typeofevent}</h1>
                             <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
                         </div>
@@ -137,6 +138,7 @@ const Registration = () => {
                         <div className={styles.subCont}><input type="submit" className={styles.submit} value="SUBMIT" onClick={submitForm} /></div>
                     </form>
                 </div>
+                <div className={styles.external}><a className={styles.a} target="blank" href={external}>{external ? "EXTERNAL LINK" : null}</a></div>
             </div>
         );
     }

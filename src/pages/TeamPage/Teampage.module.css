@@ -25,6 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .headingDiv {
@@ -186,6 +187,9 @@
 @media (max-width: 768px) {
   .leftFrame{
     width: 100%;
+  }
+  .wrapper .teamCards{
+    gap: 0;
   }
 
 }
