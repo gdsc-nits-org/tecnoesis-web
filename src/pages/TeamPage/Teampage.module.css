@@ -2,7 +2,7 @@
   min-height: 100vh;
   width: 100%;
   background-color: black;
-  background-image: url(/public/images/teamPage/bg.svg);
+  background-image: url(/images/teamPage/bg.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -25,6 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .headingDiv {
@@ -78,6 +79,7 @@
   font-family: PixeloidSans, serif;
   background: linear-gradient(#ff002f, black);
   -webkit-background-clip: text;
+  background-clip:text;
   -webkit-text-stroke: 0.12em transparent;
 }
 
@@ -85,7 +87,7 @@
   min-height: 90vh;
   overflow: auto;
   overflow-x: hidden;
-  background-image: url(/public/images/teamPage/rightFrame.svg);
+  background-image: url("https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/mo0ht3ph0j5vugt5hrkj");
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;

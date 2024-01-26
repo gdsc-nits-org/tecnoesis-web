@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 import Button_page from "../Button/Button";
-import arow from "../../../public/elements/arow.svg"
+import arow from "/elements/arow.svg"
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className={styles.footer_container}>
         <div className={styles.footer_content}>
           <img
-            src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706105860/tecnoesis/Tecno_24_logo_d3tac1.png"
+            src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/Tecno_24_logo_ifx9ru.webp"
             className={styles.footer_logo}
             alt="Techno Logo"
           />
