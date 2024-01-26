@@ -7,7 +7,6 @@
   background-attachment: fixed;
   background-size: cover;
   padding-bottom: 20vw;
-
   display: flex;
 }
 
@@ -100,11 +99,14 @@
 .toggle {
   position: absolute;
   right: 0;
+  margin-right: 2rem;
+  cursor: pointer;
 }
 
 .sticky {
   position: fixed;
   right: 0;
+  z-index: 20;
   top: var(--navbar-height);
 }
 
@@ -133,6 +135,9 @@
   .leftFrame {
     width: 100%;
     padding: 0 20px 0 20px;
+  }
+  .heading{
+    font-size: 0.9rem;
   }
 }
 
