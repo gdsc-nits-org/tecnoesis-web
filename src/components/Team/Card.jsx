@@ -46,19 +46,21 @@ export const Card = ({
                 <img src={linkedinImg} />
               </a>
             </div>
-            <div className={styles.icon}>
-              {github ? (
+            {github ? (
+              <div className={styles.icon}>
                 <a href={github} target="_blank">
                   <img src={githubImg} />
                 </a>
-              ) : inst ? (
+              </div>
+            ) : inst ? (
+              <div className={styles.icon}>
                 <a href={inst} target="_blank">
                   <img src={insta} />
                 </a>
-              ) : (
-                ""
-              )}
-            </div>
+              </div>
+            ) : (
+              ""
+            )}
             <div className={styles.icon}>
               <a href={facebook} target="_blank">
                 <img src={facebookImg} />

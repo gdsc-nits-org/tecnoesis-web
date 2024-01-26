@@ -110,11 +110,12 @@
 }
 
 .SocialProfile {
-  display: inline-flex;
+  display: flex;
   gap: 2vw;
   opacity: 0;
   transition: all 0.3s ease-in;
   z-index: 2;
+  justify-content: space-between;
 }
 
 .SocialProfile .icon {
