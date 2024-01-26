@@ -58,7 +58,6 @@ function App() {
             theme="dark"
             transition:Bounce
           />
-          <Navbar />
           <Routes>
             <Route
               path="/"
