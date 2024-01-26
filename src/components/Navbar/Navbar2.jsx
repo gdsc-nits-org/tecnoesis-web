@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { Slant as Hamburger } from "hamburger-react";
 import { toast } from "react-toastify";
 import { Button } from "../../components";
-import logo from "/elements/tecno-Logo.svg";
 import UserContext from "../../globals/authcontext";
 import styles from "./Navbar.module.css";
 
@@ -36,7 +35,7 @@ const Navbar2 = () => {
     toast(message);
     setShowNavbar(false);
     if (status === 200) {
-      navigate("/dashboard");
+      navigate("/profile");
     } else if (status === 404 || status === 409) {
       // if no user exists or username already taken
       navigate("/signup");
@@ -102,17 +101,6 @@ const Navbar2 = () => {
               </Link>
             </li>
             <li>
-              <Link to="/#about" onClick={handleShowNavbar}>
-                <Button
-                  onClick={() => {
-                    window.location.href = "/#about";
-                  }}
-                >
-                  <div className={styles.navbuttonpage_side}>ABOUT</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
               <Link to="/team" onClick={handleShowNavbar}>
                 <Button>
                   <div className={styles.navbuttonpage_side}>TEAM</div>
@@ -126,33 +114,11 @@ const Navbar2 = () => {
                 </Button>
               </Link>
             </li>
-            <li>
-              <Link to="/#gallery" onClick={handleShowNavbar}>
-                <Button
-                  onClick={() => {
-                    window.location.href = "/#gallery";
-                  }}
-                >
-                  <div className={styles.navbuttonpage_side}>GALLERY</div>
-                </Button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/#sponsor" onClick={handleShowNavbar}>
-                <Button
-                  onClick={() => {
-                    window.location.href = "/#sponsor";
-                  }}
-                >
-                  <div className={styles.navbuttonpage_side}>SPONSORS</div>
-                </Button>
-              </Link>
-            </li>
             {loggedin && (
               <li>
-                <Link to="/dashboard" onClick={handleShowNavbar}>
+                <Link to="/profile" onClick={handleShowNavbar}>
                   <Button>
-                    <div className={styles.navbuttonpage_side}>DASHBOARD</div>
+                    <div className={styles.navbuttonpage_side}>PROFILE</div>
                   </Button>
                 </Link>
               </li>
@@ -204,7 +170,7 @@ const Navbar2 = () => {
 
             {loggedin && (
               <li>
-                <Link to="/dashboard">
+                <Link to="/profile">
                   <img
                     className={styles.main_img}
                     src={user && user.imageUrl ? user.imageUrl : defaultImg}
@@ -215,7 +181,7 @@ const Navbar2 = () => {
             )}
           </ul>
           <div className={styles.nav_logo}>
-            <img src={logo} alt="logo" />
+            <img src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/T_of_tecno_tzmwpv.png" alt="logo" />
           </div>
         </div>
       </div>
