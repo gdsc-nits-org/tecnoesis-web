@@ -91,7 +91,7 @@ const Teampage = () => {
         {
           id: "1",
           name: "Jyotishka Bhattacharjee",
-          designation: "Executive Head ",
+          designation: "Executive Head",
           linkedin:
             "https://www.linkedin.com/in/jyotishka-b-32995712b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/profile.php?id=100005647038947",
@@ -102,7 +102,7 @@ const Teampage = () => {
         {
           id: "10",
           name: "Debashish Konwar",
-          designation: "EXECUTIVE HEAD",
+          designation: "Executive Head",
           linkedin: "https://www.linkedin.com/in/debasishkonwar/",
           facebook: "https://www.facebook.com/debasish.konwar.25",
           image:
@@ -111,7 +111,7 @@ const Teampage = () => {
         {
           id: "3",
           name: "Pankaj kumar meena ",
-          designation: "Event management Head",
+          designation: "Event Management Head",
           linkedin:
             "https://www.linkedin.com/in/pankaj-meena-8305aa269?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook:
@@ -154,7 +154,7 @@ const Teampage = () => {
         {
           id: "5",
           name: "Truptee Vinod Undre",
-          designation: " Marketing Head",
+          designation: "Marketing Head",
           linkedin:
             "https://www.linkedin.com/in/truptee-vinod-undre-9847b1187/",
           facebook: "https://www.facebook.com/truptee.undre?mibextid=ZbWKwL",
@@ -185,7 +185,7 @@ const Teampage = () => {
         {
           id: "9",
           name: "Eisha Halder ",
-          designation: "PR Head ",
+          designation: "PR Head",
           linkedin: "https://www.linkedin.com/in/eisha-halder-a42367200/",
           facebook: "https://www.facebook.com/eisha.halder.16",
           inst: "https://www.instagram.com/eisha_s.halder/",
@@ -206,7 +206,7 @@ const Teampage = () => {
         {
           id: "33",
           name: "Ayush Gupta ",
-          designation: "App Team head",
+          designation: "App Team Head",
           linkedin: "https://www.linkedin.com/in/gupta--ayush/",
           facebook: "https://www.facebook.com/profile.php?id=100058445922286",
           inst: "https://www.instagram.com/a_y_u_s_h_g__/",
@@ -258,7 +258,7 @@ const Teampage = () => {
         {
           id: "32",
           name: "Rishikesh Kumar Narayan Sinha",
-          designation: "Conferenza team Head",
+          designation: "Conferenza Head",
           linkedin:
             "https://www.linkedin.com/in/rishikesh-kumar-narayan-sinha-751552160?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/rishikesh.krnarayansinha/",
@@ -372,7 +372,7 @@ const Teampage = () => {
         {
           id: 90,
           name: "Pragya Annesha Baruah",
-          designation: "UI/UX Lead",
+          designation: "UI/UX Designer",
           linkedin:
             "https://www.linkedin.com/in/pragya-annesha-baruah-34a043229",
           facebook: "https://www.facebook.com/profile.php?id=100075204826742",
@@ -394,7 +394,7 @@ const Teampage = () => {
         {
           id: "39",
           name: "Kaustav Dev",
-          designation: "UI UX Designer",
+          designation: "UI/UX Designer",
           linkedin:
             "https://www.linkedin.com/in/kaustav-dev-429123248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook:
