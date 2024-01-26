@@ -17,17 +17,18 @@
   transition: transform 0.5s ease;
 }
 
+
 .moveUp {
   transform: translateY(-100%);
 }
 
 
 .close_button {
-  margin-top: 2rem;
-  margin-left: 2rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
   position: absolute;
   top: 0;
-  width: 2.2rem;
+  width: 2rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -37,7 +38,9 @@
   gap: 1.563rem;
   padding-right: 4vw;
 }
-
+.nav_links{
+  margin-top: -11rem;
+}
 
 
 /* New Styles */
@@ -193,7 +196,15 @@
 
 @media (max-width: 768px) {
   .nav_links {
+    margin-top: -22rem;
     padding-top: 5rem;
+  }
+  .nav_logo img{
+    width: 3rem;
+    margin-left: 1rem;
+  }
+  .close_button{
+    width: 1.6rem;
   }
 
   .register_dock {
