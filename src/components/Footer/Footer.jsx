@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 import Button_page from "../Button/Button";
-import arow from "../../../public/elements/arow.svg"
+import arow from "/elements/arow.svg"
 
 const Footer = () => {
   return (

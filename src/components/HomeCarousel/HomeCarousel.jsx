@@ -5,47 +5,47 @@ import styles from './HomeCarousel.module.css';
 
 const images = [
   {
-    url: "/galleryimg/imgp3.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lxilsxgndsnulhk06snp"
   },
   {
-    url: "/galleryimg/imgp5.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hgaybso4dg38ctmyla6b"
 
   },
   {
-    url: "/galleryimg/imgp8.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/l2sl88hyigmqmvojaxwu"
   },
   {
-    url: "/galleryimg/imgp9.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/oohkiwfwo41jctugqygb"
   },
   {
-    url: "/galleryimg/imgp10.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/ozzoyarayifvq1u3ppsi"
   },
   {
-    url: "/galleryimg/imgp2.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/kjkagbeotvz5xebsoakg"
   },
   {
-    url: "/galleryimg/imgp4.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/axfdyshx3chrnix0xhmy"
   },
   {
-    url: "/galleryimg/imgp13.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/nfyvdnot721mvb2ykvhx"
   },
   {
-    url: "/galleryimg/imgp14.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/xxtp6zdzk3oy6vikqjij"
   },
   {
-    url: "/galleryimg/imgp15.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/p4ylpueqw8bb1knfkfu9"
   },
   {
-    url: "/galleryimg/imgp16.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/fe5jbivxs8o13jatbqlj"
   },
   {
-    url: "/galleryimg/imgp17.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/vp18zllaralmaevrzksh"
   },
   {
-    url: "/galleryimg/imgp18.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/o0z2snxqaaochtfxmxrq"
   },
   {
-    url: "/galleryimg/imgp23.jpg"
+    url: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/vswq5zdxxtufokrp8lyk"
   },
 
 ]
