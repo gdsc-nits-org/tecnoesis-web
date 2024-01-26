@@ -15,6 +15,10 @@
 .leftFrame {
   width: 85%;
   padding: 0 0 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper .teamCards {
@@ -161,4 +165,33 @@
   .teamCards {
     justify-content: center !important;
   }
+}
+
+
+@media (max-width: 1071px) {
+  .leftFrame{
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 890px) {
+  .leftFrame{
+    width: 76%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .leftFrame{
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .teamCards{
+    justify-content: center !important;
+  }
+
 }

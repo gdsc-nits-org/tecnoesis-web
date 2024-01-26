@@ -8,7 +8,6 @@ const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [sidebarStyle, setsidebarStyle] = useState({position : "fixed"})
 
   useEffect(() => {
     const handleScroll = () => {
