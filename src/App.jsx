@@ -129,8 +129,7 @@ function App() {
             />
             <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
-          <Footer />
-        </LoadingProvider >
+        </LoadingProvider>
       </AuthProvider>
     </>
   );

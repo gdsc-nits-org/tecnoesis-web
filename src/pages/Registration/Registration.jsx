@@ -67,12 +67,16 @@ const Registration = () => {
                 else {
                     if (response.status == 200) {
                         setError("Successfully registered!!");
+                        window.location.href = `/dashboard`;
+                        toast("Successfully registered!");
                     }
                     else if (response.status == 409) {
                         setError("Error! Conflict in registration!!");
+                        toast("Error! Conflict in registration!!");
                     }
                     else {
                         setError("Problem in registration!!");
+                        toast("Problem in registration!");
                     }
                 }
             }
@@ -89,7 +93,9 @@ const Registration = () => {
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let msg = arr.maxTeamSize;
+        let minSg = arr.minTeamSize;
         setmaxMember(msg);
+        setminMember(minSg);
         setloadingMsg(null);
         if (msg === 1) {
             setTypeofevent("NAME");

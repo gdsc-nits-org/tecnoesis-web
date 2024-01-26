@@ -23,18 +23,10 @@ const Teampage = () => {
       const footer = document.getElementById("footer");
       const footerRect = footer.getBoundingClientRect();
 
-      const sidebar = document.getElementById("sidebar");
-      const sidebarRect = sidebar.getBoundingClientRect();
-
-      console.log(footerRect.top - window.innerHeight);
       if (footerRect.top - window.innerHeight > 0) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
-        setsidebarStyle({
-          position: "absolute",
-          top: footerRect.top - sidebarRect.height,
-        });
       }
     };
 

@@ -151,8 +151,7 @@ const Module = () => {
   const handleRoute = (id) => {
     console.log(id);
     navigate(`/event/${id}`);
-  }
-
+  };
 
   if (isLoading) {
     return <Loading />;
