@@ -64,6 +64,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.setItem("loggedin",0);
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/");
   };
 
