@@ -20,7 +20,7 @@ function Loading() {
      </div>
         {/* <img src="/elements/frame.svg" alt="" className={styles.bgImage}/> */}
         <div>
-     <img src="images/Tecno 24 logo.png" alt="Tecnoesis 2024"  className={styles.tecnoLogo}/>
+     <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/kgajelscqqbonahqxg3y" alt="Tecnoesis 2024"  className={styles.tecnoLogo}/>
      </div>
      <div className={styles.lottieContainer}>
      <Lottie

@@ -6,6 +6,7 @@ import {
   EventDescription,
   Registration,
   Form,
+  TeamPage
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer, Loading, Navbar2 } from "./components";
@@ -106,6 +107,16 @@ function App() {
                 <>
                   {showNavbar && <Navbar2 />}
                   <EventDescription />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/team"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <TeamPage />
                   <Footer />
                 </>
               }
