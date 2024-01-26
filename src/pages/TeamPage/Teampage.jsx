@@ -74,6 +74,18 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210678/tecnoesis/IMG20221003210912_-_Mriganga_Jyoti_Chutia_b5c78g.webp",
         },
+        {
+          id: "62",
+          name: "MIRAJ DEKA",
+          designation: "CONVENOR",
+          linkedin:
+            "http://www.linkedin.com/in/miraj-deka-32a78720a",
+          facebook:
+            "https://www.facebook.com/miraz.deka",
+          inst: "https://www.instagram.com/not_miraj_/?hl=en",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/cvsjl6ea2rlcwzyhoor5",
+        },
       ],
     },
     {
