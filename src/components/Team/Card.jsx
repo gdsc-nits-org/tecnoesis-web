@@ -4,6 +4,7 @@ import frame from "/images/teamPage/frame.svg";
 import member from "/images/teamPage/member.webp";
 import logo from "/images/teamPage/logo.svg";
 import card_dp from "/images/teamPage/cardframe.svg";
+import insta from "/images/teamPage/inst.svg";
 import tecnoSid from "/images/teamPage/technoSid.svg";
 import frameBorder from "/images/teamPage/border.png";
 import linkedinImg from "/images/teamPage/linkedin.svg";
@@ -12,6 +13,7 @@ import githubImg from "/images/teamPage/github.svg";
 
 
 export const Card = ({ name, designation, image , linkedin , facebook , github , inst}) => {
+
   return (
     <div className={styles.container}>
       <div className={styles.frame}>
@@ -43,9 +45,17 @@ export const Card = ({ name, designation, image , linkedin , facebook , github ,
               </a>
             </div>
             <div className={styles.icon}>
-            <a href={github} target="_blank">
+              {
+                github ? (
+                  <a href={github} target="_blank">
               <img src={githubImg} />
               </a>
+                ) : (
+                  <a href={inst} target="_blank">
+                  <img src={insta} />
+                  </a>
+                )
+              }
             </div>
             <div className={styles.icon}>
             <a href={facebook} target="_blank">
