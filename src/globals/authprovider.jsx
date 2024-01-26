@@ -1,7 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import UserContext from "./authcontext";
 
 const getToken = () => {
@@ -11,7 +10,6 @@ const getToken = () => {
 
 const AuthProvider = ({ children }) => {
   const auth = getAuth();
-  const navigate = useNavigate();
 
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : ""
@@ -65,7 +63,7 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("loggedin", 0);
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    navigate("/");
+    window.location.reload();
   };
 
   const signinbackend = async () => {
