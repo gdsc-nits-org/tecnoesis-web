@@ -437,6 +437,10 @@ const Teampage = () => {
               name={member.name}
               designation={member.designation}
               image={member.image}
+              linkedin={member.linkedin}
+              facebook={member.facebook}
+              github={member.git}
+              inst ={member.inst}
             />
           ))}
         </div>
