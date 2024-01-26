@@ -193,7 +193,7 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205888/WhatsApp_Image_2024-01-22_at_00.04.54_-_CSE_045_Eisha_Halder_n4nmyh.jpg",
         },
         {
-          id: "45",////////////////
+          id: "45",
           name: "Jadav Anusha ",
           designation: "PR Head",
           linkedin: "https://www.linkedin.com/in/jadav-anusha-34b56320a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -230,6 +230,16 @@ const Teampage = () => {
           inst: "https://www.instagram.com/rohan.pxl?igsh=MWRqM3VjMGh2Y3JseA==",
           image:
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210775/tecnoesis/1705913533019-01_-_Rohan_Deb_merstq.webp",
+        },
+        {
+          id: "51",
+          name: "Mudra Das",
+          designation: "Design Head",
+          linkedin: "https://www.linkedin.com/in/mudra-das-594620200/",
+          facebook: "https://www.facebook.com/profile.php?id=100082138975470&sfnsn=wiwspwa&mibextid=RUbZ1f",
+          git: "https://github.com/mud-pot",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/cplfujulzrz2cyleonvh",
         },
         {
           id: "20",
@@ -294,7 +304,7 @@ const Teampage = () => {
         {
           id: "41",
           name: "Suman Goswami",
-          designation: "Vwarz Module head",
+          designation: "V-warz Module head",
           linkedin: "",
           facebook: "https://www.facebook.com/profile.php?id=100058459812857&mibextid=9R9pXO",
           inst: "https://www.instagram.com/fatty_thigh/",
@@ -319,7 +329,7 @@ const Teampage = () => {
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dqv6rmemeywxlkmaovjg"
         },
         {
-          id: "46",/////////////
+          id: "46",
           name: "Gautam Yadav",
           designation: "Infra Head",
           linkedin: "https://www.linkedin.com/in/gautam-yadav-00819120b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
