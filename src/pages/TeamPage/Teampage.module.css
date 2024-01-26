@@ -8,6 +8,8 @@
   background-size: cover;
   padding-bottom: 20vw;
   display: flex;
+  overflow-x: hidden;
+  
 }
 
 .leftFrame {
@@ -108,6 +110,13 @@
   right: 0;
   z-index: 20;
   top: var(--navbar-height);
+}
+
+
+.absolute{
+  position: absolute;
+  translate: 250px;
+  display: none;
 }
 
 /* for chrome*/

@@ -4,7 +4,7 @@ import arow from "../../../public/elements/arow.svg"
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} id="footer">
       <div className={styles.footer_container}>
         <div className={styles.footer_content}>
           <img
