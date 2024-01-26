@@ -89,8 +89,6 @@ const Registration = () => {
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let msg = arr.maxTeamSize;
-        let minSg = arr.minTeamSize;
-        setminMember(minSg);
         setmaxMember(msg);
         setloadingMsg(null);
         if (msg === 1) {

@@ -28,7 +28,6 @@ const Module = () => {
   const { isLoading, setIsLoading } = useContext(LoadingContext);
   const navigate = useNavigate();
 
-
   const delayTime = 400;
 
   const handleEvent1 = () => {
@@ -119,6 +118,7 @@ const Module = () => {
 
 
   const getModules = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_URL}/api/module/`
@@ -150,7 +150,7 @@ const Module = () => {
   }
   const handleRoute = (id) => {
     console.log(id);
-    navigate(`/event/${id}`);
+    navigate(`/event/id:${id}`);
   }
 
 
@@ -174,7 +174,10 @@ const Module = () => {
                 <div className={styles.moduleFrames}>
                   <Slider {...settings}>
                     {moduleName.events.map((event) => (
-                      <div key={event.id} className={styles.moduleImg} onClick={() => handleRoute(event.id)}
+                      <div
+                        key={event.id}
+                        className={styles.moduleImg}
+                        onClick={() => handleRoute(event.id)}
                       >
                         <div
                           className={styles.moduleImgInContent}
