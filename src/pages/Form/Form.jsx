@@ -40,7 +40,7 @@ const Form = () => {
     const { status, message } = await signup(formData);
     toast(message);
     if (status === 200) {
-      navigate("/dashboard");
+      navigate("/profile");
     } else if (status === 409) {
       navigate("/signup");
     } else {
