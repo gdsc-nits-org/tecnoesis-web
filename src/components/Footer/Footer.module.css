@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background: url('/elements/footerbg.png') center/cover no-repeat;
+  background: url("https://res.cloudinary.com/dnitrnzho/image/upload/v1706290994/footerbg_dmslkr.webp") center/cover no-repeat;
   overflow: hidden;
 }
 
