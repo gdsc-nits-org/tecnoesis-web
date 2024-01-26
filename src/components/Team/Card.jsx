@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Team/Card.module.css";
 import frame from "/images/teamPage/frame.svg";
 import member from "/images/teamPage/member.webp";;
-import card_dp from "/images/teamPage/cardframe.svg";
+// import card_dp from "/images/teamPage/cardframe.svg";
 import insta from "/images/teamPage/inst.svg";
 import tecnoSid from "/images/teamPage/technoSid.svg";
 import frameBorder from "/images/teamPage/border.png";
@@ -17,7 +17,7 @@ export const Card = ({ name, designation, image , linkedin , facebook , github ,
     <div className={styles.container}>
       <div className={styles.frame}>
         <div className={styles.frameChild}>
-          <img src={card_dp} className={styles.imageFrame} />
+          <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/pgzhtyz0lfv7jl2kbq0n" className={styles.imageFrame} />
           <img
             src={card_dp}
 
