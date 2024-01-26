@@ -19,18 +19,22 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const { setLoggedin } = useContext(UserContext);
 
   const [showNavbar, setShowNavbar] = useState(true);
+  const [loading, setLoading] = useState(true);
   const toggleNavbar = () => {
     setShowNavbar((prev) => !prev);
   };
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
     if (localStorage.getItem("user") && localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
       localStorage.setItem("loggedin", 0);
     }
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -50,6 +54,7 @@ function App() {
             theme="dark"
             transition:Bounce
           />
+
           <Routes>
             <Route
               path="/"
@@ -103,16 +108,6 @@ function App() {
               }
             />
             <Route
-              path="/team"
-              element={
-                <>
-                  {showNavbar && <Navbar2 />}
-                  <TeamPage />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
               path="/event/:id/registration"
               element={
                 <>
@@ -122,9 +117,20 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="/team"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <TeamPage />
+                  <Footer />
+                </>
+              }
+            />
             <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
           </Routes>
-        </LoadingProvider>
+          <Footer />
+        </LoadingProvider >
       </AuthProvider>
     </>
   );
