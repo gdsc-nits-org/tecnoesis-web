@@ -113,6 +113,14 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg",
         },
         {
+          id: "44",
+          name: "Yuvraj Singh ",
+          designation: "Event management Head",
+          linkedin: "",
+          facebook: "https://www.facebook.com/profile.php?id=100056971062674&mibextid=ZbWKwL",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lgdnb55ywripzrjekpb9"
+        },
+        {
           id: "2",
           name: "Shayan Debroy",
           designation: "Web Team Head",
@@ -184,7 +192,15 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205888/WhatsApp_Image_2024-01-22_at_00.04.54_-_CSE_045_Eisha_Halder_n4nmyh.jpg",
         },
-
+        {
+          id: "45",////////////////
+          name: "Jadav Anusha ",
+          designation: "PR Head",
+          linkedin: "https://www.linkedin.com/in/jadav-anusha-34b56320a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          facebook: "https://www.facebook.com/share/y9JAR3mqXWCBXd5j/?mibextid=WC7FNe",
+          inst: "https://www.instagram.com/jadhav._.anusha?igsh=cXF3M3dsZWl2MTFp",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/vnoohxhwcaggab4o68ru"
+        },
         {
           id: "14",
           name: "Biju Borah",
@@ -226,6 +242,14 @@ const Teampage = () => {
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210499/tecnoesis/IMG-20230802-WA0001_-_Hannan_Afridi_bdfgue.webp",
         },
         {
+          id: "48",
+          name: "Abhishek bairwa ",
+          designation: "Logistics Head ",
+          linkedin: "https://www.linkedin.com/in/abhishek-bairwa-a39ba2224",
+          facebook: "https://www.facebook.com/abhi.bairwa.562?mibextid=JRoKGi",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/riuecbase15tzucacseq"
+        },
+        {
           id: "8",
           name: "Ansh Umathe",
           designation: "Logistics Co-Head",
@@ -246,6 +270,15 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706211967/IMG_20231008_021040_984_-_EE-B_118_Priya_Pal_px70bz.jpg",
         },
+        {
+          id: "49",
+          name: "Abhishek Soni",
+          designation: "Hospitality Head",
+          linkedin: "https://www.linkedin.com/in/abhishek-soni-8371b3238/",
+          facebook: "https://www.facebook.com/profile.php?id=100010523790887",
+          git: "https://github.com/abyssoni",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/obgtqmtzvztl8c49scfz"
+        },
 
         {
           id: "32",
@@ -258,6 +291,42 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706213207/WhatsApp_Image_2024-01-23_at_14.13.34_-_R.K.N._Sinha_cxkckb.jpg",
         },
+        {
+          id: "41",
+          name: "Suman Goswami",
+          designation: "Vwarz Module head",
+          linkedin: "",
+          facebook: "https://www.facebook.com/profile.php?id=100058459812857&mibextid=9R9pXO",
+          inst: "https://www.instagram.com/fatty_thigh/",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dqvrq9zkurfxshvygp24"
+        },
+        {
+          id: "42",
+          name: "Arnab Deka",
+          designation: "V-Warz Module Head",
+          linkedin: "https://www.linkedin.com/in/arnab-deka-624793218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/profile.php?id=100082138975470&sfnsn=wiwspwa&mibextid=RUbZ1f",
+          inst: "https://www.instagram.com/arna_b_d?igsh=NzJpaTZnbWppaW90",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/yfgwbz0e7caqfy2o1a1e"
+        },
+        {
+          id: "43",
+          name: "Aaditya Vikram",
+          designation: "Decoration team Head",
+          linkedin: "https://www.linkedin.com/in/aaditya-vikram-a9b78420a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/aditya.vikram.754570?mibextid=ZbWKwL",
+          inst: "https://www.instagram.com/vikram___adi?igsh=NjBmNjY1dnE0NHVt",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dqv6rmemeywxlkmaovjg"
+        },
+        {
+          id: "46",/////////////
+          name: "Gautam Yadav",
+          designation: "Infra Head",
+          linkedin: "https://www.linkedin.com/in/gautam-yadav-00819120b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/gautam.yadavv.315",
+          inst: "https://www.instagram.com/_the_gautam___/",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/m2xdvhzl4bskpcn5see9"
+        }
       ],
     },
 
@@ -529,9 +598,8 @@ const Teampage = () => {
 
       {/* rightFrame */}
       <div
-        className={`${isSticky ? styles.sticky : styles.absolute} ${
-          styles.rightFrameParent
-        }`}
+        className={`${isSticky ? styles.sticky : styles.absolute} ${styles.rightFrameParent
+          }`}
         id="sidebar"
         style={{ translate: isSidebarVisible ? "0px" : "250px" }}
       >
