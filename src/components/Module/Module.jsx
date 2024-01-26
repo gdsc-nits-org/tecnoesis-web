@@ -117,13 +117,13 @@ const Module = () => {
   }, []);
   const [modulesData, setModulesData] = useState([]);
 
-  
-    const getModules = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/api/module/`
-        );
-        const jsonData = response.data;
+
+  const getModules = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/module/`
+      );
+      const jsonData = response.data;
 
       setModulesData(jsonData.msg);
       setIsLoading(false);
@@ -133,24 +133,25 @@ const Module = () => {
   };
   useEffect(() => {
     getModules();
-  }, []); 
+  }, []);
 
 
 
   // const modulesData=data.msg; 
 
-     
-  
-  const handleEvent= [[handleEvent1,handleEvent11],[handleEvent2,handleEvent22],[handleEvent3,handleEvent33],[handleEvent4,handleEvent44],[handleEvent5,handleEvent55],[handleEvent6,handleEvent66],[handleEvent7,handleEvent77]];
-  const showRing = [showRing1, showRing2,showRing3,showRing4,showRing5,showRing6,showRing7 ]
+
+
+  const handleEvent = [[handleEvent1, handleEvent11], [handleEvent2, handleEvent22], [handleEvent3, handleEvent33], [handleEvent4, handleEvent44], [handleEvent5, handleEvent55], [handleEvent6, handleEvent66], [handleEvent7, handleEvent77]];
+  const showRing = [showRing1, showRing2, showRing3, showRing4, showRing5, showRing6, showRing7]
 
 
   for (let i = 0; i < modulesData?.length; i++) {
     modulesData[i].sequence = i + 1;
   }
-  const handleRoute=(id)=>{
+  const handleRoute = (id) => {
     console.log(id);
-    navigate(`/event/id:${id}`);  }
+    navigate(`/event/${id}`);
+  }
 
 
   if (isLoading) {
@@ -212,7 +213,7 @@ const Module = () => {
               ) : (
                 <div className={styles.moduleFrames}>
                   {moduleName.events.map((event) => (
-                    
+
                     <div
                       key={event.id}
                       className={styles.moduleImg}
@@ -244,7 +245,7 @@ const Module = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                   ))}
                 </div>
               )}
@@ -274,9 +275,8 @@ const Module = () => {
                 <Lottie
                   animationData={module_page_ring_animation}
                   loop={false}
-                  className={`${styles.lottieAnimation} ${
-                    showRing[moduleName.sequence] ? "" : styles.lottieAnimation2
-                  }`}
+                  className={`${styles.lottieAnimation} ${showRing[moduleName.sequence] ? "" : styles.lottieAnimation2
+                    }`}
                 />{" "}
               </div>
             ))}
@@ -285,6 +285,6 @@ const Module = () => {
       </div>
     </>
   );
-                }
+}
 
 export default Module;
