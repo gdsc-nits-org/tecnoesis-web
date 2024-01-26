@@ -3,12 +3,13 @@ import styles from "../Team/Card.module.css";
 import frame from "/images/teamPage/frame.svg";
 import member from "/images/teamPage/member.webp";
 import logo from "/images/teamPage/logo.svg";
-import card_dp from "/elements/tech_card.svg";
+import card_dp from "/images/teamPage/cardframe.svg";
 import tecnoSid from "/images/teamPage/technoSid.svg";
 import frameBorder from "/images/teamPage/border.png";
 import linkedinImg from "/images/teamPage/linkedin.svg";
 import facebookImg from "/images/teamPage/facebook.svg";
 import githubImg from "/images/teamPage/github.svg";
+
 
 export const Card = ({ name, designation, image , linkedin , facebook , github , inst}) => {
   return (
