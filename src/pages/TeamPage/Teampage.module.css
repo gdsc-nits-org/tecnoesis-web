@@ -188,6 +188,9 @@
   .leftFrame{
     width: 100%;
   }
+  .wrapper .teamCards{
+    gap: 0;
+  }
 
 }
 
