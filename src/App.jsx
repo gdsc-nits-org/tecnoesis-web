@@ -6,10 +6,11 @@ import {
   EventDescription,
   Registration,
   Form,
+  TeamPage
 } from "./pages";
-import { useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer, Loading, Navbar2} from "./components";
+import { Navbar, Footer, Loading, Navbar2 } from "./components";
+import { useState, useEffect, useContext } from "react";
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
@@ -18,31 +19,19 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
+  const { setLoggedin } = useContext(UserContext);
 
   const [showNavbar, setShowNavbar] = useState(true);
-
   const toggleNavbar = () => {
     setShowNavbar((prev) => !prev);
   };
-  // const { setLoggedin } = useContext(UserContext);
-
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("user") && localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
       localStorage.setItem("loggedin", 0);
     }
-
-    return () => clearTimeout(timer);
   }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <>
@@ -61,7 +50,6 @@ function App() {
             theme="dark"
             transition:Bounce
           />
-
           <Routes>
             <Route
               path="/"
@@ -110,6 +98,26 @@ function App() {
                 <>
                   {showNavbar && <Navbar2 />}
                   <EventDescription />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/team"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <TeamPage />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/event/:id/registration"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <Registration />
                   <Footer />
                 </>
               }

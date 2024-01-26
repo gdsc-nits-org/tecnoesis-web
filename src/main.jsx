@@ -9,11 +9,11 @@ import AuthProvider from "./globals/authprovider";
 initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <App />
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
