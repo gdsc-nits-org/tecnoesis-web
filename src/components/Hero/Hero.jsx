@@ -64,7 +64,7 @@ function Hero() {
     <div className={styles.gifBackground} id="hero">
       <div>
         <img
-          src="images/Tecno 24 logo.png"
+          src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/Tecno_24_logo_ifx9ru.png"
           alt="Tecnoesis 2024"
           className={styles.tecnoLogo}
         />
