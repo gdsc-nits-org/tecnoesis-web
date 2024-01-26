@@ -70,7 +70,7 @@ const Registration = () => {
                     }
                     else {
                         const json = await response.json();
-                        setError(json.msg);
+                        toast(json.msg);
                     }
                 }
             }
