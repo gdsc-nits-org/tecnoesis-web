@@ -9,7 +9,7 @@ import {
   TeamPage
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer, Loading, Navbar2 } from "./components";
+import { Footer, Loading, Navbar2 } from "./components";
 import { useState, useEffect, useContext } from "react";
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
@@ -60,7 +60,7 @@ function App() {
               path="/"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <Home />
                   <Footer />
                 </>
@@ -77,7 +77,7 @@ function App() {
               }
             />
             <Route
-              path="/dashboard"
+              path="/profile"
               element={
                 <>
                   {showNavbar && <Navbar2 />}
