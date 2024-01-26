@@ -34,11 +34,8 @@
 }
 
 .navbar {
-  /* height:3..75rem; */
   gap: 1.563rem;
   padding-right: 4vw;
-
-
 }
 
 
@@ -48,10 +45,12 @@
 
 
 .nav_content {
-  padding-top: 1.5rem;
   gap: 2.5rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
+  margin-top: 1.2rem;
 }
 
 .nav_logo {
@@ -61,26 +60,24 @@
 .register_dock {
   display: none;
 }
-.nav_profile{
+
+.nav_profile {
   padding-bottom: 1.5rem;
 }
 
 .main_img {
   border-radius: 50%;
-  box-shadow: 0px 0px 54.1px -1px #409fed;
   width: 3.25rem;
-  height: 3.25rem;
   flex-shrink: 0;
-  margin: 3rem 2rem;
-
-
+  margin-bottom: 1rem;
+  border: 2px solid var(--tecno-brown-1-100);
 }
 
 .navbuttonpage {
   font-family: PixeloidSans, serif;
   display: inline-flex;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
   align-self: stretch;
   flex-direction: column;
@@ -101,12 +98,11 @@
   align-items: center;
   margin-bottom: 2rem;
 }
-
 .btn_signin {
   border: 1px solid var(--tecno-brown-1-100);
   color: #190958;
   display: flex;
-  padding: 0.83419rem 2.00206rem;
+  padding: 0.83419rem 5.3rem;
   justify-content: center;
   align-items: center;
   gap: 0.66738rem;
