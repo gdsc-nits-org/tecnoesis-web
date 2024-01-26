@@ -1,5 +1,5 @@
 .boxContainerParent {
-  background-image: url('/module_page_bg.gif');
+  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1706207516/tecnoesis/module_bg_vinedb.svg");
   background-attachment: fixed;;
   background-color: rgb(95, 95, 95);
   background-size: cover;

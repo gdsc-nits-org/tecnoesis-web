@@ -1,6 +1,6 @@
 @font-face {
     font-family: PixeloidSans;
-    src: url('/public/fonts/PixeloidSans-mLxMm.ttf');
+    src: url('/fonts/PixeloidSans-mLxMm.ttf');
 }
 
 :root {
@@ -150,6 +150,7 @@
     width: 80%;
     background: linear-gradient(180deg, #FF003D 0%, #FCFDFF 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     font-size: 0.6rem;
 }
@@ -157,6 +158,7 @@
 .memberInput::placeholder {
     background: linear-gradient(180deg, #FF003D 0%, #FCFDFF 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -208,13 +210,14 @@
     border: 2px solid var(--blue-button-gradient-light, #56F4FD);
     background: linear-gradient(90deg, #56F4FD, #48bec7);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     transition-duration: 0.5s;
 }
 
 .addMember:hover {
-
     -webkit-background-clip: border-box;
+    background-clip: border-box;
     color: #000000;
     transition-duration: 0.5s;
 }
@@ -223,6 +226,7 @@
 .teamName {
     background: linear-gradient(180deg, #FF003D 0%, #FCFDFF 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     font-size: 1rem;
     font-weight: 700;

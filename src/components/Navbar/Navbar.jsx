@@ -30,6 +30,10 @@ const Navbar = () => {
     }
   };
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  const defaultImg =
+    "https://t4.ftcdn.net/jpg/05/42/36/11/360_F_542361185_VFRJWpR2FH5OiAEVveWO7oZnfSccZfD3.jpg";
+
   const handleLogin = async () => {
     const { status, message } = await signin();
     toast(message);
@@ -76,7 +80,9 @@ const Navbar = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogout}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGOUT</div>
+                    <div className={styles.btn_signin} onClick={handleLogout}>
+                      LOGOUT
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -84,7 +90,9 @@ const Navbar = () => {
               <li className={styles.register_dock}>
                 <Link to="" onClick={handleLogin}>
                   <div className={styles.button_sign_content}>
-                    <div className={styles.btn_signin}>LOGIN WITH GOOGLE</div>
+                    <div className={styles.btn_signin} onClick={handleLogin}>
+                      LOGIN WITH GOOGLE
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -192,11 +200,15 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
-            {/* <li className={styles.nav_profile}>
-              <a href="">
-                <img className={styles.main_img} src={img123456} alt="" />
-              </a>
-            </li> */}
+            {loggedin && (
+              <Link to="/dashboard">
+              <img
+                className={styles.main_img}
+                src={user && user.imageUrl ? user.imageUrl : defaultImg}
+                alt="pfp"
+              />
+            </Link>
+            )}
           </ul>
           <div className={styles.nav_logo}>
             <img src={logo} alt="logo" />
