@@ -1,11 +1,5 @@
-import React from "react";
 import styles from "../Team/Card.module.css";
-import frame from "/images/teamPage/frame.svg";
-import member from "/images/teamPage/member.webp";
-// import card_dp from "/images/teamPage/cardframe.svg";
 import insta from "/images/teamPage/inst.svg";
-import tecnoSid from "/images/teamPage/technoSid.svg";
-import frameBorder from "/images/teamPage/border.png";
 import linkedinImg from "/images/teamPage/linkedin.svg";
 import facebookImg from "/images/teamPage/facebook.svg";
 import githubImg from "/images/teamPage/github.svg";
