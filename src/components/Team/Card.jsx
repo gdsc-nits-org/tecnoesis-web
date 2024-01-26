@@ -41,11 +41,15 @@ export const Card = ({
             <div className={styles.position}>{designation}</div>
           </div>
           <div className={styles.SocialProfile}>
-            <div className={styles.icon}>
-              <a href={linkedin} target="_blank">
-                <img src={linkedinImg} />
-              </a>
-            </div>
+            {linkedin ? (
+              <div className={styles.icon}>
+                <a href={linkedin} target="_blank">
+                  <img src={linkedinImg} />
+                </a>
+              </div>
+            ) : (
+              ""
+            )}
             {github ? (
               <div className={styles.icon}>
                 <a href={github} target="_blank">
@@ -61,11 +65,15 @@ export const Card = ({
             ) : (
               ""
             )}
-            <div className={styles.icon}>
-              <a href={facebook} target="_blank">
-                <img src={facebookImg} />
-              </a>
-            </div>
+            {facebook ? (
+              <div className={styles.icon}>
+                <a href={facebook} target="_blank">
+                  <img src={facebookImg} />
+                </a>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
