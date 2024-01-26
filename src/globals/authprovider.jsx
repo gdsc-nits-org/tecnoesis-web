@@ -1,7 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import UserContext from "./authcontext";
 
 const getToken = () => {
@@ -11,7 +10,6 @@ const getToken = () => {
 
 const AuthProvider = ({ children }) => {
   const auth = getAuth();
-  const navigate = useNavigate();
 
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : ""
@@ -62,9 +60,10 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.setItem("loggedin",0);
+    localStorage.setItem("loggedin", 0);
     localStorage.removeItem("token");
-    navigate("/");
+    localStorage.removeItem("user");
+    window.location.reload();
   };
 
   const signinbackend = async () => {
@@ -75,7 +74,7 @@ const AuthProvider = ({ children }) => {
       headers: header,
     });
     if (res.status >= 200 && res.status < 300) {
-      localStorage.setItem("loggedin",1);
+      localStorage.setItem("loggedin", 1);
     }
   };
 
@@ -87,7 +86,7 @@ const AuthProvider = ({ children }) => {
       headers: header,
     });
     if (res.status >= 200 && res.status < 300) {
-      localStorage.setItem("loggedin",1);
+      localStorage.setItem("loggedin", 1);
     }
   };
 

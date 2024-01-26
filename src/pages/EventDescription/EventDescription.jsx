@@ -19,7 +19,6 @@ const EventDescription = () => {
   const { setloggedin } = useContext(UserContext);
   const { token } = useContext(UserContext);
   const getEvent = async () => {
-
     setIsLoading(true);
     const url = `${import.meta.env.VITE_BASE_URL}/api/event/${id}`;
     const response = await axios(url, {
@@ -42,10 +41,13 @@ const EventDescription = () => {
   const regBtn = () => {
     if (!localStorage.getItem("token")) {
       toast("Not here! Go to login/signup section");
-    }
-    else {
+    } else {
       window.location.href = `/event/${id}/registration`;
     }
+  };
+
+  if (isLoading) {
+    return <Loading />;
   }
   return (
     <div className={styles.container}>
@@ -53,7 +55,10 @@ const EventDescription = () => {
         <div className={styles.robowars}>
           <Link to="/modules">
             <div className={styles.backIcon}>
-              <img alt="" src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp" />
+              <img
+                alt=""
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp"
+              />
             </div>
           </Link>
           <div className={styles.robowars_img}> {name.toUpperCase()}</div>
@@ -68,10 +73,19 @@ const EventDescription = () => {
             <img alt="robologo_demo.png" src={posterImage} />
           </div>
         </div>
-        {localStorage.getItem("token") ?
-          <button className={styles.button} onClick={regBtn}>Register</button> :
-          <button className={styles.button} style={{ fontSize: '1rem' }} onClick={regBtn}>Login to register</button>
-        }
+        {localStorage.getItem("token") ? (
+          <button className={styles.button} onClick={regBtn}>
+            Register
+          </button>
+        ) : (
+          <button
+            className={styles.button}
+            style={{ fontSize: "1rem" }}
+            onClick={regBtn}
+          >
+            Login to register
+          </button>
+        )}
       </div>
     </div>
   );
