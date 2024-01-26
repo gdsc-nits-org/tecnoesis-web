@@ -179,7 +179,10 @@
     height: 272px;
     width: 191px;
   }
-
+  .SocialProfile .icon {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 @media (max-width: 477px) {
