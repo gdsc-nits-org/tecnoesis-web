@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 100vh; */
-  background: url(../../../elements/bgAnime.gif) no-repeat;
+  background: url("https://res.cloudinary.com/dnitrnzho/image/upload/v1706252662/bgAnime_itxddm.gif") no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -33,20 +32,15 @@
   letter-spacing: 0;
   line-height: normal;
   padding: 1em 0;
-  /* margin-top: -1px; */
   text-align: center;
   color: #6b6b6b;
   white-space: nowrap;
 }
 
-/* .container{
-  margin-top: 4px;
-} */
-
 .inputBox {
   width: 430px;
   margin: 30px 0;
-  border-bottom: 2px solid #3B3B3B;;
+  border-bottom: 2px solid #3B3B3B;
   position: relative;
 }
 
@@ -61,8 +55,8 @@
   color: white;
 }
 
-.input:focus + .labels,
-.input:valid + .labels {
+.input:focus+.labels,
+.input:valid+.labels {
   top: -5px;
 }
 
@@ -73,7 +67,6 @@
   transform: translateY(-50%);
   pointer-events: none;
   transition: 0.5s;
-
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
   background: linear-gradient(180deg, rgb(25, 245, 238) 0%, rgba(1.62, 194.97, 188.82, 0.04) 100%);
@@ -85,40 +78,38 @@
   letter-spacing: 0;
 }
 
-.error{
+.error {
   color: red;
 }
 
-.button{
-    position: relative;
-    align-items: center;
-    background: transparent;
-    border: 1.5px solid;
-    border-color: transparent;
-    border-image: linear-gradient(to bottom, rgb(181, 134, 141), rgb(243, 97, 150)) 1;
-    margin-top: 20px;
+.button {
+  position: relative;
+  align-items: center;
+  background: transparent;
+  border: 1.5px solid;
+  border-color: transparent;
+  border-image: linear-gradient(to bottom, rgb(181, 134, 141), rgb(243, 97, 150)) 1;
+  margin-top: 20px;
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
 }
 
-.button .layertext{
-  font-family: PixeloidSansBold, serif;     
+.button .layertext {
+  font-family: PixeloidSansBold, serif;
   padding: 10px 24px;
   color: #4debf6;
   white-space: nowrap;
 }
 
-
-
 @media (max-width: 578px) {
-  .heading{
+  .heading {
     font-size: 14px;
   }
+
   .form {
     width: 100%;
-    /* height: 100vh; */
     border: none;
     border-radius: 0;
   }
@@ -128,31 +119,31 @@
   }
 }
 
-@media (max-width: 460px){
-  .heading{
+@media (max-width: 460px) {
+  .heading {
     font-size: 12px;
   }
 
-  .inputBox{
+  .inputBox {
     width: 300px;
   }
 }
 
 @media (max-width: 375px) {
-  .heading{
+  .heading {
     font-size: 3vw;
 
   }
 
-  .inputBox{
+  .inputBox {
     width: 70vw;
   }
 
-  .labels{
+  .labels {
     font-size: 4vw;
   }
 
-  .button .layertext{
+  .button .layertext {
     font-size: 3vw;
   }
 }

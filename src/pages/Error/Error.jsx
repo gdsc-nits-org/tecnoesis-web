@@ -1,5 +1,4 @@
 import styles from "./Error.module.css";
-// import error_txt from "/elements/404_text.svg"
 import { Link } from "react-router-dom";
 
 

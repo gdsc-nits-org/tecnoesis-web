@@ -50,6 +50,9 @@ const Form = () => {
 
   const validate = (values) => {
     const errors = {};
+    if (!values.username) {
+      errors.username = "Username is required";
+    }
     if (!values.phoneNumber) {
       errors.phoneNumber = "Phone Number is required";
     } else if (
@@ -71,7 +74,7 @@ const Form = () => {
     <div className={styles.wrapper}>
       <form action="" className={styles.form} onSubmit={submitHandler}>
         <h1 className={styles.heading}>
-          <p>Welcome To The Official Website Of Technoesis</p>
+          <p>Welcome To The Official Website Of Tecnoesis</p>
           <p>Let’s Get You Started</p>
         </h1>
         <div className={styles.container}>
@@ -125,7 +128,9 @@ const Form = () => {
             ></input>
             <label className={styles.labels}>ENTER PHONE NUMBER</label>
           </div>
+          <p className={styles.error}>{formError.username}</p>
           <p className={styles.error}>{formError.phoneNumber}</p>
+
         </div>
         <button className={styles.button}>
           <div className={styles.layertext}>SUBMIT</div>

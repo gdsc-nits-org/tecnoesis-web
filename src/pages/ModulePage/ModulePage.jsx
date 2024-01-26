@@ -1,13 +1,10 @@
 import Module from "../../components/Module/Module";
 
-
-
 const ModulePage = () => {
   return (
     <>
-    <Module/>
+      <Module />
     </>
   );
 };
 export default ModulePage;
-
