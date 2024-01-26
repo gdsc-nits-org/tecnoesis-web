@@ -87,7 +87,7 @@ const Registration = () => {
         }
     }
     async function fetchData() {
-        let response = await fetch(`${BACKEND_URL}:8080/api/event/${id}`, { method: 'GET' });
+        let response = await fetch(`${BACKEND_URL}/api/event/${id}`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let msg = arr.maxTeamSize;
