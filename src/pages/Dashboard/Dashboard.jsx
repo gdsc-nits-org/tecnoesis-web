@@ -115,7 +115,7 @@ export default function Dashboard() {
       try {
         const token = localStorage.getItem("token");
         if (!token) {
-          throw Error("User must be sign in");
+          throw Error("User must be logged in");
         }
         const headers = {
           Authorization: `Bearer ${token}`,
