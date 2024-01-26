@@ -85,7 +85,7 @@
   min-height: 90vh;
   overflow: auto;
   overflow-x: hidden;
-  background-image: url(/public/images/teamPage/rightFrame.svg);
+  background-image: url("https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/mo0ht3ph0j5vugt5hrkj");
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
