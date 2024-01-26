@@ -1,0 +1,202 @@
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  background-image: url(/images/teamPage/bg.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 20vw;
+  display: flex;
+  overflow-x: hidden;
+  
+}
+
+.leftFrame {
+  width: 85%;
+  padding: 0 0 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .teamCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.headingDiv {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 30px;
+}
+
+.heading {
+  -webkit-text-stroke-width: 2.7799999713897705;
+  -webkit-text-stroke-color: #000;
+
+  font-family: PixeloidSansBold, serif;
+  font-size: 2vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  background: linear-gradient(180deg, #f00 0%, #fff 36.46%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 20px;
+}
+
+.teamName {
+  font-size: 1.15rem;
+  font-family: PixeloidSans, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  position: relative;
+}
+
+.teamName:hover {
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-shadow: -3px 5px 3px rgba(233, 7, 7, 0.6);
+}
+
+.teamHeading {
+  font-size: 0.12em;
+  margin-top: 2.25em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff002f, black);
+  -webkit-background-clip: text;
+  background-clip:text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+
+.rightFrameParent {
+  min-height: 90vh;
+  overflow: auto;
+  overflow-x: hidden;
+  background-image: url("https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/mo0ht3ph0j5vugt5hrkj");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  aspect-ratio: 0.328;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.2s ease-in;
+  /* margin-top: var(--navbar-height); */
+  font-size: 16vw;
+  transform-origin: right;
+}
+
+.toggle {
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  right: 0;
+  z-index: 20;
+  top: var(--navbar-height);
+}
+
+
+.absolute{
+  position: absolute;
+  translate: 250px;
+  display: none;
+}
+
+/* for chrome*/
+.rightFrameParent::-webkit-scrollbar {
+  display: none;
+}
+.rightFrameParent::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*for firefox*/
+.rightFrameParent {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+/*ms edge*/
+.rightFrameParent {
+  -ms-overflow-style: none;
+}
+
+.rightFrame {
+  margin-top: var(--navbar-height);
+}
+
+@media (max-width: 768px) {
+  .leftFrame {
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+  .heading{
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .leftFrame {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+}
+
+@media (max-width: 256px) {
+  .teamCards {
+    justify-content: center !important;
+  }
+}
+
+
+@media (max-width: 1071px) {
+  .leftFrame{
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 890px) {
+  .leftFrame{
+    width: 76%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .leftFrame{
+    width: 100%;
+  }
+  .wrapper .teamCards{
+    gap: 0;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .teamCards{
+    justify-content: center !important;
+  }
+
+}

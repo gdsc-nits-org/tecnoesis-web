@@ -6,10 +6,11 @@ import {
   EventDescription,
   Registration,
   Form,
+  TeamPage
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer, Loading, Navbar2 } from "./components";
-import { useState, useEffect, useContext } from 'react'
+import { Footer, Loading, Navbar2 } from "./components";
+import { useState, useEffect, useContext } from "react";
 import AuthProvider from "./globals/authprovider";
 import LoadingProvider from "./globals/loading/loadingProvider";
 import UserContext from "./globals/authcontext";
@@ -18,7 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const { setLoggedin } = useContext(UserContext);
+
   const [showNavbar, setShowNavbar] = useState(true);
   const [loading, setLoading] = useState(true);
   const toggleNavbar = () => {
@@ -33,12 +34,8 @@ function App() {
     } else {
       localStorage.setItem("loggedin", 0);
     }
-
     return () => clearTimeout(timer);
   }, []);
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <>
@@ -57,13 +54,13 @@ function App() {
             theme="dark"
             transition:Bounce
           />
-          <Navbar />
+
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                  {showNavbar && <Navbar />}
+                  {showNavbar && <Navbar2 />}
                   <Home />
                   <Footer />
                 </>
@@ -80,7 +77,7 @@ function App() {
               }
             />
             <Route
-              path="/dashboard"
+              path="/profile"
               element={
                 <>
                   {showNavbar && <Navbar2 />}
@@ -116,6 +113,16 @@ function App() {
                 <>
                   {showNavbar && <Navbar2 />}
                   <Registration />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/team"
+              element={
+                <>
+                  {showNavbar && <Navbar2 />}
+                  <TeamPage />
                   <Footer />
                 </>
               }

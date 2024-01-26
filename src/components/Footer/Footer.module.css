@@ -32,15 +32,10 @@
   clip-path: polygon(0% 0%, 100% 15%, 100% 80%, 10% 100%, 0% 80%);
 }
 
-
-
-
 .foot_buttons {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: 3rem;
-  padding-right: 3rem;
   z-index: 7;
   gap: 0.5rem;
 }
@@ -81,66 +76,64 @@
 .centerText {
   padding: 1rem;
   text-align: center;
-}
-
-.whiteText {
-  color: white;
+  margin-bottom: -2rem;
   font-size: 0.9rem;
-  font-family: 'Roboto';
-  font-weight: 500;
-  line-height: 20px;
+}
+
+.gdsctext{
+  font-family:  PixeloidSans, serif;
+  font-weight: 400;
+  line-height: 2rem;
   letter-spacing: 0.10;
-  word-wrap: break-word;
-  
+  word-wrap:break-word;
+  font-size: 0.9rem;
 }
+.gdsctext_pos{
+  margin-left: -4rem;
+  display: inline-flex;
 
-.purpleText {
-  color: #593EFF;
-  font-size: 14px;
-  font-family: PixeloidSans;
+}
+.gdsclogo{
+  width: 10rem;
+}
+.gdsctext1{
+  font-family:  PixeloidSans, serif;
   font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.60;
-  word-wrap: break-word;
+  line-height: 2rem;
+
+  letter-spacing: 0.10;
+  word-wrap:break-word;
+  margin-left: -2rem;
+  margin-top: 1rem;
+}
+.gdsclogoarow{
+  margin-top: 1.6rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+.gdsctext1 {
+  position: relative;
+  display: inline-block;
+  color: white;
 }
 
-.yellowText {
-  color: #FFF72E;
-  font-size: 14px;
-  font-family: PixeloidSans;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.60;
-  word-wrap: break-word;
+.gdsctext1::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #00FF0A 0%, #14FF00 22%, #EBFF00 22%, #EFE600 37%, #EBFF00 49%, #FF0000 49%, #FF0000 76%, #00A3FF 76%, #0094FF 100%);
+  margin-top: 2rem;
+  left: 0;
 }
-
-.redText {
-  color: #FF3737;
-  font-size: 14px;
-  font-family: PixeloidSans;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.60;
-  word-wrap: break-word;
-}
-
-.greenText {
-  color: #3FFF3B;
-  font-size: 14px;
-  font-family: PixeloidSans;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.60;
-  word-wrap: break-word;
-}
-
-
 
 @media (max-width: 768px) {
   .pikachu{
     width: 7rem;
   }
- 
+  .centerText {
+    font-size: 0.8rem;
+  }
   .foot_btn{
     font-size: small;
   }

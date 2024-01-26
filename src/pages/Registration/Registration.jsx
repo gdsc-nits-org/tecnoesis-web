@@ -68,15 +68,14 @@ const Registration = () => {
                     if (response.status == 200) {
                         setError("Successfully registered!!");
                     }
-                    else if (response.status == 409) {
-                        setError("Error! Conflict in registration!!");
-                    }
                     else {
-                        setError("Problem in registration!!");
+                        const json = await response.json();
+                        toast(json.msg);
                     }
                 }
             }
             else {
+                console.log(required);
                 toast('Please fill the required fields');
             }
         } catch (err) {
@@ -85,20 +84,17 @@ const Registration = () => {
         }
     }
     async function fetchData() {
-        // let response = await fetch("https://tecnoesis-api.onrender.com/api/event", { method: 'GET' });
-        let response = await fetch(`${BACKEND_URL}/api/event`, { method: 'GET' });
+        let response = await fetch(`${BACKEND_URL}/api/event/${id}`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
-        let arrFilter = arr.filter((item) => item.id = id);
-        let msg = arrFilter[0].maxTeamSize;
-        let minSg = arrFilter[0].minTeamSize;
+        let msg = arr.maxTeamSize;
+        let minSg = arr.minTeamSize;
         setminMember(minSg);
         setmaxMember(msg);
         setloadingMsg(null);
         if (msg === 1) {
-            setTypeofevent("TEAM NAME");
+            setTypeofevent("NAME");
         }
-        // console.log(msg);
         let temp = Array.from({ length: msg - 1 }, () => "");
         setMembers(temp);
     }
