@@ -75,7 +75,7 @@ const Teampage = () => {
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210678/tecnoesis/IMG20221003210912_-_Mriganga_Jyoti_Chutia_b5c78g.webp",
         },
         {
-          id: "62",
+          id: "92",
           name: "MIRAJ DEKA",
           designation: "CONVENOR",
           linkedin:
@@ -129,7 +129,7 @@ const Teampage = () => {
           name: "Yuvraj Singh ",
           designation: "Event management Head",
           linkedin: "",
-          inst:"https://www.instagram.com/singhyuvraj1102/",
+          inst: "https://www.instagram.com/singhyuvraj1102/",
           facebook: "https://www.facebook.com/profile.php?id=100056971062674&mibextid=ZbWKwL",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lgdnb55ywripzrjekpb9"
         },
@@ -269,7 +269,7 @@ const Teampage = () => {
           name: "Abhishek bairwa ",
           designation: "Logistics Head ",
           linkedin: "https://www.linkedin.com/in/abhishek-bairwa-a39ba2224",
-          inst:"https://www.instagram.com/abhishek__bairwa/",
+          inst: "https://www.instagram.com/abhishek__bairwa/",
           facebook: "https://www.facebook.com/abhi.bairwa.562?mibextid=JRoKGi",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/riuecbase15tzucacseq"
         },
