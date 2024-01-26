@@ -117,6 +117,7 @@ const Teampage = () => {
           name: "Yuvraj Singh ",
           designation: "Event management Head",
           linkedin: "",
+          inst:"https://www.instagram.com/singhyuvraj1102/",
           facebook: "https://www.facebook.com/profile.php?id=100056971062674&mibextid=ZbWKwL",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lgdnb55ywripzrjekpb9"
         },
@@ -256,6 +257,7 @@ const Teampage = () => {
           name: "Abhishek bairwa ",
           designation: "Logistics Head ",
           linkedin: "https://www.linkedin.com/in/abhishek-bairwa-a39ba2224",
+          inst:"https://www.instagram.com/abhishek__bairwa/",
           facebook: "https://www.facebook.com/abhi.bairwa.562?mibextid=JRoKGi",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/riuecbase15tzucacseq"
         },
