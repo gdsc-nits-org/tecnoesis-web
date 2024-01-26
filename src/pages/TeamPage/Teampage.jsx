@@ -23,7 +23,7 @@ const Teampage = () => {
       const footer = document.getElementById("footer");
       const footerRect = footer.getBoundingClientRect();
 
-      const sidebar = document.getElementById("sidebar")
+      const sidebar = document.getElementById("sidebar");
       const sidebarRect = sidebar.getBoundingClientRect();
 
       console.log(footerRect.top - window.innerHeight);
@@ -31,7 +31,10 @@ const Teampage = () => {
         setIsSticky(true);
       } else {
         setIsSticky(false);
-        setsidebarStyle({position: 'absolute', top: footerRect.top - sidebarRect.height})
+        setsidebarStyle({
+          position: "absolute",
+          top: footerRect.top - sidebarRect.height,
+        });
       }
     };
 
@@ -367,6 +370,18 @@ const Teampage = () => {
         },
 
         {
+          id: 90,
+          name: "Pragya Annesha Baruah",
+          designation: "UI/UX Lead",
+          linkedin:
+            "https://www.linkedin.com/in/pragya-annesha-baruah-34a043229",
+          facebook: "https://www.facebook.com/profile.php?id=100075204826742",
+          git: "https://github.com/Prag03",
+          image:
+            "https://res.cloudinary.com/dl19r276g/image/upload/v1705513973/imagegdsc2_zdgzcm.webp",
+        },
+
+        {
           id: "24",
           name: "Jacinth Mahanta",
           designation: "UI/UX Designer",
@@ -431,7 +446,8 @@ const Teampage = () => {
           facebook:
             "https://www.facebook.com/profile.php?id=100087912133756&mibextid=JRoKGi",
           git: "https://github.com/AyuTechLive",
-          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/d2rhqgnkxqepily7qqsc"
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/d2rhqgnkxqepily7qqsc",
         },
         {
           id: "26",
@@ -525,7 +541,7 @@ const Teampage = () => {
           styles.rightFrameParent
         }`}
         id="sidebar"
-        style={{ translate: isSidebarVisible ? "0px" : "250px"}}
+        style={{ translate: isSidebarVisible ? "0px" : "250px" }}
       >
         <div className={styles.rightFrame}>
           {teams.map((TeamName, id) => (

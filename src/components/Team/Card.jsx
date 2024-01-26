@@ -51,10 +51,12 @@ export const Card = ({
                 <a href={github} target="_blank">
                   <img src={githubImg} />
                 </a>
-              ) : (
+              ) : inst ? (
                 <a href={inst} target="_blank">
                   <img src={insta} />
                 </a>
+              ) : (
+                ""
               )}
             </div>
             <div className={styles.icon}>
