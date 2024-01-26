@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "../Team/Card.module.css";
 import frame from "/images/teamPage/frame.svg";
-import member from "/images/teamPage/member.webp";
-import logo from "/images/teamPage/logo.svg";
+import member from "/images/teamPage/member.webp";;
 import card_dp from "/images/teamPage/cardframe.svg";
 import insta from "/images/teamPage/inst.svg";
 import tecnoSid from "/images/teamPage/technoSid.svg";
@@ -19,7 +18,6 @@ export const Card = ({ name, designation, image , linkedin , facebook , github ,
       <div className={styles.frame}>
         <div className={styles.frameChild}>
           <img src={card_dp} className={styles.imageFrame} />
-          <img src={logo} className={styles.logo} />
           <img
             src={card_dp}
 

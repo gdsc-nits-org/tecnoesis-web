@@ -4,12 +4,15 @@
   justify-content: center;
   cursor: pointer;
   margin-bottom: 4vw;
+  
+  overflow: hidden;
+  
 }
 .frame {
   position: relative;
   overflow: hidden;
-  height: 404px;
-  width: 280px;
+  height: 25.25rem;
+  width:17.5rem;
   z-index: 1;
 }
 
@@ -50,7 +53,7 @@
   /* width: 35rem;
   height: 25rem;  */
   width: 100%;
-  height: 100%;
+  height: 98%;
   object-fit: cover;
 }
 
@@ -140,9 +143,10 @@
     height: 233px;
     width: 161px;
   }
+  
   .dp{
     width: 10rem; /* Example width */
-    height: 14rem; /* Example height */
+    height: 13rem; /* Example height */
   }
   .name{
     font-size: 0.8rem;
