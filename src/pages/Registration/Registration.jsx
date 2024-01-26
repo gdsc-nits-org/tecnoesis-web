@@ -85,20 +85,15 @@ const Registration = () => {
         }
     }
     async function fetchData() {
-        // let response = await fetch("https://tecnoesis-api.onrender.com/api/event", { method: 'GET' });
-        let response = await fetch(`${BACKEND_URL}/api/event`, { method: 'GET' });
+        let response = await fetch(`${BACKEND_URL}/api/event/${id}`, { method: 'GET' });
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
-        let arrFilter = arr.filter((item) => item.id = id);
-        let msg = arrFilter[0].maxTeamSize;
-        let minSg = arrFilter[0].minTeamSize;
-        setminMember(minSg);
+        let msg = arr.maxTeamSize;
         setmaxMember(msg);
         setloadingMsg(null);
         if (msg === 1) {
-            setTypeofevent("TEAM NAME");
+            setTypeofevent("NAME");
         }
-        // console.log(msg);
         let temp = Array.from({ length: msg - 1 }, () => "");
         setMembers(temp);
     }

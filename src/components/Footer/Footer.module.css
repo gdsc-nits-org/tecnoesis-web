@@ -32,15 +32,10 @@
   clip-path: polygon(0% 0%, 100% 15%, 100% 80%, 10% 100%, 0% 80%);
 }
 
-
-
-
 .foot_buttons {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: 3rem;
-  padding-right: 3rem;
   z-index: 7;
   gap: 0.5rem;
 }
