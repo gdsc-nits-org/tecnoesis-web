@@ -24,6 +24,7 @@
   color: #ffffff;
   background: linear-gradient(#312f2f, #312f2f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-stroke: 0.16em transparent;
 }
 .arrowLottieContainer {
@@ -53,7 +54,7 @@
 }
 @media screen and (max-width: 450px) {
   .gifBackground {
-    background-image: url(/home_bg_mob.gif);
+    background-image: url("https://res.cloudinary.com/dnitrnzho/image/upload/v1706188452/home_bg_mob_vykzlu.gif");
   }
   .dateTecno {
     font-size: 1.8rem;

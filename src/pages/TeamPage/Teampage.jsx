@@ -432,8 +432,7 @@ const Teampage = () => {
           facebook:
             "https://www.facebook.com/profile.php?id=100087912133756&mibextid=JRoKGi",
           git: "https://github.com/AyuTechLive",
-          image:
-            "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706211845/IMG_20240102_215228_524_-_Ayush_Shahi_ucus0p.heic",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/d2rhqgnkxqepily7qqsc"
         },
         {
           id: "26",
