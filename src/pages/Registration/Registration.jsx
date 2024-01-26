@@ -68,15 +68,14 @@ const Registration = () => {
                     if (response.status == 200) {
                         setError("Successfully registered!!");
                     }
-                    else if (response.status == 409) {
-                        setError("Error! Conflict in registration!!");
-                    }
                     else {
-                        setError("Problem in registration!!");
+                        const json = await response.json();
+                        setError(json.msg);
                     }
                 }
             }
             else {
+                console.log(required);
                 toast('Please fill the required fields');
             }
         } catch (err) {
@@ -89,6 +88,8 @@ const Registration = () => {
         let maxNumber = await response.json();
         let arr = maxNumber.msg;
         let msg = arr.maxTeamSize;
+        let minSg = arr.minTeamSize;
+        setminMember(minSg);
         setmaxMember(msg);
         setloadingMsg(null);
         if (msg === 1) {
