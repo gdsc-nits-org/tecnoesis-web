@@ -1,9 +1,13 @@
 import { useState } from "react";
-
 import Lottie from "lottie-react";
 import aboutus_pc from "../../assets/aboutus_pc.json";
 import aboutus_coin from "../../assets/aboutus_coin.json";
+import alien_near_module_section from "../../assets/alien_near_module_section.json";
+import heart from "../../assets/heart.json";
 import styles from "./About.module.css";
+import Button from "../Button/Button";
+import { Link } from "react-router-dom";
+import HomeCarousel from '../HomeCarousel/HomeCarousel.jsx'
 
 function About() {
   const [coinbox, setCoinbox] = useState(false);
@@ -12,19 +16,27 @@ function About() {
   };
   const style2 = {
     height: "auto",
-    // width: "25rem"
   };
   const handleEvent = () => {
     setCoinbox(!coinbox);
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnFocus: true,
+  };
+
   return (
     <>
-      <div id='about' >
-      
+      <div id="about">
         <div className={styles.bgContainer}>
           <div className={styles.contentContainer}>
-            <div className={styles.aboutleftImg}></div>
             <div className={styles.textContainer}>
               <div className={styles.aboutUsText}>
                 <div className={styles.techFestText}>ABOUT US</div>
@@ -72,7 +84,6 @@ function About() {
           </div>
           {/* about nit silchar*/}
           <div className={styles.contentContainer2}>
-            <div className={styles.aboutrightImg}></div>
             <div className={styles.textContainer2}>
               <div className={styles.lottieContainerParent2}>
                 <div className={styles.lottieContainer2}>
@@ -102,6 +113,51 @@ function About() {
                   transformed into a sought out centre of learning.
                 </div>
               </div>
+            </div>
+          </div>
+          <div
+            className={`${styles.contentContainer3} ${styles.containerPadding}`}
+          >
+            <div className={styles.alienLottieContainer}>
+              <Lottie
+                animationData={alien_near_module_section}
+                loop={true}
+                style={style2}
+              />
+            </div>
+            <div className={styles.moduleContainer}>
+              <div className={styles.heartLottieContainer}>
+                <Lottie animationData={heart} loop={true} style={style2} />
+              </div>
+
+              <div className={styles.moduletext}>MODULES</div>
+              <div className={styles.eventText3}>
+                A bright future requires a bright start. NITS abides by this
+                mantra. The institute believes in equipping students with the
+                knowledge and skills in their chosen streams, inculcate values,
+                identify hidden talents, and provide opportunities for students
+                to realize their full potential. It facilitates the requisite
+                support and encouragement via various cultural and academic
+                activities to shape the body and soul. It has transformed into a
+                sought out centre of learning.
+              </div>
+
+              <div className={styles.buttonContainer}>
+                <Link to="/modules">
+                  <Button>
+                    <a className={styles.moduleButton}>PLAY MODULES</a>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contentContainer3} id="gallery" >
+            <div className={styles.photoContainer}>
+              <div className={styles.moduletext}>PHOTO GALLERY</div>
+              
+               <HomeCarousel/>
+
             </div>
           </div>
         </div>

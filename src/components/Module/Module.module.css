@@ -1,0 +1,317 @@
+.boxContainerParent {
+  background-image: url("https://res.cloudinary.com/dhry5xscm/image/upload/v1706207516/tecnoesis/module_bg_vinedb.svg");
+  background-attachment: fixed;;
+  background-color: rgb(95, 95, 95);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  background-position: right;
+}
+
+.boxContainer {
+  width: 84%;
+  font-size: 80vw;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+}
+.moduleContainer {
+  padding-top: 0.05em;
+  padding-bottom: 0.05em;
+  font-size: 1em;
+}
+
+.modulestext {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  font-size: 0.04em;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: PixeloidSansBold, serif;
+  background: linear-gradient(#ff004c, black);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+.moduleFrames {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+}
+.moduleImg {
+  width: 100%;
+    flex: 0 0 30%;
+    aspect-ratio: 1.26;
+    margin-top: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-image: url(/elements/module_page_frame.svg); */
+    /* background-image: url('/bg2.svg'); */
+    /* background-color: black; */
+    color: white;
+    /* font-size: 10px; */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.moduleImg:hover .moduleImgContent{
+  bottom: 0;
+  transform: scale(1);
+  transition: bottom 0.5s , transform 0.5s;
+
+}
+.moduleImgInContent{
+  width:100%;
+  height: 100%;
+}
+.moduleImgContent{
+  width: 100%;
+  height: 5vw;
+  bottom: -7vw;
+  background-color: white;
+  opacity: 0.5;
+  /* color: red; */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  position: absolute;
+ 
+  font-size: 2vw;
+  transform: scale(1.5);
+  transition: bottom 0.5s , transform 0.5s;
+
+  
+}
+.subModules{
+  width:100%;
+  font-size:1em;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff004c, black);
+  background-clip: text;
+  -webkit-text-stroke: 0.1em transparent;
+  white-space: nowrap;
+}
+
+.moduleImgMob{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+.carouselitem {
+  background-image: url("/elements/module_page_frame.svg");
+  height: 300px; /* Adjust the height as needed */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* .rightFrameParent{
+  width:20vw;
+}
+.rightFrameParent:hover + .rightFrame {
+  position: unset;
+top: unset;
+} */
+.rightFrameParent{
+  height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    position: fixed;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+/* for chrome*/
+.rightFrameParent::-webkit-scrollbar {
+ display: none;
+}
+.rightFrameParent::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+/*for firefox*/
+.rightFrameParent{
+  scrollbar-width :none;
+  scrollbar-color: transparent transparent;
+}
+/*ms edge*/
+.rightFrameParent{
+  -ms-overflow-style: none;
+}
+
+.rightFrame {
+  width: 16vw;
+    /* height: 60.9vw; */
+    aspect-ratio:0.328;
+    margin-top: var(--navbar-height);
+    font-size: 16vw;
+    background-image: url(/elements/module_page_right_frame.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    position: sticky;
+    top: var(--navbar-height);
+    right: 0;
+}
+.rightFrameBg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:20vw;
+  /* transform: scaleX(1.2); */
+}
+/* .rightFrame::after{
+  width: 20vw;
+  height: 60.9vw;
+  margin-top: 6.4rem;
+  font-size: 20vw;
+  background-image: url(/elements/module_page_right_frame.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  color: white;
+  position: sticky;
+  top: 6.4rem;
+  right: 0;
+} */
+.sticky{
+  position: fixed;
+}
+.moduleNamesHeading {
+  font-size: 0.12em;
+  margin-top: 2.25em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff;
+  font-family: PixeloidSans, serif;
+  background: linear-gradient(#ff002f, black);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.12em transparent;
+}
+.moduleName {
+  font-size: 0.08em;
+  font-family: PixeloidSans, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  position: relative;
+}
+.link:hover {
+    color: yellow;
+  
+  }
+   .link{
+    z-index: 2;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    top: 7rem;
+    /* transition-property: color;
+    transition-delay: 0.4s; */
+   }
+.lottieAnimation {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  transform: scale(1.5);
+  opacity: 1;
+  z-index: 1;
+  left: 0;
+  transition: left 0.5s, opacity 0s linear 0s;
+}
+/* transition: property duration timing-function delay|initial|inherit; */
+
+.lottieAnimation2 {
+  width: 100%;
+  opacity: 0;
+  height: auto;
+  position: absolute;
+  transform: scale(1.5);
+  /* translate: -20rem 0; */
+  z-index: 1;
+
+  left: -8vw;
+  transition: left 0.5s, opacity 0.25s linear 0.25s;
+}
+@media screen and (max-width: 1000px) {
+
+  .moduleFrames{
+  width: 90%;
+  margin-left: 5%;
+  }
+  }
+@media screen and (max-width: 800px) {
+
+  .moduleFrames{
+  width: 92%;
+  margin-left: 4%;
+  }
+  .moduleImg{
+    flex: 0 0 31%;
+  }
+  .modulestext{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 0.05em;
+  }
+  }
+  @media screen and (max-width: 1200px) {
+    /* .rightFrame{
+      margin-top: 7.2rem;
+      top: 7.2rem;
+  } */
+  }
+  @media screen and (max-width: 768px) {
+    /* .rightFrame{
+      margin-top: 6.4rem;
+      top:6.4rem;
+  } */
+  }
+@media screen and (max-width: 725px) {
+    .boxContainer{
+        width: 100%;
+    }
+    .moduleFrames{
+display:block;
+        width: 62%;
+        margin-left:19%;
+        aspect-ratio: 1.1;
+    }
+    .rightFrame{
+        display: none;
+         width:0%; 
+    }
+    .modulestext{
+      font-size:0.08em;
+      -webkit-text-stroke: 0.2em transparent;
+    }
+    .moduleImgContent{
+      height: 14vw;
+      bottom: -18vw;
+    font-size:2.5vh;
+    }
+}
+@media screen and (min-width: 2500px) {
+  .boxContainer{
+    padding-top: 13rem;
+  }
+  .rightFrame{
+    margin-top: 13rem;
+    top:13rem;
+}
+}

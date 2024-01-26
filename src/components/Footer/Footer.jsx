@@ -1,45 +1,48 @@
 import styles from "./Footer.module.css";
-import pikachu from "/elements/pikachu.gif";
-import facebook from "/elements/social_fb.svg";
-import instagram from "/elements/social_insta.svg";
-import mail from "/elements/social_mail.svg";
-import linkedin from "/elements/social_lin.svg";
-import twitter from "/elements/social_twit.svg";
-import satellite from "/elements/satellite.svg";
+import Button_page from "../Button/Button";
+import arow from "/elements/arow.svg"
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <img src={satellite} className={styles.foot_satellite} alt="satellite" />
+    <div className={styles.footer} id="footer">
       <div className={styles.footer_container}>
         <div className={styles.footer_content}>
           <img
-            src="/elements/tecneosis.svg"
+            src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/Tecno_24_logo_ifx9ru.webp"
             className={styles.footer_logo}
             alt="Techno Logo"
           />
-          <img src={pikachu} className={styles.pikachu} alt="pikachu" />
+          <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107103/pikachu_dhcqjy.gif" className={styles.pikachu} alt="pikachu" />
           <div className={styles.foot_buttons}>
             <a
               href="https://drive.google.com/file/d/1i53pZdSVj15uRAoAib6ypxKeV18z4K4F/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer "
             >
-              <button className={styles.footer_button}>
-                DOWNLOAD BROCHURE
-              </button>
+              <Button_page>
+                <div className={styles.foot_btn}>DOWNLOAD BROCHURE</div>
+
+              </Button_page>
             </a>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdmnmsbM5qv12sPe8ZdAP4cupGOHjMtxzNnKuslO8acKCqSAQ/viewform?usp=pp_url"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className={styles.footer_button}>
-                <div className={styles.footer_button_style}>
-                  BECOME OUR CAMPUS AMBASSADOR
-                </div>
-              </button>
+              <Button_page >
+                <div className={styles.foot_btn}>BECOME OUR CAMPUS AMBASSADOR</div>
+
+              </Button_page>
             </a>
+          </div>
+          <div className={styles.centerText}>
+            <div className={styles.gdsctext}>DESIGNED AND DEVELOPED IN COLLABORATION WITH</div>
+            <div className={styles.gdsctext_pos}>
+              <div className={styles.gdsclogo}><img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hyg5xs9vkkpswxiiidp3" /></div>
+
+              <div className={styles.gdsctext1}>GDSC NIT SILCHAR</div>
+              <div className={styles.gdsclogoarow}><a href="https://gdscnits.in" target="_blank" rel="noopener noreferrer"><img src={arow} /></a></div>
+            </div>
           </div>
           <div className={styles.footer_contact}>CONTACT US</div>
           <div className={styles.black_flare}></div>
@@ -49,14 +52,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer "
             >
-              <img src={facebook} alt="facebook" />
+              <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107103/social_fb_hjt6l2.svg" alt="facebook" />
             </a>
             <a
               href="https://www.instagram.com/tecnoesis.nits/"
               target="_blank"
               rel="noopener noreferrer "
             >
-              <img src={instagram} alt="instagram" />
+              <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107098/social_insta_puschh.svg" alt="instagram" />
             </a>
             <a
               href="mailto:Tecnoesis@nits.ac.in"
@@ -64,8 +67,8 @@ const Footer = () => {
               rel="noopener noreferrer "
             >
               <img
-                src={mail}
-                style={{ backgroundColor: "white", borderRadius: "10px" }}
+                src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107096/social_mail_ilraoy.svg"
+                style={{ width: '2.5rem' }}
                 alt="mail"
               />
             </a>
@@ -74,17 +77,17 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer "
             >
-              <img src={linkedin} alt="linkedin" />
+              <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107099/social_lin_c2x0um.svg" alt="linkedin" />
             </a>
             <a
               href="https://x.com/tecnoesis_nits?s=20"
               target="_blank"
               rel="noopener noreferrer "
             >
-              <img src={twitter} alt="twitter" />
+              <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1698410357/tech-week-2023/Social_Icons_p5m59p.svg" alt="twitter" />
             </a>
           </div>
-          <div className={styles.footer_flare}></div>
+
         </div>
       </div>
     </div>

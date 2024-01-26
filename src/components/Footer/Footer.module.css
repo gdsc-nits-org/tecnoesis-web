@@ -1,7 +1,6 @@
 .footer {
   width: 100%;
-  background: var(--footer-blue-4-100);
-  height: 87vh;
+  background: url('/elements/footerbg.png') center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -13,6 +12,7 @@
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   color: var(--tecno-light-1-100);
+  
 }
 
 .footer_content {
@@ -27,7 +27,7 @@
 }
 
 .pikachu {
-  width: 7rem;
+  width: 9rem;
   margin-top: 1rem;
   clip-path: polygon(0% 0%, 100% 15%, 100% 80%, 10% 100%, 0% 80%);
 }
@@ -36,48 +36,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: 3rem;
-  padding-right: 3rem;
   z-index: 7;
+  gap: 0.5rem;
 }
 
-.foot_satellite {
-  position: absolute;
-  margin-top: 110px;
-  margin-left: 150px;
-}
-
-.footer_button {
-  background: linear-gradient(
-    to right,
-    var(--footer-blue-1-100),
-    var(--footer-blue-3-100)
-  );
-  border: 1px solid var(--tecno-brown-1-100);
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  color: #4debf6;
-  flex-direction: column;
-  font-family: "Roboto", sans-serif;
-  justify-content: center;
-  align-items: center;
-  display: inline-flex;
-  outline: none;
-  z-index: 7;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  margin-bottom: 1.3rem;
-}
-
-.footer_button:hover {
-  background: linear-gradient(to right, var(--tecno-brown-1-100), #f36196);
-  color: var(--tecno-light-1-100);
-  outline: none;
-  transition: all 300ms ease-in-out;
-}
 
 .footer_contact {
   margin-top: 1.75rem;
@@ -97,6 +59,8 @@
   justify-content: center;
   margin-top: -3.3rem;
   gap: 1.5rem;
+  
+  
 }
 
 .black_flare {
@@ -109,22 +73,68 @@
   filter: blur(2.75rem);
 }
 
-.footer_flare {
-  width: 100vw;
-  z-index: 5;
-  height: 9rem;
-  background-color: var(--techno-purple-2-100);
-  filter: blur(5.75rem);
+.centerText {
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: -2rem;
+  font-size: 0.9rem;
+}
+
+.gdsctext{
+  font-family:  PixeloidSans, serif;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.10;
+  word-wrap:break-word;
+  font-size: 0.9rem;
+}
+.gdsctext_pos{
+  margin-left: -4rem;
+  display: inline-flex;
+
+}
+.gdsclogo{
+  width: 10rem;
+}
+.gdsctext1{
+  font-family:  PixeloidSans, serif;
+  font-weight: 400;
+  line-height: 2rem;
+
+  letter-spacing: 0.10;
+  word-wrap:break-word;
+  margin-left: -2rem;
+  margin-top: 1rem;
+}
+.gdsclogoarow{
+  margin-top: 1.6rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+.gdsctext1 {
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+
+.gdsctext1::after {
+  content: '';
   position: absolute;
-  margin-top: 62vh;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #00FF0A 0%, #14FF00 22%, #EBFF00 22%, #EFE600 37%, #EBFF00 49%, #FF0000 49%, #FF0000 76%, #00A3FF 76%, #0094FF 100%);
+  margin-top: 2rem;
+  left: 0;
 }
 
 @media (max-width: 768px) {
-  .foot_satellite {
-    display: none;
+  .pikachu{
+    width: 7rem;
   }
-
-  .footer_button {
+  .centerText {
+    font-size: 0.8rem;
+  }
+  .foot_btn{
     font-size: small;
   }
 
@@ -145,7 +155,7 @@
     width: 60rem;
   }
 
-  .footer_buttons {
+  .foot_btn {
     margin-bottom: 2rem;
     margin-top: 2rem;
     padding-left: 6rem;
@@ -155,11 +165,7 @@
     width: 15rem;
   }
 
-  .footer_button {
-    font-size: 2rem;
-    margin-top: 2rem;
-    padding: 4rem;
-  }
+  
   .footer_contact {
     margin-top: 2rem;
     font-size: 26rem;
@@ -168,12 +174,7 @@
     margin-top: 2rem;
     width: 3.5rem;
   }
-  .foot_satellite {
-    width: 10%;
-  }
-  .footer_flare {
-    height: 15rem;
-  }
+  
 }
 @media screen and (min-width: 2500px) {
   .footer_container {
@@ -183,31 +184,18 @@
     max-height: 75vh;
   }
 
-  .footer_buttons {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
+ 
   .pikachu {
     width: 15rem;
   }
 
-  .footer_button {
-    font-size: 2rem;
-  }
   .footer_contact {
     font-size: 2rem;
   }
   .footer_icons img {
     width: 3.5rem;
   }
-  .foot_satellite {
-    width: 10%;
-  }
-  .footer_flare {
-    height: 15rem;
-  }
+
 }
 @media screen and (min-width: 1900px) {
   .footer_container {
