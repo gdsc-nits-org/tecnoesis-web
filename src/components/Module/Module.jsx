@@ -150,7 +150,7 @@ const Module = () => {
   }
   const handleRoute = (id) => {
     console.log(id);
-    navigate(`/event/id:${id}`);
+    navigate(`/event/${id}`);
   }
 
 
