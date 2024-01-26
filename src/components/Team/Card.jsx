@@ -19,7 +19,7 @@ export const Card = ({ name, designation, image , linkedin , facebook , github ,
         <div className={styles.frameChild}>
           <img src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/pgzhtyz0lfv7jl2kbq0n" className={styles.imageFrame} />
           <img
-            src={card_dp}
+            src="https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/pgzhtyz0lfv7jl2kbq0n"
 
             className={`${styles.imageFrame} ${styles.frame}`}
           />
