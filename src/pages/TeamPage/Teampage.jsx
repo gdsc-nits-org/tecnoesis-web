@@ -178,6 +178,18 @@ const Teampage = () => {
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210758/tecnoesis/IMG_20240122_122121_2_-_Saurav_Pal_uelt1r.webp",
         },
         {
+          id: "50",
+          name: "Aniruddha Dutta",
+          designation: "Web Team Head",
+          linkedin:
+            "https://www.linkedin.com/in/aniruddha-dutta-naz/",
+          facebook:
+            "https://www.facebook.com/aniruddha.dutta.naz/",
+          git: "https://github.com/username-naz",
+          image:
+            "https://res.cloudinary.com/dhry5xscm/image/upload/v1694017416/gdsc%20seniors/team_pics/AniruddhaDutta_ipghak.webp",
+        },
+        {
           id: "5",
           name: "Truptee Vinod Undre",
           designation: "Marketing Head",
