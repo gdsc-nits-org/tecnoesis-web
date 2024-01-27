@@ -9,7 +9,7 @@ import styles from "./Loading.module.css";
 
 function Loading() {
   return (
-   <div>
+   <div style={{overflow:'hidden'}}>
      <div className={styles.bgContainer}>
      <div className={styles.pixelContainer}>
      <Lottie

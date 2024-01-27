@@ -18,6 +18,23 @@
     font-family: PixeloidSans;
 }
 
+.external {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .a {
+        background: linear-gradient(180deg, #FF003D 0%, #FCFDFF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
+
 @media screen and (min-width:2570px) {
     .regCont {
         background-size: cover;

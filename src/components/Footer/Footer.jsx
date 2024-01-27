@@ -15,7 +15,7 @@ const Footer = () => {
           <img src="https://res.cloudinary.com/dhry5xscm/image/upload/v1706107103/pikachu_dhcqjy.gif" className={styles.pikachu} alt="pikachu" />
           <div className={styles.foot_buttons}>
             <a
-              href="https://drive.google.com/file/d/1i53pZdSVj15uRAoAib6ypxKeV18z4K4F/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/138gnxS0nhT0ngR7SnqxNtCamkFampgDe/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer "
             >

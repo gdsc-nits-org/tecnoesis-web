@@ -63,6 +63,18 @@ const Teampage = () => {
       name: "Union Body",
       members: [
         {
+          id: "93",
+          name: " Ashish kumar",
+          designation: "Chief Coordinator",
+          linkedin:
+            "https://www.linkedin.com/in/ashish-kumar-5b0a24207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook:
+            "https://www.facebook.com/profile.php?id=100013905035630&mibextid=ZbWKwL",
+          inst: "https://www.instagram.com/ashish_45_k?igsh=MWVxMTNsMXZyNjAxag==",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/uxmzjjkgbz3elflkyhjp",
+        },
+        {
           id: "19",
           name: "Mriganga Jyoti Chutia",
           designation: "CONVENOR",
@@ -86,18 +98,7 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/cvsjl6ea2rlcwzyhoor5",
         },
-        {
-          id: "93",
-          name: " Ashish kumar",
-          designation: "Chief Coordinator",
-          linkedin:
-            "https://www.linkedin.com/in/ashish-kumar-5b0a24207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          facebook:
-            "https://www.facebook.com/profile.php?id=100013905035630&mibextid=ZbWKwL",
-          inst: "https://www.instagram.com/ashish_45_k?igsh=MWVxMTNsMXZyNjAxag==",
-          image:
-            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/uxmzjjkgbz3elflkyhjp",
-        },
+
       ],
     },
     {
@@ -137,6 +138,15 @@ const Teampage = () => {
         //     "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg",
         // },
         {
+          id: "80",
+          name: "Kavya Sharma",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/kavya-sharma-b143651ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          inst: "https://www.instagram.com/bhardwaj_",
+          facebook: "https://www.facebook.com/profile.php?id=100008131120392&mibextid=ZbWKwL",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dapglknefuhts7tckf4w"
+        },
+        {
           id: "44",
           name: "Yuvraj Singh ",
           designation: "Event management Head",
@@ -146,9 +156,27 @@ const Teampage = () => {
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lgdnb55ywripzrjekpb9"
         },
         {
+          id: "81",
+          name: "Ankit Srivastava ",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/srivastavaankit15/",
+          git: "https://github.com/Srivastavaankit15",
+          facebook: "https://www.facebook.com/ankit.srivastava.0015",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hkmakxcwgqzrtjp0kdgc"
+        },
+        {
+          id: "82",
+          name: "Ranjan Kumar Mandal",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/ranjan-kumar-mandal-0501b420b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          inst: "https://www.instagram.com/_ranjan_200?igsh=MTRhMmszMnhobGlrcg%3D%3D&utm_source=qr",
+          facebook: "https://www.facebook.com/ranjan.kumarii.90?mibextid=tPfjzR",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/wmkt6aoleebtjfxzqwh1"
+        },
+        {
           id: "2",
           name: "Shayan Debroy",
-          designation: "Web Team Head",
+          designation: "Technical Head",
           linkedin:
             "https://www.linkedin.com/in/shayan-debroy?trk=contact-info",
           facebook: "https://www.facebook.com/shayan.debroy.90",
@@ -177,6 +205,18 @@ const Teampage = () => {
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1706210758/tecnoesis/IMG_20240122_122121_2_-_Saurav_Pal_uelt1r.webp",
         },
         {
+          id: "50",
+          name: "Aniruddha Dutta",
+          designation: "Web Team Head",
+          linkedin:
+            "https://www.linkedin.com/in/aniruddha-dutta-naz/",
+          facebook:
+            "https://www.facebook.com/aniruddha.dutta.naz/",
+          git: "https://github.com/username-naz",
+          image:
+            "https://res.cloudinary.com/dhry5xscm/image/upload/v1694017416/gdsc%20seniors/team_pics/AniruddhaDutta_ipghak.webp",
+        },
+        {
           id: "5",
           name: "Truptee Vinod Undre",
           designation: "Marketing Head",
@@ -198,6 +238,16 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212700/IMG_20230102_130503_-_SYED_INTEKHAB_HUSSAIN_rxkftn.jpg",
         },
         {
+          id: "85",
+          name: "Agneesh Dasgupta",
+          designation: "Marketing Head",
+          linkedin: "https://www.linkedin.com/in/agneesh-dasgupta-81090a1bb/",
+          facebook: "https://www.facebook.com/agneesh.dasgupta/",
+          git: "https://github.com/Agneeshz",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/virwtygfm8rhhfw5ldam",
+        },
+        {
           id: "6",
           name: "Bhaskar Wary",
           designation: "UI/UX Head",
@@ -206,6 +256,16 @@ const Teampage = () => {
           inst: "https://www.behance.net/bhaskarwary",
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205317/Wary_Profile_-_Bhaskar_Wary_ijpbdt.jpg",
+        },
+        {
+          id: "84",
+          name: "ABHISHEK RAJ",
+          designation: "Content and Documentation",
+          linkedin: "https://www.linkedin.com/in/abhishekrajceoarfglobal/",
+          facebook: "",
+          inst: "",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/jijaagjfqst0wpx3dro0",
         },
         {
           id: "9",
@@ -353,6 +413,15 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/aditya.vikram.754570?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/vikram___adi?igsh=NjBmNjY1dnE0NHVt",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dqv6rmemeywxlkmaovjg"
+        },
+        {
+          id: "86",
+          name: "Dhiraj Deka",
+          designation: "Decoration team Head",
+          linkedin: "https://www.linkedin.com/in/dhiraj-deka-04a952224?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/dhiraj.deka.3538039",
+          inst: "https://www.instagram.com/dhirajdeka332?igsh=OThob3VtN3ZzZTR5",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/juisdawaa9x5vpqvkc7h"
         },
         {
           id: "46",
