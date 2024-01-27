@@ -2,6 +2,7 @@ import styles from './Registration.module.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { Footer, Navbar2 } from '../../components';
 
 const BACKEND_URL = import.meta.env.VITE_BASE_URL;
 const Card = ({ id, setMembers, name, minMember }) => {
@@ -109,6 +110,8 @@ const Registration = () => {
     }, []);
     if (localStorage.getItem("token")) {
         return (
+            <>
+            <Navbar2/>
             <div className={styles.regCont}>
                 <h1 className={styles.mainHeading}>REGISTRATION FORM</h1>
                 <div className={styles.innerCont}>
@@ -127,7 +130,7 @@ const Registration = () => {
                             <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
                             {
                                 members.map((member, index) =>
-                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
+                                <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
                                 )
                             }
 
@@ -140,6 +143,8 @@ const Registration = () => {
                 </div>
                 <div className={styles.external}><a className={styles.a} target="blank" href={external}>{external ? "EXTERNAL LINK" : null}</a></div>
             </div>
+            <Footer/>
+                        </>
         );
     }
     else {
