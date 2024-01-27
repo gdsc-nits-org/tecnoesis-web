@@ -97,7 +97,7 @@ const Module = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const [modulesData, setModulesData] = useState([]);
+  // const [modulesData, setModulesData] = useState([]);
 
 
   const getModules = async () => {
@@ -114,13 +114,13 @@ const Module = () => {
       console.error("Error fetching data:", error);
     }
   };
-  useEffect(() => {
-    getModules();
-  }, []);
+  // useEffect(() => {
+  //   getModules();
+  // }, []);
 
 
 
-  // const modulesData=data.msg; 
+  const modulesData=data.msg; 
 
   
   const handleRoute = (id) => {
@@ -390,13 +390,15 @@ const Module = () => {
               >
                 {moduleName.name}
               </Link>
-              <Lottie
-                animationData={module_page_ring_animation}
-                loop={false}
-                className={`${styles.lottieAnimation} ${
-                  showRings[index] ? "" : styles.lottieAnimation2
-                }`}
-              />{" "}
+              {isSmallScreen2===false && (
+  <Lottie
+    animationData={module_page_ring_animation}
+    loop={false}
+    className={`${styles.lottieAnimation} ${
+      showRings[index] ? "" : styles.lottieAnimation2
+    }`}
+  />
+)}
             </div>
           ))}
         </div>

@@ -194,6 +194,7 @@ top: unset;
     position: sticky;
     top: var(--navbar-height);
     right: 0;
+    padding-left: 9px;
 }
 .rightFrameBg{
   position: absolute;
