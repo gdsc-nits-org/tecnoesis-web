@@ -9,7 +9,7 @@
 }
 
 .boxContainer {
-  width: 84%;
+  width: 85%;
   font-size: 80vw;
   padding-top: 7rem;
   padding-bottom: 5rem;
@@ -74,7 +74,7 @@
   height: 5vw;
   bottom: -7vw;
   background-color: white;
-  opacity: 0.5;
+  opacity: 1;
   /* color: red; */
   
   display: flex;
@@ -115,6 +115,21 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+.toggle {
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  right: 0;
+  z-index: 20;
+  top: var(--navbar-height);
+}
 /* .rightFrameParent{
   width:20vw;
 }
@@ -123,14 +138,28 @@
 top: unset;
 } */
 .rightFrameParent{
-  height: 100%;
+  height: 100vh;
+    width: auto;
     overflow: auto;
     overflow-x: hidden;
     position: fixed;
-    position: sticky;
-    top: 0;
+    top: 25px;
     bottom: 0;
     right: 0;
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+.rightFrameParent2{
+  height: 100vh;
+    width: auto;
+    overflow: auto;
+    overflow-x: hidden;
+    position: fixed;
+    top: 25px;
+    bottom: 0;
+    right: 0;
+    transform: translateX(30vh);
+    transition: transform 0.5s;
 }
 /* for chrome*/
 .rightFrameParent::-webkit-scrollbar {
@@ -150,11 +179,11 @@ top: unset;
 }
 
 .rightFrame {
-  width: 16vw;
-    /* height: 60.9vw; */
+  /* width: 15vw; */
+    height: 84vh;
     aspect-ratio:0.328;
     margin-top: var(--navbar-height);
-    font-size: 16vw;
+    font-size: 27vh;
     background-image: url(/elements/module_page_right_frame.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -187,13 +216,11 @@ top: unset;
   top: 6.4rem;
   right: 0;
 } */
-.sticky{
-  position: fixed;
-}
+
 .moduleNamesHeading {
   font-size: 0.12em;
-  margin-top: 2.25em;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
   padding-left: 0.5em;
   line-height: 1;
   text-align: center;
@@ -204,12 +231,16 @@ top: unset;
   -webkit-text-stroke: 0.12em transparent;
 }
 .moduleName {
-  font-size: 0.08em;
+  font-size: 0.06em;
   font-family: PixeloidSans, serif;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   display: flex;
   position: relative;
+  
+  width:100%;
+  justify-content: center;
+  align-items: center;
 }
 .link:hover {
     color: yellow;
@@ -225,27 +256,27 @@ top: unset;
     transition-delay: 0.4s; */
    }
 .lottieAnimation {
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  height: 3vh;
   position: absolute;
   transform: scale(1.5);
   opacity: 1;
   z-index: 1;
-  left: 0;
+  left: 7vh;
   transition: left 0.5s, opacity 0s linear 0s;
 }
 /* transition: property duration timing-function delay|initial|inherit; */
 
 .lottieAnimation2 {
-  width: 100%;
+  /* width: 100%; */
   opacity: 0;
-  height: auto;
+  height: 3vh;
   position: absolute;
   transform: scale(1.5);
   /* translate: -20rem 0; */
   z-index: 1;
 
-  left: -8vw;
+  left: -6vh;
   transition: left 0.5s, opacity 0.25s linear 0.25s;
 }
 @media screen and (max-width: 1000px) {
@@ -292,10 +323,10 @@ display:block;
         margin-left:19%;
         aspect-ratio: 1.1;
     }
-    .rightFrame{
+    /* .rightFrame{
         display: none;
          width:0%; 
-    }
+    } */
     .modulestext{
       font-size:0.08em;
       -webkit-text-stroke: 0.2em transparent;
@@ -305,6 +336,16 @@ display:block;
       bottom: -18vw;
     font-size:2.5vh;
     }
+}
+@media screen and (min-width: 900px) {
+  .rightFrameParent{
+    top:0;
+}
+.rightFrame{
+  height: 90vh;
+  font-size: 30vh;
+}
+
 }
 @media screen and (min-width: 2500px) {
   .boxContainer{
