@@ -238,7 +238,7 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
+                          <img src={events.event.posterImage} alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
@@ -276,8 +276,10 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
+                                  {member.status === "accepted" ? (
                                     <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
-                                  </td>
+                                    ) : null}
+                                    </td>
                                 </tr>
                               ))}
                             </tbody>
@@ -296,7 +298,7 @@ export default function Dashboard() {
                   pendingEvents?.map((events) => (
                     <div key={events.event.id} className={styles.event_rect2}>
                       <div className={styles.circle}>
-                        <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
+                        <img src={events.event.posterImage} alt="" />
                       </div>
                       <div className={styles.middle}>
                         <div className={styles.event_title}>
@@ -337,7 +339,7 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div key={events.event.id} className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg" alt="" />
+                          <img src={events.event.posterImage} alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
