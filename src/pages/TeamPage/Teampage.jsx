@@ -149,7 +149,7 @@ const Teampage = () => {
         {
           id: "2",
           name: "Shayan Debroy",
-          designation: "Web Team Head",
+          designation: "Technical Head",
           linkedin:
             "https://www.linkedin.com/in/shayan-debroy?trk=contact-info",
           facebook: "https://www.facebook.com/shayan.debroy.90",
