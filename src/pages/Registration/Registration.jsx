@@ -68,7 +68,7 @@ const Registration = () => {
                 else {
                     if (response.status == 200) {
                         setError("Successfully registered!!");
-                        window.location.href = `/dashboard`;
+                        window.location.href = `/profile`;
                         toast("Successfully registered!");
                     }
                     else {

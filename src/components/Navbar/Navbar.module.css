@@ -38,7 +38,8 @@
   gap: 1.563rem;
   padding-right: 4vw;
 }
-.nav_links{
+
+.nav_links {
   margin-top: -11rem;
 }
 
@@ -101,6 +102,7 @@
   align-items: center;
   margin-bottom: 2rem;
 }
+
 .btn_signin {
   border: 1px solid var(--tecno-brown-1-100);
   color: #190958;
@@ -144,7 +146,8 @@
   text-align: center;
   align-items: center;
   list-style: none;
-
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slideInFromLeft {
@@ -165,6 +168,18 @@
   to {
     left: -100%;
   }
+}
+
+.profileUser {
+  color: var(--tecno-brown-1-100);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.userProfilecontainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav_sidebar {
@@ -190,20 +205,21 @@
 
 .nav_links {
   padding-left: 10rem;
-  gap: 2rem;
+  gap: 0.8rem;
 }
 
 
 @media (max-width: 768px) {
   .nav_links {
-    margin-top: -19rem;
-    padding-top: 5rem;
+    padding-top: 8rem;
   }
-  .nav_logo img{
+
+  .nav_logo img {
     width: 3rem;
     margin-left: 1rem;
   }
-  .close_button{
+
+  .close_button {
     width: 1.6rem;
   }
 
