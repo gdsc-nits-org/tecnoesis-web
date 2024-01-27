@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import axios from "axios";
 import { useState } from "react";
 import UserContext from "./authcontext";
@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
   const GoogleSignin = async () => {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({});
-    const result = await signInWithPopup(auth, provider);
+    const result = await signInWithRedirect(auth, provider);
     setEmail(result.user.email);
     let token = await result.user.getIdToken();
     setToken(token);
