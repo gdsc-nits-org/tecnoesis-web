@@ -57,11 +57,10 @@ function About() {
               <div className={styles.lottieContainerParent}>
                 <div className={styles.lottieContainer}>
                   <div
-                    className={`${
-                      coinbox
+                    className={`${coinbox
                         ? styles.translateLottie
                         : styles.retranslateLottie
-                    } ${styles.mb4}`}
+                      } ${styles.mb4}`}
                   >
                     <Lottie
                       animationData={aboutus_coin}
@@ -73,9 +72,8 @@ function About() {
                     <div
                       onMouseOver={handleEvent}
                       onMouseOut={handleEvent}
-                      className={`${
-                        coinbox ? styles.translate : styles.retranslate
-                      } ${styles.coinboxImage}`}
+                      className={`${coinbox ? styles.translate : styles.retranslate
+                        } ${styles.coinboxImage}`}
                     />
                   </div>
                 </div>
@@ -132,14 +130,7 @@ function About() {
 
               <div className={styles.moduletext}>MODULES</div>
               <div className={styles.eventText3}>
-                A bright future requires a bright start. NITS abides by this
-                mantra. The institute believes in equipping students with the
-                knowledge and skills in their chosen streams, inculcate values,
-                identify hidden talents, and provide opportunities for students
-                to realize their full potential. It facilitates the requisite
-                support and encouragement via various cultural and academic
-                activities to shape the body and soul. It has transformed into a
-                sought out centre of learning.
+                Tecnoesis, an awaited fiesta filled with technology and creativity finally knocks on your doors and it's time to explore. Starting from day zero till the last day, it is a colossal affair that encompasses several activities, be it building a robot or designing a bridge. It has it all. From building of robots in Robotron, learning the automobile secrets in SAE, exploring entrepreneurship in Empresario, innovation in ASME to having minds blown in MYNDSNARE, hacking races in NITS HACKS, and city exploration in SMART CITY. These are just a few and a lot more fun awaits you. Hold on to your horses and get ready for a vibrant and techy carnival.
               </div>
 
               <div className={styles.buttonContainer}>
@@ -155,8 +146,8 @@ function About() {
           <div className={styles.contentContainer3} id="gallery" >
             <div className={styles.photoContainer}>
               <div className={styles.moduletext}>PHOTO GALLERY</div>
-              
-               <HomeCarousel/>
+
+              <HomeCarousel />
 
             </div>
           </div>

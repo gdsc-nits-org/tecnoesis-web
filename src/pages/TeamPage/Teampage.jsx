@@ -63,6 +63,18 @@ const Teampage = () => {
       name: "Union Body",
       members: [
         {
+          id: "93",
+          name: " Ashish kumar",
+          designation: "Chief Coordinator",
+          linkedin:
+            "https://www.linkedin.com/in/ashish-kumar-5b0a24207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook:
+            "https://www.facebook.com/profile.php?id=100013905035630&mibextid=ZbWKwL",
+          inst: "https://www.instagram.com/ashish_45_k?igsh=MWVxMTNsMXZyNjAxag==",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/uxmzjjkgbz3elflkyhjp",
+        },
+        {
           id: "19",
           name: "Mriganga Jyoti Chutia",
           designation: "CONVENOR",
@@ -86,18 +98,7 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/cvsjl6ea2rlcwzyhoor5",
         },
-        {
-          id: "93",
-          name: " Ashish kumar",
-          designation: "Chief Coordinator",
-          linkedin:
-            "https://www.linkedin.com/in/ashish-kumar-5b0a24207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          facebook:
-            "https://www.facebook.com/profile.php?id=100013905035630&mibextid=ZbWKwL",
-          inst: "https://www.instagram.com/ashish_45_k?igsh=MWVxMTNsMXZyNjAxag==",
-          image:
-            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/uxmzjjkgbz3elflkyhjp",
-        },
+
       ],
     },
     {
@@ -148,7 +149,7 @@ const Teampage = () => {
         {
           id: "2",
           name: "Shayan Debroy",
-          designation: "Web Team Head",
+          designation: "Technical Head",
           linkedin:
             "https://www.linkedin.com/in/shayan-debroy?trk=contact-info",
           facebook: "https://www.facebook.com/shayan.debroy.90",
