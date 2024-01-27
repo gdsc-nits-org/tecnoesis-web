@@ -17,6 +17,7 @@
     width:111vw;
     position: absolute;
     z-index:-1;
+    overflow-x:hidden;
 }
 .bgImage{
     position: absolute;
