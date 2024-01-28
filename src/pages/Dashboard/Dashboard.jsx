@@ -259,7 +259,17 @@ export default function Dashboard() {
                           <div className={styles.event_team}>
                             Team Name: {events.teamName} </div> </div>
                         <div className={styles.end_div}>
-                          <p> View Team </p>
+                        <img className={styles.verify_img}
+                              src={`${
+                                events.registrationStatus ==="REGISTERED"
+                                  ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                  : events.registrationStatus ==="CANCELLED"
+                                  ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                  : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                              }`}
+                              alt="status"
+                            />
+                         <div className={styles.end_div_down}> <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
                             src={`${isExpanded[index]
@@ -267,7 +277,7 @@ export default function Dashboard() {
                                 : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
                               }`}
                             alt=""
-                          />
+                          /></div>
                         </div>
 
 
@@ -292,9 +302,9 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
                                     <img className={styles.status_img}
-                                      src={`${events.event.status === "REGISTERED"
+                                      src={`${member.registrationStatus=== "REGISTERED"
                                           ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                          : events.event.status === "REJECTED"
+                                          : member.registrationStatus=== "CANCELLED"
                                             ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
                                             : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
                                         }`}
@@ -370,7 +380,17 @@ export default function Dashboard() {
                           </div>
                         </div>
                         <div className={styles.end_div}>
-                          <p> View Team </p>
+                        <img className={styles.verify_img}
+                              src={`${
+                                events.registrationStatus ==="REGISTERED"
+                                  ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                  : events.registrationStatus ==="CANCELLED"
+                                  ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                  : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                              }`}
+                              alt="status"
+                            />
+                         <div className={styles.end_div_down}> <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
                             src={`${isExpanded[index]
@@ -378,7 +398,7 @@ export default function Dashboard() {
                                 : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
                               }`}
                             alt=""
-                          />
+                          /></div>
                         </div>
                       </div>
                       {isExpanded[index] && (
@@ -401,9 +421,9 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
                                     <img
-                                      src={`${events.event.status === "REGISTERED"
+                                      src={`${member.registrationStatus=== "REGISTERED"
                                           ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                          : events.event.status === "REJECTED"
+                                          : member.registrationStatus=== "CANCELLED"
                                             ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
                                             : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
                                         }`}
