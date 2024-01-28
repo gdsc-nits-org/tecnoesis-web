@@ -20,14 +20,10 @@ import "./App.css";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(true);
-  const [loading, setLoading] = useState(true);
   const toggleNavbar = () => {
     setShowNavbar((prev) => !prev);
   };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
     if (localStorage.getItem("user") && localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
@@ -112,7 +108,7 @@ function App() {
                 </>
               }
             />
-            <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
+            <Route path="*" element={<Error/>} />
           </Routes>
         </LoadingProvider>
       </AuthProvider>
