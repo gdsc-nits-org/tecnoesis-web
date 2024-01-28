@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import statusData from "../../assets/statusData";
 import axios from "axios";
 import LoadingContext from "../../globals/loading/loadingContext";
-import { Loading } from "../../components"
+import { Loading } from "../../components";
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -178,7 +178,11 @@ export default function Dashboard() {
           </div>
           <div className={styles.profile}>
             <div className={styles.name}>
-              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167701/contact_zncula.webp" alt="" />
+              <img
+                className={styles.profile_icons}
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167701/contact_zncula.webp"
+                alt=""
+              />
               <p className={styles.profile_text}>
                 {userData?.firstName +
                   " " +
@@ -188,11 +192,19 @@ export default function Dashboard() {
               </p>
             </div>
             <div className={styles.college}>
-              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706165592/school_black_zikpij.webp" alt="" />
+              <img
+                className={styles.profile_icons}
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706165592/school_black_zikpij.webp"
+                alt=""
+              />
               <p className={styles.profile_text}>{userData?.collegeName}</p>
             </div>
             <div className={styles.contact}>
-              <img className={styles.profile_icons} src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167925/call_black_p7gu9x.webp" alt="" />
+              <img
+                className={styles.profile_icons}
+                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706167925/call_black_p7gu9x.webp"
+                alt=""
+              />
               <p className={styles.profile_text}>
                 {"+91 " + userData?.phoneNumber}
               </p>
@@ -210,7 +222,6 @@ export default function Dashboard() {
             <Link to="/" style={{ textDecoration: "none" }}>
               <button className={styles.button1}>GO TO HOME</button>
             </Link>
-
           </div>
         </div>
         <div className={styles.right}>
@@ -222,8 +233,9 @@ export default function Dashboard() {
                 alt=""
               />
               <p>
-                {`Events ${currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
-                  }`}{" "}
+                {`Events ${
+                  currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
+                }`}{" "}
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
@@ -242,19 +254,33 @@ export default function Dashboard() {
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
-                            {events.event.name}
+                            <p>{events.event.name}</p>
+                            <img
+                              src={`${
+                                events.event.status === "REGISTERED"
+                                  ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                  : events.event.status === "REJECTED"
+                                  ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                  : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                              }`}
+                              alt="status"
+                            />
                           </div>
                           <div className={styles.event_team}>
                             Team Name: {events.teamName}
+                            <div className={styles.end_div}>
+                              <p> View Team </p>
+                              <img
+                                onClick={() => handleToggle(index)}
+                                src={`${
+                                  isExpanded[index]
+                                    ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
+                                    : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
+                                }`}
+                                alt=""
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div className={styles.end_div}>
-                          <p> View Team </p>
-                          <img
-                            onClick={() => handleToggle(index)}
-                            src={`${isExpanded[index] ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp" : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"}`}
-                            alt=""
-                          />
                         </div>
                       </div>
                       {isExpanded[index] && (
@@ -292,7 +318,6 @@ export default function Dashboard() {
                       )}
                     </div>
                   ))
-
                 ) : (
                   <p className={styles.content_text}>No registered events</p>
                 ))}
@@ -333,7 +358,6 @@ export default function Dashboard() {
                       </div>
                     </div>
                   ))
-
                 ) : (
                   <p className={styles.content_text}>No pending events</p>
                 ))}
@@ -358,8 +382,11 @@ export default function Dashboard() {
                           <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
-                            src={`${isExpanded[index] ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp" : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"}`}
-
+                            src={`${
+                              isExpanded[index]
+                                ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
+                                : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
+                            }`}
                             alt=""
                           />
                         </div>
@@ -399,7 +426,6 @@ export default function Dashboard() {
                       )}
                     </div>
                   ))
-
                 ) : (
                   <p className={styles.content_text}>No rejected events</p>
                 ))}
@@ -411,11 +437,13 @@ export default function Dashboard() {
             {" "}
             <button className={styles.button1}>GO TO HOME</button>
           </Link>
-
         </div>
       </div>
       <div className={styles.pink_shade}>
-        <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170585/Ellipse2_izkzim.svg" alt="" />
+        <img
+          src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170585/Ellipse2_izkzim.svg"
+          alt=""
+        />
       </div>
     </div>
   );

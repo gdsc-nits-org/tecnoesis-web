@@ -74,6 +74,18 @@ const Navbar2 = () => {
           <ul className={styles.nav_links}>
             {loggedin ? (
               <li className={styles.register_dock}>
+                <li>
+                  <div className={styles.userProfilecontainer}>
+                    <Link to="/profile">
+                      <img
+                        className={styles.main_img}
+                        src={user && user.imageUrl ? user.imageUrl : defaultImg}
+                        alt="pfp"
+                      />
+                    </Link>
+                    <p className={styles.profileUser}>{user.username}</p>
+                  </div>
+                </li>
                 <Link to="" onClick={handleLogout}>
                   <div className={styles.button_sign_content}>
                     <div className={styles.btn_signin} onClick={handleLogout}>
@@ -168,7 +180,7 @@ const Navbar2 = () => {
               </li>
             )}
 
-            {loggedin===1 && (
+            {loggedin === 1 && (
               <li>
                 <Link to="/profile">
                   <img
@@ -181,7 +193,10 @@ const Navbar2 = () => {
             )}
           </ul>
           <div className={styles.nav_logo}>
-            <img src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/T_of_tecno_tzmwpv.png" alt="logo" />
+            <img
+              src="https://res.cloudinary.com/dnitrnzho/image/upload/v1706279238/T_of_tecno_tzmwpv.png"
+              alt="logo"
+            />
           </div>
         </div>
       </div>
