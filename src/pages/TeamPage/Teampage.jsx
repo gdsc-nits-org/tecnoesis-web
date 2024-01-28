@@ -3,17 +3,22 @@ import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
 import toggleLeft from "/images/teamPage/toggle1.svg";
 import toggleRight from "/images/teamPage/toggleRight.svg";
-import { Footer, Navbar2 } from "../../components";
+import { Footer, Loading, Navbar2 } from "../../components";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
     const handleScroll = () => {
       // const offset = window.scrollY;
-
+      
       // // Adjust the offset
       // if (offset < 500) {
       //   setIsSticky(true);
@@ -49,6 +54,7 @@ const Teampage = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
@@ -684,6 +690,10 @@ const Teampage = () => {
   ]);
 
   const [index, setIndex] = useState(0);
+
+  if(loading){
+    return <Loading/>
+  }
 
   return (
     <>
