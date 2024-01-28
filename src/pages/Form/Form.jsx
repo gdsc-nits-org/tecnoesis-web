@@ -3,6 +3,7 @@ import styles from "./Form.module.css";
 import UserContext from "../../globals/authcontext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Footer, Navbar2 } from "../../components";
 
 const Form = () => {
   const { signup } = useContext(UserContext);
@@ -71,6 +72,8 @@ const Form = () => {
   }, [loggedin]);
 
   return (
+    <>
+    <Navbar2/> 
     <div className={styles.wrapper}>
       <form action="" className={styles.form} onSubmit={submitHandler}>
         <h1 className={styles.heading}>
@@ -85,7 +88,7 @@ const Form = () => {
               name="username"
               value={formData.username}
               onChange={changeHandler}
-            ></input>
+              ></input>
             <label className={styles.labels}>ENTER YOUR USERNAME</label>
           </div>
           <div className={styles.inputBox}>
@@ -95,7 +98,7 @@ const Form = () => {
               name="firstName"
               value={formData.firstName}
               onChange={changeHandler}
-            ></input>
+              ></input>
             <label className={styles.labels}>ENTER FIRST NAME</label>
           </div>
           <div className={styles.inputBox}>
@@ -105,7 +108,7 @@ const Form = () => {
               name="lastName"
               value={formData.lastName}
               onChange={changeHandler}
-            ></input>
+              ></input>
             <label className={styles.labels}>ENTER LAST NAME</label>
           </div>
           <div className={styles.inputBox}>
@@ -115,7 +118,7 @@ const Form = () => {
               name="collegeName"
               value={formData.collegeName}
               onChange={changeHandler}
-            ></input>
+              ></input>
             <label className={styles.labels}>ENTER COLLEGE NAME</label>
           </div>
           <div className={styles.inputBox}>
@@ -125,7 +128,7 @@ const Form = () => {
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={changeHandler}
-            ></input>
+              ></input>
             <label className={styles.labels}>ENTER PHONE NUMBER</label>
           </div>
           <p className={styles.error}>{formError.username}</p>
@@ -137,6 +140,8 @@ const Form = () => {
         </button>
       </form>
     </div>
+              <Footer/>
+              </>
   );
 };
 

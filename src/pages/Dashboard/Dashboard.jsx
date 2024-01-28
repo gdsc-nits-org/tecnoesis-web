@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import statusData from "../../assets/statusData";
 import axios from "axios";
 import LoadingContext from "../../globals/loading/loadingContext";
-import { Loading } from "../../components";
+import { Footer, Loading, Navbar2 } from "../../components"
 
 const getTeams = (teamsRegistered, status, currentUsername) => {
   const teams = teamsRegistered.filter((team) => {
@@ -170,6 +170,8 @@ export default function Dashboard() {
   }
 
   return (
+    <>
+    <Navbar2/>
     <div className={styles.container}>
       <div className={styles.texture}>
         <div className={styles.left}>
@@ -214,7 +216,7 @@ export default function Dashboard() {
                 className={styles.profile_icons}
                 src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170954/email_s_sgoqgm.webp"
                 alt=""
-              />
+                />
               <p className={styles.profile_text}>{userData?.email}</p>
             </div>
           </div>
@@ -231,7 +233,7 @@ export default function Dashboard() {
                 onClick={() => handleArrowClick("left")}
                 src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168436/Vector2_optq03.webp"
                 alt=""
-              />
+                />
               <p>
                 {`Events ${
                   currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
@@ -241,7 +243,7 @@ export default function Dashboard() {
                 onClick={() => handleArrowClick("right")}
                 src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168161/Vector1_c26co1.webp"
                 alt=""
-              />
+                />
             </div>
             <div className={styles.content}>
               {currentStatus === "registered" &&
@@ -305,10 +307,7 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    <img
-                                      src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                      alt=""
-                                    />
+                                    <img  src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
                                   </td>
                                 </tr>
                               ))}
@@ -346,7 +345,7 @@ export default function Dashboard() {
                           onClick={() => {
                             handleResponse(events.id, "REGISTERED");
                           }}
-                        >
+                          >
                           Accept
                         </button>
                         <button
@@ -354,7 +353,7 @@ export default function Dashboard() {
                           onClick={() => {
                             handleResponse(events.id, "CANCELLED");
                           }}
-                        >
+                          >
                           Reject
                         </button>
                       </div>
@@ -363,7 +362,6 @@ export default function Dashboard() {
                 ) : (
                   <p className={styles.content_text}>No pending events</p>
                 ))}
-
               {currentStatus === "rejected" &&
                 (rejectedEvents && rejectedEvents.length > 0 ? (
                   rejectedEvents?.map((events, index) => (
@@ -393,7 +391,7 @@ export default function Dashboard() {
                                 : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
                             }`}
                             alt=""
-                          />
+                            />
                         </div>
                       </div>
                       {isExpanded[index] && (
@@ -448,5 +446,7 @@ export default function Dashboard() {
         />
       </div>
     </div>
+                    <Footer/>
+                    </>
   );
 }

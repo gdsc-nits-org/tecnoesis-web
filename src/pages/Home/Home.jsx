@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Hero, Sponsors, About, Loading } from "../../components";
+import { Hero, Sponsors, About, Loading, Navbar2, Footer } from "../../components";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -16,9 +16,11 @@ const Home = () => {
   }
   return (
     <>
+      <Navbar2/>
       <Hero />
       <About />
       <Sponsors />
+      <Footer/>
     </>
   );
 };

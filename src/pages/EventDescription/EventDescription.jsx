@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import LoadingContext from "../../globals/loading/loadingContext";
 
 import UserContext from "../../globals/authcontext";
-import { Loading } from "../../components";
+import { Footer, Loading, Navbar2 } from "../../components";
 import styles from "./EventDescription.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -50,6 +50,8 @@ const EventDescription = () => {
     return <Loading />;
   }
   return (
+    <>
+    <Navbar2/>
     <div className={styles.container}>
       <div className={styles.gradient}>
         <div className={styles.robowars}>
@@ -58,7 +60,7 @@ const EventDescription = () => {
               <img
                 alt=""
                 src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp"
-              />
+                />
             </div>
           </Link>
           <div className={styles.robowars_img}> {name.toUpperCase()}</div>
@@ -79,15 +81,17 @@ const EventDescription = () => {
           </button>
         ) : (
           <button
-            className={styles.button}
-            style={{ fontSize: "1rem" }}
-            onClick={regBtn}
+          className={styles.button}
+          style={{ fontSize: "1rem" }}
+          onClick={regBtn}
           >
             Login to register
           </button>
         )}
       </div>
     </div>
+    <Footer/>
+        </>
   );
 };
 

@@ -3,6 +3,7 @@ import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
 import toggleLeft from "/images/teamPage/toggle1.svg";
 import toggleRight from "/images/teamPage/toggleRight.svg";
+import { Footer, Navbar2 } from "../../components";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -685,6 +686,8 @@ const Teampage = () => {
   const [index, setIndex] = useState(0);
 
   return (
+    <>
+    <Navbar2/>
     <div className={styles.wrapper}>
       {/* leftFrame */}
       <div className={styles.leftFrame}>
@@ -698,37 +701,37 @@ const Teampage = () => {
         <div className={styles.teamCards}>
           {teams[index].members.map((member, id) => (
             <Card
-              key={id}
-              name={member.name}
-              designation={member.designation}
-              image={member.image}
-              linkedin={member.linkedin}
-              facebook={member.facebook}
-              github={member.git}
-              inst={member.inst}
+            key={id}
+            name={member.name}
+            designation={member.designation}
+            image={member.image}
+            linkedin={member.linkedin}
+            facebook={member.facebook}
+            github={member.git}
+            inst={member.inst}
             />
-          ))}
+            ))}
         </div>
       </div>
 
       {/* rightFrame */}
       <div
         className={`${isSticky ? styles.sticky : styles.absolute} ${styles.rightFrameParent
-          }`}
+        }`}
         id="sidebar"
         style={{ translate: isSidebarVisible ? "0px" : "250px" }}
-      >
+        >
         <div className={styles.rightFrame}>
           {teams.map((TeamName, id) => (
             <div
-              key={id}
-              className={styles.teamName}
-              onClick={() => {
-                setIndex(id);
-                if (isSmallScreen) {
-                  setIsSidebarVisible(false);
-                }
-              }}
+            key={id}
+            className={styles.teamName}
+            onClick={() => {
+              setIndex(id);
+              if (isSmallScreen) {
+                setIsSidebarVisible(false);
+              }
+            }}
             >
               {TeamName.name}
             </div>
@@ -740,15 +743,17 @@ const Teampage = () => {
       <div
         className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
         onClick={hadleToggle}
-      >
+        >
         {isSmallScreen &&
           (isSidebarVisible ? (
             <img src={toggleRight} alt="img" />
-          ) : (
-            <img src={toggleLeft} alt="img" />
-          ))}
+            ) : (
+              <img src={toggleLeft} alt="img" />
+              ))}
       </div>
     </div>
+              <Footer/>
+              </>
   );
 };
 export default Teampage;
