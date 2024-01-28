@@ -290,6 +290,7 @@
   padding: 0.4rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .event_rect2 {
@@ -326,10 +327,11 @@
   justify-content: flex-start;
 }
 
-.event_title img{
+.event_title img {
   position: absolute;
   right: 5rem;
 }
+
 .event_team {
   color: #FFF;
   font-family: PixeloidSans;
@@ -346,6 +348,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  margin-left: 0.9rem;
 }
 
 .end_div p {
@@ -358,7 +364,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-left: 0.7rem;
+
   padding-right: 0.5rem;
 }
 
@@ -458,7 +464,9 @@ table {
 tr:nth-child(1) {
 
   border-bottom: 0.1rem solid #AEAEAE;
+
 }
+
 
 th {
   padding: 0.2rem 0.7rem;
@@ -516,6 +524,10 @@ td {
   justify-content: center;
   align-items: center;
 
+}
+
+.status_img {
+  padding-bottom: 0.2rem;
 }
 
 .buttons_responsive {
@@ -683,12 +695,10 @@ td {
 
   .end_div p {
     font-size: 0.6rem;
-    padding-left: 0.1rem;
+
   }
 
-  .end_div {
-    padding-right: 0.1rem;
-  }
+
 
   th {
     font-size: 0.6rem;
@@ -724,12 +734,10 @@ td {
     font-size: 0.7rem;
   }
 
-  .end_div {
-    padding-left: 0.7rem;
-  }
+
 
   .end_div p {
-    padding-left: 0.7rem;
+
     font-size: 0.8rem;
   }
 }
@@ -751,12 +759,9 @@ td {
 
   .end_div p {
     font-size: 0.6rem;
-    padding-left: 0.2rem;
   }
 
-  .end_div {
-    padding-right: 0.2rem;
-  }
+
 
 }
 
@@ -872,7 +877,7 @@ td {
   }
 
   .end_div p {
-    padding-left: 2.9rem;
+
     font-size: 2rem;
   }
 
@@ -973,5 +978,11 @@ td {
   .button4 {
     padding: 0rem 0.5rem;
     font-size: 0.8rem;
+  }
+}
+
+@media(min-width:2500px) and (max-width: 3000px) {
+  .middle {
+    width: 40%;
   }
 }

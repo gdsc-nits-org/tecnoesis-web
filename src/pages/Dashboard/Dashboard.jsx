@@ -233,9 +233,8 @@ export default function Dashboard() {
                 alt=""
               />
               <p>
-                {`Events ${
-                  currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
-                }`}{" "}
+                {`Events ${currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
+                  }`}{" "}
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
@@ -255,33 +254,23 @@ export default function Dashboard() {
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
                             <p>{events.event.name}</p>
-                            <img
-                              src={`${
-                                events.event.status === "REGISTERED"
-                                  ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                  : events.event.status === "REJECTED"
-                                  ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
-                                  : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
-                              }`}
-                              alt="status"
-                            />
+
                           </div>
                           <div className={styles.event_team}>
-                            Team Name: {events.teamName}
-                            <div className={styles.end_div}>
-                              <p> View Team </p>
-                              <img
-                                onClick={() => handleToggle(index)}
-                                src={`${
-                                  isExpanded[index]
-                                    ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
-                                    : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
-                                }`}
-                                alt=""
-                              />
-                            </div>
-                          </div>
+                            Team Name: {events.teamName} </div> </div>
+                        <div className={styles.end_div}>
+                          <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={`${isExpanded[index]
+                                ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
+                                : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
+                              }`}
+                            alt=""
+                          />
                         </div>
+
+
                       </div>
                       {isExpanded[index] && (
                         <div className={styles.expanded_content}>
@@ -302,13 +291,15 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    {member.user.registrationStatus === "accepted" ? (
-                                      <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
-                                    ) : member.user.registrationStatus === "pending" ? (
-                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg" alt="" />
-                                    ) : member.user.registrationStatus === "rejected" ? (
-                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg" alt="" />
-                                    ) : null}
+                                    <img className={styles.status_img}
+                                      src={`${events.event.status === "REGISTERED"
+                                          ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                          : events.event.status === "REJECTED"
+                                            ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                            : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                                        }`}
+                                      alt="status"
+                                    />
                                   </td>
                                 </tr>
                               ))}
@@ -382,11 +373,10 @@ export default function Dashboard() {
                           <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
-                            src={`${
-                              isExpanded[index]
+                            src={`${isExpanded[index]
                                 ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
                                 : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
-                            }`}
+                              }`}
                             alt=""
                           />
                         </div>
@@ -410,13 +400,15 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    {member.user.registrationStatus === "accepted" ? (
-                                      <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
-                                    ) : member.user.registrationStatus === "pending" ? (
-                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg" alt="" />
-                                    ) : member.user.registrationStatus === "rejected" ? (
-                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg" alt="" />
-                                    ) : null}
+                                    <img
+                                      src={`${events.event.status === "REGISTERED"
+                                          ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                          : events.event.status === "REJECTED"
+                                            ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                            : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                                        }`}
+                                      alt="status"
+                                    />
                                   </td>
                                 </tr>
                               ))}
