@@ -2,6 +2,7 @@ import styles from './Registration.module.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { Footer, Navbar2 } from '../../components';
 
 const BACKEND_URL = import.meta.env.VITE_BASE_URL;
 const Card = ({ id, setMembers, name, minMember }) => {
@@ -36,6 +37,7 @@ const Registration = () => {
     const [error, setError] = useState(null);
     const [required, setRequired] = useState(true);
     const [external, setExternal] = useState();
+    const [username, setUsername] = useState("");
     async function submitForm(e) {
         e.preventDefault();
         let filter = members.filter((item) => item != "");
@@ -68,7 +70,7 @@ const Registration = () => {
                 else {
                     if (response.status == 200) {
                         setError("Successfully registered!!");
-                        window.location.href = `/dashboard`;
+                        window.location.href = `/profile`;
                         toast("Successfully registered!");
                     }
                     else {
@@ -93,6 +95,8 @@ const Registration = () => {
         let msg = arr.maxTeamSize;
         let minSg = arr.minTeamSize;
         let external_links = arr.thirdPartyURL;
+        const user = JSON.parse(localStorage.getItem("user"));
+        setUsername(user.username);
         setmaxMember(msg);
         setminMember(minSg);
         setloadingMsg(null);
@@ -109,37 +113,42 @@ const Registration = () => {
     }, []);
     if (localStorage.getItem("token")) {
         return (
-            <div className={styles.regCont}>
-                <h1 className={styles.mainHeading}>REGISTRATION FORM</h1>
-                <div className={styles.innerCont}>
-                    <div className={styles.lottieCont}>
-                        <img className={styles.alienComp} src='https://res.cloudinary.com/dhry5xscm/image/upload/v1705322365/tecnoesis/alien-gif_lcycsq.gif' alt='alien static loading...' />
-                    </div>
-                    <form className={styles.formCont}>
-                        <div className={styles.teamNameCont}>
-                            <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1><br /><br />
-                            <h1 className={styles.teamName}>{typeofevent}</h1>
-                            <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
+            <>
+                <Navbar2 />
+                <div className={styles.regCont}>
+                    <h1 className={styles.mainHeading}>REGISTRATION FORM</h1>
+                    <div className={styles.innerCont}>
+                        <div className={styles.lottieCont}>
+                            <img className={styles.alienComp} src='https://res.cloudinary.com/dhry5xscm/image/upload/v1705322365/tecnoesis/alien-gif_lcycsq.gif' alt='alien static loading...' />
                         </div>
-                        <div className={styles.memberCont}>
-                            <h1 style={{ color: '#ffffff' }}>ADD MEMBERS</h1>
-                            <h1 style={{ color: '#ffffff' }}>{error}</h1>
-                            <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
-                            {
-                                members.map((member, index) =>
-                                    <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
-                                )
-                            }
+                        <form className={styles.formCont}>
+                            <div className={styles.teamNameCont}>
+                                <h1 className={styles.teamName}>Welcome {username} !!</h1><br /><br />
+                                <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1><br /><br />
+                                <h1 className={styles.teamName}>{typeofevent}</h1>
+                                <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
+                            </div>
+                            <div className={styles.memberCont}>
+                                <h1 style={{ color: '#ffffff' }}>ADD MEMBERS</h1>
+                                <h1 style={{ color: '#ffffff' }}>{error}</h1>
+                                <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
+                                {
+                                    members.map((member, index) =>
+                                        <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
+                                    )
+                                }
 
-                            {/* <button className={styles.addMember} onClick={addMember}>
+                                {/* <button className={styles.addMember} onClick={addMember}>
                             + Add Member
                         </button> */}
-                        </div>
-                        <div className={styles.subCont}><input type="submit" className={styles.submit} value="SUBMIT" onClick={submitForm} /></div>
-                    </form>
+                            </div>
+                            <div className={styles.subCont}><input type="submit" className={styles.submit} value="SUBMIT" onClick={submitForm} /></div>
+                        </form>
+                    </div>
+                    <div className={styles.external}><a className={styles.a} target="blank" href={external}>{external ? "EXTERNAL LINK" : null}</a></div>
                 </div>
-                <div className={styles.external}><a className={styles.a} target="blank" href={external}>{external ? "EXTERNAL LINK" : null}</a></div>
-            </div>
+                <Footer />
+            </>
         );
     }
     else {

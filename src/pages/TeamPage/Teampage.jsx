@@ -3,16 +3,22 @@ import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
 import toggleLeft from "/images/teamPage/toggle1.svg";
 import toggleRight from "/images/teamPage/toggleRight.svg";
+import { Footer, Loading, Navbar2 } from "../../components";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
     const handleScroll = () => {
       // const offset = window.scrollY;
-
+      
       // // Adjust the offset
       // if (offset < 500) {
       //   setIsSticky(true);
@@ -48,6 +54,7 @@ const Teampage = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
@@ -138,6 +145,15 @@ const Teampage = () => {
         //     "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706204894/Snapchat-662942085_-_BadBoy_Panku_cxxxau.jpg",
         // },
         {
+          id: "80",
+          name: "Kavya Sharma",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/kavya-sharma-b143651ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          inst: "https://www.instagram.com/bhardwaj_",
+          facebook: "https://www.facebook.com/profile.php?id=100008131120392&mibextid=ZbWKwL",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dapglknefuhts7tckf4w"
+        },
+        {
           id: "44",
           name: "Yuvraj Singh ",
           designation: "Event management Head",
@@ -145,6 +161,24 @@ const Teampage = () => {
           inst: "https://www.instagram.com/singhyuvraj1102/",
           facebook: "https://www.facebook.com/profile.php?id=100056971062674&mibextid=ZbWKwL",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/lgdnb55ywripzrjekpb9"
+        },
+        {
+          id: "81",
+          name: "Ankit Srivastava ",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/srivastavaankit15/",
+          git: "https://github.com/Srivastavaankit15",
+          facebook: "https://www.facebook.com/ankit.srivastava.0015",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/hkmakxcwgqzrtjp0kdgc"
+        },
+        {
+          id: "82",
+          name: "Ranjan Kumar Mandal",
+          designation: "Event management Head",
+          linkedin: "https://www.linkedin.com/in/ranjan-kumar-mandal-0501b420b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+          inst: "https://www.instagram.com/_ranjan_200?igsh=MTRhMmszMnhobGlrcg%3D%3D&utm_source=qr",
+          facebook: "https://www.facebook.com/ranjan.kumarii.90?mibextid=tPfjzR",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/wmkt6aoleebtjfxzqwh1"
         },
         {
           id: "2",
@@ -201,6 +235,16 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205163/IMG20231013164902-removebg-preview_1_-_EEB-098_Truptee_Undre_cu2uby.png",
         },
         {
+          id: "87",
+          name: "ABHISHEK RAJ",
+          designation: "Marketing Head",
+          linkedin: "https://www.linkedin.com/in/abhishekrajceoarfglobal/",
+          facebook: "",
+          inst: "",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/jijaagjfqst0wpx3dro0",
+        },
+        {
           id: "29",
           name: "Syed Intekhab Hussain",
           designation: "Marketing Head",
@@ -211,6 +255,16 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212700/IMG_20230102_130503_-_SYED_INTEKHAB_HUSSAIN_rxkftn.jpg",
         },
         {
+          id: "85",
+          name: "Agneesh Dasgupta",
+          designation: "Marketing Head",
+          linkedin: "https://www.linkedin.com/in/agneesh-dasgupta-81090a1bb/",
+          facebook: "https://www.facebook.com/agneesh.dasgupta/",
+          git: "https://github.com/Agneeshz",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/virwtygfm8rhhfw5ldam",
+        },
+        {
           id: "6",
           name: "Bhaskar Wary",
           designation: "UI/UX Head",
@@ -219,6 +273,16 @@ const Teampage = () => {
           inst: "https://www.behance.net/bhaskarwary",
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205317/Wary_Profile_-_Bhaskar_Wary_ijpbdt.jpg",
+        },
+        {
+          id: "84",
+          name: "ABHISHEK RAJ",
+          designation: "Content and Documentation Head",
+          linkedin: "https://www.linkedin.com/in/abhishekrajceoarfglobal/",
+          facebook: "",
+          inst: "",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/jijaagjfqst0wpx3dro0",
         },
         {
           id: "9",
@@ -366,6 +430,15 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/aditya.vikram.754570?mibextid=ZbWKwL",
           inst: "https://www.instagram.com/vikram___adi?igsh=NjBmNjY1dnE0NHVt",
           image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/dqv6rmemeywxlkmaovjg"
+        },
+        {
+          id: "86",
+          name: "Dhiraj Deka",
+          designation: "Decoration team Head",
+          linkedin: "https://www.linkedin.com/in/dhiraj-deka-04a952224?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          facebook: "https://www.facebook.com/dhiraj.deka.3538039",
+          inst: "https://www.instagram.com/dhirajdeka332?igsh=OThob3VtN3ZzZTR5",
+          image: "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/juisdawaa9x5vpqvkc7h"
         },
         {
           id: "46",
@@ -618,7 +691,13 @@ const Teampage = () => {
 
   const [index, setIndex] = useState(0);
 
+  if(loading){
+    return <Loading/>
+  }
+
   return (
+    <>
+    <Navbar2/>
     <div className={styles.wrapper}>
       {/* leftFrame */}
       <div className={styles.leftFrame}>
@@ -632,37 +711,37 @@ const Teampage = () => {
         <div className={styles.teamCards}>
           {teams[index].members.map((member, id) => (
             <Card
-              key={id}
-              name={member.name}
-              designation={member.designation}
-              image={member.image}
-              linkedin={member.linkedin}
-              facebook={member.facebook}
-              github={member.git}
-              inst={member.inst}
+            key={id}
+            name={member.name}
+            designation={member.designation}
+            image={member.image}
+            linkedin={member.linkedin}
+            facebook={member.facebook}
+            github={member.git}
+            inst={member.inst}
             />
-          ))}
+            ))}
         </div>
       </div>
 
       {/* rightFrame */}
       <div
         className={`${isSticky ? styles.sticky : styles.absolute} ${styles.rightFrameParent
-          }`}
+        }`}
         id="sidebar"
         style={{ translate: isSidebarVisible ? "0px" : "250px" }}
-      >
+        >
         <div className={styles.rightFrame}>
           {teams.map((TeamName, id) => (
             <div
-              key={id}
-              className={styles.teamName}
-              onClick={() => {
-                setIndex(id);
-                if (isSmallScreen) {
-                  setIsSidebarVisible(false);
-                }
-              }}
+            key={id}
+            className={styles.teamName}
+            onClick={() => {
+              setIndex(id);
+              if (isSmallScreen) {
+                setIsSidebarVisible(false);
+              }
+            }}
             >
               {TeamName.name}
             </div>
@@ -674,15 +753,17 @@ const Teampage = () => {
       <div
         className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
         onClick={hadleToggle}
-      >
+        >
         {isSmallScreen &&
           (isSidebarVisible ? (
             <img src={toggleRight} alt="img" />
-          ) : (
-            <img src={toggleLeft} alt="img" />
-          ))}
+            ) : (
+              <img src={toggleLeft} alt="img" />
+              ))}
       </div>
     </div>
+              <Footer/>
+              </>
   );
 };
 export default Teampage;

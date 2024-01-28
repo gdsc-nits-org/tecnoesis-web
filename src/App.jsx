@@ -19,16 +19,11 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-
   const [showNavbar, setShowNavbar] = useState(true);
-  const [loading, setLoading] = useState(true);
   const toggleNavbar = () => {
     setShowNavbar((prev) => !prev);
   };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
     if (localStorage.getItem("user") && localStorage.getItem("token")) {
       localStorage.setItem("loggedin", 1);
     } else {
@@ -60,9 +55,7 @@ function App() {
               path="/"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <Home />
-                  <Footer />
                 </>
               }
             />
@@ -70,9 +63,7 @@ function App() {
               path="/modules"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <ModulePage />
-                  <Footer />
                 </>
               }
             />
@@ -80,9 +71,7 @@ function App() {
               path="/profile"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <Dashboard />
-                  <Footer />
                 </>
               }
             />
@@ -91,9 +80,7 @@ function App() {
               path="/signup"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <Form />
-                  <Footer />
                 </>
               }
             />
@@ -101,9 +88,7 @@ function App() {
               path="/event/:id"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <EventDescription />
-                  <Footer />
                 </>
               }
             />
@@ -111,9 +96,7 @@ function App() {
               path="/event/:id/registration"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <Registration />
-                  <Footer />
                 </>
               }
             />
@@ -121,13 +104,11 @@ function App() {
               path="/team"
               element={
                 <>
-                  {showNavbar && <Navbar2 />}
                   <TeamPage />
-                  <Footer />
                 </>
               }
             />
-            <Route path="*" element={<Error toggleNavbar={toggleNavbar} />} />
+            <Route path="*" element={<Error/>} />
           </Routes>
         </LoadingProvider>
       </AuthProvider>

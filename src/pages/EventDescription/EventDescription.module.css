@@ -30,6 +30,24 @@
   background-attachment: fixed;
 }
 
+.externalLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+  .link {
+    background: linear-gradient(180deg, #FF003D 0%, #FCFDFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: PixeloidSans;
+  }
+}
+
 .robowars {
   flex: 2;
   justify-content: center;
@@ -177,6 +195,7 @@
 
   .description {
     width: 90%;
+    font-size: 0.8rem;
   }
 
   .text {
