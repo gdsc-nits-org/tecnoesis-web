@@ -16,6 +16,8 @@ import Loading from "../Loading/Loading";
 import { Link as NavigateLink } from "react-router-dom";
 import data from "./data.json";
 import { useNavigate } from "react-router-dom";
+import Navbar2 from "../Navbar/Navbar2";
+import Footer from "../Footer/Footer";
 
 const Module = () => {
 
@@ -265,6 +267,7 @@ const Module = () => {
     //   </div>
     // </>
     <>
+    <Navbar2/>
     <div className={styles.boxContainerParent}>
       <div className={styles.boxContainer}>
         {modulesData.map((moduleName, index) => (
@@ -404,6 +407,7 @@ const Module = () => {
         </div>
       </div>)}
     </div>
+  <Footer/>
   </>
   );
 }

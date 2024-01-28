@@ -2,10 +2,7 @@ import styles from "./Error.module.css";
 import { Link } from "react-router-dom";
 
 
-const Error = ({ hideNavbar }) => {
-  if (hideNavbar) {
-    hideNavbar();
-  }
+const Error = () => {
   return (
     <div className={styles.error_container}>
       <div className={styles.err_txt}>

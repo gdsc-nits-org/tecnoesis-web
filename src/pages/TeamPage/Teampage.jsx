@@ -3,16 +3,22 @@ import styles from "./Teampage.module.css";
 import { Card } from "../../components/Team/Card";
 import toggleLeft from "/images/teamPage/toggle1.svg";
 import toggleRight from "/images/teamPage/toggleRight.svg";
+import { Footer, Loading, Navbar2 } from "../../components";
 
 const Teampage = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
     const handleScroll = () => {
       // const offset = window.scrollY;
-
+      
       // // Adjust the offset
       // if (offset < 500) {
       //   setIsSticky(true);
@@ -48,6 +54,7 @@ const Teampage = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
@@ -684,7 +691,13 @@ const Teampage = () => {
 
   const [index, setIndex] = useState(0);
 
+  if(loading){
+    return <Loading/>
+  }
+
   return (
+    <>
+    <Navbar2/>
     <div className={styles.wrapper}>
       {/* leftFrame */}
       <div className={styles.leftFrame}>
@@ -698,37 +711,37 @@ const Teampage = () => {
         <div className={styles.teamCards}>
           {teams[index].members.map((member, id) => (
             <Card
-              key={id}
-              name={member.name}
-              designation={member.designation}
-              image={member.image}
-              linkedin={member.linkedin}
-              facebook={member.facebook}
-              github={member.git}
-              inst={member.inst}
+            key={id}
+            name={member.name}
+            designation={member.designation}
+            image={member.image}
+            linkedin={member.linkedin}
+            facebook={member.facebook}
+            github={member.git}
+            inst={member.inst}
             />
-          ))}
+            ))}
         </div>
       </div>
 
       {/* rightFrame */}
       <div
         className={`${isSticky ? styles.sticky : styles.absolute} ${styles.rightFrameParent
-          }`}
+        }`}
         id="sidebar"
         style={{ translate: isSidebarVisible ? "0px" : "250px" }}
-      >
+        >
         <div className={styles.rightFrame}>
           {teams.map((TeamName, id) => (
             <div
-              key={id}
-              className={styles.teamName}
-              onClick={() => {
-                setIndex(id);
-                if (isSmallScreen) {
-                  setIsSidebarVisible(false);
-                }
-              }}
+            key={id}
+            className={styles.teamName}
+            onClick={() => {
+              setIndex(id);
+              if (isSmallScreen) {
+                setIsSidebarVisible(false);
+              }
+            }}
             >
               {TeamName.name}
             </div>
@@ -740,15 +753,17 @@ const Teampage = () => {
       <div
         className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
         onClick={hadleToggle}
-      >
+        >
         {isSmallScreen &&
           (isSidebarVisible ? (
             <img src={toggleRight} alt="img" />
-          ) : (
-            <img src={toggleLeft} alt="img" />
-          ))}
+            ) : (
+              <img src={toggleLeft} alt="img" />
+              ))}
       </div>
     </div>
+              <Footer/>
+              </>
   );
 };
 export default Teampage;
