@@ -276,10 +276,14 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                  {member.status === "accepted" ? (
-                                    <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
+                                    {member.user.registrationStatus === "accepted" ? (
+                                      <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
+                                    ) : member.user.registrationStatus === "pending" ? (
+                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg" alt="" />
+                                    ) : member.user.registrationStatus === "rejected" ? (
+                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg" alt="" />
                                     ) : null}
-                                    </td>
+                                  </td>
                                 </tr>
                               ))}
                             </tbody>
@@ -307,6 +311,7 @@ export default function Dashboard() {
                         <div className={styles.event_team}>
                           Team Name: {events.teamName}
                         </div>
+
                       </div>
                       <div className={styles.end_div2}>
                         <button
@@ -378,7 +383,13 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
+                                    {member.user.registrationStatus === "accepted" ? (
+                                      <img src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
+                                    ) : member.user.registrationStatus === "pending" ? (
+                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg" alt="" />
+                                    ) : member.user.registrationStatus === "rejected" ? (
+                                      <img src="https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg" alt="" />
+                                    ) : null}
                                   </td>
                                 </tr>
                               ))}

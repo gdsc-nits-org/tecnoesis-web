@@ -204,6 +204,7 @@
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(18, 17, 17, 0.47) rgba(18, 17, 17, 0.47);
+
   &::-webkit-scrollbar {
     width: 0.4rem;
   }
@@ -300,13 +301,15 @@
   padding: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .middle {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
+  width: 40%;
 }
 
 .event_title {
@@ -318,6 +321,8 @@
   font-weight: 700;
   line-height: normal;
   padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .event_team {
@@ -327,7 +332,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
+  flex-wrap: wrap;
+  white-space: normal;
 }
 
 
@@ -357,14 +363,30 @@
   cursor: pointer;
 }
 
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
 .end_div2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
-  padding-left: 3.9rem;
-  padding-right: 1rem;
+
+  position: absolute;
+  right: 0;
+  top: 20%;
+  margin-right: 0.8rem;
+  margin-left: 0.9rem;
+
 }
+
+
+
+
 
 .button3 {
   border: 1.5px solid #24FF00;
@@ -776,6 +798,15 @@ td {
 
   }
 
+  .middle {
+    width: 60%;
+  }
+
+  .button3,
+  .button4 {
+    font-size: 1.3rem;
+  }
+
   .address,
   .name,
   .college,
@@ -850,9 +881,7 @@ td {
     font-size: 2rem;
   }
 
-  .end_div2 {
-    padding-left: 6rem;
-  }
+
 
   .end_div img {
     width: 1.4rem;
@@ -868,17 +897,9 @@ td {
   }
 }
 
-@media(max-width:410px) {
-  .end_div2 {
-    padding-left: 1rem;
-  }
-}
 
-@media(min-width:768px)and (max-width:1045px) {
-  .end_div2 {
-    padding-left: 1rem;
-  }
-}
+
+
 
 @media(max-width:350px) {
   .main_img {
@@ -921,5 +942,33 @@ td {
   .content_text {
     padding-top: 30%;
     font-size: 1.4rem;
+  }
+}
+
+@media(max-width:375px) {
+  .button4 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .button3 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .end_div2 {
+    margin-right: 0.6rem;
+  }
+}
+
+@media(min-width:769px) and (max-width: 830px) {
+  .button3 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .button4 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
   }
 }
