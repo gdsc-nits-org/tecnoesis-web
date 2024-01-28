@@ -228,6 +228,16 @@ const Teampage = () => {
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205163/IMG20231013164902-removebg-preview_1_-_EEB-098_Truptee_Undre_cu2uby.png",
         },
         {
+          id: "87",
+          name: "ABHISHEK RAJ",
+          designation: "Marketing Head",
+          linkedin: "https://www.linkedin.com/in/abhishekrajceoarfglobal/",
+          facebook: "",
+          inst: "",
+          image:
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/jijaagjfqst0wpx3dro0",
+        },
+        {
           id: "29",
           name: "Syed Intekhab Hussain",
           designation: "Marketing Head",
@@ -260,7 +270,7 @@ const Teampage = () => {
         {
           id: "84",
           name: "ABHISHEK RAJ",
-          designation: "Content and Documentation",
+          designation: "Content and Documentation Head",
           linkedin: "https://www.linkedin.com/in/abhishekrajceoarfglobal/",
           facebook: "",
           inst: "",
