@@ -204,6 +204,7 @@
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(18, 17, 17, 0.47) rgba(18, 17, 17, 0.47);
+
   &::-webkit-scrollbar {
     width: 0.4rem;
   }
@@ -289,6 +290,7 @@
   padding: 0.4rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .event_rect2 {
@@ -300,13 +302,15 @@
   padding: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .middle {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
+  width: 40%;
 }
 
 .event_title {
@@ -319,12 +323,15 @@
   font-weight: 700;
   line-height: normal;
   padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.event_title img{
+.event_title img {
   position: absolute;
   right: 5rem;
 }
+
 .event_team {
   color: #FFF;
   font-family: PixeloidSans;
@@ -332,16 +339,31 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  display: flex;
-
+  flex-wrap: wrap;
+  white-space: normal;
 }
 
 
 .end_div {
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  /* top: 20%; */
+  margin-left: 0.9rem;
+}
+.verify_img{
+  margin-left: 4.5rem;
+  padding-bottom: 0.8rem;
+}
+.end_div_down{
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
+
 
 .end_div p {
   color: #FFF;
@@ -353,7 +375,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-left: 0.7rem;
+
   padding-right: 0.5rem;
 }
 
@@ -361,14 +383,30 @@
   cursor: pointer;
 }
 
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
 .end_div2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
-  padding-left: 3.9rem;
-  padding-right: 1rem;
+
+  position: absolute;
+  right: 0;
+  top: 20%;
+  margin-right: 0.8rem;
+  margin-left: 0.9rem;
+
 }
+
+
+
+
 
 .button3 {
   border: 1.5px solid #24FF00;
@@ -437,7 +475,9 @@ table {
 tr:nth-child(1) {
 
   border-bottom: 0.1rem solid #AEAEAE;
+
 }
+
 
 th {
   padding: 0.2rem 0.7rem;
@@ -495,6 +535,10 @@ td {
   justify-content: center;
   align-items: center;
 
+}
+
+.status_img {
+  padding-bottom: 0.2rem;
 }
 
 .buttons_responsive {
@@ -662,12 +706,10 @@ td {
 
   .end_div p {
     font-size: 0.6rem;
-    padding-left: 0.1rem;
+
   }
 
-  .end_div {
-    padding-right: 0.1rem;
-  }
+
 
   th {
     font-size: 0.6rem;
@@ -703,12 +745,10 @@ td {
     font-size: 0.7rem;
   }
 
-  .end_div {
-    padding-left: 0.7rem;
-  }
+
 
   .end_div p {
-    padding-left: 0.7rem;
+
     font-size: 0.8rem;
   }
 }
@@ -730,12 +770,9 @@ td {
 
   .end_div p {
     font-size: 0.6rem;
-    padding-left: 0.2rem;
   }
 
-  .end_div {
-    padding-right: 0.2rem;
-  }
+
 
 }
 
@@ -778,6 +815,13 @@ td {
   .profile {
     padding-top: 1.5rem;
 
+  }
+
+  
+
+  .button3,
+  .button4 {
+    font-size: 1.3rem;
   }
 
   .address,
@@ -842,7 +886,7 @@ td {
   }
 
   .end_div p {
-    padding-left: 2.9rem;
+
     font-size: 2rem;
   }
 
@@ -854,9 +898,7 @@ td {
     font-size: 2rem;
   }
 
-  .end_div2 {
-    padding-left: 6rem;
-  }
+
 
   .end_div img {
     width: 1.4rem;
@@ -872,17 +914,9 @@ td {
   }
 }
 
-@media(max-width:410px) {
-  .end_div2 {
-    padding-left: 1rem;
-  }
-}
 
-@media(min-width:768px)and (max-width:1045px) {
-  .end_div2 {
-    padding-left: 1rem;
-  }
-}
+
+
 
 @media(max-width:350px) {
   .main_img {
@@ -926,4 +960,54 @@ td {
     padding-top: 30%;
     font-size: 1.4rem;
   }
+}
+
+@media(max-width:375px) {
+  .button4 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .button3 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .end_div2 {
+    margin-right: 0.6rem;
+  }
+}
+
+@media(min-width:769px) and (max-width: 830px) {
+  .button3 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .button4 {
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media(min-width:2500px) and (max-width: 3000px) {
+  .middle {
+    width: 40%;
+  }
+}
+@media(min-width:2500px){
+  .middle {
+    width: 40%;
+  }
+  .end_div{
+    top: 20%;
+  }
+  
+  .verify_img{
+    padding-left: 0.1rem;
+    padding-bottom: 3rem;
+    margin-left: 10rem;
+  }
+ 
+  
 }

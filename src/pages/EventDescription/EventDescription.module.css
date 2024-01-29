@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 5rem;  
   min-height: 100vh;
 }
 
@@ -28,6 +28,8 @@
   height: 100%;
   width: 100%;
   background-attachment: fixed;
+  
+
 }
 
 .externalLink {
