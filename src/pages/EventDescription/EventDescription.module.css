@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;  
+  padding-top: 5rem;
   min-height: 100vh;
 }
 
@@ -28,7 +28,7 @@
   height: 100%;
   width: 100%;
   background-attachment: fixed;
-  
+
 
 }
 
@@ -178,7 +178,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .center {
     display: flex;
     flex-direction: column-reverse;
@@ -197,12 +197,13 @@
 
   .description {
     width: 90%;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .text {
     text-align: center;
     padding-left: 0;
+    line-height: 2rem;
   }
 }
 

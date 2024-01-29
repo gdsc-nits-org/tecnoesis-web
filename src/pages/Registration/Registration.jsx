@@ -123,15 +123,17 @@ const Registration = () => {
                         </div>
                         <form className={styles.formCont}>
                             <div className={styles.teamNameCont}>
-                                <h1 className={styles.teamName}>Welcome {username} !!</h1><br /><br />
                                 <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1><br /><br />
                                 <h1 className={styles.teamName}>{typeofevent}</h1>
                                 <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
                             </div>
                             <div className={styles.memberCont}>
                                 <h1 style={{ color: '#ffffff' }}>ADD MEMBERS</h1>
+                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>Except the team leader</h1>
+                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>In case of solo participation, just keep the members fields blank and submit.</h1>
                                 <h1 style={{ color: '#ffffff' }}>{error}</h1>
                                 <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
+                                <h1 className={styles.teamName}>Team leader: {username}</h1>
                                 {
                                     members.map((member, index) =>
                                         <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
