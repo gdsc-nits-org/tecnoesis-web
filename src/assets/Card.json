@@ -2,12 +2,12 @@
   {
     "id": 1,
     "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105904/tecnoesis/coca_cola_logo_lxd1po.png",
-    "url":""
+    "url":"https://www.coca-cola.com/in/en"
   },
   {
     "id": 2,
     "company": "https://res.cloudinary.com/dhry5xscm/image/upload/v1706105864/tecnoesis/amul_logo_vnwfww.png",
-    "url":""
+    "url":"https://amul.com/index.php"
   },
   {
     "id": 3,
@@ -17,7 +17,7 @@
   {
     "id": 4,
     "company": "http://res.cloudinary.com/doqtoi4nw/image/upload/v1706126418/tecnoesis/xqwjtxegynl87d96egcm.png",
-    "url":""
+    "url":"https://edtimes.in"
   }
   
 ]
