@@ -235,9 +235,8 @@ export default function Dashboard() {
                 alt=""
                 />
               <p>
-                {`Events ${
-                  currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
-                }`}{" "}
+                {`Events ${currentStatus.charAt(0).toUpperCase() + currentStatus.slice(1)
+                  }`}{" "}
               </p>
               <img
                 onClick={() => handleArrowClick("right")}
@@ -252,41 +251,38 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img
-                            src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg"
-                            alt=""
-                          />
+                          <img src={events.event.posterImage} alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
                             <p>{events.event.name}</p>
-                            <img
+
+                          </div>
+                          <div className={styles.event_team}>
+                            Team Name: {events.teamName} </div> </div>
+                        <div className={styles.end_div}>
+                        <img className={styles.verify_img}
                               src={`${
-                                events.event.status === "REGISTERED"
+                                events.registrationStatus ==="REGISTERED"
                                   ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                  : events.event.status === "REJECTED"
+                                  : events.registrationStatus ==="CANCELLED"
                                   ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
                                   : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
                               }`}
                               alt="status"
                             />
-                          </div>
-                          <div className={styles.event_team}>
-                            Team Name: {events.teamName}
-                            <div className={styles.end_div}>
-                              <p> View Team </p>
-                              <img
-                                onClick={() => handleToggle(index)}
-                                src={`${
-                                  isExpanded[index]
-                                    ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
-                                    : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
-                                }`}
-                                alt=""
-                              />
-                            </div>
-                          </div>
+                         <div className={styles.end_div_down}> <p> View Team </p>
+                          <img
+                            onClick={() => handleToggle(index)}
+                            src={`${isExpanded[index]
+                                ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
+                                : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
+                              }`}
+                            alt=""
+                          /></div>
                         </div>
+
+
                       </div>
                       {isExpanded[index] && (
                         <div className={styles.expanded_content}>
@@ -307,7 +303,15 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.firstName)}</td>
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
-                                    <img  src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp" alt="" />
+                                    <img className={styles.status_img}
+                                      src={`${member.registrationStatus=== "REGISTERED"
+                                          ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                          : member.registrationStatus=== "CANCELLED"
+                                            ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                            : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                                        }`}
+                                      alt="status"
+                                    />
                                   </td>
                                 </tr>
                               ))}
@@ -326,10 +330,7 @@ export default function Dashboard() {
                   pendingEvents?.map((events) => (
                     <div key={events.event.id} className={styles.event_rect2}>
                       <div className={styles.circle}>
-                        <img
-                          src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg"
-                          alt=""
-                        />
+                        <img src={events.event.posterImage} alt="" />
                       </div>
                       <div className={styles.middle}>
                         <div className={styles.event_title}>
@@ -338,6 +339,7 @@ export default function Dashboard() {
                         <div className={styles.event_team}>
                           Team Name: {events.teamName}
                         </div>
+
                       </div>
                       <div className={styles.end_div2}>
                         <button
@@ -368,10 +370,7 @@ export default function Dashboard() {
                     <div key={events.event.id} className={styles.repeating_box}>
                       <div key={events.event.id} className={styles.event_rect}>
                         <div className={styles.circle}>
-                          <img
-                            src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706168759/Ellipse_2169_qy5pou.svg"
-                            alt=""
-                          />
+                          <img src={events.event.posterImage} alt="" />
                         </div>
                         <div className={styles.middle}>
                           <div className={styles.event_title}>
@@ -382,16 +381,25 @@ export default function Dashboard() {
                           </div>
                         </div>
                         <div className={styles.end_div}>
-                          <p> View Team </p>
+                        <img className={styles.verify_img}
+                              src={`${
+                                events.registrationStatus ==="REGISTERED"
+                                  ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                  : events.registrationStatus ==="CANCELLED"
+                                  ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                  : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                              }`}
+                              alt="status"
+                            />
+                         <div className={styles.end_div_down}> <p> View Team </p>
                           <img
                             onClick={() => handleToggle(index)}
-                            src={`${
-                              isExpanded[index]
+                            src={`${isExpanded[index]
                                 ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706170146/Vector3_t07tw8.webp"
                                 : "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706169323/Vector_zxvxqu.svg"
-                            }`}
+                              }`}
                             alt=""
-                            />
+                          /></div>
                         </div>
                       </div>
                       {isExpanded[index] && (
@@ -414,8 +422,13 @@ export default function Dashboard() {
                                   <td>{trimText(member.user.username)}</td>
                                   <td>
                                     <img
-                                      src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
-                                      alt=""
+                                      src={`${member.registrationStatus=== "REGISTERED"
+                                          ? "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706171072/Vector4_sxxqxh.webp"
+                                          : member.registrationStatus=== "CANCELLED"
+                                            ? "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/fail_qjvtea.svg"
+                                            : "https://res.cloudinary.com/dz2mlxltd/image/upload/v1706368700/pending_vkje50.svg"
+                                        }`}
+                                      alt="status"
                                     />
                                   </td>
                                 </tr>
