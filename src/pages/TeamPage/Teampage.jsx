@@ -224,15 +224,14 @@ const Teampage = () => {
             "https://res.cloudinary.com/dhry5xscm/image/upload/v1694017416/gdsc%20seniors/team_pics/AniruddhaDutta_ipghak.webp",
         },
         {
-          id: "5",
-          name: "Truptee Vinod Undre",
+          id: "85",
+          name: "Agneesh Dasgupta",
           designation: "Marketing Head",
-          linkedin:
-            "https://www.linkedin.com/in/truptee-vinod-undre-9847b1187/",
-          facebook: "https://www.facebook.com/truptee.undre?mibextid=ZbWKwL",
-          inst: "https://www.instagram.com/_truptee__/",
+          linkedin: "https://www.linkedin.com/in/agneesh-dasgupta-81090a1bb/",
+          facebook: "https://www.facebook.com/agneesh.dasgupta/",
+          git: "https://github.com/Agneeshz",
           image:
-            "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205163/IMG20231013164902-removebg-preview_1_-_EEB-098_Truptee_Undre_cu2uby.png",
+            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/virwtygfm8rhhfw5ldam",
         },
         {
           id: "87",
@@ -245,6 +244,17 @@ const Teampage = () => {
             "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/jijaagjfqst0wpx3dro0",
         },
         {
+          id: "5",
+          name: "Truptee Vinod Undre",
+          designation: "Marketing Head",
+          linkedin:
+            "https://www.linkedin.com/in/truptee-vinod-undre-9847b1187/",
+          facebook: "https://www.facebook.com/truptee.undre?mibextid=ZbWKwL",
+          inst: "https://www.instagram.com/_truptee__/",
+          image:
+            "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706205163/IMG20231013164902-removebg-preview_1_-_EEB-098_Truptee_Undre_cu2uby.png",
+        },
+        {
           id: "29",
           name: "Syed Intekhab Hussain",
           designation: "Marketing Head",
@@ -253,16 +263,6 @@ const Teampage = () => {
           inst: "https://www.instagram.com/inte_khaab_/",
           image:
             "https://res.cloudinary.com/dfa0k8sry/image/upload/v1706212700/IMG_20230102_130503_-_SYED_INTEKHAB_HUSSAIN_rxkftn.jpg",
-        },
-        {
-          id: "85",
-          name: "Agneesh Dasgupta",
-          designation: "Marketing Head",
-          linkedin: "https://www.linkedin.com/in/agneesh-dasgupta-81090a1bb/",
-          facebook: "https://www.facebook.com/agneesh.dasgupta/",
-          git: "https://github.com/Agneeshz",
-          image:
-            "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/virwtygfm8rhhfw5ldam",
         },
         {
           id: "6",
