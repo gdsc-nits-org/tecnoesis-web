@@ -16,6 +16,9 @@ const EventDescription = () => {
   const [moduleName, setModuleName] = useState("");
   const [description, setDescription] = useState("");
   const [posterImage, setPosterImage] = useState("");
+  const [external, setExternal] = useState(null);
+  const [maxMember, setmaxMember] = useState(null);
+  const [minMember, setminMember] = useState(null);
   const { setloggedin } = useContext(UserContext);
   const { token } = useContext(UserContext);
   const getEvent = async () => {
@@ -31,6 +34,9 @@ const EventDescription = () => {
       setModuleName(msg.module.name);
       setDescription(msg.description);
       setPosterImage(msg.posterImage);
+      setExternal(`${msg.thirdPartyURL}`);
+      setmaxMember(msg.maxTeamSize);
+      setminMember(msg.minTeamSize);
       setIsLoading(false);
     }
   };
@@ -51,47 +57,57 @@ const EventDescription = () => {
   }
   return (
     <>
-    <Navbar2/>
-    <div className={styles.container}>
-      <div className={styles.gradient}>
-        <div className={styles.robowars}>
-          <Link to="/modules">
-            <div className={styles.backIcon}>
-              <img
-                alt=""
-                src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp"
+      <Navbar2 />
+      <div className={styles.container}>
+        <div className={styles.gradient}>
+          <div className={styles.robowars}>
+            <Link to="/modules">
+              <div className={styles.backIcon}>
+                <img
+                  alt=""
+                  src="https://res.cloudinary.com/dfa0k8sry/image/upload/v1706177113/backIcon_mnk3xs.webp"
                 />
-            </div>
-          </Link>
-          <div className={styles.robowars_img}> {name.toUpperCase()}</div>
-        </div>
+              </div>
+            </Link>
+            <div className={styles.robowars_img}> {name.toUpperCase()}</div>
+          </div>
 
-        <div className={styles.moduleWrapper}>Module : {moduleName}</div>
-        <div className={styles.center}>
-          <div className={styles.description}>
-            <p className={styles.text}>{description}</p>
+          <div className={styles.moduleWrapper}>Module : {moduleName}</div>
+          <div className={styles.externalLink}>
+            {
+              minMember !== maxMember ?
+                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size:{minMember}-{maxMember}</h1> :
+                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size: {minMember} member(s)</h1>
+            }
           </div>
-          <div className={styles.center_img}>
-            <img alt="robologo_demo.png" src={posterImage} />
+          <div className={styles.center}>
+            <div className={styles.description}>
+              <p className={styles.text}>{description}</p>
+            </div>
+            <div className={styles.center_img}>
+              <img alt="robologo_demo.png" src={posterImage} />
+            </div>
+          </div>
+          {localStorage.getItem("token") ? (
+            <button className={styles.button} onClick={regBtn}>
+              Register
+            </button>
+          ) : (
+            <button
+              className={styles.button}
+              style={{ fontSize: "1rem" }}
+              onClick={regBtn}
+            >
+              Login to register
+            </button>
+          )}
+          <div className={styles.externalLink}>
+            <a className={styles.link} target="blank" href={external}>EXTERNAL LINK</a>
           </div>
         </div>
-        {localStorage.getItem("token") ? (
-          <button className={styles.button} onClick={regBtn}>
-            Register
-          </button>
-        ) : (
-          <button
-          className={styles.button}
-          style={{ fontSize: "1rem" }}
-          onClick={regBtn}
-          >
-            Login to register
-          </button>
-        )}
       </div>
-    </div>
-    <Footer/>
-        </>
+      <Footer />
+    </>
   );
 };
 
