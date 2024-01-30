@@ -74,7 +74,11 @@ const EventDescription = () => {
 
           <div className={styles.moduleWrapper}>Module : {moduleName}</div>
           <div className={styles.externalLink}>
-            <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size:{minMember}-{maxMember}</h1>
+            {
+              minMember !== maxMember ?
+                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size:{minMember}-{maxMember}</h1> :
+                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size: {minMember} member(s)</h1>
+            }
           </div>
           <div className={styles.center}>
             <div className={styles.description}>

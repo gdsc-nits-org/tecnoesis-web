@@ -19,7 +19,7 @@ const Card = ({ id, setMembers, name, minMember }) => {
                 <div className={styles.leftPortion}>
                     <h1 className={styles.memberName}>USERNAME</h1>
                     <div className={styles.memberInfo}>
-                        <input type="text" placeholder={`${id < minMember - 1 ? `Member username ${id + 1} (required)` : `Member username ${id + 1}`}`} value={name} onChange={handleChange} className={styles.memberInput} required={id < minMember - 1} />
+                        <input type="text" placeholder={`${id < minMember - 1 ? `Member username ${id + 1} *` : `Member username ${id + 1}`}`} value={name} onChange={handleChange} className={styles.memberInput} required={id < minMember - 1} />
                     </div>
                 </div>
             </div>
@@ -123,17 +123,19 @@ const Registration = () => {
                         </div>
                         <form className={styles.formCont}>
                             <div className={styles.teamNameCont}>
-                                <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1><br /><br />
+                                {minMember !== maxMember ? <h1 className={styles.teamName}>Team Size: {minMember}-{maxMember} Members</h1> : <h1 className={styles.teamName}>Team Size: {maxMember} member(s)</h1>}<br /><br />
+
                                 <h1 className={styles.teamName}>{typeofevent}</h1>
                                 <input type="text" className={styles.teamField} value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder={`${typeofevent === 'TEAM NAME' ? 'Enter your team name here...' : 'Enter your name here'}`} />
+
                             </div>
                             <div className={styles.memberCont}>
-                                <h1 style={{ color: '#ffffff' }}>ADD MEMBERS</h1>
-                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>Except the team leader</h1>
-                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>In case of solo participation, just keep the members fields blank and submit.</h1>
+                                <h1 className={styles.teamName}>{typeofevent === 'TEAM NAME' ? <>Team leader</> : <>Register as</>}: {username}</h1>
+                                <h1 style={{ color: '#ffffff' }}>{typeofevent === 'TEAM NAME' ? <>ADD MEMBERS</> : null}</h1>
+                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>{typeofevent === 'TEAM NAME' ? <>Except the team leader</> : null}</h1>
+                                <h1 style={{ color: '#ffffff', fontSize: "1rem" }}>{typeofevent === 'TEAM NAME' ? <>In case of solo participation, just keep the members fields blank and submit.</> : <>Click on the submit button to register yourself</>}</h1>
                                 <h1 style={{ color: '#ffffff' }}>{error}</h1>
                                 <h1 style={{ color: '#ffffff' }}>{loadingMsg}</h1>
-                                <h1 className={styles.teamName}>Team leader: {username}</h1>
                                 {
                                     members.map((member, index) =>
                                         <Card key={index} BACKEND_URL={BACKEND_URL} id={index} name={member} minMember={minMember} setMembers={setMembers} />
@@ -146,9 +148,9 @@ const Registration = () => {
                             </div>
                             <div className={styles.subCont}><input type="submit" className={styles.submit} value="SUBMIT" onClick={submitForm} /></div>
                         </form>
-                    </div>
+                    </div >
                     <div className={styles.external}><a className={styles.a} target="blank" href={external}>{external ? "EXTERNAL LINK" : null}</a></div>
-                </div>
+                </div >
                 <Footer />
             </>
         );

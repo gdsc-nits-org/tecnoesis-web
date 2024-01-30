@@ -182,7 +182,7 @@ export default function Dashboard() {
               <img className={styles.main_img} src={userData?.imageUrl} alt="" />
             </div>
             <div className={styles.profile}>
-              <p className={styles.profile_text} style={{ textAlign: 'left', margin: '1.8rem 2.2rem' }}>
+              <p className={styles.profile_text} style={{ textAlign: 'left', margin: '1.8rem 3.2rem' }}>
                 {username}
               </p>
               <div className={styles.name}>
