@@ -34,7 +34,7 @@ const EventDescription = () => {
       setModuleName(msg.module.name);
       setDescription(msg.description);
       setPosterImage(msg.posterImage);
-      setExternal(`${msg.thirdPartyURL}`);
+      setExternal(msg.thirdPartyURL);
       setmaxMember(msg.maxTeamSize);
       setminMember(msg.minTeamSize);
       setIsLoading(false);
@@ -74,11 +74,15 @@ const EventDescription = () => {
 
           <div className={styles.moduleWrapper}>Module : {moduleName}</div>
           <div className={styles.externalLink}>
-            {
-              minMember !== maxMember ?
-                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size:{minMember}-{maxMember}</h1> :
-                <h1 className={styles.link} style={{ fontSize: "2rem" }}>Team Size: {minMember} member(s)</h1>
-            }
+            {minMember !== maxMember ? (
+              <h1 className={styles.link} style={{ fontSize: "2rem" }}>
+                Team Size:{minMember}-{maxMember}
+              </h1>
+            ) : (
+              <h1 className={styles.link} style={{ fontSize: "2rem" }}>
+                Team Size: {minMember} member(s)
+              </h1>
+            )}
           </div>
           <div className={styles.center}>
             <div className={styles.description}>
@@ -102,7 +106,9 @@ const EventDescription = () => {
             </button>
           )}
           <div className={styles.externalLink}>
-            <a className={styles.link} target="blank" href={external}>EXTERNAL LINK</a>
+            <a className={styles.link} target="blank" href={external}>
+              {external ? "EXTERNAL LINK" : ""}
+            </a>
           </div>
         </div>
       </div>
