@@ -465,7 +465,7 @@ const Teampage = () => {
           facebook: "https://www.facebook.com/profile.php?id=100080251090648",
           git: "https://github.com/amardga",
           image:
-            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633527/WhatsApp_Image_2024-01-28_at_10.45.25_PM_-_Amar_SINGH_eezga0.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1706713590/IMG_20240128_210310_2_rtupva.webp",
         },
         {
           id: "32",

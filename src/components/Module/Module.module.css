@@ -29,6 +29,7 @@
   font-weight: bold;
   text-align: center;
   color: #ffffff;
+  user-select: none;
   text-transform: uppercase;
   font-family: PixeloidSansBold, serif;
   background: linear-gradient(#ff004c, black);
