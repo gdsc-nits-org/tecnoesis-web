@@ -748,7 +748,16 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dl19r276g/image/upload/v1705513973/imagegdsc2_zdgzcm.webp",
         },
-
+        
+        {
+          id: 121,
+          name: "Tithi Jha",
+          designation: "UI/UX Designer",
+          img: "https://res.cloudinary.com/dl19r276g/image/upload/v1705513971/imagegdsc1_fwwgdr.webp",
+          git: "https://github.com/tithiii",
+          linkedin: "https://www.linkedin.com/in/tithi-jha-3b43b5229/",
+          fb: "https://www.facebook.com/tithi.jha.14?mibextid=LQQJ4d"
+        },
         {
           id: "24",
           name: "Jacinth Mahanta",
