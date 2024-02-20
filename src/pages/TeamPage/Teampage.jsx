@@ -18,7 +18,7 @@ const Teampage = () => {
 
     const handleScroll = () => {
       // const offset = window.scrollY;
-      
+
       // // Adjust the offset
       // if (offset < 500) {
       //   setIsSticky(true);
@@ -54,7 +54,7 @@ const Teampage = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      clearTimeout(timer)
+      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
@@ -97,15 +97,12 @@ const Teampage = () => {
           id: "92",
           name: "MIRAJ DEKA",
           designation: "CONVENOR",
-          linkedin:
-            "http://www.linkedin.com/in/miraj-deka-32a78720a",
-          facebook:
-            "https://www.facebook.com/miraz.deka",
+          linkedin: "http://www.linkedin.com/in/miraj-deka-32a78720a",
+          facebook: "https://www.facebook.com/miraz.deka",
           inst: "https://www.instagram.com/not_miraj_/?hl=en",
           image:
             "https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/cvsjl6ea2rlcwzyhoor5",
         },
-
       ],
     },
     {
@@ -245,7 +242,8 @@ const Teampage = () => {
           id: "125",
           name: "NETRAKAMAL BARUA ",
           designation: "Web Team Head",
-          linkedin: "https://www.linkedin.com/in/netrakamal-barua?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          linkedin:
+            "https://www.linkedin.com/in/netrakamal-barua?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook: "https://www.facebook.com/netrakamal.barua?mibextid=2JQ9oc",
           git: "https://github.com/JOSU9435",
           image:
@@ -442,7 +440,7 @@ const Teampage = () => {
           designation: "Hospitality Head",
           linkedin: "https://www.linkedin.com/in/tropcilina-saikia-47445520a",
           facebook: "https://www.facebook.com/tropcilina.saikia.9",
-          insta: "https://www.instagram.com/tropci__?igsh=eDk5bTF6Z2ViY3Y1",
+          inst: "https://www.instagram.com/tropci__?igsh=eDk5bTF6Z2ViY3Y1",
           image:
             "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633529/IMG-20230515-WA0002_-_Tropcilina_Saikia_wuqstz.webp",
         },
@@ -452,8 +450,7 @@ const Teampage = () => {
           designation: "Publicity Head",
           linkedin: "https://www.linkedin.com/in/anup-sharma-5114a8236",
           facebook: "https://www.facebook.com/anupsharma.sharma.3344",
-          insta:
-            "https://www.instagram.com/s.anupsharma_ind?igsh=eHA2MWNrdG5nOXd3",
+          inst: "https://www.instagram.com/s.anupsharma_ind?igsh=eHA2MWNrdG5nOXd3",
           image:
             "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633532/IMG20230113160508_-_ANUP_SHARMA_pty7lu.webp",
         },
@@ -509,7 +506,7 @@ const Teampage = () => {
             "https://www.linkedin.com/in/krishnav-choudhury-944861184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
           facebook:
             "https://www.facebook.com/krishnav.choudhury?mibextid=ZbWKwL",
-          insta: "https://www.instagram.com/krishnav_choudhury?igsh=YnRrbnZ1MzNnZHNx",
+          inst: "https://www.instagram.com/krishnav_choudhury?igsh=YnRrbnZ1MzNnZHNx",
           image:
             "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633523/SAVE_20240129_180442_-_Krishnav_Choudhury_j8tm4h.webp",
         },
@@ -517,88 +514,91 @@ const Teampage = () => {
           id: "105",
           name: "Dimpal Dutta",
           designation: "Myndsnare Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/dimpal-dutta-a721841ba",
+          linkedin: "https://www.linkedin.com/in/dimpal-dutta-a721841ba",
           git: "https://github.com/dimpald101",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633523/IMG-20240127-WA0033_-_Dimpal_Dutta_rx47wy.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633523/IMG-20240127-WA0033_-_Dimpal_Dutta_rx47wy.webp",
         },
         {
           id: "106",
           name: "Ritwick Sinha",
           designation: "Myndsnare Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/ritwick-sinha-b97110187/",
-          facebook:"https://www.facebook.com/ritwick.sinha.54",
-          insta: "https://www.instagram.com/ritwick_de_sinha/",
+          linkedin: "https://www.linkedin.com/in/ritwick-sinha-b97110187/",
+          facebook: "https://www.facebook.com/ritwick.sinha.54",
+          inst: "https://www.instagram.com/ritwick_de_sinha/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633525/ritwick_img_-_ECE-A003_Ritwick_Sinha_rqmpep.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633525/ritwick_img_-_ECE-A003_Ritwick_Sinha_rqmpep.webp",
         },
         {
           id: "107",
           name: "Doneela Das",
           designation: "Circuitry Nexus Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/ddas7",
-          facebook:"https://www.facebook.com/doneela.das.71/",
-          insta: "https://www.instagram.com/doneela_das/",
+          linkedin: "https://www.linkedin.com/in/ddas7",
+          facebook: "https://www.facebook.com/doneela.das.71/",
+          inst: "https://www.instagram.com/doneela_das/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633526/IMG-20231212-WA0324_-_Kavietry_vchurc.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633526/IMG-20231212-WA0324_-_Kavietry_vchurc.webp",
         },
         {
           id: "108",
           name: "Rohit Roy",
           designation: "Robotron Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/rohit-roy-nits/",
-          facebook:"https://www.facebook.com/profile.php?id=100006742771161&mibextid=ZbWKwL",
-          insta: "https://www.instagram.com/__rohit__roy___/",
+          linkedin: "https://www.linkedin.com/in/rohit-roy-nits/",
+          facebook:
+            "https://www.facebook.com/profile.php?id=100006742771161&mibextid=ZbWKwL",
+          inst: "https://www.instagram.com/__rohit__roy___/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633525/myPicFb_-_Rohit_Roy_ds3nad.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633525/myPicFb_-_Rohit_Roy_ds3nad.webp",
         },
         {
           id: "109",
           name: "Arnav Mishra",
           designation: "Cyberwarp Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/arnav-mishra-44171b175",
-          facebook:"https://www.facebook.com/arnav.mishra.13?mibextid=dGKdO6",
-          insta: "https://www.instagram.com/arnav_mishra13/",
+          linkedin: "https://www.linkedin.com/in/arnav-mishra-44171b175",
+          facebook: "https://www.facebook.com/arnav.mishra.13?mibextid=dGKdO6",
+          inst: "https://www.instagram.com/arnav_mishra13/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633526/4a753fd4-29e6-45d2-8ad9-03a1593bc3c2_-_EI69_Arnav_Mishra_fls8xu.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633526/4a753fd4-29e6-45d2-8ad9-03a1593bc3c2_-_EI69_Arnav_Mishra_fls8xu.webp",
         },
         {
           id: "110",
           name: "Ridha Rani Pradhan",
           designation: "ASME Student Chair",
-          linkedin:
-            "https://www.linkedin.com/in/ridharanipradhan2000/",
-          facebook:"https://www.facebook.com/ridhar.pradhan.5",
-          insta: "https://www.instagram.com/ridhathegreat/",
+          linkedin: "https://www.linkedin.com/in/ridharanipradhan2000/",
+          facebook: "https://www.facebook.com/ridhar.pradhan.5",
+          inst: "https://www.instagram.com/ridhathegreat/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633523/WhatsApp_Image_2024-01-23_at_10.46.51_PM_-_ME_B_144_RIDHA_R_PRADHAN_bfi1ex.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633523/WhatsApp_Image_2024-01-23_at_10.46.51_PM_-_ME_B_144_RIDHA_R_PRADHAN_bfi1ex.webp",
         },
         {
           id: "111",
           name: "Somadrita Halder",
           designation: "School Genius Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/somadrita-halder-46156220a",
-          facebook:"https://www.facebook.com/somadrita.halder?mibextid=ZbWKwL",
+          linkedin: "https://www.linkedin.com/in/somadrita-halder-46156220a",
+          facebook: "https://www.facebook.com/somadrita.halder?mibextid=ZbWKwL",
           git: "https://github.com/Rai2020-ops/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633522/IMG-20240130-WA0043_-_EI87_SOMADRITA_HALDER_rfpkwa.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633522/IMG-20240130-WA0043_-_EI87_SOMADRITA_HALDER_rfpkwa.webp",
+        },
+        {
+          id: "211",
+          name: "Shyantani Choudhary",
+          designation: "School Genius Module Head",
+          linkedin: "https://www.linkedin.com/in/shyantani-choudhury-67612421a",
+          facebook: "https://www.facebook.com/shyantani.choudhury.3",
+          inst: "https://www.instagram.com/shyantani._.ch",
+          image:
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1708429067/WhatsApp_Image_2024-02-20_at_12.58.38_PM_odsalp.webp",
         },
         {
           id: "112",
           name: "Shubham Kumar",
           designation: "Empresario Module Head",
-          linkedin:
-            "https://www.linkedin.com/in/shubham-kumar-03540b20b/",
-          facebook:"https://www.facebook.com/profile.php?id=100058575665353",
-          insta: "https://www.instagram.com/iam_shubham_45/",
+          linkedin: "https://www.linkedin.com/in/shubham-kumar-03540b20b/",
+          facebook: "https://www.facebook.com/profile.php?id=100058575665353",
+          inst: "https://www.instagram.com/iam_shubham_45/",
           image:
-          "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633524/shubham_-_EI91_Shubham_Kumar_stkjyi.webp",
+            "https://res.cloudinary.com/dnitrnzho/image/upload/v1706633524/shubham_-_EI91_Shubham_Kumar_stkjyi.webp",
         },
         {
           id: "43",
@@ -748,7 +748,7 @@ const Teampage = () => {
           image:
             "https://res.cloudinary.com/dl19r276g/image/upload/v1705513973/imagegdsc2_zdgzcm.webp",
         },
-        
+
         {
           id: 121,
           name: "Tithi Jha",
@@ -756,7 +756,8 @@ const Teampage = () => {
           linkedin: "https://www.linkedin.com/in/tithi-jha-3b43b5229/",
           facebook: "https://www.facebook.com/tithi.jha.14",
           git: "https://github.com/tithiii",
-          image: "https://res.cloudinary.com/dl19r276g/image/upload/v1705513971/imagegdsc1_fwwgdr.webp",
+          image:
+            "https://res.cloudinary.com/dl19r276g/image/upload/v1705513971/imagegdsc1_fwwgdr.webp",
         },
         {
           id: "24",
@@ -885,79 +886,80 @@ const Teampage = () => {
 
   const [index, setIndex] = useState(0);
 
-  if(loading){
-    return <Loading/>
+  if (loading) {
+    return <Loading />;
   }
 
   return (
     <>
-    <Navbar2/>
-    <div className={styles.wrapper}>
-      {/* leftFrame */}
-      <div className={styles.leftFrame}>
-        <div className={styles.headingDiv}>
-          <div className={styles.heading}>
-            <h1>MEET THE TEAM</h1>
-          </div>
+      <Navbar2 />
+      <div className={styles.wrapper}>
+        {/* leftFrame */}
+        <div className={styles.leftFrame}>
+          <div className={styles.headingDiv}>
+            <div className={styles.heading}>
+              <h1>MEET THE TEAM</h1>
+            </div>
 
-          <div className={styles.heading}>{teams[index].name}</div>
+            <div className={styles.heading}>{teams[index].name}</div>
+          </div>
+          <div className={styles.teamCards}>
+            {teams[index].members.map((member, id) => (
+              <Card
+                key={id}
+                name={member.name}
+                designation={member.designation}
+                image={member.image}
+                linkedin={member.linkedin}
+                facebook={member.facebook}
+                github={member.git}
+                inst={member.inst}
+              />
+            ))}
+          </div>
         </div>
-        <div className={styles.teamCards}>
-          {teams[index].members.map((member, id) => (
-            <Card
-            key={id}
-            name={member.name}
-            designation={member.designation}
-            image={member.image}
-            linkedin={member.linkedin}
-            facebook={member.facebook}
-            github={member.git}
-            inst={member.inst}
-            />
+
+        {/* rightFrame */}
+        <div
+          className={`${isSticky ? styles.sticky : styles.absolute} ${
+            styles.rightFrameParent
+          }`}
+          id="sidebar"
+          style={{ translate: isSidebarVisible ? "0px" : "250px" }}
+        >
+          <div className={styles.rightFrame}>
+            {teams.map((TeamName, id) => (
+              <div
+                key={id}
+                className={styles.teamName}
+                onClick={() => {
+                  setIndex(id);
+                  if (isSmallScreen) {
+                    setIsSidebarVisible(false);
+                  }
+                }}
+              >
+                {TeamName.name}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* toggle */}
+        <div
+          className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
+          onClick={hadleToggle}
+        >
+          {isSmallScreen &&
+            (isSidebarVisible ? (
+              <img src={toggleRight} alt="img" />
+            ) : (
+              <img src={toggleLeft} alt="img" />
             ))}
         </div>
       </div>
-
-      {/* rightFrame */}
-      <div
-        className={`${isSticky ? styles.sticky : styles.absolute} ${styles.rightFrameParent
-        }`}
-        id="sidebar"
-        style={{ translate: isSidebarVisible ? "0px" : "250px" }}
-        >
-        <div className={styles.rightFrame}>
-          {teams.map((TeamName, id) => (
-            <div
-            key={id}
-            className={styles.teamName}
-            onClick={() => {
-              setIndex(id);
-              if (isSmallScreen) {
-                setIsSidebarVisible(false);
-              }
-            }}
-            >
-              {TeamName.name}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* toggle */}
-      <div
-        className={`${styles.toggle} ${isSticky ? styles.sticky : ""}`}
-        onClick={hadleToggle}
-        >
-        {isSmallScreen &&
-          (isSidebarVisible ? (
-            <img src={toggleRight} alt="img" />
-            ) : (
-              <img src={toggleLeft} alt="img" />
-              ))}
-      </div>
-    </div>
-              <Footer/>
-              </>
+      <Footer />
+    </>
   );
 };
 export default Teampage;
